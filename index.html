@@ -379,6 +379,19 @@
     }
     .skill-pill:hover { background: var(--accent-dim); color: var(--accent); border-color: var(--accent); }
 
+    .timeline-date-flag {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--bg);
+      background: var(--accent);
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+      box-shadow: 0 0 10px rgba(0,212,255,0.3);
+    }
+
     /* ── EXPERIENCE ── */
     .timeline { position: relative; padding-left: 30px; }
     .timeline::before {
@@ -430,7 +443,57 @@
     }
     .timeline-desc { font-size: 13px; color: var(--text-muted); line-height: 1.7; }
 
+    /* ── PHOTO ── */
+    .hero-photo-wrap {
+      flex: 0 0 140px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+    .hero-photo {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--accent);
+      box-shadow: 0 0 0 6px rgba(0,212,255,0.12), 0 8px 32px rgba(0,212,255,0.18);
+      display: block;
+    }
+    .hero-photo-label {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      color: var(--accent);
+      letter-spacing: 1px;
+      opacity: 0.7;
+    }
+
     /* ── PROJECTS ── */
+    .projects-category-title {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--accent);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin: 28px 0 14px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .projects-category-title:first-child { margin-top: 0; }
+    .projects-category-title .cat-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 700;
+      border: 1px solid;
+    }
+    .cat-freelance { color: #f59e0b; border-color: rgba(245,158,11,0.4); background: rgba(245,158,11,0.08); }
+    .cat-stage     { color: #a855f7; border-color: rgba(168,85,247,0.4); background: rgba(168,85,247,0.08); }
+    .cat-etude     { color: #22c55e; border-color: rgba(34,197,94,0.4); background: rgba(34,197,94,0.08); }
     .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
     .project-card {
       background: var(--card-bg);
@@ -807,6 +870,7 @@
       .skills-grid { grid-template-columns: 1fr; }
       #hero-section { flex-direction: column; gap: 28px; }
       .hero-right { flex: none; width: 100%; }
+      .hero-photo-wrap { flex-direction: row; justify-content: flex-start; }
     }
     @media (max-width: 560px) {
       .projects-grid { grid-template-columns: 1fr; }
@@ -870,6 +934,10 @@
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
             </a>
           </div>
+        </div>
+        <div class="hero-photo-wrap">
+          <img src="rayen.jpg" alt="Rayen Chemlali" class="hero-photo" loading="eager">
+          <span class="hero-photo-label"></span>
         </div>
         <div class="hero-right" aria-label="Developer profile card">
           <div class="code-file-tab">
@@ -1077,6 +1145,7 @@ const PORTFOLIO_DATA = {
   projects: [
     {
       id: "kickstream", name: "KickStream", emoji: "⚽",
+      category: "etude",
       tagline: { en: "Real-time football prediction & streaming platform", fr: "Plateforme de prédiction et streaming football en temps réel" },
       accentColor: "#00aaff", watermark: "KICK",
       status: { en: "Completed", fr: "Terminé" }, statusType: "done",
@@ -1093,6 +1162,7 @@ const PORTFOLIO_DATA = {
     },
     {
       id: "medisys", name: "MediSys", emoji: "🏥",
+      category: "etude",
       tagline: { en: "AI-powered medical management platform", fr: "Plateforme de gestion médicale propulsée par l'IA" },
       accentColor: "#a855f7", watermark: "MEDI",
       status: { en: "In Development", fr: "En Développement" }, statusType: "dev",
@@ -1109,6 +1179,7 @@ const PORTFOLIO_DATA = {
     },
     {
       id: "erp", name: "Mini-ERP System", emoji: "📊",
+      category: "etude",
       tagline: { en: "Enterprise resource planning for sales operations", fr: "Système ERP pour les opérations de vente" },
       accentColor: "#f59e0b", watermark: "ERP",
       status: { en: "Completed", fr: "Terminé" }, statusType: "done",
@@ -1125,6 +1196,7 @@ const PORTFOLIO_DATA = {
     },
     {
       id: "interim", name: "InterimCo Website", emoji: "🌐",
+      category: "etude",
       tagline: { en: "Corporate site built in PHP then migrated to Symfony", fr: "Site corporate développé en PHP puis migré vers Symfony" },
       accentColor: "#10b981", watermark: "SYM",
       status: { en: "Completed", fr: "Terminé" }, statusType: "done",
@@ -1141,6 +1213,7 @@ const PORTFOLIO_DATA = {
     },
     {
       id: "copilot", name: "Strategy Copilot", emoji: "🤖",
+      category: "freelance",
       tagline: { en: "AI-powered business diagnostics and strategy generator", fr: "Générateur de stratégie et diagnostics business par IA" },
       accentColor: "#06b6d4", watermark: "AI",
       status: { en: "Completed", fr: "Terminé" }, statusType: "done",
@@ -1157,6 +1230,7 @@ const PORTFOLIO_DATA = {
     },
     {
       id: "shannon", name: "Shannon", emoji: "⚙️",
+      category: "freelance",
       tagline: { en: "Open-source Simulink-inspired visual code generator", fr: "Générateur de code visuel open-source inspiré de Simulink" },
       accentColor: "#8b5cf6", watermark: "SHN",
       status: { en: "Completed", fr: "Terminé" }, statusType: "done",
@@ -1173,6 +1247,7 @@ const PORTFOLIO_DATA = {
     },
     {
       id: "ml-suite", name: "ML Projects Suite", emoji: "🧠",
+      category: "stage",
       tagline: { en: "5 end-to-end ML projects across domains", fr: "5 projets machine learning complets sur différents domaines" },
       accentColor: "#22c55e", watermark: "ML",
       status: { en: "Completed", fr: "Terminé" }, statusType: "done",
@@ -1189,6 +1264,7 @@ const PORTFOLIO_DATA = {
     },
     {
       id: "container-registry", name: "ContainerIQ", emoji: "🐳",
+      category: "stage",
       tagline: { en: "AI-powered Docker storage optimizer for Kubernetes", fr: "Optimiseur de stockage Docker pour Kubernetes par IA" },
       accentColor: "#38bdf8", watermark: "K8S",
       status: { en: "Phase 1 Delivered", fr: "Phase 1 Livrée" }, statusType: "p1",
@@ -1492,13 +1568,15 @@ function renderExperience() {
   document.getElementById('timeline').innerHTML = PORTFOLIO_DATA.experience.map(e => `
     <div class="timeline-item">
       <div class="timeline-dot" aria-hidden="true"></div>
+      <div style="margin-bottom:8px;display:flex;align-items:center;gap:8px;">
+        <span class="timeline-date-flag">📅 ${e.period}</span>
+        <span class="timeline-type-badge" style="margin:0">${t(e.type)}</span>
+      </div>
       <div class="timeline-card">
         <div class="timeline-header">
           <h3 class="timeline-role">${t(e.role)}</h3>
-          <span class="timeline-period">${e.period}</span>
         </div>
         <div class="timeline-company">${e.company}</div>
-        <span class="timeline-type-badge">${t(e.type)}</span>
         <p class="timeline-desc">${t(e.description)}</p>
       </div>
     </div>
@@ -1511,22 +1589,48 @@ function renderExperience() {
 function renderProjects() {
   document.getElementById('label-projects').textContent = t(UI_LABELS.proj_lbl);
   document.getElementById('proj-title').textContent = t(UI_LABELS.proj_title);
-  document.getElementById('projects-grid').innerHTML = PORTFOLIO_DATA.projects.map((p, i) => `
-    <article class="project-card" style="--project-color:${p.accentColor}"
-             onclick="openModal(${i})"
-             role="button" tabindex="0"
-             aria-label="View details for ${p.name} project"
-             onkeydown="if(event.key==='Enter')openModal(${i})">
-      <div class="project-card-top">
-        <span class="project-emoji" role="img" aria-label="${p.name}">${p.emoji}</span>
-        <span class="project-status status-${p.statusType}">${t(p.status)}</span>
-      </div>
-      <h3 class="project-name">${p.name}</h3>
-      <p class="project-tagline">${t(p.tagline)}</p>
-      <div class="project-tech-row">${p.tech.slice(0,3).map(tech => `<span class="tech-chip">${tech}</span>`).join('')}${p.tech.length > 3 ? `<span class="tech-chip">+${p.tech.length-3}</span>` : ''}</div>
-      <div class="project-view-btn" aria-hidden="true">${t(UI_LABELS.view_details)}</div>
-    </article>
-  `).join('');
+
+  const categories = [
+    { key: 'freelance', label: { en: 'Freelance', fr: 'Freelance' }, icon: '💼', badgeClass: 'cat-freelance' },
+    { key: 'stage',     label: { en: 'Internship', fr: 'Stage' },    icon: '🏢', badgeClass: 'cat-stage' },
+    { key: 'etude',     label: { en: 'Academic', fr: 'Études' },     icon: '🎓', badgeClass: 'cat-etude' }
+  ];
+
+  const allProjects = PORTFOLIO_DATA.projects;
+  let html = '';
+
+  categories.forEach(cat => {
+    const filtered = allProjects.filter(p => p.category === cat.key);
+    if (!filtered.length) return;
+    html += `<div class="projects-category-title">
+      <span>${cat.icon} ${t(cat.label)}</span>
+      <span class="cat-badge ${cat.badgeClass}">${filtered.length} ${filtered.length > 1 ? (lang === 'fr' ? 'projets' : 'projects') : (lang === 'fr' ? 'projet' : 'project')}</span>
+    </div>
+    <div class="projects-grid">`;
+    filtered.forEach(p => {
+      const i = allProjects.indexOf(p);
+      html += `<article class="project-card" style="--project-color:${p.accentColor}"
+               onclick="openModal(${i})"
+               role="button" tabindex="0"
+               aria-label="View details for ${p.name} project"
+               onkeydown="if(event.key==='Enter')openModal(${i})">
+        <div class="project-card-top">
+          <span class="project-emoji" role="img" aria-label="${p.name}">${p.emoji}</span>
+          <span class="project-status status-${p.statusType}">${t(p.status)}</span>
+        </div>
+        <h3 class="project-name">${p.name}</h3>
+        <p class="project-tagline">${t(p.tagline)}</p>
+        <div class="project-tech-row">${p.tech.slice(0,3).map(tech => `<span class="tech-chip">${tech}</span>`).join('')}${p.tech.length > 3 ? `<span class="tech-chip">+${p.tech.length-3}</span>` : ''}</div>
+        <div class="project-view-btn" aria-hidden="true">${t(UI_LABELS.view_details)}</div>
+      </article>`;
+    });
+    html += `</div>`;
+  });
+
+  // Remplacer le container projects-grid par un div générique
+  const container = document.getElementById('projects-grid');
+  container.className = '';
+  container.innerHTML = html;
 }
 
 // ═══════════════════════════════════════════════════════
