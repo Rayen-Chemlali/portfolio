@@ -1,0 +1,1836 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080c14">
+  <meta name="author" content="Rayen Chemlali">
+  <meta name="robots" content="index, follow">
+  <meta name="keywords" content="Rayen Chemlali, software engineer Tunisia, INSAT engineer, full-stack developer Tunisia, machine learning developer Tunisia, competitive programming Tunisia, Angular NestJS developer, AI developer Tunisia, développeur logiciel Tunisie">
+  <link rel="alternate" hreflang="en" href="https://rayen-chemlali.dev">
+  <link rel="alternate" hreflang="fr" href="https://rayen-chemlali.dev">
+  <link rel="canonical" href="https://rayen-chemlali.dev">
+  <!-- OG & Twitter filled dynamically -->
+  <meta id="meta-desc" name="description" content="">
+  <meta id="og-title" property="og:title" content="">
+  <meta id="og-desc" property="og:description" content="">
+  <meta id="og-type" property="og:type" content="website">
+  <meta id="og-locale" property="og:locale" content="en_US">
+  <meta id="og-site" property="og:site_name" content="Rayen Chemlali Portfolio">
+  <meta id="tw-card" name="twitter:card" content="summary_large_image">
+  <meta id="tw-title" name="twitter:title" content="">
+  <meta id="tw-desc" name="twitter:description" content="">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <title id="page-title">Rayen Chemlali | Software Engineer & AI Developer – Tunis, Tunisia</title>
+  <style>
+    :root {
+      --bg: #080c14;
+      --sidebar-bg: #0d1220;
+      --card-bg: #0f1929;
+      --border: #1a2740;
+      --border-hover: #00d4ff;
+      --accent: #00d4ff;
+      --accent-dim: rgba(0,212,255,0.08);
+      --text: #e2e8f0;
+      --text-muted: #64748b;
+      --text-dim: #94a3b8;
+      --sidebar-w: 220px;
+      --topbar-h: 40px;
+      --font-display: 'Syne', sans-serif;
+      --font-mono: 'IBM Plex Mono', monospace;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-display);
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── TOP BAR ── */
+    #topbar {
+      height: var(--topbar-h);
+      background: #060a10;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      flex-shrink: 0;
+      z-index: 100;
+    }
+    .topbar-dots { display: flex; gap: 6px; }
+    .dot { width: 11px; height: 11px; border-radius: 50%; }
+    .dot-r { background: #ff5f57; }
+    .dot-y { background: #febc2e; }
+    .dot-g { background: #28c840; }
+    .topbar-url {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+    }
+    .topbar-url span { color: var(--accent); }
+    #lang-toggle {
+      display: flex;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .lang-btn {
+      padding: 3px 10px;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--text-muted);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      letter-spacing: 1px;
+    }
+    .lang-btn.active {
+      background: var(--accent);
+      color: #000;
+    }
+
+    /* ── LAYOUT ── */
+    #layout {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+    }
+
+    /* ── SIDEBAR ── */
+    #sidebar {
+      width: var(--sidebar-w);
+      background: var(--sidebar-bg);
+      border-right: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+      overflow-y: auto;
+      padding: 20px 0 20px;
+    }
+    .sidebar-logo {
+      padding: 0 16px 20px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 12px;
+    }
+    .sidebar-logo-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: 0.3px;
+    }
+    .sidebar-logo-sub {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--accent);
+      margin-top: 2px;
+    }
+    .sidebar-section-label {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      color: var(--text-muted);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 8px 16px 4px;
+    }
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 8px 16px;
+      cursor: pointer;
+      border-left: 3px solid transparent;
+      transition: all 0.15s;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-decoration: none;
+      position: relative;
+    }
+    .nav-item:hover { color: var(--text); background: rgba(255,255,255,0.03); }
+    .nav-item.active {
+      color: var(--accent);
+      border-left-color: var(--accent);
+      background: var(--accent-dim);
+    }
+    .nav-icon { font-size: 13px; width: 16px; text-align: center; }
+
+    /* ── MAIN PANEL ── */
+    #main-panel {
+      flex: 1;
+      overflow-y: auto;
+      padding: 40px 48px 60px;
+      scroll-behavior: smooth;
+    }
+    #main-panel::-webkit-scrollbar { width: 4px; }
+    #main-panel::-webkit-scrollbar-track { background: transparent; }
+    #main-panel::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+    /* ── SECTION STYLES ── */
+    .section { display: none; animation: fadeIn 0.3s ease; }
+    .section.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+    .section-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--accent);
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+      opacity: 0.7;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 32px;
+      line-height: 1.1;
+    }
+
+    /* ── PARTICLES ── */
+    #particles-canvas {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.4;
+    }
+
+    /* ── HERO ── */
+    #hero-section {
+      min-height: calc(100vh - var(--topbar-h) - 100px);
+      display: flex;
+      align-items: center;
+      gap: 48px;
+    }
+    .hero-left { flex: 1; }
+    .hero-greeting {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--accent);
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+    }
+    .hero-name {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 5vw, 58px);
+      font-weight: 800;
+      color: var(--text);
+      line-height: 1.05;
+      margin-bottom: 12px;
+    }
+    .hero-name span { color: var(--accent); }
+    .hero-role {
+      font-family: var(--font-mono);
+      font-size: 16px;
+      color: var(--text-dim);
+      margin-bottom: 20px;
+      min-height: 24px;
+    }
+    .cursor { display: inline-block; width: 2px; height: 1em; background: var(--accent); margin-left: 2px; animation: blink 0.8s step-end infinite; vertical-align: text-bottom; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+    .hero-bio {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.7;
+      max-width: 460px;
+      margin-bottom: 28px;
+    }
+    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-primary {
+      padding: 10px 22px;
+      background: var(--accent);
+      color: #000;
+      border: none;
+      border-radius: 6px;
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+      letter-spacing: 0.3px;
+    }
+    .btn-primary:hover { background: #33ddff; transform: translateY(-1px); box-shadow: 0 4px 20px rgba(0,212,255,0.3); }
+    .btn-outline {
+      padding: 10px 22px;
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      border-radius: 6px;
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      text-decoration: none;
+    }
+    .btn-outline:hover { background: var(--accent-dim); transform: translateY(-1px); }
+    .hero-socials { display: flex; gap: 14px; margin-top: 24px; }
+    .social-link {
+      width: 36px; height: 36px;
+      display: flex; align-items: center; justify-content: center;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 15px;
+      transition: all 0.2s;
+    }
+    .social-link:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
+    .hero-right {
+      flex: 0 0 320px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      line-height: 1.8;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-right::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), #8b5cf6, var(--accent));
+      background-size: 200%;
+      animation: shimmer 3s linear infinite;
+    }
+    @keyframes shimmer { 0%{background-position:0%} 100%{background-position:200%} }
+    .code-file-tab {
+      display: flex; align-items: center; gap: 6px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 14px;
+      color: var(--text-muted);
+      font-size: 10px;
+    }
+    .code-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+    .json-key { color: #7dd3fc; }
+    .json-str { color: #86efac; }
+    .json-arr { color: #fbbf24; }
+    .json-bool { color: var(--accent); }
+    .json-punc { color: var(--text-muted); }
+
+    /* ── ABOUT ── */
+    .about-grid { display: grid; grid-template-columns: 1fr 280px; gap: 32px; }
+    .about-text { font-size: 14px; color: var(--text-dim); line-height: 1.8; }
+    .about-text p { margin-bottom: 16px; }
+    .about-stats { display: flex; flex-direction: column; gap: 12px; }
+    .stat-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+    }
+    .stat-card-num {
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--accent);
+      font-family: var(--font-mono);
+    }
+    .stat-card-label { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+    .lang-bars { margin-top: 12px; }
+    .lang-bar-item { margin-bottom: 12px; }
+    .lang-bar-header { display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 5px; }
+    .lang-bar-track { height: 4px; background: var(--border); border-radius: 4px; overflow: hidden; }
+    .lang-bar-fill { height: 100%; background: var(--accent); border-radius: 4px; transition: width 1s ease; width: 0; }
+
+    /* ── SKILLS ── */
+    .skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .skill-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      transition: border-color 0.2s;
+    }
+    .skill-card:hover { border-color: var(--accent); }
+    .skill-card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+    .skill-icon { font-size: 20px; }
+    .skill-category { font-size: 13px; font-weight: 700; color: var(--text); }
+    .skills-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+    .skill-pill {
+      padding: 4px 10px;
+      background: rgba(0,212,255,0.06);
+      border: 1px solid rgba(0,212,255,0.2);
+      border-radius: 20px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-dim);
+      transition: all 0.15s;
+    }
+    .skill-pill:hover { background: var(--accent-dim); color: var(--accent); border-color: var(--accent); }
+
+    /* ── EXPERIENCE ── */
+    .timeline { position: relative; padding-left: 30px; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 8px; top: 8px; bottom: 8px;
+      width: 2px;
+      background: var(--border);
+    }
+    .timeline-item { position: relative; margin-bottom: 32px; }
+    .timeline-dot {
+      position: absolute;
+      left: -26px; top: 6px;
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 2px solid var(--bg);
+      box-shadow: 0 0 0 3px rgba(0,212,255,0.2);
+    }
+    .timeline-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      transition: border-color 0.2s;
+    }
+    .timeline-card:hover { border-color: rgba(0,212,255,0.4); }
+    .timeline-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 8px; flex-wrap: wrap; gap: 8px; }
+    .timeline-role { font-size: 15px; font-weight: 700; color: var(--text); }
+    .timeline-period {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--accent);
+      background: var(--accent-dim);
+      padding: 3px 8px;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+    .timeline-company { font-size: 13px; color: var(--text-muted); margin-bottom: 10px; }
+    .timeline-type-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      background: rgba(100,116,139,0.15);
+      border-radius: 4px;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+    .timeline-desc { font-size: 13px; color: var(--text-muted); line-height: 1.7; }
+
+    /* ── PROJECTS ── */
+    .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .project-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      cursor: pointer;
+      transition: all 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .project-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--project-color, var(--accent));
+      transform: scaleX(0);
+      transition: transform 0.2s;
+    }
+    .project-card:hover { border-color: var(--border-hover); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,212,255,0.08); }
+    .project-card:hover::after { transform: scaleX(1); }
+    .project-card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
+    .project-emoji { font-size: 24px; }
+    .project-status {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      padding: 3px 7px;
+      border-radius: 4px;
+      border: 1px solid;
+    }
+    .status-done { color: #22c55e; border-color: rgba(34,197,94,0.3); background: rgba(34,197,94,0.08); }
+    .status-dev { color: #f59e0b; border-color: rgba(245,158,11,0.3); background: rgba(245,158,11,0.08); }
+    .status-p1 { color: #38bdf8; border-color: rgba(56,189,248,0.3); background: rgba(56,189,248,0.08); }
+    .project-name { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+    .project-tagline { font-size: 12px; color: var(--text-muted); line-height: 1.5; margin-bottom: 14px; }
+    .project-tech-row { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 14px; }
+    .tech-chip {
+      padding: 2px 7px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--text-muted);
+    }
+    .project-view-btn {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 12px;
+      color: var(--accent);
+      font-weight: 600;
+      transition: gap 0.15s;
+    }
+    .project-card:hover .project-view-btn { gap: 10px; }
+
+    /* ── MODAL ── */
+    #modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(8px);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    #modal-overlay.open { display: flex; }
+    #modal-box {
+      background: #0c1525;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      width: 100%;
+      max-width: 680px;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+    }
+    #modal-box::-webkit-scrollbar { width: 3px; }
+    #modal-box::-webkit-scrollbar-thumb { background: var(--border); }
+    .modal-header {
+      position: relative;
+      padding: 28px 28px 20px;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    .modal-watermark {
+      position: absolute;
+      right: -10px; top: -10px;
+      font-size: 80px;
+      font-weight: 800;
+      opacity: 0.05;
+      line-height: 1;
+      font-family: var(--font-display);
+      pointer-events: none;
+      user-select: none;
+    }
+    .modal-close {
+      position: absolute;
+      top: 16px; right: 16px;
+      width: 28px; height: 28px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: transparent;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 14px;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.15s;
+      z-index: 2;
+    }
+    .modal-close:hover { border-color: var(--accent); color: var(--accent); }
+    .modal-emoji { font-size: 32px; margin-bottom: 8px; }
+    .modal-title { font-size: 22px; font-weight: 800; margin-bottom: 8px; }
+    .modal-badges { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 10px; }
+    .modal-badge {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      padding: 3px 9px;
+      border-radius: 4px;
+      background: rgba(255,255,255,0.05);
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+    }
+    .modal-tech-row { display: flex; flex-wrap: wrap; gap: 5px; }
+    .modal-body { padding: 20px 28px 28px; }
+    .modal-tabs { display: flex; gap: 0; border-bottom: 1px solid var(--border); margin-bottom: 20px; }
+    .modal-tab {
+      padding: 8px 16px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      transition: all 0.15s;
+    }
+    .modal-tab:hover { color: var(--text); }
+    .modal-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+    .modal-tab-content { display: none; }
+    .modal-tab-content.active { display: block; }
+    .modal-overview { font-size: 13px; color: var(--text-dim); line-height: 1.8; }
+    .modal-features-list { list-style: none; }
+    .modal-features-list li {
+      padding: 7px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      font-size: 13px;
+      color: var(--text-dim);
+      display: flex; align-items: flex-start; gap: 8px;
+    }
+    .modal-features-list li::before { content: '→'; color: var(--accent); flex-shrink: 0; }
+    .modal-text { font-size: 13px; color: var(--text-dim); line-height: 1.8; }
+    .modal-my-role {
+      background: var(--accent-dim);
+      border: 1px solid rgba(0,212,255,0.2);
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin-top: 16px;
+    }
+    .modal-my-role-label { font-family: var(--font-mono); font-size: 10px; color: var(--accent); margin-bottom: 4px; }
+    .modal-my-role-text { font-size: 12px; color: var(--text-dim); }
+    .modal-links { display: flex; gap: 10px; flex-wrap: wrap; padding: 16px 28px 20px; border-top: 1px solid var(--border); }
+    .modal-link-btn {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 8px 16px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: all 0.15s;
+    }
+    .modal-link-btn:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
+
+    /* ── EDUCATION ── */
+    .edu-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .edu-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      transition: border-color 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .edu-card:hover { border-color: rgba(0,212,255,0.4); }
+    .edu-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--accent);
+    }
+    .edu-inst { font-size: 18px; font-weight: 800; color: var(--accent); margin-bottom: 4px; }
+    .edu-full { font-size: 11px; color: var(--text-muted); margin-bottom: 12px; font-family: var(--font-mono); }
+    .edu-degree { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+    .edu-period { font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); margin-bottom: 14px; }
+    .edu-highlights { list-style: none; }
+    .edu-highlights li {
+      font-size: 12px;
+      color: var(--text-muted);
+      padding: 4px 0;
+      display: flex; align-items: flex-start; gap: 8px;
+    }
+    .edu-highlights li::before { content: '▸'; color: var(--accent); flex-shrink: 0; }
+
+    /* ── ACHIEVEMENTS ── */
+    .achievements-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .achievement-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px 20px;
+      text-align: center;
+      transition: all 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .achievement-card:hover { transform: translateY(-3px); border-color: var(--a-color, var(--accent)); box-shadow: 0 10px 40px rgba(0,0,0,0.3); }
+    .achievement-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at top, var(--a-color-dim, rgba(0,212,255,0.05)), transparent 70%);
+    }
+    .achievement-medal { font-size: 40px; margin-bottom: 10px; display: block; transition: transform 0.2s; }
+    .achievement-card:hover .achievement-medal { transform: scale(1.1) rotate(-5deg); }
+    .achievement-place {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+      border: 1px solid;
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+    .achievement-title { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+    .achievement-subtitle { font-size: 11px; color: var(--text-muted); line-height: 1.5; margin-bottom: 16px; }
+    .achievement-link {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 5px 12px;
+      border: 1px solid var(--border);
+      border-radius: 5px;
+      transition: all 0.15s;
+    }
+    .achievement-link:hover { color: var(--accent); border-color: var(--accent); background: var(--accent-dim); }
+
+    /* ── CERTIFICATIONS ── */
+    .certs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .cert-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      transition: all 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .cert-card:hover { border-color: var(--accent); box-shadow: 0 0 20px rgba(0,212,255,0.08); transform: translateY(-2px); }
+    .cert-icon { font-size: 26px; margin-bottom: 10px; }
+    .cert-name { font-size: 13px; font-weight: 700; color: var(--text); margin-bottom: 4px; line-height: 1.4; }
+    .cert-issuer { font-family: var(--font-mono); font-size: 10px; color: var(--text-muted); margin-bottom: 14px; flex: 1; }
+    .cert-link {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--accent);
+      text-decoration: none;
+      padding: 5px 10px;
+      border: 1px solid rgba(0,212,255,0.3);
+      border-radius: 5px;
+      transition: all 0.15s;
+      align-self: flex-start;
+    }
+    .cert-link:hover { background: var(--accent-dim); }
+
+    /* ── CONTACT ── */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    .contact-info { display: flex; flex-direction: column; gap: 12px; }
+    .contact-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      transition: all 0.15s;
+    }
+    .contact-card:hover { border-color: var(--accent); background: var(--accent-dim); }
+    .contact-card-icon { font-size: 18px; }
+    .contact-card-label { font-family: var(--font-mono); font-size: 9px; color: var(--text-muted); }
+    .contact-card-val { font-size: 13px; color: var(--text); font-weight: 600; }
+    .contact-form { display: flex; flex-direction: column; gap: 12px; }
+    .form-group { display: flex; flex-direction: column; gap: 5px; }
+    .form-label { font-family: var(--font-mono); font-size: 10px; color: var(--text-muted); letter-spacing: 0.5px; }
+    .form-input, .form-textarea {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      padding: 10px 12px;
+      color: var(--text);
+      font-family: var(--font-display);
+      font-size: 13px;
+      transition: border-color 0.15s;
+      outline: none;
+      resize: none;
+    }
+    .form-input:focus, .form-textarea:focus { border-color: var(--accent); }
+    .form-textarea { height: 100px; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 16px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--text-muted);
+      flex-shrink: 0;
+    }
+    footer span { color: var(--accent); }
+
+    /* ── MOBILE ── */
+    #mobile-nav {
+      display: none;
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      background: #060a10;
+      border-top: 1px solid var(--border);
+      z-index: 200;
+      padding: 8px 0 12px;
+      overflow-x: auto;
+    }
+    .mobile-nav-inner { display: flex; justify-content: space-around; min-width: 100%; padding: 0 8px; }
+    .mobile-nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3px;
+      padding: 4px 10px;
+      cursor: pointer;
+      color: var(--text-muted);
+      transition: color 0.15s;
+      font-size: 9px;
+      font-family: var(--font-mono);
+      white-space: nowrap;
+    }
+    .mobile-nav-item .nav-icon { font-size: 16px; }
+    .mobile-nav-item.active { color: var(--accent); }
+
+    @media (max-width: 900px) {
+      #sidebar { display: none; }
+      #mobile-nav { display: block; }
+      #main-panel { padding: 24px 20px 80px; overflow-y: auto; }
+      body { overflow: auto; }
+      #layout { overflow: visible; }
+      .projects-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-grid { grid-template-columns: 1fr; }
+      .edu-grid { grid-template-columns: 1fr; }
+      .achievements-grid { grid-template-columns: 1fr; }
+      .certs-grid { grid-template-columns: repeat(2, 1fr); }
+      .contact-grid { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: 1fr; }
+      #hero-section { flex-direction: column; gap: 28px; }
+      .hero-right { flex: none; width: 100%; }
+    }
+    @media (max-width: 560px) {
+      .projects-grid { grid-template-columns: 1fr; }
+      .certs-grid { grid-template-columns: 1fr; }
+      .topbar-url { display: none; }
+    }
+  </style>
+</head>
+<body>
+<canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+<!-- TOP BAR -->
+<header id="topbar" role="banner">
+  <div class="topbar-dots" aria-hidden="true">
+    <div class="dot dot-r"></div>
+    <div class="dot dot-y"></div>
+    <div class="dot dot-g"></div>
+  </div>
+  <div class="topbar-url" aria-label="Site URL">
+    <span>rayen</span>-chemlali.dev
+  </div>
+  <div id="lang-toggle" role="group" aria-label="Language selector">
+    <button class="lang-btn active" onclick="setLang('en')" id="btn-en" aria-label="Switch to English">EN</button>
+    <button class="lang-btn" onclick="setLang('fr')" id="btn-fr" aria-label="Passer en français">FR</button>
+  </div>
+</header>
+
+<!-- LAYOUT -->
+<div id="layout">
+  <!-- SIDEBAR -->
+  <nav id="sidebar" aria-label="Main navigation">
+    <div class="sidebar-logo">
+      <div class="sidebar-logo-name">Rayen Chemlali</div>
+      <div class="sidebar-logo-sub">// software_engineer</div>
+    </div>
+    <div class="sidebar-section-label">NAVIGATE</div>
+    <div id="sidebar-nav"></div>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main id="main-panel" role="main">
+    <div id="section-hero" class="section active">
+      <section id="hero-section" aria-label="Hero introduction">
+        <div class="hero-left">
+          <div class="hero-greeting" aria-hidden="true">// hello_world</div>
+          <h1 class="hero-name">Rayen <span>Chemlali</span></h1>
+          <div class="hero-role" id="hero-role-text" aria-live="polite"><span id="typewriter"></span><span class="cursor" aria-hidden="true"></span></div>
+          <p class="hero-bio" id="hero-bio"></p>
+          <div class="hero-btns">
+            <a href="#" class="btn-primary" id="btn-work" onclick="navigate('projects');return false;" aria-label="View my work">View My Work</a>
+            <a href="#" class="btn-outline" id="btn-cv" aria-label="Download CV">Download CV</a>
+          </div>
+          <div class="hero-socials">
+            <a href="https://github.com/Rayen-Chemlali" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub profile">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/chemlali-rayen-69aa65243/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn profile">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a href="mailto:rayen.chemlali@insat.ucar.tn" class="social-link" aria-label="Send email">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="hero-right" aria-label="Developer profile card">
+          <div class="code-file-tab">
+            <div class="code-dot" aria-hidden="true"></div>
+            <span>config.json</span>
+          </div>
+          <div id="code-block"></div>
+        </div>
+      </section>
+    </div>
+    <div id="section-about" class="section">
+      <section aria-labelledby="about-title">
+        <div class="section-label" aria-hidden="true" id="label-about"></div>
+        <h2 class="section-title" id="about-title" id="title-about"></h2>
+        <div class="about-grid">
+          <div class="about-text" id="about-text"></div>
+          <aside class="about-stats">
+            <div class="stat-card">
+              <div class="stat-card-num">4th</div>
+              <div class="stat-card-label" id="stat-year"></div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-card-num">18.16</div>
+              <div class="stat-card-label" id="stat-bac"></div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-card-num">6th<small style="font-size:14px">/96</small></div>
+              <div class="stat-card-label" id="stat-rank"></div>
+            </div>
+            <div class="lang-bars" id="lang-bars"></div>
+          </aside>
+        </div>
+      </section>
+    </div>
+    <div id="section-skills" class="section">
+      <section aria-labelledby="skills-title">
+        <div class="section-label" aria-hidden="true" id="label-skills"></div>
+        <h2 class="section-title" id="skills-title"></h2>
+        <div class="skills-grid" id="skills-grid"></div>
+      </section>
+    </div>
+    <div id="section-experience" class="section">
+      <section aria-labelledby="exp-title">
+        <div class="section-label" aria-hidden="true" id="label-experience"></div>
+        <h2 class="section-title" id="exp-title"></h2>
+        <div class="timeline" id="timeline"></div>
+      </section>
+    </div>
+    <div id="section-projects" class="section">
+      <section aria-labelledby="proj-title">
+        <div class="section-label" aria-hidden="true" id="label-projects"></div>
+        <h2 class="section-title" id="proj-title"></h2>
+        <div class="projects-grid" id="projects-grid"></div>
+      </section>
+    </div>
+    <div id="section-education" class="section">
+      <section aria-labelledby="edu-title">
+        <div class="section-label" aria-hidden="true" id="label-education"></div>
+        <h2 class="section-title" id="edu-title"></h2>
+        <div class="edu-grid" id="edu-grid"></div>
+      </section>
+    </div>
+    <div id="section-achievements" class="section">
+      <section aria-labelledby="ach-title">
+        <div class="section-label" aria-hidden="true" id="label-achievements"></div>
+        <h2 class="section-title" id="ach-title"></h2>
+        <div class="achievements-grid" id="achievements-grid"></div>
+      </section>
+    </div>
+    <div id="section-certifications" class="section">
+      <section aria-labelledby="cert-title">
+        <div class="section-label" aria-hidden="true" id="label-certifications"></div>
+        <h2 class="section-title" id="cert-title"></h2>
+        <div class="certs-grid" id="certs-grid"></div>
+      </section>
+    </div>
+    <div id="section-contact" class="section">
+      <section aria-labelledby="contact-title">
+        <div class="section-label" aria-hidden="true" id="label-contact"></div>
+        <h2 class="section-title" id="contact-title"></h2>
+        <div class="contact-grid">
+          <div class="contact-info" id="contact-info"></div>
+          <div class="contact-form" id="contact-form"></div>
+        </div>
+      </section>
+    </div>
+  </main>
+</div>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+  <span id="footer-left"></span>
+  <span id="footer-right"></span>
+</footer>
+
+<!-- MOBILE NAV -->
+<nav id="mobile-nav" aria-label="Mobile navigation">
+  <div class="mobile-nav-inner" id="mobile-nav-inner"></div>
+</nav>
+
+<!-- MODAL -->
+<div id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title-el" tabindex="-1">
+  <div id="modal-box">
+    <div class="modal-header">
+      <div class="modal-watermark" id="modal-watermark-el" aria-hidden="true"></div>
+      <button class="modal-close" id="modal-close-btn" aria-label="Close modal">✕</button>
+      <div class="modal-emoji" id="modal-emoji-el" role="img" aria-label="Project icon"></div>
+      <h3 class="modal-title" id="modal-title-el"></h3>
+      <div class="modal-badges" id="modal-badges-el"></div>
+      <div class="modal-tech-row" id="modal-tech-el"></div>
+    </div>
+    <div class="modal-body">
+      <div class="modal-tabs" id="modal-tabs-el" role="tablist"></div>
+      <div id="modal-tab-contents"></div>
+    </div>
+    <div class="modal-links" id="modal-links-el"></div>
+  </div>
+</div>
+
+<script>
+// ═══════════════════════════════════════════════════════
+//  PORTFOLIO DATA — Edit only this object to update content
+// ═══════════════════════════════════════════════════════
+const PORTFOLIO_DATA = {
+  meta: {
+    name: "Rayen Chemlali",
+    title: { en: "Software Engineer & AI Developer", fr: "Ingénieur Logiciel & Développeur IA" },
+    description: {
+      en: "Rayen Chemlali is a software engineering student at INSAT Tunisia, specializing in full-stack development, machine learning, and competitive programming. Available for internships and collaborations.",
+      fr: "Rayen Chemlali est étudiant ingénieur à l'INSAT Tunisie, spécialisé en développement full-stack, machine learning et programmation compétitive. Disponible pour des stages et collaborations."
+    },
+    email: "rayen.chemlali@insat.ucar.tn",
+    phone: "+216 56042251",
+    location: "Tunis, Tunisia",
+    linkedin: "https://www.linkedin.com/in/chemlali-rayen-69aa65243/",
+    github: "https://github.com/Rayen-Chemlali",
+    cvUrl: "#",
+    roles: {
+      en: ["Software Engineer","ML & AI Enthusiast","Competitive Programmer","Full-Stack Developer"],
+      fr: ["Ingénieur Logiciel","Passionné ML & IA","Programmeur Compétitif","Développeur Full-Stack"]
+    }
+  },
+  about: {
+    en: "I am a 4th-year Software Engineering student at INSAT (Institut National des Sciences Appliquées et de Technologie), Tunisia. My academic journey has been marked by strong performance: Mathematics Baccalaureate with Highest Honors (18.16/20), ranked 32nd out of 410 in the common first year (MPI), then 5th/90 and 6th/96 in subsequent years.\n\nBeyond academics, I live for competitive programming — the rush of solving hard algorithmic problems under pressure taught me more about thinking clearly than any course. I also participate actively in AI hackathons and club activities. I have accumulated solid professional experience through internships, freelance projects, and part-time work, always bridging theory and real impact.",
+    fr: "Je suis étudiant en 4ème année Génie Logiciel à l'INSAT (Institut National des Sciences Appliquées et de Technologie), Tunisie. Mon parcours académique est marqué par d'excellents résultats : baccalauréat en mathématiques avec mention Très Bien (18.16/20), classé 32ème sur 410 en 1ère année tronc commun (MPI), puis 5ème/90 et 6ème/96 les années suivantes.\n\nAu-delà des cours, je vis pour la programmation compétitive — résoudre des problèmes algorithmiques complexes sous pression m'a plus appris sur la rigueur que n'importe quel module. Je participe activement aux hackathons IA et aux activités des clubs. J'ai accumulé une solide expérience professionnelle en stages, projets freelance et poste à temps partiel."
+  },
+  skills: [
+    { category: { en: "Languages", fr: "Langages" }, icon: "💻", items: ["Java","Python","C++","JavaScript","PHP","Go"] },
+    { category: { en: "Frameworks", fr: "Frameworks" }, icon: "🧩", items: ["ASP.NET","NestJS","Symfony","React","Next.js","Angular"] },
+    { category: { en: "ML & AI", fr: "ML & IA" }, icon: "🧠", items: ["TensorFlow","Scikit-learn","RAG","NLP","Computer Vision","Pandas","NumPy"] },
+    { category: { en: "DevOps & Tools", fr: "DevOps & Outils" }, icon: "⚙️", items: ["Docker","Git","Linux","CI/CD","MySQL","Redis","UML"] }
+  ],
+  experience: [
+    {
+      role: { en: "ML Intern", fr: "Stagiaire ML" },
+      company: "Elevvo Pathways",
+      period: "Feb 2026 – Mar 2026",
+      type: { en: "Internship", fr: "Stage" },
+      description: {
+        en: "Completed 5 end-to-end machine learning projects spanning clustering, classification, time series forecasting, computer vision, and audio classification. Gained hands-on experience with the full ML pipeline from data preprocessing to model evaluation and deployment.",
+        fr: "Réalisation de 5 projets ML complets couvrant le clustering, la classification, la prévision de séries temporelles, la vision par ordinateur et la classification audio. Maîtrise du pipeline ML complet du prétraitement des données jusqu'au déploiement."
+      }
+    },
+    {
+      role: { en: "Part-Time Software Engineer", fr: "Ingénieur Logiciel (Temps Partiel)" },
+      company: "Plug & Tel",
+      period: "Nov 2025 – Present",
+      type: { en: "Part-Time", fr: "Temps Partiel" },
+      description: {
+        en: "Working part-time as a software engineer, contributing to production software projects and applying full-stack skills in a professional setting while completing my engineering degree.",
+        fr: "Travail à temps partiel en tant qu'ingénieur logiciel, contribution à des projets de développement en production tout en terminant mon diplôme d'ingénieur."
+      }
+    },
+    {
+      role: { en: "Summer Intern", fr: "Stagiaire d'Été" },
+      company: "Talan Tunisie Consulting",
+      period: "Jun 2025 – Aug 2025",
+      type: { en: "Internship", fr: "Stage" },
+      description: {
+        en: "Designed and developed Phase 1 of a Smart Container Registry platform to optimize Docker storage costs at scale: AI-powered conversational chatbot, unified Kubernetes/S3 dashboard, and configurable automated deletion rules engine.",
+        fr: "Conception et développement de la phase 1 d'un Smart Container Registry : chatbot IA conversationnel, tableau de bord unifié Kubernetes/S3 et moteur de règles de suppression automatisé pour optimiser les coûts de stockage Docker."
+      }
+    },
+    {
+      role: { en: "Summer Intern", fr: "Stagiaire d'Été" },
+      company: "Talan Tunisie Consulting",
+      period: "Jul 2024 – Aug 2024",
+      type: { en: "Internship", fr: "Stage" },
+      description: {
+        en: "Built an HR Management Application with NestJS backend and React frontend, focusing on user experience optimization, role-based access control, and application security hardening.",
+        fr: "Développement d'une application de gestion RH avec backend NestJS et frontend React, optimisation UX, contrôle d'accès par rôles et renforcement de la sécurité."
+      }
+    },
+    {
+      role: { en: "Summer Intern", fr: "Stagiaire d'Été" },
+      company: "Centre Informatique – Ministère des Finances",
+      period: "Jul 2023",
+      type: { en: "Internship", fr: "Stage" },
+      description: {
+        en: "First professional experience in an IT maintenance department. Introduction to enterprise IT infrastructure, ticketing systems, and professional work culture.",
+        fr: "Première expérience professionnelle dans un service de maintenance informatique. Introduction à l'infrastructure IT d'entreprise et à la culture professionnelle."
+      }
+    }
+  ],
+  projects: [
+    {
+      id: "kickstream", name: "KickStream", emoji: "⚽",
+      tagline: { en: "Real-time football prediction & streaming platform", fr: "Plateforme de prédiction et streaming football en temps réel" },
+      accentColor: "#00aaff", watermark: "KICK",
+      status: { en: "Completed", fr: "Terminé" }, statusType: "done",
+      duration: "3 months", team: "5 developers",
+      tech: ["Angular 20","NestJS","Rust","WebSocket","MySQL","Redis"],
+      myRole: { en: "Fixtures page, real-time timers, WebSocket integration, RxJS search/filtering, mock Rust server", fr: "Page des matchs, timers temps réel, intégration WebSocket, recherche RxJS, serveur Rust mock" },
+      links: [{ label: "View Code", url: "https://github.com/khalilghimaji/Projet-Web-Mobile-GL4" }],
+      tabs: {
+        overview: { en: "A full-stack real-time football prediction and streaming platform with microservices architecture. Angular 20 frontend communicates with a NestJS REST API, while a high-performance Rust/Actix WebSocket service streams live match events with sub-millisecond latency and 100k+ concurrent connection support.", fr: "Plateforme full-stack de prédiction et streaming football en temps réel avec architecture microservices. Frontend Angular 20, API REST NestJS, et service WebSocket Rust/Actix ultra-performant avec latence inférieure à la milliseconde." },
+        features: { en: ["Live match browsing across multiple leagues","Real-time goal, card and substitution events via WebSocket","Match predictions with gamified diamond currency","User rankings and leaderboards","OAuth (Google, GitHub) + Two-Factor Authentication","Detailed team and player statistics"], fr: ["Consultation des matchs en direct sur plusieurs ligues","Événements temps réel via WebSocket","Prédictions avec système de monnaie diamant gamifié","Classements et tableaux des leaders","OAuth + Authentification deux facteurs","Statistiques détaillées des équipes"] },
+        challenges: { en: "Achieving real-time performance at scale was the core challenge. Node.js couldn't handle the connection volume, which led us to choose Rust/Actix. Designing an efficient event detection algorithm to diff API snapshots and broadcast only meaningful changes required careful engineering.", fr: "Atteindre des performances temps réel à grande échelle était le défi principal. Node.js ne gérait pas le volume de connexions, d'où le choix de Rust/Actix. La conception d'un algorithme de détection d'événements efficace a nécessité une ingénierie soignée." },
+        learnings: { en: "Learned when to use Rust in a polyglot microservices stack, the actor concurrency model, Angular Signals for reactive state, and how to architect a gamified prediction system from scratch.", fr: "Appris quand utiliser Rust dans une stack microservices polyglotte, le modèle d'acteurs, Angular Signals, et comment architecturer un système de prédiction gamifié." }
+      }
+    },
+    {
+      id: "medisys", name: "MediSys", emoji: "🏥",
+      tagline: { en: "AI-powered medical management platform", fr: "Plateforme de gestion médicale propulsée par l'IA" },
+      accentColor: "#a855f7", watermark: "MEDI",
+      status: { en: "In Development", fr: "En Développement" }, statusType: "dev",
+      duration: "8 months", team: "4 developers",
+      tech: ["NestJS","Next.js","GraphQL","WebSocket","Python","OCR","AI"],
+      myRole: { en: "Backend architecture and AI/OCR integration module", fr: "Architecture backend et module d'intégration IA/OCR" },
+      links: [{ label: "Frontend", url: "https://github.com/Khalil-Ghimaji/DoussiyaFidaya" }, { label: "Backend", url: "https://github.com/Rayen-Chemlali/DoussiyaFidaya" }, { label: "AI / OCR", url: "https://github.com/Rayen-Chemlali/PPP-OCR" }],
+      tabs: {
+        overview: { en: "Built for the 'AI in Healthcare' competition. MediSys handles full medical workflows: consultations, appointments, analyses, prescriptions, and patient records. Hybrid GraphQL/REST API with SSE and WebSocket for real-time features, and an AI module for medical document OCR processing.", fr: "Développé pour la compétition 'AI in Healthcare'. MediSys gère les workflows médicaux complets : consultations, rendez-vous, analyses, prescriptions et dossiers patients. API hybride GraphQL/REST avec SSE, WebSocket, et module IA pour l'OCR." },
+        features: { en: ["Full medical workflow: appointments, consultations, prescriptions","AI-powered OCR for medical document digitization","Real-time notifications via WebSocket and SSE","Role-based access: doctors, patients, administrators","Hybrid GraphQL/REST API"], fr: ["Workflow médical complet : rendez-vous, consultations, prescriptions","OCR IA pour numérisation de documents médicaux","Notifications temps réel via WebSocket et SSE","Accès par rôles : médecins, patients, administrateurs","API hybride GraphQL/REST"] },
+        challenges: { en: "Integrating OCR in a medical context required handling high document variability. Designing a GraphQL schema flexible enough for multiple medical specialties while keeping queries performant was also a major challenge.", fr: "L'intégration OCR dans un contexte médical nécessitait de gérer une grande variabilité documentaire. La conception d'un schéma GraphQL flexible pour plusieurs spécialités médicales tout en maintenant de bonnes performances était un défi majeur." },
+        learnings: { en: "Deep expertise in GraphQL schema design, hybrid API architectures, OCR pipeline integration, and healthcare data modeling.", fr: "Expertise approfondie en conception de schémas GraphQL, architectures API hybrides, intégration de pipelines OCR et modélisation de données de santé." }
+      }
+    },
+    {
+      id: "erp", name: "Mini-ERP System", emoji: "📊",
+      tagline: { en: "Enterprise resource planning for sales operations", fr: "Système ERP pour les opérations de vente" },
+      accentColor: "#f59e0b", watermark: "ERP",
+      status: { en: "Completed", fr: "Terminé" }, statusType: "done",
+      duration: "4 months", team: "3 developers",
+      tech: ["ASP.NET","C#","SQL Server"],
+      myRole: { en: "Backend architecture, database design, business logic", fr: "Architecture backend, conception base de données, logique métier" },
+      links: [{ label: "View Code", url: "https://github.com/Khalil-Ghimaji/dotnetERP" }],
+      tabs: {
+        overview: { en: "A complete ERP system covering the entire sales process with four integrated modules: order management, inventory management, invoicing, and customer management. Built with ASP.NET and SQL Server for enterprise-grade reliability.", fr: "Système ERP complet couvrant l'intégralité du processus de vente avec quatre modules intégrés : gestion des commandes, stocks, facturation et clients. Développé avec ASP.NET et SQL Server." },
+        features: { en: ["Order management with full lifecycle tracking","Inventory management with stock level alerts","Invoice generation and management","Customer relationship module","Integrated reporting and dashboards"], fr: ["Gestion des commandes avec suivi du cycle de vie","Gestion des stocks avec alertes de niveau","Génération et gestion des factures","Module de gestion de la relation client","Tableaux de bord et rapports intégrés"] },
+        challenges: { en: "Designing a normalized database schema supporting complex business rules across all modules without redundancy. Implementing transaction management to ensure data consistency across the order-inventory-invoice pipeline.", fr: "Conception d'un schéma de base de données normalisé supportant des règles métier complexes sans redondance. Implémentation de la gestion des transactions pour la cohérence des données." },
+        learnings: { en: "Enterprise application architecture with ASP.NET, relational database design for business apps, and ERP business logic end-to-end.", fr: "Architecture d'application d'entreprise avec ASP.NET, conception de bases de données relationnelles pour applications business, et logique ERP de bout en bout." }
+      }
+    },
+    {
+      id: "interim", name: "InterimCo Website", emoji: "🌐",
+      tagline: { en: "Corporate site built in PHP then migrated to Symfony", fr: "Site corporate développé en PHP puis migré vers Symfony" },
+      accentColor: "#10b981", watermark: "SYM",
+      status: { en: "Completed", fr: "Terminé" }, statusType: "done",
+      duration: "6 months", team: "Solo",
+      tech: ["PHP","Symfony","Doctrine ORM","MySQL","MVC"],
+      myRole: { en: "Full project — sole developer", fr: "Projet complet — développeur unique" },
+      links: [{ label: "Symfony Version", url: "https://github.com/Rayen-Chemlali/InterimCo-symfony" }, { label: "Native PHP Version", url: "https://github.com/Rayen-Chemlali/Interim-Co-webApplication" }],
+      tabs: {
+        overview: { en: "A major milestone in my web dev journey. Built a full corporate website for an interim staffing company, first in native PHP, then fully refactored and migrated to Symfony — gaining deep experience with MVC architecture, Symfony routing, and Doctrine ORM.", fr: "Étape majeure dans mon parcours. Site corporate complet d'une entreprise intérimaire, d'abord en PHP natif, puis entièrement migré vers Symfony — maîtrise approfondie de l'architecture MVC, du routing Symfony et de Doctrine ORM." },
+        features: { en: ["Corporate pages: services, team, contact","Job listing and application management","Admin panel for content management","Full form handling and validation"], fr: ["Pages corporate : services, équipe, contact","Gestion des offres d'emploi et candidatures","Panneau d'administration","Gestion complète des formulaires et validation"] },
+        challenges: { en: "Migrating a working PHP app to Symfony without breaking functionality required careful planning. Understanding Symfony's bundle system and Doctrine entity mapping had a steep but rewarding learning curve.", fr: "Migrer une application PHP fonctionnelle vers Symfony sans casser les fonctionnalités a nécessité une planification minutieuse. La courbe d'apprentissage de Symfony était raide mais enrichissante." },
+        learnings: { en: "In-depth Symfony knowledge, MVC in a real project, Doctrine ORM, and the long-term value of migrating legacy code to a proper framework.", fr: "Connaissance approfondie de Symfony, MVC dans un vrai projet, Doctrine ORM, et la valeur à long terme de la migration de code legacy vers un framework structuré." }
+      }
+    },
+    {
+      id: "copilot", name: "Strategy Copilot", emoji: "🤖",
+      tagline: { en: "AI-powered business diagnostics and strategy generator", fr: "Générateur de stratégie et diagnostics business par IA" },
+      accentColor: "#06b6d4", watermark: "AI",
+      status: { en: "Completed", fr: "Terminé" }, statusType: "done",
+      duration: "Freelance", team: "Solo",
+      tech: ["Python","AI","Chatbot","Data Viz","PDF Export"],
+      myRole: { en: "Full project — sole developer", fr: "Projet complet — développeur unique" },
+      links: [{ label: "View Code", url: "#" }],
+      tabs: {
+        overview: { en: "An AI-powered business strategy assistant that generates complete business diagnostics, financial projections, and market analysis through a conversational chatbot. Visualizes strategic data as interactive graphs and exports results as PDF reports or pitch decks.", fr: "Assistant stratégique IA générant diagnostics business complets, projections financières et analyses de marché via chatbot conversationnel. Visualisations en graphiques interactifs, exports PDF et pitch deck." },
+        features: { en: ["Conversational AI chatbot for business questions","Automated business diagnostic generation","Financial projection modeling","Market analysis with interactive graph visualizations","PDF and pitch deck export"], fr: ["Chatbot IA conversationnel pour questions business","Génération automatisée de diagnostics","Modélisation de projections financières","Analyses de marché avec graphiques interactifs","Export PDF et pitch deck"] },
+        challenges: { en: "Structuring unstructured business input into coherent, actionable diagnostics required careful prompt engineering and output validation.", fr: "Structurer des données business non structurées en diagnostics cohérents a nécessité une ingénierie de prompts soignée et une validation rigoureuse des sorties." },
+        learnings: { en: "Advanced prompt engineering, building AI pipelines that produce structured business outputs, and data visualization for strategic content.", fr: "Ingénierie de prompts avancée, construction de pipelines IA produisant des sorties structurées, et visualisation de données pour contenu stratégique." }
+      }
+    },
+    {
+      id: "shannon", name: "Shannon", emoji: "⚙️",
+      tagline: { en: "Open-source Simulink-inspired visual code generator", fr: "Générateur de code visuel open-source inspiré de Simulink" },
+      accentColor: "#8b5cf6", watermark: "SHN",
+      status: { en: "Completed", fr: "Terminé" }, statusType: "done",
+      duration: "Freelance", team: "2 developers",
+      tech: ["Canvas API","Graph Model","Code Generation","Open Source"],
+      myRole: { en: "Co-developer — canvas engine and code generation", fr: "Co-développeur — moteur canvas et génération de code" },
+      links: [{ label: "View Code", url: "#" }],
+      tabs: {
+        overview: { en: "Co-developed Shannon, a free open-source alternative to Simulink. An interactive visual canvas lets users place and connect functional blocks to model systems, then automatically generates executable code from the graph. Built for engineers needing accessible model-based design tooling.", fr: "Co-développement de Shannon, alternative open-source gratuite à Simulink. Canvas visuel interactif pour modéliser des systèmes par blocs et liens, avec génération automatique de code exécutable." },
+        features: { en: ["Interactive drag-and-drop block canvas","Block and link modeling system","Integrated code generation engine","Export to multiple code targets"], fr: ["Canvas de blocs interactif drag-and-drop","Système de modélisation par blocs et liens","Moteur de génération de code intégré","Export vers plusieurs cibles de code"] },
+        challenges: { en: "Building a reliable graph-to-code compiler handling cycles, ordering, and block type validation was the core algorithmic challenge.", fr: "Construire un compilateur graphe-vers-code gérant les cycles, l'ordonnancement et la validation des types de blocs était le défi algorithmique central." },
+        learnings: { en: "Graph data structures for UI, visual programming language design, and building developer tools from scratch.", fr: "Structures de données graphes pour UI, conception de langages de programmation visuels, et développement d'outils from scratch." }
+      }
+    },
+    {
+      id: "ml-suite", name: "ML Projects Suite", emoji: "🧠",
+      tagline: { en: "5 end-to-end ML projects across domains", fr: "5 projets machine learning complets sur différents domaines" },
+      accentColor: "#22c55e", watermark: "ML",
+      status: { en: "Completed", fr: "Terminé" }, statusType: "done",
+      duration: "1 month", team: "Solo",
+      tech: ["Python","Scikit-learn","TensorFlow","CV","NLP","Audio"],
+      myRole: { en: "Full project — sole developer", fr: "Projet complet — développeur unique" },
+      links: [{ label: "View Code", url: "#" }],
+      tabs: {
+        overview: { en: "A suite of 5 complete ML projects built during the Elevvo Pathways internship. Each covers the full pipeline: data collection, preprocessing, EDA, feature engineering, model training, evaluation, and deployment packaging. Domains: clustering, classification, time series, computer vision, audio.", fr: "Suite de 5 projets ML complets réalisés lors du stage Elevvo Pathways. Pipeline complet : collecte, prétraitement, EDA, feature engineering, entraînement, évaluation et déploiement." },
+        features: { en: ["Customer segmentation with clustering","Binary and multi-class classification pipelines","Time series forecasting with LSTM/ARIMA","Image classification with CNNs","Audio classification with spectral features"], fr: ["Segmentation client par clustering","Pipelines de classification binaire et multi-classes","Prévision de séries temporelles LSTM/ARIMA","Classification d'images avec CNNs","Classification audio avec features spectrales"] },
+        challenges: { en: "Each domain had unique data challenges — audio spectrogram extraction, time series stationarity, and class imbalance all required domain-specific solutions.", fr: "Chaque domaine avait ses défis spécifiques — spectrogrammes audio, stationnarité des séries temporelles, déséquilibre de classes." },
+        learnings: { en: "Breadth of the ML landscape, domain-specific feature engineering, model selection trade-offs, and professional ML project structure.", fr: "Vue d'ensemble du paysage ML, feature engineering spécifique, compromis de sélection de modèles et structure professionnelle de projets ML." }
+      }
+    },
+    {
+      id: "container-registry", name: "ContainerIQ", emoji: "🐳",
+      tagline: { en: "AI-powered Docker storage optimizer for Kubernetes", fr: "Optimiseur de stockage Docker pour Kubernetes par IA" },
+      accentColor: "#38bdf8", watermark: "K8S",
+      status: { en: "Phase 1 Delivered", fr: "Phase 1 Livrée" }, statusType: "p1",
+      duration: "3 months", team: "Solo (Internship)",
+      tech: ["Docker","Kubernetes","S3","AI","NestJS","Chatbot"],
+      myRole: { en: "Full project — sole intern developer", fr: "Projet complet — seul développeur stagiaire" },
+      links: [{ label: "View Code", url: "#" }],
+      tabs: {
+        overview: { en: "Developed at Talan Tunisie Consulting. Smart Container Registry optimizes Docker image storage costs in enterprise Kubernetes environments. Phase 1 delivers: AI chatbot for storage insights, unified K8s/S3 dashboard, and configurable automated image deletion rules engine.", fr: "Développé chez Talan Tunisie Consulting. Smart Container Registry optimise les coûts de stockage Docker en environnement Kubernetes d'entreprise. Phase 1 : chatbot IA, tableau de bord K8s/S3 unifié et moteur de règles de suppression." },
+        features: { en: ["AI conversational chatbot for storage cost analysis","Unified Kubernetes + S3 metrics dashboard","Configurable automated image deletion rules","Cost tracking and savings reporting"], fr: ["Chatbot IA pour analyse des coûts de stockage","Tableau de bord unifié K8s + S3","Règles de suppression d'images automatisées","Suivi des coûts et rapports d'économies"] },
+        challenges: { en: "Aggregating metrics from heterogeneous sources (K8s API, S3 SDK) into a consistent unified model required careful abstraction design.", fr: "Agréger des métriques de sources hétérogènes (API K8s, SDK S3) dans un modèle unifié cohérent a nécessité une conception d'abstraction soignée." },
+        learnings: { en: "Container ecosystems, Kubernetes API interaction, cloud storage cost optimization, and enterprise-grade internal tooling.", fr: "Écosystèmes de conteneurs, interaction avec l'API Kubernetes, optimisation des coûts de stockage cloud et outils internes de qualité entreprise." }
+      }
+    }
+  ],
+  education: [
+    {
+      institution: "INSAT",
+      full: "Institut National des Sciences Appliquées et de Technologie",
+      degree: { en: "Engineering Degree — Software Engineering", fr: "Diplôme d'Ingénieur — Génie Logiciel" },
+      period: "2022 – Present",
+      highlights: { en: ["Ranked 32nd / 410 — 1st year common cycle (MPI)","Ranked 5th / 90 — 2nd year preparatory cycle","Ranked 6th / 96 — 1st year engineering cycle"], fr: ["Classé 32ème / 410 — 1ère année tronc commun (MPI)","Classé 5ème / 90 — 2ème année préparatoire","Classé 6ème / 96 — 1ère année cycle ingénieur"] }
+    },
+    {
+      institution: { en: "Baccalaureate in Mathematics", fr: "Baccalauréat en Mathématiques" },
+      full: "Lycée — Tunisia",
+      degree: { en: "Mathematics Baccalaureate — Highest Honors", fr: "Baccalauréat Mathématiques — Mention Très Bien" },
+      period: "2022",
+      highlights: { en: ["Highest Honors — 18.16 / 20","Strong mathematical foundation for CS and AI"], fr: ["Mention Très Bien — 18.16 / 20","Solide base mathématique pour l'informatique et l'IA"] }
+    }
+  ],
+  certifications: [
+    { name: "Supervised Machine Learning", issuer: "Coursera", icon: "🎓", url: "https://www.coursera.org/learn/machine-learning" },
+    { name: "Advanced Learning Algorithms", issuer: "Coursera", icon: "🎓", url: "https://www.coursera.org/learn/advanced-learning-algorithms" },
+    { name: "Efficient LLM Customization", issuer: "NVIDIA Deep Learning Institute", icon: "🔥", url: "https://www.nvidia.com/en-us/training/" },
+    { name: "Building RAG Agents with LLMs", issuer: "NVIDIA Deep Learning Institute", icon: "🔥", url: "https://www.nvidia.com/en-us/training/" },
+    { name: "Samsung Innovation Campus AI", issuer: "Samsung", icon: "⭐", url: "https://www.samsung.com/global/innovation/campus/" }
+  ],
+  achievements: [
+    {
+      place: "2nd", medal: "🥈",
+      title: { en: "Code Quest 2023", fr: "Code Quest 2023" },
+      subtitle: { en: "Competitive Programming Contest @ INSAT", fr: "Concours de Programmation Compétitive @ INSAT" },
+      color: "#94a3b8", url: "https://www.linkedin.com/in/chemlali-rayen-69aa65243/"
+    },
+    {
+      place: "11th", medal: "🥉",
+      title: { en: "TCPC 2024 — Bronze Medal", fr: "TCPC 2024 — Médaille de Bronze" },
+      subtitle: { en: "Tunisian Collegiate Programming Contest", fr: "Concours Tunisien de Programmation Universitaire" },
+      color: "#cd7f32", url: "https://www.linkedin.com/in/chemlali-rayen-69aa65243/"
+    },
+    {
+      place: "3rd", medal: "🥉",
+      title: { en: "AI 4 New Generation Hackathon", fr: "Hackathon AI 4 New Generation" },
+      subtitle: { en: "by EY & Université Ibn Khaldoun — 2024", fr: "par EY & Université Ibn Khaldoun — 2024" },
+      color: "#f97316", url: "https://www.linkedin.com/in/chemlali-rayen-69aa65243/"
+    }
+  ],
+  languages: [
+    { lang: "Arabic", level: { en: "Native", fr: "Langue maternelle" }, pct: 100 },
+    { lang: "French", level: { en: "Fluent", fr: "Courant" }, pct: 90 },
+    { lang: "English", level: { en: "Good", fr: "Bon niveau" }, pct: 75 },
+    { lang: "Spanish", level: { en: "Beginner", fr: "Débutant" }, pct: 20 }
+  ]
+};
+
+// ═══════════════════════════════════════════════════════
+//  APP STATE & HELPERS
+// ═══════════════════════════════════════════════════════
+let lang = 'en';
+let currentSection = 'hero';
+let typewriterTimeout = null;
+let typewriterIndex = 0;
+let typewriterCharIndex = 0;
+let typewriterDeleting = false;
+
+const t = (field) => {
+  if (!field) return '';
+  if (typeof field === 'object' && (field.en !== undefined || field.fr !== undefined)) return field[lang] || field.en || '';
+  return field;
+};
+
+const NAV_ITEMS = [
+  { id: 'hero',          icon: '⌂', label: { en: 'Home',           fr: 'Accueil' } },
+  { id: 'about',         icon: '◉', label: { en: 'About',          fr: 'À Propos' } },
+  { id: 'skills',        icon: '✦', label: { en: 'Skills',         fr: 'Compétences' } },
+  { id: 'experience',    icon: '◈', label: { en: 'Experience',     fr: 'Expérience' } },
+  { id: 'projects',      icon: '⬡', label: { en: 'Projects',       fr: 'Projets' } },
+  { id: 'education',     icon: '◎', label: { en: 'Education',      fr: 'Formation' } },
+  { id: 'achievements',  icon: '◆', label: { en: 'Achievements',   fr: 'Récompenses' } },
+  { id: 'certifications',icon: '◇', label: { en: 'Certifications', fr: 'Certifications' } },
+  { id: 'contact',       icon: '◉', label: { en: 'Contact',        fr: 'Contact' } }
+];
+
+const UI_LABELS = {
+  hero_work:    { en: 'View My Work',        fr: 'Voir Mon Travail' },
+  hero_cv:      { en: 'Download CV',         fr: 'Télécharger CV' },
+  stat_year:    { en: 'Year at INSAT',       fr: 'Année à l\'INSAT' },
+  stat_bac:     { en: 'Baccalaureate Score', fr: 'Note au Baccalauréat' },
+  stat_rank:    { en: 'Best Engineering Rank',fr: 'Meilleur Rang Ingénieur' },
+  about_lbl:    { en: '// 02_about',         fr: '// 02_à_propos' },
+  about_title:  { en: 'About Me',            fr: 'À Propos' },
+  skills_lbl:   { en: '// 03_skills',        fr: '// 03_compétences' },
+  skills_title: { en: 'My Stack',            fr: 'Mon Stack' },
+  exp_lbl:      { en: '// 04_experience',    fr: '// 04_expérience' },
+  exp_title:    { en: 'Experience',          fr: 'Expérience' },
+  proj_lbl:     { en: '// 05_projects',      fr: '// 05_projets' },
+  proj_title:   { en: 'My Work',             fr: 'Mes Projets' },
+  edu_lbl:      { en: '// 06_education',     fr: '// 06_formation' },
+  edu_title:    { en: 'Education',           fr: 'Formation' },
+  ach_lbl:      { en: '// 07_achievements',  fr: '// 07_récompenses' },
+  ach_title:    { en: '🏆 Achievements',     fr: '🏆 Récompenses' },
+  cert_lbl:     { en: '// 08_certifications',fr: '// 08_certifications' },
+  cert_title:   { en: '📜 Certifications',   fr: '📜 Certifications' },
+  contact_lbl:  { en: '// 09_contact',       fr: '// 09_contact' },
+  contact_title:{ en: 'Get In Touch',        fr: 'Me Contacter' },
+  view_details: { en: '→ View Details',      fr: '→ Voir Détails' },
+  view_post:    { en: '→ View Post',         fr: '→ Voir Post' },
+  view_cert:    { en: '→ View Certificate',  fr: '→ Voir Certificat' },
+  tab_overview: { en: 'Overview',            fr: 'Vue d\'ensemble' },
+  tab_features: { en: 'Features',            fr: 'Fonctionnalités' },
+  tab_challenges:{ en: 'Challenges',         fr: 'Défis' },
+  tab_learnings:{ en: 'Key Learnings',       fr: 'Apprentissages' },
+  my_role:      { en: '// my_role',          fr: '// mon_rôle' },
+  form_name:    { en: 'Name',                fr: 'Nom' },
+  form_email:   { en: 'Email',               fr: 'Email' },
+  form_subject: { en: 'Subject',             fr: 'Sujet' },
+  form_message: { en: 'Message',             fr: 'Message' },
+  form_send:    { en: 'Send Message',        fr: 'Envoyer' },
+  footer_copy:  { en: '© 2026 Rayen Chemlali', fr: '© 2026 Rayen Chemlali' },
+  footer_made:  { en: 'Built with ☕ in Tunis, Tunisia 🇹🇳', fr: 'Fait avec ☕ à Tunis, Tunisie 🇹🇳' }
+};
+
+// ═══════════════════════════════════════════════════════
+//  NAVIGATE
+// ═══════════════════════════════════════════════════════
+function navigate(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  const sec = document.getElementById('section-' + id);
+  if (sec) sec.classList.add('active');
+  currentSection = id;
+  document.querySelectorAll('.nav-item').forEach(n => {
+    n.classList.toggle('active', n.dataset.section === id);
+  });
+  document.querySelectorAll('.mobile-nav-item').forEach(n => {
+    n.classList.toggle('active', n.dataset.section === id);
+  });
+  if (id === 'about') animateLangBars();
+}
+
+// ═══════════════════════════════════════════════════════
+//  LANGUAGE SWITCH
+// ═══════════════════════════════════════════════════════
+function setLang(l) {
+  lang = l;
+  document.getElementById('html-root').lang = l;
+  document.getElementById('btn-en').classList.toggle('active', l === 'en');
+  document.getElementById('btn-fr').classList.toggle('active', l === 'fr');
+  updateSEOMeta();
+  renderAll();
+  navigate(currentSection);
+}
+
+function updateSEOMeta() {
+  const d = PORTFOLIO_DATA;
+  document.getElementById('page-title').textContent = d.meta.name + ' | ' + t(d.meta.title) + ' – Tunis, Tunisia';
+  document.getElementById('meta-desc').setAttribute('content', t(d.meta.description));
+  document.getElementById('og-title').setAttribute('content', d.meta.name + ' | ' + t(d.meta.title));
+  document.getElementById('og-desc').setAttribute('content', t(d.meta.description));
+  document.getElementById('og-locale').setAttribute('content', lang === 'fr' ? 'fr_FR' : 'en_US');
+  document.getElementById('tw-title').setAttribute('content', d.meta.name + ' | ' + t(d.meta.title));
+  document.getElementById('tw-desc').setAttribute('content', t(d.meta.description));
+}
+
+// ═══════════════════════════════════════════════════════
+//  RENDER NAV
+// ═══════════════════════════════════════════════════════
+function renderNav() {
+  const nav = document.getElementById('sidebar-nav');
+  const mob = document.getElementById('mobile-nav-inner');
+  nav.innerHTML = NAV_ITEMS.map(item => `
+    <a href="#${item.id}" class="nav-item${currentSection === item.id ? ' active' : ''}"
+       data-section="${item.id}" onclick="navigate('${item.id}');return false;"
+       aria-label="Navigate to ${t(item.label)} section">
+      <span class="nav-icon" aria-hidden="true">${item.icon}</span>
+      ${t(item.label)}
+    </a>
+  `).join('');
+  mob.innerHTML = NAV_ITEMS.map(item => `
+    <div class="mobile-nav-item${currentSection === item.id ? ' active' : ''}"
+         data-section="${item.id}" onclick="navigate('${item.id}')"
+         role="button" tabindex="0" aria-label="${t(item.label)}">
+      <span class="nav-icon" aria-hidden="true">${item.icon}</span>
+      ${t(item.label)}
+    </div>
+  `).join('');
+}
+
+// ═══════════════════════════════════════════════════════
+//  RENDER HERO
+// ═══════════════════════════════════════════════════════
+function renderHero() {
+  document.getElementById('hero-bio').textContent = lang === 'en'
+    ? "Engineering student at INSAT passionate about building intelligent systems, competing in algorithmic contests, and shipping real-world software."
+    : "Étudiant ingénieur à l'INSAT passionné par la construction de systèmes intelligents, les concours algorithmiques et le développement de logiciels à impact réel.";
+  document.getElementById('btn-work').textContent = t(UI_LABELS.hero_work);
+  document.getElementById('btn-cv').textContent = t(UI_LABELS.hero_cv);
+  document.getElementById('btn-cv').href = PORTFOLIO_DATA.meta.cvUrl;
+  const codeLines = [
+    `<span class="json-punc">{</span>`,
+    `  <span class="json-key">"name"</span><span class="json-punc">:</span> <span class="json-str">"Rayen Chemlali"</span><span class="json-punc">,</span>`,
+    `  <span class="json-key">"role"</span><span class="json-punc">:</span> <span class="json-str">"${lang==='en'?'Software Engineer':'Ingénieur Logiciel'}"</span><span class="json-punc">,</span>`,
+    `  <span class="json-key">"stack"</span><span class="json-punc">:</span> <span class="json-arr">["Angular"<span class="json-punc">,</span>"NestJS"<span class="json-punc">,</span>"Python"<span class="json-punc">,</span>"Rust"]</span><span class="json-punc">,</span>`,
+    `  <span class="json-key">"status"</span><span class="json-punc">:</span> <span class="json-bool">"open_to_opportunities"</span><span class="json-punc">,</span>`,
+    `  <span class="json-key">"location"</span><span class="json-punc">:</span> <span class="json-str">"Tunis, TN 🇹🇳"</span>`,
+    `<span class="json-punc">}</span>`
+  ];
+  document.getElementById('code-block').innerHTML = codeLines.join('<br>');
+}
+
+// ═══════════════════════════════════════════════════════
+//  TYPEWRITER
+// ═══════════════════════════════════════════════════════
+function startTypewriter() {
+  const roles = PORTFOLIO_DATA.meta.roles[lang];
+  const el = document.getElementById('typewriter');
+  if (!el) return;
+  if (typewriterTimeout) clearTimeout(typewriterTimeout);
+  typewriterIndex = 0; typewriterCharIndex = 0; typewriterDeleting = false;
+  function tick() {
+    const current = roles[typewriterIndex % roles.length];
+    if (typewriterDeleting) {
+      typewriterCharIndex--;
+      el.textContent = current.substring(0, typewriterCharIndex);
+      if (typewriterCharIndex === 0) { typewriterDeleting = false; typewriterIndex++; typewriterTimeout = setTimeout(tick, 400); return; }
+      typewriterTimeout = setTimeout(tick, 40);
+    } else {
+      typewriterCharIndex++;
+      el.textContent = current.substring(0, typewriterCharIndex);
+      if (typewriterCharIndex === current.length) { typewriterDeleting = true; typewriterTimeout = setTimeout(tick, 1800); return; }
+      typewriterTimeout = setTimeout(tick, 80);
+    }
+  }
+  tick();
+}
+
+// ═══════════════════════════════════════════════════════
+//  RENDER ABOUT
+// ═══════════════════════════════════════════════════════
+function renderAbout() {
+  const el = document.getElementById('about-text');
+  el.innerHTML = t(PORTFOLIO_DATA.about).split('\n\n').map(p => `<p>${p}</p>`).join('');
+  document.getElementById('label-about').textContent = t(UI_LABELS.about_lbl);
+  document.getElementById('about-title').textContent = t(UI_LABELS.about_title);
+  document.getElementById('stat-year').textContent = t(UI_LABELS.stat_year);
+  document.getElementById('stat-bac').textContent = t(UI_LABELS.stat_bac);
+  document.getElementById('stat-rank').textContent = t(UI_LABELS.stat_rank);
+  const barsEl = document.getElementById('lang-bars');
+  barsEl.innerHTML = PORTFOLIO_DATA.languages.map(l => `
+    <div class="lang-bar-item">
+      <div class="lang-bar-header">
+        <span style="font-size:12px;font-family:var(--font-display);font-weight:600">${l.lang}</span>
+        <span style="font-size:11px;color:var(--text-muted);font-family:var(--font-mono)">${t(l.level)}</span>
+      </div>
+      <div class="lang-bar-track"><div class="lang-bar-fill" data-pct="${l.pct}" style="width:0%"></div></div>
+    </div>
+  `).join('');
+}
+
+function animateLangBars() {
+  setTimeout(() => {
+    document.querySelectorAll('.lang-bar-fill').forEach(el => {
+      el.style.width = el.dataset.pct + '%';
+    });
+  }, 100);
+}
+
+// ═══════════════════════════════════════════════════════
+//  RENDER SKILLS
+// ═══════════════════════════════════════════════════════
+function renderSkills() {
+  document.getElementById('label-skills').textContent = t(UI_LABELS.skills_lbl);
+  document.getElementById('skills-title').textContent = t(UI_LABELS.skills_title);
+  document.getElementById('skills-grid').innerHTML = PORTFOLIO_DATA.skills.map(s => `
+    <article class="skill-card">
+      <div class="skill-card-header">
+        <span class="skill-icon" role="img" aria-label="${t(s.category)} icon">${s.icon}</span>
+        <h3 class="skill-category">${t(s.category)}</h3>
+      </div>
+      <div class="skills-pills">${s.items.map(item => `<span class="skill-pill">${item}</span>`).join('')}</div>
+    </article>
+  `).join('');
+}
+
+// ═══════════════════════════════════════════════════════
+//  RENDER EXPERIENCE
+// ═══════════════════════════════════════════════════════
+function renderExperience() {
+  document.getElementById('label-experience').textContent = t(UI_LABELS.exp_lbl);
+  document.getElementById('exp-title').textContent = t(UI_LABELS.exp_title);
+  document.getElementById('timeline').innerHTML = PORTFOLIO_DATA.experience.map(e => `
+    <div class="timeline-item">
+      <div class="timeline-dot" aria-hidden="true"></div>
+      <div class="timeline-card">
+        <div class="timeline-header">
+          <h3 class="timeline-role">${t(e.role)}</h3>
+          <span class="timeline-period">${e.period}</span>
+        </div>
+        <div class="timeline-company">${e.company}</div>
+        <span class="timeline-type-badge">${t(e.type)}</span>
+        <p class="timeline-desc">${t(e.description)}</p>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ═══════════════════════════════════════════════════════
+//  RENDER PROJECTS
+// ═══════════════════════════════════════════════════════
+function renderProjects() {
+  document.getElementById('label-projects').textContent = t(UI_LABELS.proj_lbl);
+  document.getElementById('proj-title').textContent = t(UI_LABELS.proj_title);
+  document.getElementById('projects-grid').innerHTML = PORTFOLIO_DATA.projects.map((p, i) => `
+    <article class="project-card" style="--project-color:${p.accentColor}"
+             onclick="openModal(${i})"
+             role="button" tabindex="0"
+             aria-label="View details for ${p.name} project"
+             onkeydown="if(event.key==='Enter')openModal(${i})">
+      <div class="project-card-top">
+        <span class="project-emoji" role="img" aria-label="${p.name}">${p.emoji}</span>
+        <span class="project-status status-${p.statusType}">${t(p.status)}</span>
+      </div>
+      <h3 class="project-name">${p.name}</h3>
+      <p class="project-tagline">${t(p.tagline)}</p>
+      <div class="project-tech-row">${p.tech.slice(0,3).map(tech => `<span class="tech-chip">${tech}</span>`).join('')}${p.tech.length > 3 ? `<span class="tech-chip">+${p.tech.length-3}</span>` : ''}</div>
+      <div class="project-view-btn" aria-hidden="true">${t(UI_LABELS.view_details)}</div>
+    </article>
+  `).join('');
+}
+
+// ═══════════════════════════════════════════════════════
+//  MODAL
+// ═══════════════════════════════════════════════════════
+function openModal(idx) {
+  const p = PORTFOLIO_DATA.projects[idx];
+  document.getElementById('modal-watermark-el').textContent = p.watermark;
+  document.getElementById('modal-watermark-el').style.color = p.accentColor;
+  document.getElementById('modal-emoji-el').textContent = p.emoji;
+  document.getElementById('modal-emoji-el').setAttribute('aria-label', p.name + ' icon');
+  document.getElementById('modal-title-el').textContent = p.name;
+  document.getElementById('modal-title-el').style.color = p.accentColor;
+  document.getElementById('modal-badges-el').innerHTML = `
+    <span class="modal-badge">⏱ ${p.duration}</span>
+    <span class="modal-badge">👥 ${p.team}</span>
+    <span class="modal-badge project-status status-${p.statusType}">${t(p.status)}</span>
+  `;
+  document.getElementById('modal-tech-el').innerHTML = p.tech.map(tech => `<span class="tech-chip">${tech}</span>`).join('');
+  const tabs = [
+    { key: 'overview', label: t(UI_LABELS.tab_overview) },
+    { key: 'features', label: t(UI_LABELS.tab_features) },
+    { key: 'challenges', label: t(UI_LABELS.tab_challenges) },
+    { key: 'learnings', label: t(UI_LABELS.tab_learnings) }
+  ];
+  document.getElementById('modal-tabs-el').innerHTML = tabs.map((tab, i) => `
+    <div class="modal-tab${i===0?' active':''}" role="tab" aria-selected="${i===0}"
+         onclick="switchModalTab('${tab.key}', this)" data-tab="${tab.key}">${tab.label}</div>
+  `).join('');
+  document.getElementById('modal-tab-contents').innerHTML = tabs.map((tab, i) => {
+    let content = '';
+    if (tab.key === 'overview') {
+      content = `<p class="modal-overview">${t(p.tabs.overview)}</p>
+        <div class="modal-my-role">
+          <div class="modal-my-role-label">${t(UI_LABELS.my_role)}</div>
+          <div class="modal-my-role-text">${t(p.myRole)}</div>
+        </div>`;
+    } else if (tab.key === 'features') {
+      const feats = t(p.tabs.features);
+      content = `<ul class="modal-features-list">${(Array.isArray(feats) ? feats : []).map(f => `<li>${f}</li>`).join('')}</ul>`;
+    } else if (tab.key === 'challenges') {
+      content = `<p class="modal-text">${t(p.tabs.challenges)}</p>`;
+    } else if (tab.key === 'learnings') {
+      content = `<p class="modal-text">${t(p.tabs.learnings)}</p>`;
+    }
+    return `<div class="modal-tab-content${i===0?' active':''}" data-content="${tab.key}">${content}</div>`;
+  }).join('');
+  document.getElementById('modal-links-el').innerHTML = p.links.map(link => `
+    <a href="${link.url}" target="_blank" rel="noopener noreferrer" class="modal-link-btn"
+       aria-label="${link.label} for ${p.name}">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+      ${link.label}
+    </a>
+  `).join('');
+  const overlay = document.getElementById('modal-overlay');
+  overlay.classList.add('open');
+  overlay.focus();
+  document.body.style.overflow = 'hidden';
+}
+
+function switchModalTab(key, el) {
+  document.querySelectorAll('.modal-tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  document.querySelectorAll('.modal-tab-content').forEach(c => {
+    c.classList.toggle('active', c.dataset.content === key);
+  });
+}
+
+function closeModal() {
+  document.getElementById('modal-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.getElementById('modal-close-btn').addEventListener('click', closeModal);
+document.getElementById('modal-overlay').addEventListener('click', e => { if (e.target === document.getElementById('modal-overlay')) closeModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+// ═══════════════════════════════════════════════════════
+//  RENDER EDUCATION
+// ═══════════════════════════════════════════════════════
+function renderEducation() {
+  document.getElementById('label-education').textContent = t(UI_LABELS.edu_lbl);
+  document.getElementById('edu-title').textContent = t(UI_LABELS.edu_title);
+  document.getElementById('edu-grid').innerHTML = PORTFOLIO_DATA.education.map(e => `
+    <article class="edu-card">
+      <div class="edu-inst">${t(e.institution)}</div>
+      <div class="edu-full">${e.full}</div>
+      <div class="edu-degree">${t(e.degree)}</div>
+      <div class="edu-period">${e.period}</div>
+      <ul class="edu-highlights" aria-label="Academic highlights">
+        ${t(e.highlights).map(h => `<li>${h}</li>`).join('')}
+      </ul>
+    </article>
+  `).join('');
+}
+
+// ═══════════════════════════════════════════════════════
+//  RENDER ACHIEVEMENTS
+// ═══════════════════════════════════════════════════════
+function renderAchievements() {
+  document.getElementById('label-achievements').textContent = t(UI_LABELS.ach_lbl);
+  document.getElementById('ach-title').textContent = t(UI_LABELS.ach_title);
+  document.getElementById('achievements-grid').innerHTML = PORTFOLIO_DATA.achievements.map(a => `
+    <article class="achievement-card"
+             style="--a-color:${a.color};--a-color-dim:${a.color}18">
+      <span class="achievement-medal" role="img" aria-label="${a.medal} medal">${a.medal}</span>
+      <span class="achievement-place"
+            style="color:${a.color};border-color:${a.color};background:${a.color}18">
+        #${a.place}
+      </span>
+      <h3 class="achievement-title">${t(a.title)}</h3>
+      <p class="achievement-subtitle">${t(a.subtitle)}</p>
+      <a href="${a.url}" target="_blank" rel="noopener noreferrer"
+         class="achievement-link" aria-label="View post about ${t(a.title)}">
+        ${t(UI_LABELS.view_post)}
+      </a>
+    </article>
+  `).join('');
+}
+
+// ═══════════════════════════════════════════════════════
+//  RENDER CERTIFICATIONS
+// ═══════════════════════════════════════════════════════
+function renderCertifications() {
+  document.getElementById('label-certifications').textContent = t(UI_LABELS.cert_lbl);
+  document.getElementById('cert-title').textContent = t(UI_LABELS.cert_title);
+  document.getElementById('certs-grid').innerHTML = PORTFOLIO_DATA.certifications.map(c => `
+    <article class="cert-card">
+      <span class="cert-icon" role="img" aria-label="${c.issuer} certification">${c.icon}</span>
+      <h3 class="cert-name">${c.name}</h3>
+      <div class="cert-issuer">${c.issuer}</div>
+      <a href="${c.url}" target="_blank" rel="noopener noreferrer"
+         class="cert-link" aria-label="View ${c.name} certificate">
+        ${t(UI_LABELS.view_cert)}
+      </a>
+    </article>
+  `).join('');
+}
+
+// ═══════════════════════════════════════════════════════
+//  RENDER CONTACT
+// ═══════════════════════════════════════════════════════
+function renderContact() {
+  document.getElementById('label-contact').textContent = t(UI_LABELS.contact_lbl);
+  document.getElementById('contact-title').textContent = t(UI_LABELS.contact_title);
+  const d = PORTFOLIO_DATA.meta;
+  document.getElementById('contact-info').innerHTML = `
+    <a href="mailto:${d.email}" class="contact-card" aria-label="Send email to ${d.email}">
+      <span class="contact-card-icon" aria-hidden="true">✉</span>
+      <div><div class="contact-card-label">EMAIL</div><div class="contact-card-val">${d.email}</div></div>
+    </a>
+    <a href="tel:${d.phone.replace(/\s/g,'')}" class="contact-card" aria-label="Call ${d.phone}">
+      <span class="contact-card-icon" aria-hidden="true">☎</span>
+      <div><div class="contact-card-label">PHONE</div><div class="contact-card-val">${d.phone}</div></div>
+    </a>
+    <a href="${d.linkedin}" target="_blank" rel="noopener noreferrer" class="contact-card" aria-label="LinkedIn profile">
+      <span class="contact-card-icon" aria-hidden="true">in</span>
+      <div><div class="contact-card-label">LINKEDIN</div><div class="contact-card-val">chemlali-rayen</div></div>
+    </a>
+    <a href="${d.github}" target="_blank" rel="noopener noreferrer" class="contact-card" aria-label="GitHub profile">
+      <span class="contact-card-icon" aria-hidden="true">⌥</span>
+      <div><div class="contact-card-label">GITHUB</div><div class="contact-card-val">Rayen-Chemlali</div></div>
+    </a>
+    <div class="contact-card" style="cursor:default">
+      <span class="contact-card-icon" aria-hidden="true">◎</span>
+      <div><div class="contact-card-label">LOCATION</div><div class="contact-card-val">${d.location}</div></div>
+    </div>
+  `;
+  const fl = t(UI_LABELS.form_label);
+  document.getElementById('contact-form').innerHTML = `
+    <div class="form-group">
+      <label class="form-label" for="f-name">${t(UI_LABELS.form_name)}</label>
+      <input id="f-name" class="form-input" type="text" placeholder="${t(UI_LABELS.form_name)}..." autocomplete="name">
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="f-email">${t(UI_LABELS.form_email)}</label>
+      <input id="f-email" class="form-input" type="email" placeholder="you@email.com" autocomplete="email">
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="f-subject">${t(UI_LABELS.form_subject)}</label>
+      <input id="f-subject" class="form-input" type="text" placeholder="${t(UI_LABELS.form_subject)}...">
+    </div>
+    <div class="form-group">
+      <label class="form-label" for="f-message">${t(UI_LABELS.form_message)}</label>
+      <textarea id="f-message" class="form-textarea" placeholder="${t(UI_LABELS.form_message)}..."></textarea>
+    </div>
+    <button class="btn-primary" onclick="handleFormSubmit()" style="align-self:flex-start" aria-label="Send contact message">
+      ${t(UI_LABELS.form_send)}
+    </button>
+  `;
+}
+
+function handleFormSubmit() {
+  const name = document.getElementById('f-name').value;
+  const email = document.getElementById('f-email').value;
+  const subject = document.getElementById('f-subject').value;
+  const message = document.getElementById('f-message').value;
+  if (!name || !email || !message) { alert(lang === 'en' ? 'Please fill in all required fields.' : 'Veuillez remplir tous les champs requis.'); return; }
+  window.location.href = `mailto:${PORTFOLIO_DATA.meta.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent('From: '+name+' ('+email+')\n\n'+message)}`;
+}
+
+// ═══════════════════════════════════════════════════════
+//  RENDER FOOTER
+// ═══════════════════════════════════════════════════════
+function renderFooter() {
+  document.getElementById('footer-left').innerHTML = t(UI_LABELS.footer_copy);
+  document.getElementById('footer-right').innerHTML = `<span>${t(UI_LABELS.footer_made)}</span>`;
+}
+
+// ═══════════════════════════════════════════════════════
+//  RENDER ALL
+// ═══════════════════════════════════════════════════════
+function renderAll() {
+  renderNav();
+  renderHero();
+  renderAbout();
+  renderSkills();
+  renderExperience();
+  renderProjects();
+  renderEducation();
+  renderAchievements();
+  renderCertifications();
+  renderContact();
+  renderFooter();
+  startTypewriter();
+}
+
+// ═══════════════════════════════════════════════════════
+//  PARTICLES
+// ═══════════════════════════════════════════════════════
+function initParticles() {
+  const canvas = document.getElementById('particles-canvas');
+  const ctx = canvas.getContext('2d');
+  let W, H, particles;
+  function resize() {
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+  function makeParticles() {
+    particles = Array.from({length: 60}, () => ({
+      x: Math.random() * W, y: Math.random() * H,
+      r: Math.random() * 1.5 + 0.3,
+      vx: (Math.random() - 0.5) * 0.2,
+      vy: (Math.random() - 0.5) * 0.2,
+      alpha: Math.random() * 0.4 + 0.1
+    }));
+  }
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    particles.forEach(p => {
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
+      if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(0,212,255,${p.alpha})`;
+      ctx.fill();
+    });
+    requestAnimationFrame(draw);
+  }
+  resize(); makeParticles(); draw();
+  window.addEventListener('resize', () => { resize(); makeParticles(); });
+}
+
+// ═══════════════════════════════════════════════════════
+//  SCHEMA.ORG JSON-LD
+// ═══════════════════════════════════════════════════════
+function injectSchema() {
+  const d = PORTFOLIO_DATA;
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": d.meta.name,
+    "jobTitle": "Software Engineering Student",
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "INSAT – Institut National des Sciences Appliquées et de Technologie" },
+    "knowsAbout": ["Software Engineering","Machine Learning","Competitive Programming","Full-Stack Development","Angular","NestJS","Python","Rust","Docker","Kubernetes"],
+    "url": "https://rayen-chemlali.dev",
+    "email": d.meta.email,
+    "telephone": d.meta.phone,
+    "address": { "@type": "PostalAddress", "addressLocality": "Tunis", "addressCountry": "TN" },
+    "sameAs": [d.meta.linkedin, d.meta.github],
+    "hasCredential": d.certifications.map(c => ({
+      "@type": "EducationalOccupationalCredential",
+      "name": c.name,
+      "credentialCategory": "Certificate",
+      "recognizedBy": { "@type": "Organization", "name": c.issuer }
+    }))
+  };
+  const script = document.createElement('script');
+  script.type = 'application/ld+json';
+  script.textContent = JSON.stringify(schema);
+  document.head.appendChild(script);
+}
+
+// ═══════════════════════════════════════════════════════
+//  INIT
+// ═══════════════════════════════════════════════════════
+document.addEventListener('DOMContentLoaded', () => {
+  updateSEOMeta();
+  injectSchema();
+  renderAll();
+  navigate('hero');
+  initParticles();
+});
+</script>
+</body>
+</html>
