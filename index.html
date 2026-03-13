@@ -330,7 +330,7 @@
     .json-punc { color: var(--text-muted); }
 
     /* ── ABOUT ── */
-    .about-grid { display: grid; grid-template-columns: 1fr 280px; gap: 32px; }
+    .about-grid { display: grid; grid-template-columns: 1fr 280px; gap: 32px; align-items: start; }
     .about-text { font-size: 14px; color: var(--text-dim); line-height: 1.8; }
     .about-text p { margin-bottom: 16px; }
     .about-stats { display: flex; flex-direction: column; gap: 12px; }
@@ -378,19 +378,6 @@
       transition: all 0.15s;
     }
     .skill-pill:hover { background: var(--accent-dim); color: var(--accent); border-color: var(--accent); }
-
-    .timeline-date-flag {
-      font-family: var(--font-mono);
-      font-size: 10px;
-      color: var(--bg);
-      background: var(--accent);
-      padding: 3px 10px;
-      border-radius: 20px;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      white-space: nowrap;
-      box-shadow: 0 0 10px rgba(0,212,255,0.3);
-    }
 
     /* ── EXPERIENCE ── */
     .timeline { position: relative; padding-left: 30px; }
@@ -444,57 +431,112 @@
     .timeline-desc { font-size: 13px; color: var(--text-muted); line-height: 1.7; }
 
     /* ── PHOTO ── */
-    .hero-photo-wrap {
-      flex: 0 0 140px;
+    .photo-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 28px;
+    }
+    .photo-ring {
+      position: relative;
+      width: 140px;
+      height: 140px;
+      flex-shrink: 0;
+    }
+    .photo-ring::before {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: 50%;
+      background: conic-gradient(var(--accent), #8b5cf6, #10b981, var(--accent));
+      animation: spin 6s linear infinite;
+      z-index: 0;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .photo-ring::after {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: 50%;
+      background: var(--bg);
+      z-index: 1;
+    }
+    .photo-img {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid var(--card-bg);
+    }
+    .photo-placeholder {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: var(--card-bg);
+      border: 3px solid var(--border);
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 10px;
+      justify-content: center;
+      gap: 4px;
+      cursor: pointer;
+      transition: border-color 0.2s;
     }
-    .hero-photo {
-      width: 130px;
-      height: 130px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid var(--accent);
-      box-shadow: 0 0 0 6px rgba(0,212,255,0.12), 0 8px 32px rgba(0,212,255,0.18);
-      display: block;
-    }
-    .hero-photo-label {
+    .photo-placeholder:hover { border-color: var(--accent); }
+    .photo-placeholder-icon { font-size: 32px; opacity: 0.4; }
+    .photo-placeholder-text {
       font-family: var(--font-mono);
       font-size: 9px;
-      color: var(--accent);
-      letter-spacing: 1px;
-      opacity: 0.7;
+      color: var(--text-muted);
+      text-align: center;
+      line-height: 1.4;
+      padding: 0 8px;
     }
+    #photo-upload-input { display: none; }
 
-    /* ── PROJECTS ── */
-    .projects-category-title {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      color: var(--accent);
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      margin: 28px 0 14px;
-      padding-bottom: 6px;
-      border-bottom: 1px solid var(--border);
+    /* ── PROJECTS CATEGORIES ── */
+    .proj-category {
+      margin-bottom: 36px;
+    }
+    .proj-category-header {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 10px;
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
     }
-    .projects-category-title:first-child { margin-top: 0; }
-    .projects-category-title .cat-badge {
-      display: inline-block;
-      padding: 2px 8px;
-      border-radius: 4px;
+    .proj-category-icon { font-size: 16px; }
+    .proj-category-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .proj-category-count {
+      margin-left: auto;
+      font-family: var(--font-mono);
       font-size: 10px;
-      font-weight: 700;
-      border: 1px solid;
+      color: var(--accent);
+      background: var(--accent-dim);
+      padding: 2px 7px;
+      border-radius: 10px;
     }
-    .cat-freelance { color: #f59e0b; border-color: rgba(245,158,11,0.4); background: rgba(245,158,11,0.08); }
-    .cat-stage     { color: #a855f7; border-color: rgba(168,85,247,0.4); background: rgba(168,85,247,0.08); }
-    .cat-etude     { color: #22c55e; border-color: rgba(34,197,94,0.4); background: rgba(34,197,94,0.08); }
     .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .project-date {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      color: var(--text-muted);
+      margin-top: 8px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .project-date::before { content: '◷'; font-size: 10px; }
     .project-card {
       background: var(--card-bg);
       border: 1px solid var(--border);
@@ -720,8 +762,9 @@
       position: absolute;
       inset: 0;
       background: radial-gradient(ellipse at top, var(--a-color-dim, rgba(0,212,255,0.05)), transparent 70%);
+      pointer-events: none;
     }
-    .achievement-medal { font-size: 40px; margin-bottom: 10px; display: block; transition: transform 0.2s; }
+    .achievement-medal { font-size: 40px; margin-bottom: 10px; display: block; transition: transform 0.2s; position: relative; z-index: 1; }
     .achievement-card:hover .achievement-medal { transform: scale(1.1) rotate(-5deg); }
     .achievement-place {
       font-family: var(--font-mono);
@@ -732,9 +775,10 @@
       border: 1px solid;
       display: inline-block;
       margin-bottom: 12px;
+      position: relative; z-index: 1;
     }
-    .achievement-title { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
-    .achievement-subtitle { font-size: 11px; color: var(--text-muted); line-height: 1.5; margin-bottom: 16px; }
+    .achievement-title { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 6px; position: relative; z-index: 1; }
+    .achievement-subtitle { font-size: 11px; color: var(--text-muted); line-height: 1.5; margin-bottom: 16px; position: relative; z-index: 1; }
     .achievement-link {
       display: inline-flex; align-items: center; gap: 5px;
       font-size: 11px;
@@ -745,6 +789,10 @@
       border: 1px solid var(--border);
       border-radius: 5px;
       transition: all 0.15s;
+      background: transparent;
+      cursor: pointer;
+      font-family: var(--font-display);
+      position: relative; z-index: 2;
     }
     .achievement-link:hover { color: var(--accent); border-color: var(--accent); background: var(--accent-dim); }
 
@@ -870,7 +918,6 @@
       .skills-grid { grid-template-columns: 1fr; }
       #hero-section { flex-direction: column; gap: 28px; }
       .hero-right { flex: none; width: 100%; }
-      .hero-photo-wrap { flex-direction: row; justify-content: flex-start; }
     }
     @media (max-width: 560px) {
       .projects-grid { grid-template-columns: 1fr; }
@@ -888,9 +935,6 @@
     <div class="dot dot-r"></div>
     <div class="dot dot-y"></div>
     <div class="dot dot-g"></div>
-  </div>
-  <div class="topbar-url" aria-label="Site URL">
-    <span>rayen</span>-chemlali.dev
   </div>
   <div id="lang-toggle" role="group" aria-label="Language selector">
     <button class="lang-btn active" onclick="setLang('en')" id="btn-en" aria-label="Switch to English">EN</button>
@@ -935,10 +979,6 @@
             </a>
           </div>
         </div>
-        <div class="hero-photo-wrap">
-          <img src="rayen.jpg" alt="Rayen Chemlali" class="hero-photo" loading="eager">
-          <span class="hero-photo-label"></span>
-        </div>
         <div class="hero-right" aria-label="Developer profile card">
           <div class="code-file-tab">
             <div class="code-dot" aria-hidden="true"></div>
@@ -951,21 +991,21 @@
     <div id="section-about" class="section">
       <section aria-labelledby="about-title">
         <div class="section-label" aria-hidden="true" id="label-about"></div>
-        <h2 class="section-title" id="about-title" id="title-about"></h2>
+        <h2 class="section-title" id="about-title"></h2>
         <div class="about-grid">
-          <div class="about-text" id="about-text"></div>
+          <div>
+            <div class="photo-wrapper">
+              <div class="photo-ring" title="Click to upload your photo">
+                <img src="rayen.jpg" class="photo-img" alt="Rayen Chemlali - Software Engineer" id="photo-img-el">
+                <input type="file" id="photo-upload-input" accept="image/*" aria-label="Photo upload input" style="display:none">
+              </div>
+            </div>
+            <div class="about-text" id="about-text"></div>
+          </div>
           <aside class="about-stats">
             <div class="stat-card">
               <div class="stat-card-num">4th</div>
               <div class="stat-card-label" id="stat-year"></div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-card-num">18.16</div>
-              <div class="stat-card-label" id="stat-bac"></div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-card-num">6th<small style="font-size:14px">/96</small></div>
-              <div class="stat-card-label" id="stat-rank"></div>
             </div>
             <div class="lang-bars" id="lang-bars"></div>
           </aside>
@@ -990,7 +1030,7 @@
       <section aria-labelledby="proj-title">
         <div class="section-label" aria-hidden="true" id="label-projects"></div>
         <h2 class="section-title" id="proj-title"></h2>
-        <div class="projects-grid" id="projects-grid"></div>
+        <div id="projects-container"></div>
       </section>
     </div>
     <div id="section-education" class="section">
@@ -1058,394 +1098,408 @@
 </div>
 
 <script>
-// ═══════════════════════════════════════════════════════
-//  PORTFOLIO DATA — Edit only this object to update content
-// ═══════════════════════════════════════════════════════
-const PORTFOLIO_DATA = {
-  meta: {
-    name: "Rayen Chemlali",
-    title: { en: "Software Engineer & AI Developer", fr: "Ingénieur Logiciel & Développeur IA" },
-    description: {
-      en: "Rayen Chemlali is a software engineering student at INSAT Tunisia, specializing in full-stack development, machine learning, and competitive programming. Available for internships and collaborations.",
-      fr: "Rayen Chemlali est étudiant ingénieur à l'INSAT Tunisie, spécialisé en développement full-stack, machine learning et programmation compétitive. Disponible pour des stages et collaborations."
-    },
-    email: "rayen.chemlali@insat.ucar.tn",
-    phone: "+216 56042251",
-    location: "Tunis, Tunisia",
-    linkedin: "https://www.linkedin.com/in/chemlali-rayen-69aa65243/",
-    github: "https://github.com/Rayen-Chemlali",
-    cvUrl: "#",
-    roles: {
-      en: ["Software Engineer","ML & AI Enthusiast","Competitive Programmer","Full-Stack Developer"],
-      fr: ["Ingénieur Logiciel","Passionné ML & IA","Programmeur Compétitif","Développeur Full-Stack"]
-    }
-  },
-  about: {
-    en: "I am a 4th-year Software Engineering student at INSAT (Institut National des Sciences Appliquées et de Technologie), Tunisia. My academic journey has been marked by strong performance: Mathematics Baccalaureate with Highest Honors (18.16/20), ranked 32nd out of 410 in the common first year (MPI), then 5th/90 and 6th/96 in subsequent years.\n\nBeyond academics, I live for competitive programming — the rush of solving hard algorithmic problems under pressure taught me more about thinking clearly than any course. I also participate actively in AI hackathons and club activities. I have accumulated solid professional experience through internships, freelance projects, and part-time work, always bridging theory and real impact.",
-    fr: "Je suis étudiant en 4ème année Génie Logiciel à l'INSAT (Institut National des Sciences Appliquées et de Technologie), Tunisie. Mon parcours académique est marqué par d'excellents résultats : baccalauréat en mathématiques avec mention Très Bien (18.16/20), classé 32ème sur 410 en 1ère année tronc commun (MPI), puis 5ème/90 et 6ème/96 les années suivantes.\n\nAu-delà des cours, je vis pour la programmation compétitive — résoudre des problèmes algorithmiques complexes sous pression m'a plus appris sur la rigueur que n'importe quel module. Je participe activement aux hackathons IA et aux activités des clubs. J'ai accumulé une solide expérience professionnelle en stages, projets freelance et poste à temps partiel."
-  },
-  skills: [
-    { category: { en: "Languages", fr: "Langages" }, icon: "💻", items: ["Java","Python","C++","JavaScript","PHP","Go"] },
-    { category: { en: "Frameworks", fr: "Frameworks" }, icon: "🧩", items: ["ASP.NET","NestJS","Symfony","React","Next.js","Angular"] },
-    { category: { en: "ML & AI", fr: "ML & IA" }, icon: "🧠", items: ["TensorFlow","Scikit-learn","RAG","NLP","Computer Vision","Pandas","NumPy"] },
-    { category: { en: "DevOps & Tools", fr: "DevOps & Outils" }, icon: "⚙️", items: ["Docker","Git","Linux","CI/CD","MySQL","Redis","UML"] }
-  ],
-  experience: [
-    {
-      role: { en: "ML Intern", fr: "Stagiaire ML" },
-      company: "Elevvo Pathways",
-      period: "Feb 2026 – Mar 2026",
-      type: { en: "Internship", fr: "Stage" },
+  // ═══════════════════════════════════════════════════════
+  //  PORTFOLIO DATA — Edit only this object to update content
+  // ═══════════════════════════════════════════════════════
+  const PORTFOLIO_DATA = {
+    meta: {
+      name: "Rayen Chemlali",
+      title: { en: "Software Engineer & AI Developer", fr: "Ingénieur Logiciel & Développeur IA" },
       description: {
-        en: "Completed 5 end-to-end machine learning projects spanning clustering, classification, time series forecasting, computer vision, and audio classification. Gained hands-on experience with the full ML pipeline from data preprocessing to model evaluation and deployment.",
-        fr: "Réalisation de 5 projets ML complets couvrant le clustering, la classification, la prévision de séries temporelles, la vision par ordinateur et la classification audio. Maîtrise du pipeline ML complet du prétraitement des données jusqu'au déploiement."
+        en: "Rayen Chemlali is a software engineering student at INSAT Tunisia, specializing in full-stack development, machine learning, and competitive programming. Available for internships and collaborations.",
+        fr: "Rayen Chemlali est étudiant ingénieur à l'INSAT Tunisie, spécialisé en développement full-stack, machine learning et programmation compétitive. Disponible pour des stages et collaborations."
+      },
+      email: "rayen.chemlali@insat.ucar.tn",
+      phone: "+216 56042251",
+      location: "Tunis, Tunisia",
+      linkedin: "https://www.linkedin.com/in/chemlali-rayen-69aa65243/",
+      github: "https://github.com/Rayen-Chemlali",
+      cvUrl: "#",
+      roles: {
+        en: ["Software Engineer","ML & AI Enthusiast","Competitive Programmer","Full-Stack Developer"],
+        fr: ["Ingénieur Logiciel","Passionné ML & IA","Programmeur Compétitif","Développeur Full-Stack"]
       }
     },
-    {
-      role: { en: "Part-Time Software Engineer", fr: "Ingénieur Logiciel (Temps Partiel)" },
-      company: "Plug & Tel",
-      period: "Nov 2025 – Present",
-      type: { en: "Part-Time", fr: "Temps Partiel" },
-      description: {
-        en: "Working part-time as a software engineer, contributing to production software projects and applying full-stack skills in a professional setting while completing my engineering degree.",
-        fr: "Travail à temps partiel en tant qu'ingénieur logiciel, contribution à des projets de développement en production tout en terminant mon diplôme d'ingénieur."
+    about: {
+      en: "I am a 4th-year Software Engineering student at INSAT (Institut National des Sciences Appliquées et de Technologie), Tunisia. My academic journey has been marked by strong performance: Mathematics Baccalaureate with Highest Honors (18.16/20), ranked 32nd out of 410 in the common first year (MPI), then 5th/90 and 6th/96 in subsequent years.\n\nBeyond academics, I live for competitive programming — the rush of solving hard algorithmic problems under pressure taught me more about thinking clearly than any course. I also participate actively in AI hackathons and club activities. I have accumulated solid professional experience through internships, freelance projects, and part-time work, always bridging theory and real impact.",
+      fr: "Je suis étudiant en 4ème année Génie Logiciel à l'INSAT (Institut National des Sciences Appliquées et de Technologie), Tunisie. Mon parcours académique est marqué par d'excellents résultats : baccalauréat en mathématiques avec mention Très Bien (18.16/20), classé 32ème sur 410 en 1ère année tronc commun (MPI), puis 5ème/90 et 6ème/96 les années suivantes.\n\nAu-delà des cours, je vis pour la programmation compétitive — résoudre des problèmes algorithmiques complexes sous pression m'a plus appris sur la rigueur que n'importe quel module. Je participe activement aux hackathons IA et aux activités des clubs. J'ai accumulé une solide expérience professionnelle en stages, projets freelance et poste à temps partiel."
+    },
+    skills: [
+      { category: { en: "Programming Languages", fr: "Langages de Programmation" }, icon: "💻", items: ["Java","Python","C++","JavaScript","PHP","Go"] },
+      { category: { en: "Frameworks & Libraries", fr: "Frameworks & Librairies" }, icon: "🧩", items: ["ASP.NET","NestJS","Symfony","React","Next.js","Angular"] },
+      { category: { en: "Data Science & Machine Learning", fr: "Data Science & Machine Learning" }, icon: "🧠", items: ["NumPy","Pandas","Scikit-learn","TensorFlow","RAG","NLP","Computer Vision","Supervised & Unsupervised Learning"] },
+      { category: { en: "Software Development & Tools", fr: "Développement & Outils" }, icon: "⚙️", items: ["Relational & Non-relational Databases","Git","Linux","UML","Design Patterns","Docker","CI/CD"] }
+    ],
+    experience: [
+      {
+        role: { en: "Part-Time Software Engineer", fr: "Ingénieur Logiciel (Temps Partiel)" },
+        company: "Plug & Tel",
+        period: "Nov 2025 – Present",
+        type: { en: "Part-Time", fr: "Temps Partiel" },
+        description: {
+          en: "Working part-time as a software engineer, contributing to production software projects and applying full-stack skills in a professional setting while completing my engineering degree.",
+          fr: "Travail à temps partiel en tant qu'ingénieur logiciel, contribution à des projets de développement en production tout en terminant mon diplôme d'ingénieur."
+        }
+      },
+      {
+        role: { en: "ML Intern", fr: "Stagiaire ML" },
+        company: "Elevvo Pathways",
+        period: "Feb 2026 – Mar 2026",
+        type: { en: "Internship", fr: "Stage" },
+        description: {
+          en: "Completed 5 end-to-end machine learning projects spanning clustering, classification, time series forecasting, computer vision, and audio classification. Gained hands-on experience with the full ML pipeline from data preprocessing to model evaluation and deployment.",
+          fr: "Réalisation de 5 projets ML complets couvrant le clustering, la classification, la prévision de séries temporelles, la vision par ordinateur et la classification audio. Maîtrise du pipeline ML complet du prétraitement des données jusqu'au déploiement."
+        }
+      },
+      {
+        role: { en: "Summer Intern", fr: "Stagiaire d'Été" },
+        company: "Talan Tunisie Consulting",
+        period: "Jun 2025 – Aug 2025",
+        type: { en: "Internship", fr: "Stage" },
+        description: {
+          en: "Designed and developed Phase 1 of a Smart Container Registry platform to optimize Docker storage costs at scale: AI-powered conversational chatbot, unified Kubernetes/S3 dashboard, and configurable automated deletion rules engine.",
+          fr: "Conception et développement de la phase 1 d'un Smart Container Registry : chatbot IA conversationnel, tableau de bord unifié Kubernetes/S3 et moteur de règles de suppression automatisé pour optimiser les coûts de stockage Docker."
+        }
+      },
+      {
+        role: { en: "Summer Intern", fr: "Stagiaire d'Été" },
+        company: "Talan Tunisie Consulting",
+        period: "Jul 2024 – Aug 2024",
+        type: { en: "Internship", fr: "Stage" },
+        description: {
+          en: "Built an HR Management Application with NestJS backend and React frontend, focusing on user experience optimization, role-based access control, and application security hardening.",
+          fr: "Développement d'une application de gestion RH avec backend NestJS et frontend React, optimisation UX, contrôle d'accès par rôles et renforcement de la sécurité."
+        }
+      },
+      {
+        role: { en: "Summer Intern", fr: "Stagiaire d'Été" },
+        company: "Centre Informatique – Ministère des Finances",
+        period: "Jul 2023",
+        type: { en: "Internship", fr: "Stage" },
+        description: {
+          en: "First professional experience in an IT maintenance department. Introduction to enterprise IT infrastructure, ticketing systems, and professional work culture.",
+          fr: "Première expérience professionnelle dans un service de maintenance informatique. Introduction à l'infrastructure IT d'entreprise et à la culture professionnelle."
+        }
       }
-    },
-    {
-      role: { en: "Summer Intern", fr: "Stagiaire d'Été" },
-      company: "Talan Tunisie Consulting",
-      period: "Jun 2025 – Aug 2025",
-      type: { en: "Internship", fr: "Stage" },
-      description: {
-        en: "Designed and developed Phase 1 of a Smart Container Registry platform to optimize Docker storage costs at scale: AI-powered conversational chatbot, unified Kubernetes/S3 dashboard, and configurable automated deletion rules engine.",
-        fr: "Conception et développement de la phase 1 d'un Smart Container Registry : chatbot IA conversationnel, tableau de bord unifié Kubernetes/S3 et moteur de règles de suppression automatisé pour optimiser les coûts de stockage Docker."
+    ],
+    projects: [
+      {
+        id: "house-prices", name: "House Prices in Grand Tunis", emoji: "🏘️", category: "academic", date: "Dec 2025 – Feb 2026",
+        tagline: { en: "Data mining & ML analysis of real estate prices in Grand Tunis", fr: "Data mining & ML sur les prix immobiliers du Grand Tunis" },
+        accentColor: "#8b5cf6", watermark: "ML",
+        status: { en: "Completed", fr: "Terminé" }, statusType: "done",
+        duration: "3 months", team: "5 developers",
+        myRole: { en: "Team member", fr: "Membre de l'équipe" },
+        tech: ["Python","Pandas","Scikit-learn","Matplotlib","Seaborn","Jupyter","Streamlit"],
+        links: [
+          { label: "View Code", url: "https://github.com/Rayen-Chemlali/House-Prices-in-Grand-Tunis-Data-Mining" },
+          { label: "Live Demo", url: "https://house-prices-in-grand-tunis-ml.streamlit.app/" }
+        ],
+        tabs: {
+          overview: { en: "A comprehensive data mining project analyzing real estate prices across Grand Tunis. Merged two datasets (2020 & 2024) covering 1,513 apartment listings across 6 cities and 95 regions. Applied a 25% inflation adjustment based on Tunisia INS statistics, performed full EDA, and built a predictive pricing model deployed via Streamlit.", fr: "Projet complet de data mining sur les prix immobiliers du Grand Tunis. Fusion de deux datasets (2020 & 2024) couvrant 1 513 annonces d'appartements dans 6 villes et 95 régions. Ajustement inflation 25% selon les données INS, EDA complète et modèle prédictif déployé via Streamlit." },
+          features: { en: ["Multi-source data integration (2020 + 2024 datasets)","Inflation adjustment (+25%) based on Tunisia INS data","Comprehensive EDA with price correlations and distributions","Intelligent deduplication across data sources","Geographic analysis: 6 cities, 95 regions of Grand Tunis","Predictive ML model for apartment pricing","Deployed interactive Streamlit app"], fr: ["Intégration multi-sources (datasets 2020 + 2024)","Ajustement inflation (+25%) basé sur les données INS Tunisie","EDA complète avec corrélations et distributions de prix","Déduplication intelligente inter-sources","Analyse géographique : 6 villes, 95 régions du Grand Tunis","Modèle ML prédictif pour les prix d'appartements","Application Streamlit interactive déployée"] },
+          challenges: { en: "Merging datasets from different years and sources with inconsistent formats required a robust cleaning pipeline. Implementing statistically sound inflation adjustment while preserving data integrity across 95 geographic regions.", fr: "Fusionner des datasets d'années et sources différentes avec des formats incohérents a nécessité un pipeline de nettoyage robuste. Implémenter un ajustement d'inflation statistiquement valide tout en préservant l'intégrité des données sur 95 régions géographiques." },
+          learnings: { en: "End-to-end data science workflow, multi-source data integration, inflation modeling, and deploying ML models to production with Streamlit.", fr: "Workflow data science de bout en bout, intégration multi-sources, modélisation de l'inflation, et déploiement de modèles ML en production avec Streamlit." }
+        }
+      },
+      {
+        id: "kickstream", name: "KickStream", emoji: "⚽", category: "academic", date: "Dec 2025 – Feb 2026",
+        tagline: { en: "Real-time football prediction & streaming platform", fr: "Plateforme de prédiction et streaming football en temps réel" },
+        accentColor: "#00aaff", watermark: "KICK",
+        status: { en: "Completed", fr: "Terminé" }, statusType: "done",
+        duration: "3 months", team: "5 developers",
+        tech: ["Angular 20","NestJS","Rust","WebSocket","MySQL","Redis"],
+        myRole: { en: "Fixtures page, real-time timers, WebSocket integration, RxJS search/filtering, mock Rust server", fr: "Page des matchs, timers temps réel, intégration WebSocket, recherche RxJS, serveur Rust mock" },
+        links: [{ label: "View Code", url: "https://github.com/Rayen-Chemlali/Projet-Web-Mobile-GL4" }],
+        tabs: {
+          overview: { en: "A full-stack real-time football prediction and streaming platform with microservices architecture. Angular 20 frontend communicates with a NestJS REST API, while a high-performance Rust/Actix WebSocket service streams live match events with sub-millisecond latency and 100k+ concurrent connection support.", fr: "Plateforme full-stack de prédiction et streaming football en temps réel avec architecture microservices. Frontend Angular 20, API REST NestJS, et service WebSocket Rust/Actix ultra-performant avec latence inférieure à la milliseconde." },
+          features: { en: ["Live match browsing across multiple leagues","Real-time goal, card and substitution events via WebSocket","Match predictions with gamified diamond currency","User rankings and leaderboards","OAuth (Google, GitHub) + Two-Factor Authentication","Detailed team and player statistics"], fr: ["Consultation des matchs en direct sur plusieurs ligues","Événements temps réel via WebSocket","Prédictions avec système de monnaie diamant gamifié","Classements et tableaux des leaders","OAuth + Authentification deux facteurs","Statistiques détaillées des équipes"] },
+          challenges: { en: "Achieving real-time performance at scale was the core challenge. Node.js couldn't handle the connection volume, which led us to choose Rust/Actix. Designing an efficient event detection algorithm to diff API snapshots and broadcast only meaningful changes required careful engineering.", fr: "Atteindre des performances temps réel à grande échelle était le défi principal. Node.js ne gérait pas le volume de connexions, d'où le choix de Rust/Actix. La conception d'un algorithme de détection d'événements efficace a nécessité une ingénierie soignée." },
+          learnings: { en: "Learned when to use Rust in a polyglot microservices stack, the actor concurrency model, Angular Signals for reactive state, and how to architect a gamified prediction system from scratch.", fr: "Appris quand utiliser Rust dans une stack microservices polyglotte, le modèle d'acteurs, Angular Signals, et comment architecturer un système de prédiction gamifié." }
+        }
+      },
+      {
+        id: "medisys", name: "MediSys", emoji: "🏥", category: "academic", date: "Mar 2025 – Jun 2025",
+        tagline: { en: "AI-powered medical management platform", fr: "Plateforme de gestion médicale propulsée par l'IA" },
+        accentColor: "#a855f7", watermark: "MEDI",
+        status: { en: "In Development", fr: "En Développement" }, statusType: "dev",
+        duration: "8 months", team: "5 developers",
+        tech: ["NestJS","Next.js","GraphQL","WebSocket","Python","OCR","AI"],
+        myRole: { en: "Backend architecture and AI/OCR integration module", fr: "Architecture backend et module d'intégration IA/OCR" },
+        links: [{ label: "Frontend", url: "https://github.com/Khalil-Ghimaji/DoussiyaFidaya" }, { label: "Backend", url: "https://github.com/Rayen-Chemlali/DoussiyaFidaya" }, { label: "AI / OCR", url: "https://github.com/Rayen-Chemlali/PPP-OCR" }],
+        tabs: {
+          overview: { en: "Built for the 'AI in Healthcare' competition. MediSys handles full medical workflows: consultations, appointments, analyses, prescriptions, and patient records. Hybrid GraphQL/REST API with SSE and WebSocket for real-time features, and an AI module for medical document OCR processing.", fr: "Développé pour la compétition 'AI in Healthcare'. MediSys gère les workflows médicaux complets : consultations, rendez-vous, analyses, prescriptions et dossiers patients. API hybride GraphQL/REST avec SSE, WebSocket, et module IA pour l'OCR." },
+          features: { en: ["Full medical workflow: appointments, consultations, prescriptions","AI-powered OCR for medical document digitization","Real-time notifications via WebSocket and SSE","Role-based access: doctors, patients, administrators","Hybrid GraphQL/REST API"], fr: ["Workflow médical complet : rendez-vous, consultations, prescriptions","OCR IA pour numérisation de documents médicaux","Notifications temps réel via WebSocket et SSE","Accès par rôles : médecins, patients, administrateurs","API hybride GraphQL/REST"] },
+          challenges: { en: "Integrating OCR in a medical context required handling high document variability. Designing a GraphQL schema flexible enough for multiple medical specialties while keeping queries performant was also a major challenge.", fr: "L'intégration OCR dans un contexte médical nécessitait de gérer une grande variabilité documentaire. La conception d'un schéma GraphQL flexible pour plusieurs spécialités médicales tout en maintenant de bonnes performances était un défi majeur." },
+          learnings: { en: "Deep expertise in GraphQL schema design, hybrid API architectures, OCR pipeline integration, and healthcare data modeling.", fr: "Expertise approfondie en conception de schémas GraphQL, architectures API hybrides, intégration de pipelines OCR et modélisation de données de santé." }
+        }
+      },
+      {
+        id: "erp", name: "Mini-ERP System", emoji: "📊", category: "academic", date: "Dec 2024 – Feb 2025",
+        tagline: { en: "Enterprise resource planning for sales operations", fr: "Système ERP pour les opérations de vente" },
+        accentColor: "#f59e0b", watermark: "ERP",
+        status: { en: "Completed", fr: "Terminé" }, statusType: "done",
+        duration: "4 months", team: "3 developers",
+        tech: ["ASP.NET","C#","SQL Server"],
+        myRole: { en: "Backend architecture, database design, business logic", fr: "Architecture backend, conception base de données, logique métier" },
+        links: [{ label: "View Code", url: "https://github.com/Khalil-Ghimaji/dotnetERP" }],
+        tabs: {
+          overview: { en: "A complete ERP system covering the entire sales process with four integrated modules: order management, inventory management, invoicing, and customer management. Built with ASP.NET and SQL Server for enterprise-grade reliability.", fr: "Système ERP complet couvrant l'intégralité du processus de vente avec quatre modules intégrés : gestion des commandes, stocks, facturation et clients. Développé avec ASP.NET et SQL Server." },
+          features: { en: ["Order management with full lifecycle tracking","Inventory management with stock level alerts","Invoice generation and management","Customer relationship module","Integrated reporting and dashboards"], fr: ["Gestion des commandes avec suivi du cycle de vie","Gestion des stocks avec alertes de niveau","Génération et gestion des factures","Module de gestion de la relation client","Tableaux de bord et rapports intégrés"] },
+          challenges: { en: "Designing a normalized database schema supporting complex business rules across all modules without redundancy. Implementing transaction management to ensure data consistency across the order-inventory-invoice pipeline.", fr: "Conception d'un schéma de base de données normalisé supportant des règles métier complexes sans redondance. Implémentation de la gestion des transactions pour la cohérence des données." },
+          learnings: { en: "Enterprise application architecture with ASP.NET, relational database design for business apps, and ERP business logic end-to-end.", fr: "Architecture d'application d'entreprise avec ASP.NET, conception de bases de données relationnelles pour applications business, et logique ERP de bout en bout." }
+        }
+      },
+      {
+        id: "interim", name: "InterimCo Website", emoji: "🌐", category: "academic", date: "Mar 2024 – May 2024",
+        tagline: { en: "Corporate site built in PHP then migrated to Symfony", fr: "Site corporate développé en PHP puis migré vers Symfony" },
+        accentColor: "#10b981", watermark: "SYM",
+        status: { en: "Completed", fr: "Terminé" }, statusType: "done",
+        duration: "6 months", team: "5 developers",
+        tech: ["PHP","Symfony","Doctrine ORM","MySQL","MVC"],
+        myRole: { en: "Full project — sole developer", fr: "Projet complet — développeur unique" },
+        links: [{ label: "Symfony Version", url: "https://github.com/Rayen-Chemlali/InterimCo-symfony" }, { label: "Native PHP Version", url: "https://github.com/Rayen-Chemlali/Interim-Co-webApplication" }],
+        tabs: {
+          overview: { en: "A major milestone in my web dev journey. Built a full corporate website for an interim staffing company, first in native PHP, then fully refactored and migrated to Symfony — gaining deep experience with MVC architecture, Symfony routing, and Doctrine ORM.", fr: "Étape majeure dans mon parcours. Site corporate complet d'une entreprise intérimaire, d'abord en PHP natif, puis entièrement migré vers Symfony — maîtrise approfondie de l'architecture MVC, du routing Symfony et de Doctrine ORM." },
+          features: { en: ["Corporate pages: services, team, contact","Job listing and application management","Admin panel for content management","Full form handling and validation"], fr: ["Pages corporate : services, équipe, contact","Gestion des offres d'emploi et candidatures","Panneau d'administration","Gestion complète des formulaires et validation"] },
+          challenges: { en: "Migrating a working PHP app to Symfony without breaking functionality required careful planning. Understanding Symfony's bundle system and Doctrine entity mapping had a steep but rewarding learning curve.", fr: "Migrer une application PHP fonctionnelle vers Symfony sans casser les fonctionnalités a nécessité une planification minutieuse. La courbe d'apprentissage de Symfony était raide mais enrichissante." },
+          learnings: { en: "In-depth Symfony knowledge, MVC in a real project, Doctrine ORM, and the long-term value of migrating legacy code to a proper framework.", fr: "Connaissance approfondie de Symfony, MVC dans un vrai projet, Doctrine ORM, et la valeur à long terme de la migration de code legacy vers un framework structuré." }
+        }
+      },
+      {
+        id: "copilot", name: "Strategy Copilot", emoji: "🤖", category: "freelance", date: "Aug 2025 – Present",
+        tagline: { en: "AI-powered business diagnostics and strategy generator", fr: "Générateur de stratégie et diagnostics business par IA" },
+        accentColor: "#06b6d4", watermark: "AI",
+        status: { en: "In Progress", fr: "En cours" }, statusType: "dev",
+        duration: "Aug 2025 – Present", team: "2 developers",
+        tech: ["Python","AI","Chatbot","Data Viz","PDF Export"],
+        myRole: { en: "Full project — sole developer", fr: "Projet complet — développeur unique" },
+        links: [{ label: "View Code", url: "#" }],
+        tabs: {
+          overview: { en: "An AI-powered business strategy assistant actively in development since August 2025. Generates complete business diagnostics, financial projections, and market analysis through a conversational chatbot. Visualizes strategic data as interactive graphs and exports results as PDF reports or pitch decks. Note: not currently in production — no public demo available.", fr: "Assistant stratégique IA en développement actif depuis août 2025. Génère des diagnostics business complets, des projections financières et des analyses de marché via chatbot conversationnel. Visualisations en graphiques interactifs, exports PDF et pitch deck. Note : pas en production actuellement." },
+          features: { en: ["Conversational AI chatbot for business questions","Automated business diagnostic generation","Financial projection modeling","Market analysis with interactive graph visualizations","PDF and pitch deck export"], fr: ["Chatbot IA conversationnel pour questions business","Génération automatisée de diagnostics","Modélisation de projections financières","Analyses de marché avec graphiques interactifs","Export PDF et pitch deck"] },
+          challenges: { en: "Structuring unstructured business input into coherent, actionable diagnostics required careful prompt engineering and output validation.", fr: "Structurer des données business non structurées en diagnostics cohérents a nécessité une ingénierie de prompts soignée et une validation rigoureuse des sorties." },
+          learnings: { en: "Advanced prompt engineering, building AI pipelines that produce structured business outputs, and data visualization for strategic content.", fr: "Ingénierie de prompts avancée, construction de pipelines IA produisant des sorties structurées, et visualisation de données pour contenu stratégique." }
+        }
+      },
+      {
+        id: "shannon", name: "Shannon", emoji: "⚙️", category: "freelance", date: "Nov 2025 – Jan 2026",
+        tagline: { en: "Open-source Simulink-inspired visual code generator", fr: "Générateur de code visuel open-source inspiré de Simulink" },
+        accentColor: "#8b5cf6", watermark: "SHN",
+        status: { en: "Completed", fr: "Terminé" }, statusType: "done",
+        duration: "Freelance", team: "2 developers",
+        tech: ["Canvas API","Graph Model","Code Generation","Open Source"],
+        myRole: { en: "Co-developer — canvas engine and code generation", fr: "Co-développeur — moteur canvas et génération de code" },
+        links: [{ label: "View Code", url: "#" }],
+        tabs: {
+          overview: { en: "Co-developed Shannon, a free open-source alternative to Simulink. An interactive visual canvas lets users place and connect functional blocks to model systems, then automatically generates executable code from the graph. Built for engineers needing accessible model-based design tooling.", fr: "Co-développement de Shannon, alternative open-source gratuite à Simulink. Canvas visuel interactif pour modéliser des systèmes par blocs et liens, avec génération automatique de code exécutable." },
+          features: { en: ["Interactive drag-and-drop block canvas","Block and link modeling system","Integrated code generation engine","Export to multiple code targets"], fr: ["Canvas de blocs interactif drag-and-drop","Système de modélisation par blocs et liens","Moteur de génération de code intégré","Export vers plusieurs cibles de code"] },
+          challenges: { en: "Building a reliable graph-to-code compiler handling cycles, ordering, and block type validation was the core algorithmic challenge.", fr: "Construire un compilateur graphe-vers-code gérant les cycles, l'ordonnancement et la validation des types de blocs était le défi algorithmique central." },
+          learnings: { en: "Graph data structures for UI, visual programming language design, and building developer tools from scratch.", fr: "Structures de données graphes pour UI, conception de langages de programmation visuels, et développement d'outils from scratch." }
+        }
+      },
+      {
+        id: "ml-suite", name: "ML Projects Suite", emoji: "🧠", category: "internship", date: "Feb 2026 – Mar 2026",
+        tagline: { en: "5 end-to-end ML projects across domains", fr: "5 projets machine learning complets sur différents domaines" },
+        accentColor: "#22c55e", watermark: "ML",
+        status: { en: "Completed", fr: "Terminé" }, statusType: "done",
+        duration: "1 month", team: "Solo",
+        tech: ["Python","Scikit-learn","TensorFlow","CV","NLP","Audio"],
+        myRole: { en: "Full project — sole developer", fr: "Projet complet — développeur unique" },
+        links: [{ label: "View Code", url: "https://github.com/Rayen-Chemlali/Elevvo-ml-internship-projects" }],
+        tabs: {
+          overview: { en: "A suite of 5 complete ML projects built during the Elevvo Pathways internship. Each covers the full pipeline: data collection, preprocessing, EDA, feature engineering, model training, evaluation, and deployment packaging. Domains: clustering, classification, time series, computer vision, audio.", fr: "Suite de 5 projets ML complets réalisés lors du stage Elevvo Pathways. Pipeline complet : collecte, prétraitement, EDA, feature engineering, entraînement, évaluation et déploiement." },
+          features: { en: ["Customer segmentation with clustering","Binary and multi-class classification pipelines","Time series forecasting with LSTM/ARIMA","Image classification with CNNs","Audio classification with spectral features"], fr: ["Segmentation client par clustering","Pipelines de classification binaire et multi-classes","Prévision de séries temporelles LSTM/ARIMA","Classification d'images avec CNNs","Classification audio avec features spectrales"] },
+          challenges: { en: "Each domain had unique data challenges — audio spectrogram extraction, time series stationarity, and class imbalance all required domain-specific solutions.", fr: "Chaque domaine avait ses défis spécifiques — spectrogrammes audio, stationnarité des séries temporelles, déséquilibre de classes." },
+          learnings: { en: "Breadth of the ML landscape, domain-specific feature engineering, model selection trade-offs, and professional ML project structure.", fr: "Vue d'ensemble du paysage ML, feature engineering spécifique, compromis de sélection de modèles et structure professionnelle de projets ML." }
+        }
+      },
+      {
+        id: "container-registry", name: "Smart Container Registry", emoji: "🐳", category: "internship", date: "Jun 2025 – Aug 2025",
+        tagline: { en: "AI-powered Docker storage optimizer for Kubernetes", fr: "Optimiseur de stockage Docker pour Kubernetes par IA" },
+        accentColor: "#38bdf8", watermark: "K8S",
+        status: { en: "Phase 1 Delivered", fr: "Phase 1 Livrée" }, statusType: "p1",
+        duration: "3 months", team: "Solo (Internship)",
+        tech: ["Docker","Kubernetes","S3","AI","NestJS","Chatbot"],
+        myRole: { en: "Full project — sole intern developer", fr: "Projet complet — seul développeur stagiaire" },
+        links: [{ label: "Frontend", url: "https://github.com/Rayen-Chemlali/smart-sontainer-registry-frontend" }, { label: "Backend", url: "https://github.com/Rayen-Chemlali/smart-sontainer-registry-backend" }],
+        tabs: {
+          overview: { en: "Developed at Talan Tunisie Consulting. Smart Container Registry optimizes Docker image storage costs in enterprise Kubernetes environments. Phase 1 delivers: AI chatbot for storage insights, unified K8s/S3 dashboard, and configurable automated image deletion rules engine.", fr: "Développé chez Talan Tunisie Consulting. Smart Container Registry optimise les coûts de stockage Docker en environnement Kubernetes d'entreprise. Phase 1 : chatbot IA, tableau de bord K8s/S3 unifié et moteur de règles de suppression." },
+          features: { en: ["AI conversational chatbot for storage cost analysis","Unified Kubernetes + S3 metrics dashboard","Configurable automated image deletion rules","Cost tracking and savings reporting"], fr: ["Chatbot IA pour analyse des coûts de stockage","Tableau de bord unifié K8s + S3","Règles de suppression d'images automatisées","Suivi des coûts et rapports d'économies"] },
+          challenges: { en: "Aggregating metrics from heterogeneous sources (K8s API, S3 SDK) into a consistent unified model required careful abstraction design.", fr: "Agréger des métriques de sources hétérogènes (API K8s, SDK S3) dans un modèle unifié cohérent a nécessité une conception d'abstraction soignée." },
+          learnings: { en: "Container ecosystems, Kubernetes API interaction, cloud storage cost optimization, and enterprise-grade internal tooling.", fr: "Écosystèmes de conteneurs, interaction avec l'API Kubernetes, optimisation des coûts de stockage cloud et outils internes de qualité entreprise." }
+        }
       }
-    },
-    {
-      role: { en: "Summer Intern", fr: "Stagiaire d'Été" },
-      company: "Talan Tunisie Consulting",
-      period: "Jul 2024 – Aug 2024",
-      type: { en: "Internship", fr: "Stage" },
-      description: {
-        en: "Built an HR Management Application with NestJS backend and React frontend, focusing on user experience optimization, role-based access control, and application security hardening.",
-        fr: "Développement d'une application de gestion RH avec backend NestJS et frontend React, optimisation UX, contrôle d'accès par rôles et renforcement de la sécurité."
+    ],
+    education: [
+      {
+        institution: "INSAT",
+        full: "Institut National des Sciences Appliquées et de Technologie",
+        degree: { en: "Engineering Degree — Software Engineering", fr: "Diplôme d'Ingénieur — Génie Logiciel" },
+        period: "2022 – Present",
+        highlights: { en: ["Ranked 32nd / 410 — 1st year common cycle (MPI)","Ranked 5th / 90 — 2nd year preparatory cycle","Ranked 6th / 96 — 1st year engineering cycle"], fr: ["Classé 32ème / 410 — 1ère année tronc commun (MPI)","Classé 5ème / 90 — 2ème année préparatoire","Classé 6ème / 96 — 1ère année cycle ingénieur"] }
+      },
+      {
+        institution: { en: "Baccalaureate in Mathematics", fr: "Baccalauréat en Mathématiques" },
+        full: "Lycée — Tunisia",
+        degree: { en: "Mathematics Baccalaureate — Highest Honors", fr: "Baccalauréat Mathématiques — Mention Très Bien" },
+        period: "2022",
+        highlights: { en: ["Highest Honors — 18.16 / 20","Strong mathematical foundation for CS and AI"], fr: ["Mention Très Bien — 18.16 / 20","Solide base mathématique pour l'informatique et l'IA"] }
       }
-    },
-    {
-      role: { en: "Summer Intern", fr: "Stagiaire d'Été" },
-      company: "Centre Informatique – Ministère des Finances",
-      period: "Jul 2023",
-      type: { en: "Internship", fr: "Stage" },
-      description: {
-        en: "First professional experience in an IT maintenance department. Introduction to enterprise IT infrastructure, ticketing systems, and professional work culture.",
-        fr: "Première expérience professionnelle dans un service de maintenance informatique. Introduction à l'infrastructure IT d'entreprise et à la culture professionnelle."
+    ],
+    certifications: [
+      { name: "Supervised Machine Learning", issuer: "Coursera", icon: "🎓", url: "https://www.coursera.org/account/accomplishments/verify/QNR4LRWNRVFB" },
+      { name: "Advanced Learning Algorithms", issuer: "Coursera", icon: "🎓", url: "https://www.coursera.org/account/accomplishments/verify/14QA5AQFDPQ4" },
+      { name: "Efficient LLM Customization", issuer: "NVIDIA Deep Learning Institute", icon: "🔥", url: "https://learn.nvidia.com/certificates?id=NiPMpiopQRGOW1fBsx3pZQ#" },
+      { name: "Building RAG Agents with LLMs", issuer: "NVIDIA Deep Learning Institute", icon: "🔥", url: "https://learn.nvidia.com/certificates?id=txMdLISsRYizzGSQXBmvAw#" },
+      { name: "Samsung Innovation Campus AI", issuer: "Samsung", icon: "⭐", url: "https://www.samsung.com/global/innovation/campus/" }
+    ],
+    achievements: [
+      {
+        place: "2nd", medal: "🥈",
+        title: { en: "Code Quest 2023", fr: "Code Quest 2023" },
+        subtitle: { en: "Competitive Programming Contest @ INSAT", fr: "Concours de Programmation Compétitive @ INSAT" },
+        color: "#94a3b8", url: "https://www.linkedin.com/posts/mohammed-achref-hemissi_exciting-news-untraceable-team-takes-2nd-activity-7152624917576892417-eWMU?utm_source=share&utm_medium=member_desktop&rcm=ACoAADx9s5YB71VOxyG-0xt1QKdyDM9DES69bfM"
+      },
+      {
+        place: "11th", medal: "🥉",
+        title: { en: "TCPC 2024 — Bronze Medal", fr: "TCPC 2024 — Médaille de Bronze" },
+        subtitle: { en: "Tunisian Collegiate Programming Contest", fr: "Concours Tunisien de Programmation Universitaire" },
+        color: "#cd7f32", url: "https://www.linkedin.com/posts/chemlali-rayen-69aa65243_competitiveprogramming-problemsolving-tcpc-activity-7246469206592958465-Jsn4?utm_source=share&utm_medium=member_desktop&rcm=ACoAADx9s5YB71VOxyG-0xt1QKdyDM9DES69bfM"
+      },
+      {
+        place: "3rd", medal: "🥉",
+        title: { en: "AI 4 New Generation Hackathon", fr: "Hackathon AI 4 New Generation" },
+        subtitle: { en: "by EY & Université Ibn Khaldoun — 2024", fr: "par EY & Université Ibn Khaldoun — 2024" },
+        color: "#f97316", url: "https://www.linkedin.com/posts/chemlali-rayen-69aa65243_ai-hackathon-llm-activity-7277362902594908160-I_RN?utm_source=share&utm_medium=member_desktop&rcm=ACoAADx9s5YB71VOxyG-0xt1QKdyDM9DES69bfM"
       }
-    }
-  ],
-  projects: [
-    {
-      id: "kickstream", name: "KickStream", emoji: "⚽",
-      category: "etude",
-      tagline: { en: "Real-time football prediction & streaming platform", fr: "Plateforme de prédiction et streaming football en temps réel" },
-      accentColor: "#00aaff", watermark: "KICK",
-      status: { en: "Completed", fr: "Terminé" }, statusType: "done",
-      duration: "3 months", team: "5 developers",
-      tech: ["Angular 20","NestJS","Rust","WebSocket","MySQL","Redis"],
-      myRole: { en: "Fixtures page, real-time timers, WebSocket integration, RxJS search/filtering, mock Rust server", fr: "Page des matchs, timers temps réel, intégration WebSocket, recherche RxJS, serveur Rust mock" },
-      links: [{ label: "View Code", url: "https://github.com/khalilghimaji/Projet-Web-Mobile-GL4" }],
-      tabs: {
-        overview: { en: "A full-stack real-time football prediction and streaming platform with microservices architecture. Angular 20 frontend communicates with a NestJS REST API, while a high-performance Rust/Actix WebSocket service streams live match events with sub-millisecond latency and 100k+ concurrent connection support.", fr: "Plateforme full-stack de prédiction et streaming football en temps réel avec architecture microservices. Frontend Angular 20, API REST NestJS, et service WebSocket Rust/Actix ultra-performant avec latence inférieure à la milliseconde." },
-        features: { en: ["Live match browsing across multiple leagues","Real-time goal, card and substitution events via WebSocket","Match predictions with gamified diamond currency","User rankings and leaderboards","OAuth (Google, GitHub) + Two-Factor Authentication","Detailed team and player statistics"], fr: ["Consultation des matchs en direct sur plusieurs ligues","Événements temps réel via WebSocket","Prédictions avec système de monnaie diamant gamifié","Classements et tableaux des leaders","OAuth + Authentification deux facteurs","Statistiques détaillées des équipes"] },
-        challenges: { en: "Achieving real-time performance at scale was the core challenge. Node.js couldn't handle the connection volume, which led us to choose Rust/Actix. Designing an efficient event detection algorithm to diff API snapshots and broadcast only meaningful changes required careful engineering.", fr: "Atteindre des performances temps réel à grande échelle était le défi principal. Node.js ne gérait pas le volume de connexions, d'où le choix de Rust/Actix. La conception d'un algorithme de détection d'événements efficace a nécessité une ingénierie soignée." },
-        learnings: { en: "Learned when to use Rust in a polyglot microservices stack, the actor concurrency model, Angular Signals for reactive state, and how to architect a gamified prediction system from scratch.", fr: "Appris quand utiliser Rust dans une stack microservices polyglotte, le modèle d'acteurs, Angular Signals, et comment architecturer un système de prédiction gamifié." }
-      }
-    },
-    {
-      id: "medisys", name: "MediSys", emoji: "🏥",
-      category: "etude",
-      tagline: { en: "AI-powered medical management platform", fr: "Plateforme de gestion médicale propulsée par l'IA" },
-      accentColor: "#a855f7", watermark: "MEDI",
-      status: { en: "In Development", fr: "En Développement" }, statusType: "dev",
-      duration: "8 months", team: "4 developers",
-      tech: ["NestJS","Next.js","GraphQL","WebSocket","Python","OCR","AI"],
-      myRole: { en: "Backend architecture and AI/OCR integration module", fr: "Architecture backend et module d'intégration IA/OCR" },
-      links: [{ label: "Frontend", url: "https://github.com/Khalil-Ghimaji/DoussiyaFidaya" }, { label: "Backend", url: "https://github.com/Rayen-Chemlali/DoussiyaFidaya" }, { label: "AI / OCR", url: "https://github.com/Rayen-Chemlali/PPP-OCR" }],
-      tabs: {
-        overview: { en: "Built for the 'AI in Healthcare' competition. MediSys handles full medical workflows: consultations, appointments, analyses, prescriptions, and patient records. Hybrid GraphQL/REST API with SSE and WebSocket for real-time features, and an AI module for medical document OCR processing.", fr: "Développé pour la compétition 'AI in Healthcare'. MediSys gère les workflows médicaux complets : consultations, rendez-vous, analyses, prescriptions et dossiers patients. API hybride GraphQL/REST avec SSE, WebSocket, et module IA pour l'OCR." },
-        features: { en: ["Full medical workflow: appointments, consultations, prescriptions","AI-powered OCR for medical document digitization","Real-time notifications via WebSocket and SSE","Role-based access: doctors, patients, administrators","Hybrid GraphQL/REST API"], fr: ["Workflow médical complet : rendez-vous, consultations, prescriptions","OCR IA pour numérisation de documents médicaux","Notifications temps réel via WebSocket et SSE","Accès par rôles : médecins, patients, administrateurs","API hybride GraphQL/REST"] },
-        challenges: { en: "Integrating OCR in a medical context required handling high document variability. Designing a GraphQL schema flexible enough for multiple medical specialties while keeping queries performant was also a major challenge.", fr: "L'intégration OCR dans un contexte médical nécessitait de gérer une grande variabilité documentaire. La conception d'un schéma GraphQL flexible pour plusieurs spécialités médicales tout en maintenant de bonnes performances était un défi majeur." },
-        learnings: { en: "Deep expertise in GraphQL schema design, hybrid API architectures, OCR pipeline integration, and healthcare data modeling.", fr: "Expertise approfondie en conception de schémas GraphQL, architectures API hybrides, intégration de pipelines OCR et modélisation de données de santé." }
-      }
-    },
-    {
-      id: "erp", name: "Mini-ERP System", emoji: "📊",
-      category: "etude",
-      tagline: { en: "Enterprise resource planning for sales operations", fr: "Système ERP pour les opérations de vente" },
-      accentColor: "#f59e0b", watermark: "ERP",
-      status: { en: "Completed", fr: "Terminé" }, statusType: "done",
-      duration: "4 months", team: "3 developers",
-      tech: ["ASP.NET","C#","SQL Server"],
-      myRole: { en: "Backend architecture, database design, business logic", fr: "Architecture backend, conception base de données, logique métier" },
-      links: [{ label: "View Code", url: "https://github.com/Khalil-Ghimaji/dotnetERP" }],
-      tabs: {
-        overview: { en: "A complete ERP system covering the entire sales process with four integrated modules: order management, inventory management, invoicing, and customer management. Built with ASP.NET and SQL Server for enterprise-grade reliability.", fr: "Système ERP complet couvrant l'intégralité du processus de vente avec quatre modules intégrés : gestion des commandes, stocks, facturation et clients. Développé avec ASP.NET et SQL Server." },
-        features: { en: ["Order management with full lifecycle tracking","Inventory management with stock level alerts","Invoice generation and management","Customer relationship module","Integrated reporting and dashboards"], fr: ["Gestion des commandes avec suivi du cycle de vie","Gestion des stocks avec alertes de niveau","Génération et gestion des factures","Module de gestion de la relation client","Tableaux de bord et rapports intégrés"] },
-        challenges: { en: "Designing a normalized database schema supporting complex business rules across all modules without redundancy. Implementing transaction management to ensure data consistency across the order-inventory-invoice pipeline.", fr: "Conception d'un schéma de base de données normalisé supportant des règles métier complexes sans redondance. Implémentation de la gestion des transactions pour la cohérence des données." },
-        learnings: { en: "Enterprise application architecture with ASP.NET, relational database design for business apps, and ERP business logic end-to-end.", fr: "Architecture d'application d'entreprise avec ASP.NET, conception de bases de données relationnelles pour applications business, et logique ERP de bout en bout." }
-      }
-    },
-    {
-      id: "interim", name: "InterimCo Website", emoji: "🌐",
-      category: "etude",
-      tagline: { en: "Corporate site built in PHP then migrated to Symfony", fr: "Site corporate développé en PHP puis migré vers Symfony" },
-      accentColor: "#10b981", watermark: "SYM",
-      status: { en: "Completed", fr: "Terminé" }, statusType: "done",
-      duration: "6 months", team: "Solo",
-      tech: ["PHP","Symfony","Doctrine ORM","MySQL","MVC"],
-      myRole: { en: "Full project — sole developer", fr: "Projet complet — développeur unique" },
-      links: [{ label: "Symfony Version", url: "https://github.com/Rayen-Chemlali/InterimCo-symfony" }, { label: "Native PHP Version", url: "https://github.com/Rayen-Chemlali/Interim-Co-webApplication" }],
-      tabs: {
-        overview: { en: "A major milestone in my web dev journey. Built a full corporate website for an interim staffing company, first in native PHP, then fully refactored and migrated to Symfony — gaining deep experience with MVC architecture, Symfony routing, and Doctrine ORM.", fr: "Étape majeure dans mon parcours. Site corporate complet d'une entreprise intérimaire, d'abord en PHP natif, puis entièrement migré vers Symfony — maîtrise approfondie de l'architecture MVC, du routing Symfony et de Doctrine ORM." },
-        features: { en: ["Corporate pages: services, team, contact","Job listing and application management","Admin panel for content management","Full form handling and validation"], fr: ["Pages corporate : services, équipe, contact","Gestion des offres d'emploi et candidatures","Panneau d'administration","Gestion complète des formulaires et validation"] },
-        challenges: { en: "Migrating a working PHP app to Symfony without breaking functionality required careful planning. Understanding Symfony's bundle system and Doctrine entity mapping had a steep but rewarding learning curve.", fr: "Migrer une application PHP fonctionnelle vers Symfony sans casser les fonctionnalités a nécessité une planification minutieuse. La courbe d'apprentissage de Symfony était raide mais enrichissante." },
-        learnings: { en: "In-depth Symfony knowledge, MVC in a real project, Doctrine ORM, and the long-term value of migrating legacy code to a proper framework.", fr: "Connaissance approfondie de Symfony, MVC dans un vrai projet, Doctrine ORM, et la valeur à long terme de la migration de code legacy vers un framework structuré." }
-      }
-    },
-    {
-      id: "copilot", name: "Strategy Copilot", emoji: "🤖",
-      category: "freelance",
-      tagline: { en: "AI-powered business diagnostics and strategy generator", fr: "Générateur de stratégie et diagnostics business par IA" },
-      accentColor: "#06b6d4", watermark: "AI",
-      status: { en: "Completed", fr: "Terminé" }, statusType: "done",
-      duration: "Freelance", team: "Solo",
-      tech: ["Python","AI","Chatbot","Data Viz","PDF Export"],
-      myRole: { en: "Full project — sole developer", fr: "Projet complet — développeur unique" },
-      links: [{ label: "View Code", url: "#" }],
-      tabs: {
-        overview: { en: "An AI-powered business strategy assistant that generates complete business diagnostics, financial projections, and market analysis through a conversational chatbot. Visualizes strategic data as interactive graphs and exports results as PDF reports or pitch decks.", fr: "Assistant stratégique IA générant diagnostics business complets, projections financières et analyses de marché via chatbot conversationnel. Visualisations en graphiques interactifs, exports PDF et pitch deck." },
-        features: { en: ["Conversational AI chatbot for business questions","Automated business diagnostic generation","Financial projection modeling","Market analysis with interactive graph visualizations","PDF and pitch deck export"], fr: ["Chatbot IA conversationnel pour questions business","Génération automatisée de diagnostics","Modélisation de projections financières","Analyses de marché avec graphiques interactifs","Export PDF et pitch deck"] },
-        challenges: { en: "Structuring unstructured business input into coherent, actionable diagnostics required careful prompt engineering and output validation.", fr: "Structurer des données business non structurées en diagnostics cohérents a nécessité une ingénierie de prompts soignée et une validation rigoureuse des sorties." },
-        learnings: { en: "Advanced prompt engineering, building AI pipelines that produce structured business outputs, and data visualization for strategic content.", fr: "Ingénierie de prompts avancée, construction de pipelines IA produisant des sorties structurées, et visualisation de données pour contenu stratégique." }
-      }
-    },
-    {
-      id: "shannon", name: "Shannon", emoji: "⚙️",
-      category: "freelance",
-      tagline: { en: "Open-source Simulink-inspired visual code generator", fr: "Générateur de code visuel open-source inspiré de Simulink" },
-      accentColor: "#8b5cf6", watermark: "SHN",
-      status: { en: "Completed", fr: "Terminé" }, statusType: "done",
-      duration: "Freelance", team: "2 developers",
-      tech: ["Canvas API","Graph Model","Code Generation","Open Source"],
-      myRole: { en: "Co-developer — canvas engine and code generation", fr: "Co-développeur — moteur canvas et génération de code" },
-      links: [{ label: "View Code", url: "#" }],
-      tabs: {
-        overview: { en: "Co-developed Shannon, a free open-source alternative to Simulink. An interactive visual canvas lets users place and connect functional blocks to model systems, then automatically generates executable code from the graph. Built for engineers needing accessible model-based design tooling.", fr: "Co-développement de Shannon, alternative open-source gratuite à Simulink. Canvas visuel interactif pour modéliser des systèmes par blocs et liens, avec génération automatique de code exécutable." },
-        features: { en: ["Interactive drag-and-drop block canvas","Block and link modeling system","Integrated code generation engine","Export to multiple code targets"], fr: ["Canvas de blocs interactif drag-and-drop","Système de modélisation par blocs et liens","Moteur de génération de code intégré","Export vers plusieurs cibles de code"] },
-        challenges: { en: "Building a reliable graph-to-code compiler handling cycles, ordering, and block type validation was the core algorithmic challenge.", fr: "Construire un compilateur graphe-vers-code gérant les cycles, l'ordonnancement et la validation des types de blocs était le défi algorithmique central." },
-        learnings: { en: "Graph data structures for UI, visual programming language design, and building developer tools from scratch.", fr: "Structures de données graphes pour UI, conception de langages de programmation visuels, et développement d'outils from scratch." }
-      }
-    },
-    {
-      id: "ml-suite", name: "ML Projects Suite", emoji: "🧠",
-      category: "stage",
-      tagline: { en: "5 end-to-end ML projects across domains", fr: "5 projets machine learning complets sur différents domaines" },
-      accentColor: "#22c55e", watermark: "ML",
-      status: { en: "Completed", fr: "Terminé" }, statusType: "done",
-      duration: "1 month", team: "Solo",
-      tech: ["Python","Scikit-learn","TensorFlow","CV","NLP","Audio"],
-      myRole: { en: "Full project — sole developer", fr: "Projet complet — développeur unique" },
-      links: [{ label: "View Code", url: "#" }],
-      tabs: {
-        overview: { en: "A suite of 5 complete ML projects built during the Elevvo Pathways internship. Each covers the full pipeline: data collection, preprocessing, EDA, feature engineering, model training, evaluation, and deployment packaging. Domains: clustering, classification, time series, computer vision, audio.", fr: "Suite de 5 projets ML complets réalisés lors du stage Elevvo Pathways. Pipeline complet : collecte, prétraitement, EDA, feature engineering, entraînement, évaluation et déploiement." },
-        features: { en: ["Customer segmentation with clustering","Binary and multi-class classification pipelines","Time series forecasting with LSTM/ARIMA","Image classification with CNNs","Audio classification with spectral features"], fr: ["Segmentation client par clustering","Pipelines de classification binaire et multi-classes","Prévision de séries temporelles LSTM/ARIMA","Classification d'images avec CNNs","Classification audio avec features spectrales"] },
-        challenges: { en: "Each domain had unique data challenges — audio spectrogram extraction, time series stationarity, and class imbalance all required domain-specific solutions.", fr: "Chaque domaine avait ses défis spécifiques — spectrogrammes audio, stationnarité des séries temporelles, déséquilibre de classes." },
-        learnings: { en: "Breadth of the ML landscape, domain-specific feature engineering, model selection trade-offs, and professional ML project structure.", fr: "Vue d'ensemble du paysage ML, feature engineering spécifique, compromis de sélection de modèles et structure professionnelle de projets ML." }
-      }
-    },
-    {
-      id: "container-registry", name: "ContainerIQ", emoji: "🐳",
-      category: "stage",
-      tagline: { en: "AI-powered Docker storage optimizer for Kubernetes", fr: "Optimiseur de stockage Docker pour Kubernetes par IA" },
-      accentColor: "#38bdf8", watermark: "K8S",
-      status: { en: "Phase 1 Delivered", fr: "Phase 1 Livrée" }, statusType: "p1",
-      duration: "3 months", team: "Solo (Internship)",
-      tech: ["Docker","Kubernetes","S3","AI","NestJS","Chatbot"],
-      myRole: { en: "Full project — sole intern developer", fr: "Projet complet — seul développeur stagiaire" },
-      links: [{ label: "View Code", url: "#" }],
-      tabs: {
-        overview: { en: "Developed at Talan Tunisie Consulting. Smart Container Registry optimizes Docker image storage costs in enterprise Kubernetes environments. Phase 1 delivers: AI chatbot for storage insights, unified K8s/S3 dashboard, and configurable automated image deletion rules engine.", fr: "Développé chez Talan Tunisie Consulting. Smart Container Registry optimise les coûts de stockage Docker en environnement Kubernetes d'entreprise. Phase 1 : chatbot IA, tableau de bord K8s/S3 unifié et moteur de règles de suppression." },
-        features: { en: ["AI conversational chatbot for storage cost analysis","Unified Kubernetes + S3 metrics dashboard","Configurable automated image deletion rules","Cost tracking and savings reporting"], fr: ["Chatbot IA pour analyse des coûts de stockage","Tableau de bord unifié K8s + S3","Règles de suppression d'images automatisées","Suivi des coûts et rapports d'économies"] },
-        challenges: { en: "Aggregating metrics from heterogeneous sources (K8s API, S3 SDK) into a consistent unified model required careful abstraction design.", fr: "Agréger des métriques de sources hétérogènes (API K8s, SDK S3) dans un modèle unifié cohérent a nécessité une conception d'abstraction soignée." },
-        learnings: { en: "Container ecosystems, Kubernetes API interaction, cloud storage cost optimization, and enterprise-grade internal tooling.", fr: "Écosystèmes de conteneurs, interaction avec l'API Kubernetes, optimisation des coûts de stockage cloud et outils internes de qualité entreprise." }
-      }
-    }
-  ],
-  education: [
-    {
-      institution: "INSAT",
-      full: "Institut National des Sciences Appliquées et de Technologie",
-      degree: { en: "Engineering Degree — Software Engineering", fr: "Diplôme d'Ingénieur — Génie Logiciel" },
-      period: "2022 – Present",
-      highlights: { en: ["Ranked 32nd / 410 — 1st year common cycle (MPI)","Ranked 5th / 90 — 2nd year preparatory cycle","Ranked 6th / 96 — 1st year engineering cycle"], fr: ["Classé 32ème / 410 — 1ère année tronc commun (MPI)","Classé 5ème / 90 — 2ème année préparatoire","Classé 6ème / 96 — 1ère année cycle ingénieur"] }
-    },
-    {
-      institution: { en: "Baccalaureate in Mathematics", fr: "Baccalauréat en Mathématiques" },
-      full: "Lycée — Tunisia",
-      degree: { en: "Mathematics Baccalaureate — Highest Honors", fr: "Baccalauréat Mathématiques — Mention Très Bien" },
-      period: "2022",
-      highlights: { en: ["Highest Honors — 18.16 / 20","Strong mathematical foundation for CS and AI"], fr: ["Mention Très Bien — 18.16 / 20","Solide base mathématique pour l'informatique et l'IA"] }
-    }
-  ],
-  certifications: [
-    { name: "Supervised Machine Learning", issuer: "Coursera", icon: "🎓", url: "https://www.coursera.org/learn/machine-learning" },
-    { name: "Advanced Learning Algorithms", issuer: "Coursera", icon: "🎓", url: "https://www.coursera.org/learn/advanced-learning-algorithms" },
-    { name: "Efficient LLM Customization", issuer: "NVIDIA Deep Learning Institute", icon: "🔥", url: "https://www.nvidia.com/en-us/training/" },
-    { name: "Building RAG Agents with LLMs", issuer: "NVIDIA Deep Learning Institute", icon: "🔥", url: "https://www.nvidia.com/en-us/training/" },
-    { name: "Samsung Innovation Campus AI", issuer: "Samsung", icon: "⭐", url: "https://www.samsung.com/global/innovation/campus/" }
-  ],
-  achievements: [
-    {
-      place: "2nd", medal: "🥈",
-      title: { en: "Code Quest 2023", fr: "Code Quest 2023" },
-      subtitle: { en: "Competitive Programming Contest @ INSAT", fr: "Concours de Programmation Compétitive @ INSAT" },
-      color: "#94a3b8", url: "https://www.linkedin.com/in/chemlali-rayen-69aa65243/"
-    },
-    {
-      place: "11th", medal: "🥉",
-      title: { en: "TCPC 2024 — Bronze Medal", fr: "TCPC 2024 — Médaille de Bronze" },
-      subtitle: { en: "Tunisian Collegiate Programming Contest", fr: "Concours Tunisien de Programmation Universitaire" },
-      color: "#cd7f32", url: "https://www.linkedin.com/in/chemlali-rayen-69aa65243/"
-    },
-    {
-      place: "3rd", medal: "🥉",
-      title: { en: "AI 4 New Generation Hackathon", fr: "Hackathon AI 4 New Generation" },
-      subtitle: { en: "by EY & Université Ibn Khaldoun — 2024", fr: "par EY & Université Ibn Khaldoun — 2024" },
-      color: "#f97316", url: "https://www.linkedin.com/in/chemlali-rayen-69aa65243/"
-    }
-  ],
-  languages: [
-    { lang: "Arabic", level: { en: "Native", fr: "Langue maternelle" }, pct: 100 },
-    { lang: "French", level: { en: "Fluent", fr: "Courant" }, pct: 90 },
-    { lang: "English", level: { en: "Good", fr: "Bon niveau" }, pct: 75 },
-    { lang: "Spanish", level: { en: "Beginner", fr: "Débutant" }, pct: 20 }
-  ]
-};
+    ],
+    languages: [
+      { lang: "Arabic", level: { en: "Native", fr: "Langue maternelle" }, pct: 100 },
+      { lang: "French", level: { en: "Fluent", fr: "Courant" }, pct: 90 },
+      { lang: "English", level: { en: "Good", fr: "Bon niveau" }, pct: 75 },
+      { lang: "Spanish", level: { en: "Beginner", fr: "Débutant" }, pct: 20 }
+    ]
+  };
 
-// ═══════════════════════════════════════════════════════
-//  APP STATE & HELPERS
-// ═══════════════════════════════════════════════════════
-let lang = 'en';
-let currentSection = 'hero';
-let typewriterTimeout = null;
-let typewriterIndex = 0;
-let typewriterCharIndex = 0;
-let typewriterDeleting = false;
+  // ═══════════════════════════════════════════════════════
+  //  APP STATE & HELPERS
+  // ═══════════════════════════════════════════════════════
+  let lang = 'en';
+  let currentSection = 'hero';
+  let typewriterTimeout = null;
+  let typewriterIndex = 0;
+  let typewriterCharIndex = 0;
+  let typewriterDeleting = false;
 
-const t = (field) => {
-  if (!field) return '';
-  if (typeof field === 'object' && (field.en !== undefined || field.fr !== undefined)) return field[lang] || field.en || '';
-  return field;
-};
+  const t = (field) => {
+    if (!field) return '';
+    if (typeof field === 'object' && (field.en !== undefined || field.fr !== undefined)) return field[lang] || field.en || '';
+    return field;
+  };
 
-const NAV_ITEMS = [
-  { id: 'hero',          icon: '⌂', label: { en: 'Home',           fr: 'Accueil' } },
-  { id: 'about',         icon: '◉', label: { en: 'About',          fr: 'À Propos' } },
-  { id: 'skills',        icon: '✦', label: { en: 'Skills',         fr: 'Compétences' } },
-  { id: 'experience',    icon: '◈', label: { en: 'Experience',     fr: 'Expérience' } },
-  { id: 'projects',      icon: '⬡', label: { en: 'Projects',       fr: 'Projets' } },
-  { id: 'education',     icon: '◎', label: { en: 'Education',      fr: 'Formation' } },
-  { id: 'achievements',  icon: '◆', label: { en: 'Achievements',   fr: 'Récompenses' } },
-  { id: 'certifications',icon: '◇', label: { en: 'Certifications', fr: 'Certifications' } },
-  { id: 'contact',       icon: '◉', label: { en: 'Contact',        fr: 'Contact' } }
-];
+  const NAV_ITEMS = [
+    { id: 'hero',          icon: '⌂', label: { en: 'Home',           fr: 'Accueil' } },
+    { id: 'about',         icon: '◉', label: { en: 'About',          fr: 'À Propos' } },
+    { id: 'skills',        icon: '✦', label: { en: 'Skills',         fr: 'Compétences' } },
+    { id: 'experience',    icon: '◈', label: { en: 'Experience',     fr: 'Expérience' } },
+    { id: 'projects',      icon: '⬡', label: { en: 'Projects',       fr: 'Projets' } },
+    { id: 'education',     icon: '◎', label: { en: 'Education',      fr: 'Formation' } },
+    { id: 'achievements',  icon: '◆', label: { en: 'Achievements',   fr: 'Récompenses' } },
+    { id: 'certifications',icon: '◇', label: { en: 'Certifications', fr: 'Certifications' } },
+    { id: 'contact',       icon: '◉', label: { en: 'Contact',        fr: 'Contact' } }
+  ];
 
-const UI_LABELS = {
-  hero_work:    { en: 'View My Work',        fr: 'Voir Mon Travail' },
-  hero_cv:      { en: 'Download CV',         fr: 'Télécharger CV' },
-  stat_year:    { en: 'Year at INSAT',       fr: 'Année à l\'INSAT' },
-  stat_bac:     { en: 'Baccalaureate Score', fr: 'Note au Baccalauréat' },
-  stat_rank:    { en: 'Best Engineering Rank',fr: 'Meilleur Rang Ingénieur' },
-  about_lbl:    { en: '// 02_about',         fr: '// 02_à_propos' },
-  about_title:  { en: 'About Me',            fr: 'À Propos' },
-  skills_lbl:   { en: '// 03_skills',        fr: '// 03_compétences' },
-  skills_title: { en: 'My Stack',            fr: 'Mon Stack' },
-  exp_lbl:      { en: '// 04_experience',    fr: '// 04_expérience' },
-  exp_title:    { en: 'Experience',          fr: 'Expérience' },
-  proj_lbl:     { en: '// 05_projects',      fr: '// 05_projets' },
-  proj_title:   { en: 'My Work',             fr: 'Mes Projets' },
-  edu_lbl:      { en: '// 06_education',     fr: '// 06_formation' },
-  edu_title:    { en: 'Education',           fr: 'Formation' },
-  ach_lbl:      { en: '// 07_achievements',  fr: '// 07_récompenses' },
-  ach_title:    { en: '🏆 Achievements',     fr: '🏆 Récompenses' },
-  cert_lbl:     { en: '// 08_certifications',fr: '// 08_certifications' },
-  cert_title:   { en: '📜 Certifications',   fr: '📜 Certifications' },
-  contact_lbl:  { en: '// 09_contact',       fr: '// 09_contact' },
-  contact_title:{ en: 'Get In Touch',        fr: 'Me Contacter' },
-  view_details: { en: '→ View Details',      fr: '→ Voir Détails' },
-  view_post:    { en: '→ View Post',         fr: '→ Voir Post' },
-  view_cert:    { en: '→ View Certificate',  fr: '→ Voir Certificat' },
-  tab_overview: { en: 'Overview',            fr: 'Vue d\'ensemble' },
-  tab_features: { en: 'Features',            fr: 'Fonctionnalités' },
-  tab_challenges:{ en: 'Challenges',         fr: 'Défis' },
-  tab_learnings:{ en: 'Key Learnings',       fr: 'Apprentissages' },
-  my_role:      { en: '// my_role',          fr: '// mon_rôle' },
-  form_name:    { en: 'Name',                fr: 'Nom' },
-  form_email:   { en: 'Email',               fr: 'Email' },
-  form_subject: { en: 'Subject',             fr: 'Sujet' },
-  form_message: { en: 'Message',             fr: 'Message' },
-  form_send:    { en: 'Send Message',        fr: 'Envoyer' },
-  footer_copy:  { en: '© 2026 Rayen Chemlali', fr: '© 2026 Rayen Chemlali' },
-  footer_made:  { en: 'Built with ☕ in Tunis, Tunisia 🇹🇳', fr: 'Fait avec ☕ à Tunis, Tunisie 🇹🇳' }
-};
+  const UI_LABELS = {
+    cat_internship: { en: 'Internship Projects', fr: 'Projets de Stage' },
+    cat_freelance:  { en: 'Freelance Projects',  fr: 'Projets Freelance' },
+    cat_academic:   { en: 'Academic Projects',   fr: 'Projets Académiques' },
+    hero_work:    { en: 'View My Work',        fr: 'Voir Mon Travail' },
+    hero_cv:      { en: 'Download CV',         fr: 'Télécharger CV' },
+    stat_year:    { en: 'Year at INSAT',       fr: 'Année à l\'INSAT' },
+    stat_bac:     { en: 'Baccalaureate Score', fr: 'Note au Baccalauréat' },
+    stat_rank:    { en: 'Best Engineering Rank',fr: 'Meilleur Rang Ingénieur' },
+    about_lbl:    { en: '// 02_about',         fr: '// 02_à_propos' },
+    about_title:  { en: 'About Me',            fr: 'À Propos' },
+    skills_lbl:   { en: '// 03_skills',        fr: '// 03_compétences' },
+    skills_title: { en: 'My Stack',            fr: 'Mon Stack' },
+    exp_lbl:      { en: '// 04_experience',    fr: '// 04_expérience' },
+    exp_title:    { en: 'Experience',          fr: 'Expérience' },
+    proj_lbl:     { en: '// 05_projects',      fr: '// 05_projets' },
+    proj_title:   { en: 'My Work',             fr: 'Mes Projets' },
+    edu_lbl:      { en: '// 06_education',     fr: '// 06_formation' },
+    edu_title:    { en: 'Education',           fr: 'Formation' },
+    ach_lbl:      { en: '// 07_achievements',  fr: '// 07_récompenses' },
+    ach_title:    { en: '🏆 Achievements',     fr: '🏆 Récompenses' },
+    cert_lbl:     { en: '// 08_certifications',fr: '// 08_certifications' },
+    cert_title:   { en: '📜 Certifications',   fr: '📜 Certifications' },
+    contact_lbl:  { en: '// 09_contact',       fr: '// 09_contact' },
+    contact_title:{ en: 'Get In Touch',        fr: 'Me Contacter' },
+    view_details: { en: '→ View Details',      fr: '→ Voir Détails' },
+    view_post:    { en: '→ View Post',         fr: '→ Voir Post' },
+    view_cert:    { en: '→ View Certificate',  fr: '→ Voir Certificat' },
+    tab_overview: { en: 'Overview',            fr: 'Vue d\'ensemble' },
+    tab_features: { en: 'Features',            fr: 'Fonctionnalités' },
+    tab_challenges:{ en: 'Challenges',         fr: 'Défis' },
+    tab_learnings:{ en: 'Key Learnings',       fr: 'Apprentissages' },
+    my_role:      { en: '// my_role',          fr: '// mon_rôle' },
+    form_name:    { en: 'Name',                fr: 'Nom' },
+    form_email:   { en: 'Email',               fr: 'Email' },
+    form_subject: { en: 'Subject',             fr: 'Sujet' },
+    form_message: { en: 'Message',             fr: 'Message' },
+    form_send:    { en: 'Send Message',        fr: 'Envoyer' },
+    footer_copy:  { en: '© 2026 Rayen Chemlali', fr: '© 2026 Rayen Chemlali' },
+    footer_made:  { en: '', fr: '' }
+  };
 
-// ═══════════════════════════════════════════════════════
-//  NAVIGATE
-// ═══════════════════════════════════════════════════════
-function navigate(id) {
-  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-  const sec = document.getElementById('section-' + id);
-  if (sec) sec.classList.add('active');
-  currentSection = id;
-  document.querySelectorAll('.nav-item').forEach(n => {
-    n.classList.toggle('active', n.dataset.section === id);
-  });
-  document.querySelectorAll('.mobile-nav-item').forEach(n => {
-    n.classList.toggle('active', n.dataset.section === id);
-  });
-  if (id === 'about') animateLangBars();
-}
+  // ═══════════════════════════════════════════════════════
+  //  NAVIGATE
+  // ═══════════════════════════════════════════════════════
+  function navigate(id) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    const sec = document.getElementById('section-' + id);
+    if (sec) sec.classList.add('active');
+    currentSection = id;
+    document.querySelectorAll('.nav-item').forEach(n => {
+      n.classList.toggle('active', n.dataset.section === id);
+    });
+    document.querySelectorAll('.mobile-nav-item').forEach(n => {
+      n.classList.toggle('active', n.dataset.section === id);
+    });
+    if (id === 'about') animateLangBars();
+  }
 
-// ═══════════════════════════════════════════════════════
-//  LANGUAGE SWITCH
-// ═══════════════════════════════════════════════════════
-function setLang(l) {
-  lang = l;
-  document.getElementById('html-root').lang = l;
-  document.getElementById('btn-en').classList.toggle('active', l === 'en');
-  document.getElementById('btn-fr').classList.toggle('active', l === 'fr');
-  updateSEOMeta();
-  renderAll();
-  navigate(currentSection);
-}
+  // ═══════════════════════════════════════════════════════
+  //  LANGUAGE SWITCH
+  // ═══════════════════════════════════════════════════════
+  function setLang(l) {
+    lang = l;
+    document.getElementById('html-root').lang = l;
+    document.getElementById('btn-en').classList.toggle('active', l === 'en');
+    document.getElementById('btn-fr').classList.toggle('active', l === 'fr');
+    updateSEOMeta();
+    renderAll();
+    navigate(currentSection);
+  }
 
-function updateSEOMeta() {
-  const d = PORTFOLIO_DATA;
-  document.getElementById('page-title').textContent = d.meta.name + ' | ' + t(d.meta.title) + ' – Tunis, Tunisia';
-  document.getElementById('meta-desc').setAttribute('content', t(d.meta.description));
-  document.getElementById('og-title').setAttribute('content', d.meta.name + ' | ' + t(d.meta.title));
-  document.getElementById('og-desc').setAttribute('content', t(d.meta.description));
-  document.getElementById('og-locale').setAttribute('content', lang === 'fr' ? 'fr_FR' : 'en_US');
-  document.getElementById('tw-title').setAttribute('content', d.meta.name + ' | ' + t(d.meta.title));
-  document.getElementById('tw-desc').setAttribute('content', t(d.meta.description));
-}
+  function updateSEOMeta() {
+    const d = PORTFOLIO_DATA;
+    document.getElementById('page-title').textContent = d.meta.name + ' | ' + t(d.meta.title) + ' – Tunis, Tunisia';
+    document.getElementById('meta-desc').setAttribute('content', t(d.meta.description));
+    document.getElementById('og-title').setAttribute('content', d.meta.name + ' | ' + t(d.meta.title));
+    document.getElementById('og-desc').setAttribute('content', t(d.meta.description));
+    document.getElementById('og-locale').setAttribute('content', lang === 'fr' ? 'fr_FR' : 'en_US');
+    document.getElementById('tw-title').setAttribute('content', d.meta.name + ' | ' + t(d.meta.title));
+    document.getElementById('tw-desc').setAttribute('content', t(d.meta.description));
+  }
 
-// ═══════════════════════════════════════════════════════
-//  RENDER NAV
-// ═══════════════════════════════════════════════════════
-function renderNav() {
-  const nav = document.getElementById('sidebar-nav');
-  const mob = document.getElementById('mobile-nav-inner');
-  nav.innerHTML = NAV_ITEMS.map(item => `
+  // ═══════════════════════════════════════════════════════
+  //  RENDER NAV
+  // ═══════════════════════════════════════════════════════
+  function renderNav() {
+    const nav = document.getElementById('sidebar-nav');
+    const mob = document.getElementById('mobile-nav-inner');
+    nav.innerHTML = NAV_ITEMS.map(item => `
     <a href="#${item.id}" class="nav-item${currentSection === item.id ? ' active' : ''}"
        data-section="${item.id}" onclick="navigate('${item.id}');return false;"
        aria-label="Navigate to ${t(item.label)} section">
@@ -1453,7 +1507,7 @@ function renderNav() {
       ${t(item.label)}
     </a>
   `).join('');
-  mob.innerHTML = NAV_ITEMS.map(item => `
+    mob.innerHTML = NAV_ITEMS.map(item => `
     <div class="mobile-nav-item${currentSection === item.id ? ' active' : ''}"
          data-section="${item.id}" onclick="navigate('${item.id}')"
          role="button" tabindex="0" aria-label="${t(item.label)}">
@@ -1461,69 +1515,66 @@ function renderNav() {
       ${t(item.label)}
     </div>
   `).join('');
-}
-
-// ═══════════════════════════════════════════════════════
-//  RENDER HERO
-// ═══════════════════════════════════════════════════════
-function renderHero() {
-  document.getElementById('hero-bio').textContent = lang === 'en'
-    ? "Engineering student at INSAT passionate about building intelligent systems, competing in algorithmic contests, and shipping real-world software."
-    : "Étudiant ingénieur à l'INSAT passionné par la construction de systèmes intelligents, les concours algorithmiques et le développement de logiciels à impact réel.";
-  document.getElementById('btn-work').textContent = t(UI_LABELS.hero_work);
-  document.getElementById('btn-cv').textContent = t(UI_LABELS.hero_cv);
-  document.getElementById('btn-cv').href = PORTFOLIO_DATA.meta.cvUrl;
-  const codeLines = [
-    `<span class="json-punc">{</span>`,
-    `  <span class="json-key">"name"</span><span class="json-punc">:</span> <span class="json-str">"Rayen Chemlali"</span><span class="json-punc">,</span>`,
-    `  <span class="json-key">"role"</span><span class="json-punc">:</span> <span class="json-str">"${lang==='en'?'Software Engineer':'Ingénieur Logiciel'}"</span><span class="json-punc">,</span>`,
-    `  <span class="json-key">"stack"</span><span class="json-punc">:</span> <span class="json-arr">["Angular"<span class="json-punc">,</span>"NestJS"<span class="json-punc">,</span>"Python"<span class="json-punc">,</span>"Rust"]</span><span class="json-punc">,</span>`,
-    `  <span class="json-key">"status"</span><span class="json-punc">:</span> <span class="json-bool">"open_to_opportunities"</span><span class="json-punc">,</span>`,
-    `  <span class="json-key">"location"</span><span class="json-punc">:</span> <span class="json-str">"Tunis, TN 🇹🇳"</span>`,
-    `<span class="json-punc">}</span>`
-  ];
-  document.getElementById('code-block').innerHTML = codeLines.join('<br>');
-}
-
-// ═══════════════════════════════════════════════════════
-//  TYPEWRITER
-// ═══════════════════════════════════════════════════════
-function startTypewriter() {
-  const roles = PORTFOLIO_DATA.meta.roles[lang];
-  const el = document.getElementById('typewriter');
-  if (!el) return;
-  if (typewriterTimeout) clearTimeout(typewriterTimeout);
-  typewriterIndex = 0; typewriterCharIndex = 0; typewriterDeleting = false;
-  function tick() {
-    const current = roles[typewriterIndex % roles.length];
-    if (typewriterDeleting) {
-      typewriterCharIndex--;
-      el.textContent = current.substring(0, typewriterCharIndex);
-      if (typewriterCharIndex === 0) { typewriterDeleting = false; typewriterIndex++; typewriterTimeout = setTimeout(tick, 400); return; }
-      typewriterTimeout = setTimeout(tick, 40);
-    } else {
-      typewriterCharIndex++;
-      el.textContent = current.substring(0, typewriterCharIndex);
-      if (typewriterCharIndex === current.length) { typewriterDeleting = true; typewriterTimeout = setTimeout(tick, 1800); return; }
-      typewriterTimeout = setTimeout(tick, 80);
-    }
   }
-  tick();
-}
 
-// ═══════════════════════════════════════════════════════
-//  RENDER ABOUT
-// ═══════════════════════════════════════════════════════
-function renderAbout() {
-  const el = document.getElementById('about-text');
-  el.innerHTML = t(PORTFOLIO_DATA.about).split('\n\n').map(p => `<p>${p}</p>`).join('');
-  document.getElementById('label-about').textContent = t(UI_LABELS.about_lbl);
-  document.getElementById('about-title').textContent = t(UI_LABELS.about_title);
-  document.getElementById('stat-year').textContent = t(UI_LABELS.stat_year);
-  document.getElementById('stat-bac').textContent = t(UI_LABELS.stat_bac);
-  document.getElementById('stat-rank').textContent = t(UI_LABELS.stat_rank);
-  const barsEl = document.getElementById('lang-bars');
-  barsEl.innerHTML = PORTFOLIO_DATA.languages.map(l => `
+  // ═══════════════════════════════════════════════════════
+  //  RENDER HERO
+  // ═══════════════════════════════════════════════════════
+  function renderHero() {
+    document.getElementById('hero-bio').textContent = lang === 'en'
+            ? "Engineering student at INSAT passionate about building intelligent systems, competing in algorithmic contests, and shipping real-world software."
+            : "Étudiant ingénieur à l'INSAT passionné par la construction de systèmes intelligents, les concours algorithmiques et le développement de logiciels à impact réel.";
+    document.getElementById('btn-work').textContent = t(UI_LABELS.hero_work);
+    document.getElementById('btn-cv').textContent = t(UI_LABELS.hero_cv);
+    document.getElementById('btn-cv').href = PORTFOLIO_DATA.meta.cvUrl;
+    const codeLines = [
+      `<span class="json-punc">{</span>`,
+      `  <span class="json-key">"name"</span><span class="json-punc">:</span> <span class="json-str">"Rayen Chemlali"</span><span class="json-punc">,</span>`,
+      `  <span class="json-key">"role"</span><span class="json-punc">:</span> <span class="json-str">"${lang==='en'?'Software Engineer':'Ingénieur Logiciel'}"</span><span class="json-punc">,</span>`,
+      `  <span class="json-key">"status"</span><span class="json-punc">:</span> <span class="json-bool">"open_to_opportunities"</span><span class="json-punc">,</span>`,
+      `  <span class="json-key">"location"</span><span class="json-punc">:</span> <span class="json-str">"Tunis, TN 🇹🇳"</span>`,
+      `<span class="json-punc">}</span>`
+    ];
+    document.getElementById('code-block').innerHTML = codeLines.join('<br>');
+  }
+
+  // ═══════════════════════════════════════════════════════
+  //  TYPEWRITER
+  // ═══════════════════════════════════════════════════════
+  function startTypewriter() {
+    const roles = PORTFOLIO_DATA.meta.roles[lang];
+    const el = document.getElementById('typewriter');
+    if (!el) return;
+    if (typewriterTimeout) clearTimeout(typewriterTimeout);
+    typewriterIndex = 0; typewriterCharIndex = 0; typewriterDeleting = false;
+    function tick() {
+      const current = roles[typewriterIndex % roles.length];
+      if (typewriterDeleting) {
+        typewriterCharIndex--;
+        el.textContent = current.substring(0, typewriterCharIndex);
+        if (typewriterCharIndex === 0) { typewriterDeleting = false; typewriterIndex++; typewriterTimeout = setTimeout(tick, 400); return; }
+        typewriterTimeout = setTimeout(tick, 40);
+      } else {
+        typewriterCharIndex++;
+        el.textContent = current.substring(0, typewriterCharIndex);
+        if (typewriterCharIndex === current.length) { typewriterDeleting = true; typewriterTimeout = setTimeout(tick, 1800); return; }
+        typewriterTimeout = setTimeout(tick, 80);
+      }
+    }
+    tick();
+  }
+
+  // ═══════════════════════════════════════════════════════
+  //  RENDER ABOUT
+  // ═══════════════════════════════════════════════════════
+  function renderAbout() {
+    const el = document.getElementById('about-text');
+    el.innerHTML = t(PORTFOLIO_DATA.about).split('\n\n').map(p => `<p>${p}</p>`).join('');
+    document.getElementById('label-about').textContent = t(UI_LABELS.about_lbl);
+    document.getElementById('about-title').textContent = t(UI_LABELS.about_title);
+    document.getElementById('stat-year').textContent = t(UI_LABELS.stat_year);
+    const barsEl = document.getElementById('lang-bars');
+    barsEl.innerHTML = PORTFOLIO_DATA.languages.map(l => `
     <div class="lang-bar-item">
       <div class="lang-bar-header">
         <span style="font-size:12px;font-family:var(--font-display);font-weight:600">${l.lang}</span>
@@ -1532,23 +1583,23 @@ function renderAbout() {
       <div class="lang-bar-track"><div class="lang-bar-fill" data-pct="${l.pct}" style="width:0%"></div></div>
     </div>
   `).join('');
-}
+  }
 
-function animateLangBars() {
-  setTimeout(() => {
-    document.querySelectorAll('.lang-bar-fill').forEach(el => {
-      el.style.width = el.dataset.pct + '%';
-    });
-  }, 100);
-}
+  function animateLangBars() {
+    setTimeout(() => {
+      document.querySelectorAll('.lang-bar-fill').forEach(el => {
+        el.style.width = el.dataset.pct + '%';
+      });
+    }, 100);
+  }
 
-// ═══════════════════════════════════════════════════════
-//  RENDER SKILLS
-// ═══════════════════════════════════════════════════════
-function renderSkills() {
-  document.getElementById('label-skills').textContent = t(UI_LABELS.skills_lbl);
-  document.getElementById('skills-title').textContent = t(UI_LABELS.skills_title);
-  document.getElementById('skills-grid').innerHTML = PORTFOLIO_DATA.skills.map(s => `
+  // ═══════════════════════════════════════════════════════
+  //  RENDER SKILLS
+  // ═══════════════════════════════════════════════════════
+  function renderSkills() {
+    document.getElementById('label-skills').textContent = t(UI_LABELS.skills_lbl);
+    document.getElementById('skills-title').textContent = t(UI_LABELS.skills_title);
+    document.getElementById('skills-grid').innerHTML = PORTFOLIO_DATA.skills.map(s => `
     <article class="skill-card">
       <div class="skill-card-header">
         <span class="skill-icon" role="img" aria-label="${t(s.category)} icon">${s.icon}</span>
@@ -1557,164 +1608,162 @@ function renderSkills() {
       <div class="skills-pills">${s.items.map(item => `<span class="skill-pill">${item}</span>`).join('')}</div>
     </article>
   `).join('');
-}
+  }
 
-// ═══════════════════════════════════════════════════════
-//  RENDER EXPERIENCE
-// ═══════════════════════════════════════════════════════
-function renderExperience() {
-  document.getElementById('label-experience').textContent = t(UI_LABELS.exp_lbl);
-  document.getElementById('exp-title').textContent = t(UI_LABELS.exp_title);
-  document.getElementById('timeline').innerHTML = PORTFOLIO_DATA.experience.map(e => `
+  // ═══════════════════════════════════════════════════════
+  //  RENDER EXPERIENCE
+  // ═══════════════════════════════════════════════════════
+  function renderExperience() {
+    document.getElementById('label-experience').textContent = t(UI_LABELS.exp_lbl);
+    document.getElementById('exp-title').textContent = t(UI_LABELS.exp_title);
+    document.getElementById('timeline').innerHTML = PORTFOLIO_DATA.experience.map(e => `
     <div class="timeline-item">
       <div class="timeline-dot" aria-hidden="true"></div>
-      <div style="margin-bottom:8px;display:flex;align-items:center;gap:8px;">
-        <span class="timeline-date-flag">📅 ${e.period}</span>
-        <span class="timeline-type-badge" style="margin:0">${t(e.type)}</span>
-      </div>
       <div class="timeline-card">
         <div class="timeline-header">
           <h3 class="timeline-role">${t(e.role)}</h3>
+          <span class="timeline-period">${e.period}</span>
         </div>
         <div class="timeline-company">${e.company}</div>
+        <span class="timeline-type-badge">${t(e.type)}</span>
         <p class="timeline-desc">${t(e.description)}</p>
       </div>
     </div>
   `).join('');
-}
+  }
 
-// ═══════════════════════════════════════════════════════
-//  RENDER PROJECTS
-// ═══════════════════════════════════════════════════════
-function renderProjects() {
-  document.getElementById('label-projects').textContent = t(UI_LABELS.proj_lbl);
-  document.getElementById('proj-title').textContent = t(UI_LABELS.proj_title);
+  // ═══════════════════════════════════════════════════════
+  //  RENDER PROJECTS
+  // ═══════════════════════════════════════════════════════
+  function renderProjects() {
+    document.getElementById('label-projects').textContent = t(UI_LABELS.proj_lbl);
+    document.getElementById('proj-title').textContent = t(UI_LABELS.proj_title);
 
-  const categories = [
-    { key: 'freelance', label: { en: 'Freelance', fr: 'Freelance' }, icon: '💼', badgeClass: 'cat-freelance' },
-    { key: 'stage',     label: { en: 'Internship', fr: 'Stage' },    icon: '🏢', badgeClass: 'cat-stage' },
-    { key: 'etude',     label: { en: 'Academic', fr: 'Études' },     icon: '🎓', badgeClass: 'cat-etude' }
-  ];
+    const CATS = [
+      { key: 'internship', icon: '🏢', label: UI_LABELS.cat_internship },
+      { key: 'freelance',  icon: '💼', label: UI_LABELS.cat_freelance },
+      { key: 'academic',   icon: '🎓', label: UI_LABELS.cat_academic }
+    ];
 
-  const allProjects = PORTFOLIO_DATA.projects;
-  let html = '';
-
-  categories.forEach(cat => {
-    const filtered = allProjects.filter(p => p.category === cat.key);
-    if (!filtered.length) return;
-    html += `<div class="projects-category-title">
-      <span>${cat.icon} ${t(cat.label)}</span>
-      <span class="cat-badge ${cat.badgeClass}">${filtered.length} ${filtered.length > 1 ? (lang === 'fr' ? 'projets' : 'projects') : (lang === 'fr' ? 'projet' : 'project')}</span>
-    </div>
-    <div class="projects-grid">`;
-    filtered.forEach(p => {
-      const i = allProjects.indexOf(p);
-      html += `<article class="project-card" style="--project-color:${p.accentColor}"
-               onclick="openModal(${i})"
-               role="button" tabindex="0"
-               aria-label="View details for ${p.name} project"
-               onkeydown="if(event.key==='Enter')openModal(${i})">
-        <div class="project-card-top">
-          <span class="project-emoji" role="img" aria-label="${p.name}">${p.emoji}</span>
-          <span class="project-status status-${p.statusType}">${t(p.status)}</span>
-        </div>
-        <h3 class="project-name">${p.name}</h3>
-        <p class="project-tagline">${t(p.tagline)}</p>
-        <div class="project-tech-row">${p.tech.slice(0,3).map(tech => `<span class="tech-chip">${tech}</span>`).join('')}${p.tech.length > 3 ? `<span class="tech-chip">+${p.tech.length-3}</span>` : ''}</div>
-        <div class="project-view-btn" aria-hidden="true">${t(UI_LABELS.view_details)}</div>
-      </article>`;
+    // Sort projects within each category by date descending (most recent first)
+    const allProjects = [...PORTFOLIO_DATA.projects].sort((a, b) => {
+      const getYear = d => parseInt((d || '').match(/\d{4}/)?.[0] || 0);
+      return getYear(b.date) - getYear(a.date);
     });
-    html += `</div>`;
-  });
 
-  // Remplacer le container projects-grid par un div générique
-  const container = document.getElementById('projects-grid');
-  container.className = '';
-  container.innerHTML = html;
-}
+    const container = document.getElementById('projects-container');
+    container.innerHTML = CATS.map(cat => {
+      const catProjects = allProjects.filter(p => p.category === cat.key);
+      if (!catProjects.length) return '';
+      return `
+      <div class="proj-category">
+        <div class="proj-category-header">
+          <span class="proj-category-icon" aria-hidden="true">${cat.icon}</span>
+          <span class="proj-category-label">${t(cat.label)}</span>
+          <span class="proj-category-count">${catProjects.length}</span>
+        </div>
+        <div class="projects-grid">
+          ${catProjects.map((p) => {
+        const idx = PORTFOLIO_DATA.projects.indexOf(p);
+        return `
+            <article class="project-card" style="--project-color:${p.accentColor}"
+                     onclick="openModal(${idx})"
+                     role="button" tabindex="0"
+                     aria-label="View details for ${p.name} project"
+                     onkeydown="if(event.key==='Enter')openModal(${idx})">
+              <div class="project-card-top">
+                <span class="project-emoji" role="img" aria-label="${p.name}">${p.emoji}</span>
+              </div>
+              <h3 class="project-name">${p.name}</h3>
+              <p class="project-tagline">${t(p.tagline)}</p>
+              <div class="project-tech-row">${p.tech.slice(0,3).map(tech => `<span class="tech-chip">${tech}</span>`).join('')}${p.tech.length > 3 ? `<span class="tech-chip">+${p.tech.length-3}</span>` : ''}</div>
+              ${p.date ? `<div class="project-date">${p.date}</div>` : ''}
+              <div class="project-view-btn" aria-hidden="true">${t(UI_LABELS.view_details)}</div>
+            </article>`;
+      }).join('')}
+        </div>
+      </div>
+    `;
+    }).join('');
+  }
 
-// ═══════════════════════════════════════════════════════
-//  MODAL
-// ═══════════════════════════════════════════════════════
-function openModal(idx) {
-  const p = PORTFOLIO_DATA.projects[idx];
-  document.getElementById('modal-watermark-el').textContent = p.watermark;
-  document.getElementById('modal-watermark-el').style.color = p.accentColor;
-  document.getElementById('modal-emoji-el').textContent = p.emoji;
-  document.getElementById('modal-emoji-el').setAttribute('aria-label', p.name + ' icon');
-  document.getElementById('modal-title-el').textContent = p.name;
-  document.getElementById('modal-title-el').style.color = p.accentColor;
-  document.getElementById('modal-badges-el').innerHTML = `
-    <span class="modal-badge">⏱ ${p.duration}</span>
+  // ═══════════════════════════════════════════════════════
+  //  MODAL
+  // ═══════════════════════════════════════════════════════
+  function openModal(idx) {
+    const p = PORTFOLIO_DATA.projects[idx];
+    document.getElementById('modal-watermark-el').textContent = p.watermark;
+    document.getElementById('modal-watermark-el').style.color = p.accentColor;
+    document.getElementById('modal-emoji-el').textContent = p.emoji;
+    document.getElementById('modal-emoji-el').setAttribute('aria-label', p.name + ' icon');
+    document.getElementById('modal-title-el').textContent = p.name;
+    document.getElementById('modal-title-el').style.color = p.accentColor;
+    document.getElementById('modal-badges-el').innerHTML = `
+    <span class="modal-badge">⏱ ${p.date || p.duration}</span>
     <span class="modal-badge">👥 ${p.team}</span>
-    <span class="modal-badge project-status status-${p.statusType}">${t(p.status)}</span>
   `;
-  document.getElementById('modal-tech-el').innerHTML = p.tech.map(tech => `<span class="tech-chip">${tech}</span>`).join('');
-  const tabs = [
-    { key: 'overview', label: t(UI_LABELS.tab_overview) },
-    { key: 'features', label: t(UI_LABELS.tab_features) },
-    { key: 'challenges', label: t(UI_LABELS.tab_challenges) },
-    { key: 'learnings', label: t(UI_LABELS.tab_learnings) }
-  ];
-  document.getElementById('modal-tabs-el').innerHTML = tabs.map((tab, i) => `
+    document.getElementById('modal-tech-el').innerHTML = p.tech.map(tech => `<span class="tech-chip">${tech}</span>`).join('');
+    const tabs = [
+      { key: 'overview', label: t(UI_LABELS.tab_overview) },
+      { key: 'features', label: t(UI_LABELS.tab_features) },
+      { key: 'challenges', label: t(UI_LABELS.tab_challenges) },
+      { key: 'learnings', label: t(UI_LABELS.tab_learnings) }
+    ];
+    document.getElementById('modal-tabs-el').innerHTML = tabs.map((tab, i) => `
     <div class="modal-tab${i===0?' active':''}" role="tab" aria-selected="${i===0}"
          onclick="switchModalTab('${tab.key}', this)" data-tab="${tab.key}">${tab.label}</div>
   `).join('');
-  document.getElementById('modal-tab-contents').innerHTML = tabs.map((tab, i) => {
-    let content = '';
-    if (tab.key === 'overview') {
-      content = `<p class="modal-overview">${t(p.tabs.overview)}</p>
-        <div class="modal-my-role">
-          <div class="modal-my-role-label">${t(UI_LABELS.my_role)}</div>
-          <div class="modal-my-role-text">${t(p.myRole)}</div>
-        </div>`;
-    } else if (tab.key === 'features') {
-      const feats = t(p.tabs.features);
-      content = `<ul class="modal-features-list">${(Array.isArray(feats) ? feats : []).map(f => `<li>${f}</li>`).join('')}</ul>`;
-    } else if (tab.key === 'challenges') {
-      content = `<p class="modal-text">${t(p.tabs.challenges)}</p>`;
-    } else if (tab.key === 'learnings') {
-      content = `<p class="modal-text">${t(p.tabs.learnings)}</p>`;
-    }
-    return `<div class="modal-tab-content${i===0?' active':''}" data-content="${tab.key}">${content}</div>`;
-  }).join('');
-  document.getElementById('modal-links-el').innerHTML = p.links.map(link => `
+    document.getElementById('modal-tab-contents').innerHTML = tabs.map((tab, i) => {
+      let content = '';
+      if (tab.key === 'overview') {
+        content = `<p class="modal-overview">${t(p.tabs.overview)}</p>`;
+      } else if (tab.key === 'features') {
+        const feats = t(p.tabs.features);
+        content = `<ul class="modal-features-list">${(Array.isArray(feats) ? feats : []).map(f => `<li>${f}</li>`).join('')}</ul>`;
+      } else if (tab.key === 'challenges') {
+        content = `<p class="modal-text">${t(p.tabs.challenges)}</p>`;
+      } else if (tab.key === 'learnings') {
+        content = `<p class="modal-text">${t(p.tabs.learnings)}</p>`;
+      }
+      return `<div class="modal-tab-content${i===0?' active':''}" data-content="${tab.key}">${content}</div>`;
+    }).join('');
+    document.getElementById('modal-links-el').innerHTML = p.links.map(link => `
     <a href="${link.url}" target="_blank" rel="noopener noreferrer" class="modal-link-btn"
        aria-label="${link.label} for ${p.name}">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
       ${link.label}
     </a>
   `).join('');
-  const overlay = document.getElementById('modal-overlay');
-  overlay.classList.add('open');
-  overlay.focus();
-  document.body.style.overflow = 'hidden';
-}
+    const overlay = document.getElementById('modal-overlay');
+    overlay.classList.add('open');
+    overlay.focus();
+    document.body.style.overflow = 'hidden';
+  }
 
-function switchModalTab(key, el) {
-  document.querySelectorAll('.modal-tab').forEach(t => t.classList.remove('active'));
-  el.classList.add('active');
-  document.querySelectorAll('.modal-tab-content').forEach(c => {
-    c.classList.toggle('active', c.dataset.content === key);
-  });
-}
+  function switchModalTab(key, el) {
+    document.querySelectorAll('.modal-tab').forEach(t => t.classList.remove('active'));
+    el.classList.add('active');
+    document.querySelectorAll('.modal-tab-content').forEach(c => {
+      c.classList.toggle('active', c.dataset.content === key);
+    });
+  }
 
-function closeModal() {
-  document.getElementById('modal-overlay').classList.remove('open');
-  document.body.style.overflow = '';
-}
+  function closeModal() {
+    document.getElementById('modal-overlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
 
-document.getElementById('modal-close-btn').addEventListener('click', closeModal);
-document.getElementById('modal-overlay').addEventListener('click', e => { if (e.target === document.getElementById('modal-overlay')) closeModal(); });
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+  document.getElementById('modal-close-btn').addEventListener('click', closeModal);
+  document.getElementById('modal-overlay').addEventListener('click', e => { if (e.target === document.getElementById('modal-overlay')) closeModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
-// ═══════════════════════════════════════════════════════
-//  RENDER EDUCATION
-// ═══════════════════════════════════════════════════════
-function renderEducation() {
-  document.getElementById('label-education').textContent = t(UI_LABELS.edu_lbl);
-  document.getElementById('edu-title').textContent = t(UI_LABELS.edu_title);
-  document.getElementById('edu-grid').innerHTML = PORTFOLIO_DATA.education.map(e => `
+  // ═══════════════════════════════════════════════════════
+  //  RENDER EDUCATION
+  // ═══════════════════════════════════════════════════════
+  function renderEducation() {
+    document.getElementById('label-education').textContent = t(UI_LABELS.edu_lbl);
+    document.getElementById('edu-title').textContent = t(UI_LABELS.edu_title);
+    document.getElementById('edu-grid').innerHTML = PORTFOLIO_DATA.education.map(e => `
     <article class="edu-card">
       <div class="edu-inst">${t(e.institution)}</div>
       <div class="edu-full">${e.full}</div>
@@ -1725,15 +1774,15 @@ function renderEducation() {
       </ul>
     </article>
   `).join('');
-}
+  }
 
-// ═══════════════════════════════════════════════════════
-//  RENDER ACHIEVEMENTS
-// ═══════════════════════════════════════════════════════
-function renderAchievements() {
-  document.getElementById('label-achievements').textContent = t(UI_LABELS.ach_lbl);
-  document.getElementById('ach-title').textContent = t(UI_LABELS.ach_title);
-  document.getElementById('achievements-grid').innerHTML = PORTFOLIO_DATA.achievements.map(a => `
+  // ═══════════════════════════════════════════════════════
+  //  RENDER ACHIEVEMENTS
+  // ═══════════════════════════════════════════════════════
+  function renderAchievements() {
+    document.getElementById('label-achievements').textContent = t(UI_LABELS.ach_lbl);
+    document.getElementById('ach-title').textContent = t(UI_LABELS.ach_title);
+    document.getElementById('achievements-grid').innerHTML = PORTFOLIO_DATA.achievements.map(a => `
     <article class="achievement-card"
              style="--a-color:${a.color};--a-color-dim:${a.color}18">
       <span class="achievement-medal" role="img" aria-label="${a.medal} medal">${a.medal}</span>
@@ -1743,21 +1792,21 @@ function renderAchievements() {
       </span>
       <h3 class="achievement-title">${t(a.title)}</h3>
       <p class="achievement-subtitle">${t(a.subtitle)}</p>
-      <a href="${a.url}" target="_blank" rel="noopener noreferrer"
-         class="achievement-link" aria-label="View post about ${t(a.title)}">
+      <button onclick="window.open('${a.url}','_blank','noopener,noreferrer')"
+         class="achievement-link" aria-label="View LinkedIn post about ${t(a.title)}">
         ${t(UI_LABELS.view_post)}
-      </a>
+      </button>
     </article>
   `).join('');
-}
+  }
 
-// ═══════════════════════════════════════════════════════
-//  RENDER CERTIFICATIONS
-// ═══════════════════════════════════════════════════════
-function renderCertifications() {
-  document.getElementById('label-certifications').textContent = t(UI_LABELS.cert_lbl);
-  document.getElementById('cert-title').textContent = t(UI_LABELS.cert_title);
-  document.getElementById('certs-grid').innerHTML = PORTFOLIO_DATA.certifications.map(c => `
+  // ═══════════════════════════════════════════════════════
+  //  RENDER CERTIFICATIONS
+  // ═══════════════════════════════════════════════════════
+  function renderCertifications() {
+    document.getElementById('label-certifications').textContent = t(UI_LABELS.cert_lbl);
+    document.getElementById('cert-title').textContent = t(UI_LABELS.cert_title);
+    document.getElementById('certs-grid').innerHTML = PORTFOLIO_DATA.certifications.map(c => `
     <article class="cert-card">
       <span class="cert-icon" role="img" aria-label="${c.issuer} certification">${c.icon}</span>
       <h3 class="cert-name">${c.name}</h3>
@@ -1768,16 +1817,16 @@ function renderCertifications() {
       </a>
     </article>
   `).join('');
-}
+  }
 
-// ═══════════════════════════════════════════════════════
-//  RENDER CONTACT
-// ═══════════════════════════════════════════════════════
-function renderContact() {
-  document.getElementById('label-contact').textContent = t(UI_LABELS.contact_lbl);
-  document.getElementById('contact-title').textContent = t(UI_LABELS.contact_title);
-  const d = PORTFOLIO_DATA.meta;
-  document.getElementById('contact-info').innerHTML = `
+  // ═══════════════════════════════════════════════════════
+  //  RENDER CONTACT
+  // ═══════════════════════════════════════════════════════
+  function renderContact() {
+    document.getElementById('label-contact').textContent = t(UI_LABELS.contact_lbl);
+    document.getElementById('contact-title').textContent = t(UI_LABELS.contact_title);
+    const d = PORTFOLIO_DATA.meta;
+    document.getElementById('contact-info').innerHTML = `
     <a href="mailto:${d.email}" class="contact-card" aria-label="Send email to ${d.email}">
       <span class="contact-card-icon" aria-hidden="true">✉</span>
       <div><div class="contact-card-label">EMAIL</div><div class="contact-card-val">${d.email}</div></div>
@@ -1799,142 +1848,195 @@ function renderContact() {
       <div><div class="contact-card-label">LOCATION</div><div class="contact-card-val">${d.location}</div></div>
     </div>
   `;
-  const fl = t(UI_LABELS.form_label);
-  document.getElementById('contact-form').innerHTML = `
-    <div class="form-group">
-      <label class="form-label" for="f-name">${t(UI_LABELS.form_name)}</label>
-      <input id="f-name" class="form-input" type="text" placeholder="${t(UI_LABELS.form_name)}..." autocomplete="name">
+    document.getElementById('contact-form').innerHTML = `
+    <div id="form-success" style="display:none;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.3);border-radius:10px;padding:20px;text-align:center;">
+      <div style="font-size:28px;margin-bottom:8px">✅</div>
+      <div style="font-size:14px;font-weight:700;color:#22c55e;margin-bottom:4px">${lang==='en'?'Message sent!':'Message envoyé !'}</div>
+      <div style="font-size:12px;color:var(--text-muted)">${lang==='en'?"I'll get back to you soon.":'Je vous répondrai bientôt.'}</div>
     </div>
-    <div class="form-group">
-      <label class="form-label" for="f-email">${t(UI_LABELS.form_email)}</label>
-      <input id="f-email" class="form-input" type="email" placeholder="you@email.com" autocomplete="email">
+    <div id="form-fields">
+      <div class="form-group">
+        <label class="form-label" for="f-name">${t(UI_LABELS.form_name)}</label>
+        <input id="f-name" class="form-input" type="text" placeholder="${t(UI_LABELS.form_name)}..." autocomplete="name">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="f-email">${t(UI_LABELS.form_email)}</label>
+        <input id="f-email" class="form-input" type="email" placeholder="you@email.com" autocomplete="email">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="f-subject">${t(UI_LABELS.form_subject)}</label>
+        <input id="f-subject" class="form-input" type="text" placeholder="${t(UI_LABELS.form_subject)}...">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="f-message">${t(UI_LABELS.form_message)}</label>
+        <textarea id="f-message" class="form-textarea" placeholder="${t(UI_LABELS.form_message)}..."></textarea>
+      </div>
+      <button class="btn-primary" id="form-submit-btn" onclick="handleFormSubmit()" style="align-self:flex-start" aria-label="Send contact message">
+        ${t(UI_LABELS.form_send)}
+      </button>
     </div>
-    <div class="form-group">
-      <label class="form-label" for="f-subject">${t(UI_LABELS.form_subject)}</label>
-      <input id="f-subject" class="form-input" type="text" placeholder="${t(UI_LABELS.form_subject)}...">
-    </div>
-    <div class="form-group">
-      <label class="form-label" for="f-message">${t(UI_LABELS.form_message)}</label>
-      <textarea id="f-message" class="form-textarea" placeholder="${t(UI_LABELS.form_message)}..."></textarea>
-    </div>
-    <button class="btn-primary" onclick="handleFormSubmit()" style="align-self:flex-start" aria-label="Send contact message">
-      ${t(UI_LABELS.form_send)}
-    </button>
   `;
-}
-
-function handleFormSubmit() {
-  const name = document.getElementById('f-name').value;
-  const email = document.getElementById('f-email').value;
-  const subject = document.getElementById('f-subject').value;
-  const message = document.getElementById('f-message').value;
-  if (!name || !email || !message) { alert(lang === 'en' ? 'Please fill in all required fields.' : 'Veuillez remplir tous les champs requis.'); return; }
-  window.location.href = `mailto:${PORTFOLIO_DATA.meta.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent('From: '+name+' ('+email+')\n\n'+message)}`;
-}
-
-// ═══════════════════════════════════════════════════════
-//  RENDER FOOTER
-// ═══════════════════════════════════════════════════════
-function renderFooter() {
-  document.getElementById('footer-left').innerHTML = t(UI_LABELS.footer_copy);
-  document.getElementById('footer-right').innerHTML = `<span>${t(UI_LABELS.footer_made)}</span>`;
-}
-
-// ═══════════════════════════════════════════════════════
-//  RENDER ALL
-// ═══════════════════════════════════════════════════════
-function renderAll() {
-  renderNav();
-  renderHero();
-  renderAbout();
-  renderSkills();
-  renderExperience();
-  renderProjects();
-  renderEducation();
-  renderAchievements();
-  renderCertifications();
-  renderContact();
-  renderFooter();
-  startTypewriter();
-}
-
-// ═══════════════════════════════════════════════════════
-//  PARTICLES
-// ═══════════════════════════════════════════════════════
-function initParticles() {
-  const canvas = document.getElementById('particles-canvas');
-  const ctx = canvas.getContext('2d');
-  let W, H, particles;
-  function resize() {
-    W = canvas.width = window.innerWidth;
-    H = canvas.height = window.innerHeight;
   }
-  function makeParticles() {
-    particles = Array.from({length: 60}, () => ({
-      x: Math.random() * W, y: Math.random() * H,
-      r: Math.random() * 1.5 + 0.3,
-      vx: (Math.random() - 0.5) * 0.2,
-      vy: (Math.random() - 0.5) * 0.2,
-      alpha: Math.random() * 0.4 + 0.1
-    }));
+
+  async function handleFormSubmit() {
+    const name = document.getElementById('f-name')?.value?.trim();
+    const email = document.getElementById('f-email')?.value?.trim();
+    const subject = document.getElementById('f-subject')?.value?.trim();
+    const message = document.getElementById('f-message')?.value?.trim();
+    if (!name || !email || !message) {
+      alert(lang === 'en' ? 'Please fill in Name, Email and Message.' : 'Veuillez remplir Nom, Email et Message.');
+      return;
+    }
+    const btn = document.getElementById('form-submit-btn');
+    btn.textContent = lang === 'en' ? 'Sending...' : 'Envoi...';
+    btn.disabled = true;
+
+    const FORMSPREE_ID = 'mkoqbpyn';
+
+    if (FORMSPREE_ID === 'YOUR_FORM_ID') {
+      // Fallback: open mailto if Formspree not configured yet
+      window.location.href = `mailto:${PORTFOLIO_DATA.meta.email}?subject=${encodeURIComponent(subject||'Portfolio Contact')}&body=${encodeURIComponent('From: '+name+' ('+email+')\n\n'+message)}`;
+      btn.textContent = t(UI_LABELS.form_send);
+      btn.disabled = false;
+      return;
+    }
+
+    try {
+      const res = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({ name, email, subject: subject||'Portfolio Contact', message })
+      });
+      if (res.ok) {
+        document.getElementById('form-fields').style.display = 'none';
+        document.getElementById('form-success').style.display = 'block';
+      } else {
+        throw new Error('Failed');
+      }
+    } catch {
+      alert(lang === 'en' ? 'Error sending. Please email directly: ' + PORTFOLIO_DATA.meta.email : 'Erreur d\'envoi. Contactez directement : ' + PORTFOLIO_DATA.meta.email);
+      btn.textContent = t(UI_LABELS.form_send);
+      btn.disabled = false;
+    }
   }
-  function draw() {
-    ctx.clearRect(0, 0, W, H);
-    particles.forEach(p => {
-      p.x += p.vx; p.y += p.vy;
-      if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
-      if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(0,212,255,${p.alpha})`;
-      ctx.fill();
+
+  // ═══════════════════════════════════════════════════════
+  //  RENDER FOOTER
+  // ═══════════════════════════════════════════════════════
+  function renderFooter() {
+    document.getElementById('footer-left').innerHTML = t(UI_LABELS.footer_copy);
+    document.getElementById('footer-right').innerHTML = `<span>${t(UI_LABELS.footer_made)}</span>`;
+  }
+
+  // ═══════════════════════════════════════════════════════
+  //  RENDER ALL
+  // ═══════════════════════════════════════════════════════
+  function renderAll() {
+    renderNav();
+    renderHero();
+    renderAbout();
+    renderSkills();
+    renderExperience();
+    renderProjects();
+    renderEducation();
+    renderAchievements();
+    renderCertifications();
+    renderContact();
+    renderFooter();
+    startTypewriter();
+  }
+
+  // ═══════════════════════════════════════════════════════
+  //  PARTICLES
+  // ═══════════════════════════════════════════════════════
+  function initParticles() {
+    const canvas = document.getElementById('particles-canvas');
+    const ctx = canvas.getContext('2d');
+    let W, H, particles;
+    function resize() {
+      W = canvas.width = window.innerWidth;
+      H = canvas.height = window.innerHeight;
+    }
+    function makeParticles() {
+      particles = Array.from({length: 60}, () => ({
+        x: Math.random() * W, y: Math.random() * H,
+        r: Math.random() * 1.5 + 0.3,
+        vx: (Math.random() - 0.5) * 0.2,
+        vy: (Math.random() - 0.5) * 0.2,
+        alpha: Math.random() * 0.4 + 0.1
+      }));
+    }
+    function draw() {
+      ctx.clearRect(0, 0, W, H);
+      particles.forEach(p => {
+        p.x += p.vx; p.y += p.vy;
+        if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
+        if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(0,212,255,${p.alpha})`;
+        ctx.fill();
+      });
+      requestAnimationFrame(draw);
+    }
+    resize(); makeParticles(); draw();
+    window.addEventListener('resize', () => { resize(); makeParticles(); });
+  }
+
+  // ═══════════════════════════════════════════════════════
+  //  SCHEMA.ORG JSON-LD
+  // ═══════════════════════════════════════════════════════
+  function injectSchema() {
+    const d = PORTFOLIO_DATA;
+    const schema = {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": d.meta.name,
+      "jobTitle": "Software Engineering Student",
+      "alumniOf": { "@type": "CollegeOrUniversity", "name": "INSAT – Institut National des Sciences Appliquées et de Technologie" },
+      "knowsAbout": ["Software Engineering","Machine Learning","Competitive Programming","Full-Stack Development","Angular","NestJS","Python","Rust","Docker","Kubernetes"],
+      "url": "https://rayen-chemlali.dev",
+      "email": d.meta.email,
+      "telephone": d.meta.phone,
+      "address": { "@type": "PostalAddress", "addressLocality": "Tunis", "addressCountry": "TN" },
+      "sameAs": [d.meta.linkedin, d.meta.github],
+      "hasCredential": d.certifications.map(c => ({
+        "@type": "EducationalOccupationalCredential",
+        "name": c.name,
+        "credentialCategory": "Certificate",
+        "recognizedBy": { "@type": "Organization", "name": c.issuer }
+      }))
+    };
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify(schema);
+    document.head.appendChild(script);
+  }
+
+  // ═══════════════════════════════════════════════════════
+  //  INIT
+  // ═══════════════════════════════════════════════════════
+  document.addEventListener('DOMContentLoaded', () => {
+    updateSEOMeta();
+    injectSchema();
+    renderAll();
+    navigate('hero');
+    initParticles();
+
+    // ── PHOTO UPLOAD ──
+    const photoInput = document.getElementById('photo-upload-input');
+    photoInput.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (ev) => {
+        const placeholder = document.getElementById('photo-placeholder');
+        if (!placeholder) return;
+        placeholder.outerHTML = `<img src="${ev.target.result}" class="photo-img" alt="Rayen Chemlali profile photo" id="photo-img-el">`;
+      };
+      reader.readAsDataURL(file);
     });
-    requestAnimationFrame(draw);
-  }
-  resize(); makeParticles(); draw();
-  window.addEventListener('resize', () => { resize(); makeParticles(); });
-}
-
-// ═══════════════════════════════════════════════════════
-//  SCHEMA.ORG JSON-LD
-// ═══════════════════════════════════════════════════════
-function injectSchema() {
-  const d = PORTFOLIO_DATA;
-  const schema = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": d.meta.name,
-    "jobTitle": "Software Engineering Student",
-    "alumniOf": { "@type": "CollegeOrUniversity", "name": "INSAT – Institut National des Sciences Appliquées et de Technologie" },
-    "knowsAbout": ["Software Engineering","Machine Learning","Competitive Programming","Full-Stack Development","Angular","NestJS","Python","Rust","Docker","Kubernetes"],
-    "url": "https://rayen-chemlali.dev",
-    "email": d.meta.email,
-    "telephone": d.meta.phone,
-    "address": { "@type": "PostalAddress", "addressLocality": "Tunis", "addressCountry": "TN" },
-    "sameAs": [d.meta.linkedin, d.meta.github],
-    "hasCredential": d.certifications.map(c => ({
-      "@type": "EducationalOccupationalCredential",
-      "name": c.name,
-      "credentialCategory": "Certificate",
-      "recognizedBy": { "@type": "Organization", "name": c.issuer }
-    }))
-  };
-  const script = document.createElement('script');
-  script.type = 'application/ld+json';
-  script.textContent = JSON.stringify(schema);
-  document.head.appendChild(script);
-}
-
-// ═══════════════════════════════════════════════════════
-//  INIT
-// ═══════════════════════════════════════════════════════
-document.addEventListener('DOMContentLoaded', () => {
-  updateSEOMeta();
-  injectSchema();
-  renderAll();
-  navigate('hero');
-  initParticles();
-});
+  });
 </script>
 </body>
 </html>
