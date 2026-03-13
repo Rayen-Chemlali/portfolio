@@ -1229,7 +1229,7 @@
         duration: "8 months", team: "5 developers",
         tech: ["NestJS","Next.js","GraphQL","WebSocket","Python","OCR","AI"],
         myRole: { en: "Backend architecture and AI/OCR integration module", fr: "Architecture backend et module d'intégration IA/OCR" },
-        links: [{ label: "Frontend", url: "https://github.com/Khalil-Ghimaji/DoussiyaFidaya" }, { label: "Backend", url: "https://github.com/Rayen-Chemlali/DoussiyaFidaya" }, { label: "AI / OCR", url: "https://github.com/Rayen-Chemlali/PPP-OCR" }],
+        links: [{ label: "Frontend", url: "https://github.com/Khalil-Ghimaji/DoussiyaFidaya" }, { label: "Backend", url: "https://github.com/Rayen-Chemlali/DoussiyaFidaya" }, { label: "AI / OCR", url: "https://github.com/Rayen-Chemlali/PPP-OCR" }, { label: "View Demo", url: "https://drive.google.com/drive/folders/16hEZMV6pYsY01KwefGd6txBG_8jKuWM9?usp=sharing" }],
         tabs: {
           overview: { en: "Built for the 'AI in Healthcare' competition. MediSys handles full medical workflows: consultations, appointments, analyses, prescriptions, and patient records. Hybrid GraphQL/REST API with SSE and WebSocket for real-time features, and an AI module for medical document OCR processing.", fr: "Développé pour la compétition 'AI in Healthcare'. MediSys gère les workflows médicaux complets : consultations, rendez-vous, analyses, prescriptions et dossiers patients. API hybride GraphQL/REST avec SSE, WebSocket, et module IA pour l'OCR." },
           features: { en: ["Full medical workflow: appointments, consultations, prescriptions","AI-powered OCR for medical document digitization","Real-time notifications via WebSocket and SSE","Role-based access: doctors, patients, administrators","Hybrid GraphQL/REST API"], fr: ["Workflow médical complet : rendez-vous, consultations, prescriptions","OCR IA pour numérisation de documents médicaux","Notifications temps réel via WebSocket et SSE","Accès par rôles : médecins, patients, administrateurs","API hybride GraphQL/REST"] },
@@ -1277,7 +1277,7 @@
         duration: "Aug 2025 – Present", team: "2 developers",
         tech: ["Python","AI","Chatbot","Data Viz","PDF Export"],
         myRole: { en: "Full project — sole developer", fr: "Projet complet — développeur unique" },
-        links: [{ label: "View Code", url: "#" }],
+        links: [],
         tabs: {
           overview: { en: "An AI-powered business strategy assistant actively in development since August 2025. Generates complete business diagnostics, financial projections, and market analysis through a conversational chatbot. Visualizes strategic data as interactive graphs and exports results as PDF reports or pitch decks. Note: not currently in production — no public demo available.", fr: "Assistant stratégique IA en développement actif depuis août 2025. Génère des diagnostics business complets, des projections financières et des analyses de marché via chatbot conversationnel. Visualisations en graphiques interactifs, exports PDF et pitch deck. Note : pas en production actuellement." },
           features: { en: ["Conversational AI chatbot for business questions","Automated business diagnostic generation","Financial projection modeling","Market analysis with interactive graph visualizations","PDF and pitch deck export"], fr: ["Chatbot IA conversationnel pour questions business","Génération automatisée de diagnostics","Modélisation de projections financières","Analyses de marché avec graphiques interactifs","Export PDF et pitch deck"] },
@@ -1293,7 +1293,7 @@
         duration: "Freelance", team: "2 developers",
         tech: ["Canvas API","Graph Model","Code Generation","Open Source"],
         myRole: { en: "Co-developer — canvas engine and code generation", fr: "Co-développeur — moteur canvas et génération de code" },
-        links: [{ label: "View Code", url: "#" }],
+        links: [{ label: "View Demo", url: "https://drive.google.com/file/d/1FP3jKk7bzvZEF6kKc1ofRmF47yAf0qW2/view?usp=sharing" }],
         tabs: {
           overview: { en: "Co-developed Shannon, a free open-source alternative to Simulink. An interactive visual canvas lets users place and connect functional blocks to model systems, then automatically generates executable code from the graph. Built for engineers needing accessible model-based design tooling.", fr: "Co-développement de Shannon, alternative open-source gratuite à Simulink. Canvas visuel interactif pour modéliser des systèmes par blocs et liens, avec génération automatique de code exécutable." },
           features: { en: ["Interactive drag-and-drop block canvas","Block and link modeling system","Integrated code generation engine","Export to multiple code targets"], fr: ["Canvas de blocs interactif drag-and-drop","Système de modélisation par blocs et liens","Moteur de génération de code intégré","Export vers plusieurs cibles de code"] },
@@ -1325,7 +1325,7 @@
         duration: "3 months", team: "Solo (Internship)",
         tech: ["Docker","Kubernetes","S3","AI","NestJS","Chatbot"],
         myRole: { en: "Full project — sole intern developer", fr: "Projet complet — seul développeur stagiaire" },
-        links: [{ label: "Frontend", url: "https://github.com/Rayen-Chemlali/smart-sontainer-registry-frontend" }, { label: "Backend", url: "https://github.com/Rayen-Chemlali/smart-sontainer-registry-backend" }],
+        links: [{ label: "Frontend", url: "https://github.com/Rayen-Chemlali/smart-sontainer-registry-frontend" }, { label: "Backend", url: "https://github.com/Rayen-Chemlali/smart-sontainer-registry-backend" }, { label: "View Demo", url: "https://drive.google.com/file/d/1AnnoEEvm6beafDYBIRuaVlhW8Cwf4YH0/view?usp=sharing" }],
         tabs: {
           overview: { en: "Developed at Talan Tunisie Consulting. Smart Container Registry optimizes Docker image storage costs in enterprise Kubernetes environments. Phase 1 delivers: AI chatbot for storage insights, unified K8s/S3 dashboard, and configurable automated image deletion rules engine.", fr: "Développé chez Talan Tunisie Consulting. Smart Container Registry optimise les coûts de stockage Docker en environnement Kubernetes d'entreprise. Phase 1 : chatbot IA, tableau de bord K8s/S3 unifié et moteur de règles de suppression." },
           features: { en: ["AI conversational chatbot for storage cost analysis","Unified Kubernetes + S3 metrics dashboard","Configurable automated image deletion rules","Cost tracking and savings reporting"], fr: ["Chatbot IA pour analyse des coûts de stockage","Tableau de bord unifié K8s + S3","Règles de suppression d'images automatisées","Suivi des coûts et rapports d'économies"] },
@@ -1730,13 +1730,18 @@
       }
       return `<div class="modal-tab-content${i===0?' active':''}" data-content="${tab.key}">${content}</div>`;
     }).join('');
-    document.getElementById('modal-links-el').innerHTML = p.links.map(link => `
+    document.getElementById('modal-links-el').innerHTML = p.links.map(link => {
+      let iconSvg = '<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>';
+      if (link.label.toLowerCase().includes('demo')) {
+        iconSvg = '<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>';
+      }
+      return `
     <a href="${link.url}" target="_blank" rel="noopener noreferrer" class="modal-link-btn"
        aria-label="${link.label} for ${p.name}">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+      ${iconSvg}
       ${link.label}
     </a>
-  `).join('');
+  `}).join('');
     const overlay = document.getElementById('modal-overlay');
     overlay.classList.add('open');
     overlay.focus();
