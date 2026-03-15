@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://rayen-chemlali.dev/sitemap.xml
+Sitemap: https://rayen-chemlali.vercel.app/sitemap.xml
