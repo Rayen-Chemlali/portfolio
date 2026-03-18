@@ -271,7 +271,7 @@ const PORTFOLIO_DATA = {
       tagline: { en: "ML app predicting insurance bundle purchases with SHAP explanations", fr: "App ML prédisant l'achat de bundle d'assurance avec explications SHAP" },
       accentColor: "#6366f1", watermark: "ARIA",
       status: { en: "Completed", fr: "Terminé" }, statusType: "done",
-      duration: "Hackathon — DataQuest", team: "Solo",
+      duration: "Hackathon — DataQuest", team: "Team",
       tech: ["LightGBM","SHAP","FastAPI","Next.js","Docker","Python"],
       myRole: { en: "Full project — sole developer", fr: "Projet complet — développeur unique" },
       links: [
