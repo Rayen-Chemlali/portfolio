@@ -191,6 +191,61 @@ const PORTFOLIO_DATA = {
       }
     },
     {
+      id: "medisys", name: "MediSys", emoji: "🏥", category: "academic", date: "Mar 2025 – Jun 2025",
+      tagline: { en: "AI-powered medical management platform", fr: "Plateforme de gestion médicale propulsée par l'IA" },
+      accentColor: "#a855f7", watermark: "MEDI",
+      status: { en: "In Development", fr: "En Développement" }, statusType: "dev",
+      duration: "8 months", team: "5 developers",
+      tech: ["NestJS","Next.js","GraphQL","WebSocket","Python","OCR","AI"],
+      myRole: { en: "Backend architecture and AI/OCR integration module", fr: "Architecture backend et module d'intégration IA/OCR" },
+      links: [
+        { label: "Frontend", url: "https://github.com/Khalil-Ghimaji/DoussiyaFidaya" },
+        { label: "Backend", url: "https://github.com/Rayen-Chemlali/DoussiyaFidaya" },
+        { label: "View Demo", url: "https://drive.google.com/drive/folders/16hEZMV6pYsY01KwefGd6txBG_8jKuWM9?usp=sharing" }
+      ],
+      tabs: {
+        overview: { en: "MediSys handles full medical workflows: consultations, appointments, analyses, prescriptions, and patient records. Hybrid GraphQL/REST API with SSE and WebSocket for real-time features, and an AI module for medical document OCR processing.", fr: "MediSys gère les workflows médicaux complets : consultations, rendez-vous, analyses, prescriptions et dossiers patients. API hybride GraphQL/REST avec SSE, WebSocket, et module IA pour l'OCR." },
+        features: { en: ["Full medical workflow: appointments, consultations, prescriptions","AI-powered OCR for medical document digitization","Real-time notifications via WebSocket and SSE","Role-based access: doctors, patients, administrators","Hybrid GraphQL/REST API"], fr: ["Workflow médical complet : rendez-vous, consultations, prescriptions","OCR IA pour numérisation de documents médicaux","Notifications temps réel via WebSocket et SSE","Accès par rôles : médecins, patients, administrateurs","API hybride GraphQL/REST"] },
+        challenges: { en: "Integrating OCR in a medical context required handling high document variability. Designing a GraphQL schema flexible enough for multiple medical specialties while keeping queries performant was also a major challenge.", fr: "L'intégration OCR dans un contexte médical nécessitait de gérer une grande variabilité documentaire. La conception d'un schéma GraphQL flexible pour plusieurs spécialités médicales tout en maintenant de bonnes performances était un défi majeur." },
+        learnings: { en: "Deep expertise in GraphQL schema design, hybrid API architectures, OCR pipeline integration, and healthcare data modeling.", fr: "Expertise approfondie en conception de schémas GraphQL, architectures API hybrides, intégration de pipelines OCR et modélisation de données de santé." }
+      }
+    },
+    {
+      id: "erp", name: "Mini-ERP System", emoji: "📊", category: "academic", date: "Dec 2024 – Feb 2025",
+      tagline: { en: "Enterprise resource planning for sales operations", fr: "Système ERP pour les opérations de vente" },
+      accentColor: "#f59e0b", watermark: "ERP",
+      status: { en: "Completed", fr: "Terminé" }, statusType: "done",
+      duration: "4 months", team: "3 developers",
+      tech: ["ASP.NET","C#","SQL Server"],
+      myRole: { en: "Backend architecture, database design, business logic", fr: "Architecture backend, conception base de données, logique métier" },
+      links: [{ label: "View Code", url: "https://github.com/Khalil-Ghimaji/dotnetERP" }],
+      tabs: {
+        overview: { en: "A complete ERP system covering the entire sales process with four integrated modules: order management, inventory management, invoicing, and customer management. Built with ASP.NET and SQL Server for enterprise-grade reliability.", fr: "Système ERP complet couvrant l'intégralité du processus de vente avec quatre modules intégrés : gestion des commandes, stocks, facturation et clients. Développé avec ASP.NET et SQL Server." },
+        features: { en: ["Order management with full lifecycle tracking","Inventory management with stock level alerts","Invoice generation and management","Customer relationship module","Integrated reporting and dashboards"], fr: ["Gestion des commandes avec suivi du cycle de vie","Gestion des stocks avec alertes de niveau","Génération et gestion des factures","Module de gestion de la relation client","Tableaux de bord et rapports intégrés"] },
+        challenges: { en: "Designing a normalized database schema supporting complex business rules across all modules without redundancy. Implementing transaction management to ensure data consistency across the order-inventory-invoice pipeline.", fr: "Conception d'un schéma de base de données normalisé supportant des règles métier complexes sans redondance. Implémentation de la gestion des transactions pour la cohérence des données." },
+        learnings: { en: "Enterprise application architecture with ASP.NET, relational database design for business apps, and ERP business logic end-to-end.", fr: "Architecture d'application d'entreprise avec ASP.NET, conception de bases de données relationnelles pour applications business, et logique ERP de bout en bout." }
+      }
+    },
+    {
+      id: "interim", name: "InterimCo Website", emoji: "🌐", category: "academic", date: "Mar 2024 – May 2024",
+      tagline: { en: "Corporate site built in PHP then migrated to Symfony", fr: "Site corporate développé en PHP puis migré vers Symfony" },
+      accentColor: "#10b981", watermark: "SYM",
+      status: { en: "Completed", fr: "Terminé" }, statusType: "done",
+      duration: "6 months", team: "5 developers",
+      tech: ["PHP","Symfony","Doctrine ORM","MySQL","MVC"],
+      myRole: { en: "Full project — sole developer", fr: "Projet complet — développeur unique" },
+      links: [
+        { label: "Symfony Version", url: "https://github.com/Rayen-Chemlali/InterimCo-symfony" },
+        { label: "Native PHP Version", url: "https://github.com/Rayen-Chemlali/Interim-Co-webApplication" }
+      ],
+      tabs: {
+        overview: { en: "A major milestone in my web dev journey. Built a full corporate website for an interim staffing company, first in native PHP, then fully refactored and migrated to Symfony — gaining deep experience with MVC architecture, Symfony routing, and Doctrine ORM.", fr: "Étape majeure dans mon parcours. Site corporate complet d'une entreprise intérimaire, d'abord en PHP natif, puis entièrement migré vers Symfony — maîtrise approfondie de l'architecture MVC, du routing Symfony et de Doctrine ORM." },
+        features: { en: ["Corporate pages: services, team, contact","Job listing and application management","Admin panel for content management","Full form handling and validation"], fr: ["Pages corporate : services, équipe, contact","Gestion des offres d'emploi et candidatures","Panneau d'administration","Gestion complète des formulaires et validation"] },
+        challenges: { en: "Migrating a working PHP app to Symfony without breaking functionality required careful planning. Understanding Symfony's bundle system and Doctrine entity mapping had a steep but rewarding learning curve.", fr: "Migrer une application PHP fonctionnelle vers Symfony sans casser les fonctionnalités a nécessité une planification minutieuse. La courbe d'apprentissage de Symfony était raide mais enrichissante." },
+        learnings: { en: "In-depth Symfony knowledge, MVC in a real project, Doctrine ORM, and the long-term value of migrating legacy code to a proper framework.", fr: "Connaissance approfondie de Symfony, MVC dans un vrai projet, Doctrine ORM, et la valeur à long terme de la migration de code legacy vers un framework structuré." }
+      }
+    },
+    {
       id: "aria", name: "ARIA", emoji: "🛡️", category: "hackathon", date: "2025",
       tagline: { en: "ML app predicting insurance bundle purchases with SHAP explanations", fr: "App ML prédisant l'achat de bundle d'assurance avec explications SHAP" },
       accentColor: "#6366f1", watermark: "ARIA",
