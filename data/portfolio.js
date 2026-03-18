@@ -267,7 +267,7 @@ const PORTFOLIO_DATA = {
       }
     },
     {
-      id: "aria", name: "ARIA", emoji: "🛡️", category: "hackathon", date: "2025",
+      id: "aria", name: "ARIA", emoji: "🛡️", category: "hackathon", date: "Mar 2026",
       tagline: { en: "ML app predicting insurance bundle purchases with SHAP explanations", fr: "App ML prédisant l'achat de bundle d'assurance avec explications SHAP" },
       accentColor: "#6366f1", watermark: "ARIA",
       status: { en: "Completed", fr: "Terminé" }, statusType: "done",
@@ -287,7 +287,7 @@ const PORTFOLIO_DATA = {
       }
     },
     {
-      id: "soundguard", name: "SoundGuard", emoji: "🔊", category: "hackathon", date: "2024",
+      id: "soundguard", name: "SoundGuard", emoji: "🔊", category: "hackathon", date: "Nov 2025",
       tagline: { en: "AI system detecting dangerous noise levels to protect workers' hearing", fr: "Système IA détectant les niveaux sonores dangereux pour protéger l'audition" },
       accentColor: "#f43f5e", watermark: "SND",
       status: { en: "Completed", fr: "Terminé" }, statusType: "done",
