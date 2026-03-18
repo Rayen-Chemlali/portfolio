@@ -25,10 +25,31 @@ const PORTFOLIO_DATA = {
     fr: "Étudiant en 4ème année Génie Logiciel à l'INSAT, Tunisie. J'ai commencé par les mathématiques, baccalauréat mention Très Bien (18,16/20), et je n'ai jamais vraiment arrêté de penser comme un mathématicien. À l'INSAT, je me suis classé 32ème/410 en tronc commun, puis 5ème/90 et 6ème/96 en Génie Logiciel.\n\nCe qui me caractérise, c'est l'envie de faire fonctionner les choses, pas juste de les comprendre. La programmation compétitive, que j'ai vraiment aimée, m'a appris à raisonner plus que n'importe quel cours. J'ai participé deux fois au TCPC, deux fois à un problème près de l'ACPC, avec une médaille de bronze. J'ai aussi participé à des hackathons IA où livrer sous pression comptait autant que les compétences techniques.\n\nCôté professionnel, j'ai construit des choses sur trois fronts : stages (optimisation stockage cloud avec IA, plateforme RH NestJS/React), projets freelance (copilote business IA, générateur de code C++ visuel), et temps partiel en développement de microservices VoIP en Go. Je m'intéresse à l'architecture logicielle et aux systèmes distribués, et de plus en plus à l'IA et au ML, un domaine dans lequel je me suis investi en profondeur à travers des formations et plusieurs projets complets.\n\nJe suis ouvert à de nouvelles opportunités, stages, collaborations, ou tout environnement stimulant."
   },
   skills: [
-    { category: { en: "Programming Languages", fr: "Langages de Programmation" }, icon: "💻", items: ["Java","Python","C++","JavaScript","PHP","Go"] },
-    { category: { en: "Frameworks & Libraries", fr: "Frameworks & Librairies" }, icon: "🧩", items: ["ASP.NET","NestJS","Symfony","React","Next.js","Angular"] },
-    { category: { en: "Data Science & Machine Learning", fr: "Data Science & Machine Learning" }, icon: "🧠", items: ["NumPy","Pandas","Scikit-learn","TensorFlow","RAG","NLP","Computer Vision","Supervised & Unsupervised Learning"] },
-    { category: { en: "Software Development & Tools", fr: "Développement & Outils" }, icon: "⚙️", items: ["Relational & Non-relational Databases","Git","Linux","UML","Design Patterns","Docker","CI/CD"] }
+    {
+      category: { en: "Languages", fr: "Langages" },
+      tag: "lang",
+      items: ["Python","Java","C++","JavaScript","Go","PHP"]
+    },
+    {
+      category: { en: "Frontend & Backend", fr: "Frontend & Backend" },
+      tag: "web",
+      items: ["Angular","React","Next.js","NestJS","Symfony","ASP.NET"]
+    },
+    {
+      category: { en: "AI & Machine Learning", fr: "IA & Machine Learning" },
+      tag: "ai",
+      items: ["TensorFlow","Scikit-learn","NumPy","Pandas","NLP","Computer Vision","RAG","Supervised & Unsupervised Learning"]
+    },
+    {
+      category: { en: "DevOps & Infrastructure", fr: "DevOps & Infrastructure" },
+      tag: "devops",
+      items: ["Docker","Kubernetes","CI/CD","Linux","Git"]
+    },
+    {
+      category: { en: "Architecture & Design", fr: "Architecture & Design" },
+      tag: "arch",
+      items: ["Design Patterns","UML","Relational Databases","Non-relational Databases","Distributed Systems","Microservices"]
+    }
   ],
   experience: [
     {
