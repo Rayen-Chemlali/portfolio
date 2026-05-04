@@ -1,12 +1,12 @@
 // ═══════════════════════════════════════════════════════
-//  RENDER SKILLS
+//  RENDER SKILLS — tuned for warm sand palette
 // ═══════════════════════════════════════════════════════
 const SKILL_ACCENTS = {
-  lang:   { color: '#00d4ff', bg: 'rgba(0,212,255,0.06)',   border: 'rgba(0,212,255,0.18)'  },
-  web:    { color: '#818cf8', bg: 'rgba(129,140,248,0.06)', border: 'rgba(129,140,248,0.2)' },
-  ai:     { color: '#34d399', bg: 'rgba(52,211,153,0.06)',  border: 'rgba(52,211,153,0.2)'  },
-  devops: { color: '#fb923c', bg: 'rgba(251,146,60,0.06)',  border: 'rgba(251,146,60,0.2)'  },
-  arch:   { color: '#a78bfa', bg: 'rgba(167,139,250,0.06)', border: 'rgba(167,139,250,0.2)' }
+  lang:   { color: '#C17B2A', bg: 'rgba(193,123,42,0.08)',  border: 'rgba(193,123,42,0.22)' },
+  web:    { color: '#6366F1', bg: 'rgba(99,102,241,0.07)',  border: 'rgba(99,102,241,0.22)' },
+  ai:     { color: '#4A7C6F', bg: 'rgba(74,124,111,0.08)',  border: 'rgba(74,124,111,0.22)' },
+  devops: { color: '#DC6B4A', bg: 'rgba(220,107,74,0.07)',  border: 'rgba(220,107,74,0.22)' },
+  arch:   { color: '#7C5CBF', bg: 'rgba(124,92,191,0.07)',  border: 'rgba(124,92,191,0.22)' }
 };
 
 function renderSkills() {
@@ -19,9 +19,9 @@ function renderSkills() {
       <span class="skill-pill" style="
         background:${accent.bg};
         border-color:${accent.border};
-        color:#cbd5e1;
-      " onmouseover="this.style.color='${accent.color}';this.style.borderColor='${accent.color}'"
-         onmouseout="this.style.color='#cbd5e1';this.style.borderColor='${accent.border}'"
+        color:#57534E;
+      " onmouseover="this.style.color='${accent.color}';this.style.borderColor='${accent.color}';this.style.background='${accent.bg}'"
+         onmouseout="this.style.color='#57534E';this.style.borderColor='${accent.border}';this.style.background='${accent.bg}'"
       >${item}</span>
     `).join('');
 

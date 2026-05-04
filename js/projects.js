@@ -5,11 +5,17 @@ function renderProjects() {
   document.getElementById('label-projects').textContent = t(UI_LABELS.proj_lbl);
   document.getElementById('proj-title').textContent = t(UI_LABELS.proj_title);
 
+  const CAT_ICONS = {
+    internship: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>`,
+    freelance:  `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>`,
+    academic:   `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>`,
+    hackathon:  `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`
+  };
   const CATS = [
-    { key: 'internship', icon: '🏢', label: UI_LABELS.cat_internship },
-    { key: 'freelance',  icon: '💼', label: UI_LABELS.cat_freelance },
-    { key: 'academic',   icon: '🎓', label: UI_LABELS.cat_academic },
-    { key: 'hackathon',  icon: '🏆', label: UI_LABELS.cat_hackathon || { en: 'Certifications & Hackathons', fr: 'Certifications & Hackathons' } }
+    { key: 'internship', icon: CAT_ICONS.internship, label: UI_LABELS.cat_internship },
+    { key: 'freelance',  icon: CAT_ICONS.freelance,  label: UI_LABELS.cat_freelance },
+    { key: 'academic',   icon: CAT_ICONS.academic,   label: UI_LABELS.cat_academic },
+    { key: 'hackathon',  icon: CAT_ICONS.hackathon,  label: UI_LABELS.cat_hackathon || { en: 'Hackathons', fr: 'Hackathons' } }
   ];
 
   const allProjects = [...PORTFOLIO_DATA.projects].sort((a, b) => {

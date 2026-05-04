@@ -13,15 +13,7 @@ function renderHero() {
   cvBtn.removeAttribute('download');
   cvBtn.onclick = function(e) { e.preventDefault(); openCvModal(); };
 
-  const codeLines = [
-    `<span class="json-punc">{</span>`,
-    `  <span class="json-key">"name"</span><span class="json-punc">:</span> <span class="json-str">"Rayen Chemlali"</span><span class="json-punc">,</span>`,
-    `  <span class="json-key">"role"</span><span class="json-punc">:</span> <span class="json-str">"${lang === 'en' ? 'Software Engineer' : 'Ingénieur Logiciel'}"</span><span class="json-punc">,</span>`,
-    `  <span class="json-key">"status"</span><span class="json-punc">:</span> <span class="json-bool">"open_to_opportunities"</span><span class="json-punc">,</span>`,
-    `  <span class="json-key">"location"</span><span class="json-punc">:</span> <span class="json-str">"Tunis, TN"</span>`,
-    `<span class="json-punc">}</span>`
-  ];
-  document.getElementById('code-block').innerHTML = codeLines.join('<br>');
+  // hero-right now shows photo — no code block needed
 }
 
 // ═══════════════════════════════════════════════════════
@@ -43,79 +35,82 @@ function openCvModal() {
     <style>
       #cv-modal-overlay {
         position: fixed; inset: 0; z-index: 2000;
-        background: rgba(6, 10, 16, 0.75);
-        backdrop-filter: blur(4px);
+        background: rgba(28,25,23,0.45);
+        backdrop-filter: blur(6px);
         display: flex; align-items: center; justify-content: center;
         animation: cvFadeIn 0.18s ease;
       }
       @keyframes cvFadeIn { from { opacity: 0 } to { opacity: 1 } }
       @keyframes cvSlideUp {
-        from { opacity: 0; transform: translateY(16px) }
+        from { opacity: 0; transform: translateY(14px) }
         to   { opacity: 1; transform: translateY(0) }
       }
       #cv-modal-box {
-        background: #0d1220;
-        border: 1px solid #1e2e47;
-        border-radius: 12px;
+        background: #FDFAF5;
+        border: 1px solid #D6CFBF;
+        border-radius: 14px;
         width: min(380px, 92vw);
         overflow: hidden;
         animation: cvSlideUp 0.22s ease;
-        box-shadow: 0 24px 60px rgba(0,0,0,0.6);
+        box-shadow: 0 16px 48px rgba(28,25,23,0.14), 0 4px 12px rgba(28,25,23,0.08);
       }
       #cv-modal-header {
         padding: 22px 22px 18px;
-        border-bottom: 1px solid #1a2740;
+        border-bottom: 1px solid #E8E2D8;
         display: flex;
         align-items: flex-start;
         justify-content: space-between;
         gap: 12px;
+        background: #F2EDE4;
       }
       #cv-modal-title {
-        font-family: 'Syne', sans-serif;
-        font-size: 15px;
+        font-family: 'Playfair Display', Georgia, serif;
+        font-size: 16px;
         font-weight: 700;
-        color: #e2e8f0;
-        letter-spacing: 0.2px;
+        color: #1C1917;
+        letter-spacing: -0.2px;
         margin: 0;
       }
       #cv-modal-subtitle {
-        font-family: 'IBM Plex Mono', monospace;
-        font-size: 10.5px;
-        color: #64748b;
+        font-family: 'DM Sans', system-ui, sans-serif;
+        font-size: 11px;
+        color: #78716C;
         margin-top: 4px;
         line-height: 1.4;
       }
       #cv-modal-close {
-        background: none;
-        border: none;
-        color: #4a5568;
-        font-size: 18px;
+        background: #FDFAF5;
+        border: 1px solid #D6CFBF;
+        color: #78716C;
+        font-size: 16px;
         line-height: 1;
         cursor: pointer;
-        padding: 2px 4px;
-        border-radius: 4px;
-        transition: color 0.15s, background 0.15s;
+        padding: 4px 8px;
+        border-radius: 7px;
+        transition: all 0.15s;
         flex-shrink: 0;
         margin-top: -2px;
       }
       #cv-modal-close:hover {
-        color: #e2e8f0;
-        background: rgba(255,255,255,0.06);
+        color: #1C1917;
+        background: #EDE8DE;
+        border-color: #C17B2A;
       }
       #cv-modal-options {
         padding: 14px 16px 16px;
         display: flex;
         flex-direction: column;
         gap: 8px;
+        background: #FDFAF5;
       }
       .cv-opt {
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding: 14px 16px;
-        background: #0a1120;
-        border: 1px solid #1a2740;
-        border-radius: 8px;
+        background: #F2EDE4;
+        border: 1.5px solid #D6CFBF;
+        border-radius: 9px;
         cursor: pointer;
         transition: border-color 0.18s, background 0.18s;
         text-align: left;
@@ -123,8 +118,8 @@ function openCvModal() {
         gap: 12px;
       }
       .cv-opt:hover {
-        border-color: #00d4ff;
-        background: rgba(0, 212, 255, 0.04);
+        border-color: #C17B2A;
+        background: rgba(193,123,42,0.05);
       }
       .cv-opt-left {
         display: flex;
@@ -132,45 +127,45 @@ function openCvModal() {
         gap: 3px;
       }
       .cv-opt-label {
-        font-family: 'Syne', sans-serif;
+        font-family: 'DM Sans', system-ui, sans-serif;
         font-size: 13px;
         font-weight: 600;
-        color: #cbd5e1;
+        color: #1C1917;
         letter-spacing: 0.1px;
       }
       .cv-opt-sub {
         font-family: 'IBM Plex Mono', monospace;
         font-size: 10px;
-        color: #475569;
+        color: #78716C;
         letter-spacing: 0.3px;
       }
       .cv-opt-arrow {
-        color: #334155;
-        font-size: 13px;
+        color: #78716C;
+        font-size: 14px;
         flex-shrink: 0;
         transition: color 0.18s, transform 0.18s;
       }
       .cv-opt:hover .cv-opt-arrow {
-        color: #00d4ff;
+        color: #C17B2A;
         transform: translateX(3px);
       }
       .cv-opt-divider {
         height: 1px;
-        background: #1a2740;
+        background: #E8E2D8;
         margin: 2px 0;
       }
-      .cv-opt.cv-opt-both .cv-opt-label { color: #00d4ff; }
-      .cv-opt.cv-opt-both .cv-opt-sub   { color: #1e4a5e; }
       .cv-opt.cv-opt-both {
-        border-color: #133245;
-        background: rgba(0, 212, 255, 0.03);
+        border-color: rgba(193,123,42,0.35);
+        background: rgba(193,123,42,0.04);
       }
+      .cv-opt.cv-opt-both .cv-opt-label { color: #C17B2A; }
+      .cv-opt.cv-opt-both .cv-opt-sub   { color: #78716C; }
       .cv-opt.cv-opt-both:hover {
-        border-color: #00d4ff;
-        background: rgba(0, 212, 255, 0.07);
+        border-color: #C17B2A;
+        background: rgba(193,123,42,0.09);
       }
-      .cv-opt.cv-opt-both .cv-opt-arrow { color: #1e4a5e; }
-      .cv-opt.cv-opt-both:hover .cv-opt-arrow { color: #00d4ff; }
+      .cv-opt.cv-opt-both .cv-opt-arrow { color: rgba(193,123,42,0.5); }
+      .cv-opt.cv-opt-both:hover .cv-opt-arrow { color: #C17B2A; }
     </style>
 
     <div id="cv-modal-box">

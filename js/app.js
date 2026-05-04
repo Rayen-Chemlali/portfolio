@@ -46,9 +46,9 @@ const UI_LABELS = {
   edu_lbl:      { en: '// 06_education',     fr: '// 06_formation' },
   edu_title:    { en: 'Education',           fr: 'Formation' },
   ach_lbl:      { en: '// 07_achievements',  fr: '// 07_récompenses' },
-  ach_title:    { en: '🏆 Achievements',     fr: '🏆 Récompenses' },
+  ach_title:    { en: 'Achievements',         fr: 'Récompenses' },
   cert_lbl:     { en: '// 08_certifications',fr: '// 08_certifications' },
-  cert_title:   { en: '📜 Certifications',   fr: '📜 Certifications' },
+  cert_title:   { en: 'Certifications',       fr: 'Certifications' },
   contact_lbl:  { en: '// 09_contact',       fr: '// 09_contact' },
   contact_title:{ en: 'Get In Touch',        fr: 'Me Contacter' },
   view_details: { en: '→ View Details',      fr: '→ Voir Détails' },
@@ -111,7 +111,7 @@ function renderAll() {
 }
 
 // ═══════════════════════════════════════════════════════
-//  PARTICLES
+//  PARTICLES — warm amber dots to match new palette
 // ═══════════════════════════════════════════════════════
 function initParticles() {
   const canvas = document.getElementById('particles-canvas');
@@ -122,12 +122,12 @@ function initParticles() {
     H = canvas.height = window.innerHeight;
   }
   function makeParticles() {
-    particles = Array.from({length: 60}, () => ({
+    particles = Array.from({length: 50}, () => ({
       x: Math.random() * W, y: Math.random() * H,
-      r: Math.random() * 1.5 + 0.3,
-      vx: (Math.random() - 0.5) * 0.2,
-      vy: (Math.random() - 0.5) * 0.2,
-      alpha: Math.random() * 0.4 + 0.1
+      r: Math.random() * 1.8 + 0.4,
+      vx: (Math.random() - 0.5) * 0.15,
+      vy: (Math.random() - 0.5) * 0.15,
+      alpha: Math.random() * 0.3 + 0.08
     }));
   }
   function draw() {
@@ -138,7 +138,8 @@ function initParticles() {
       if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(0,212,255,${p.alpha})`;
+      // Warm amber color matching --accent: #C17B2A
+      ctx.fillStyle = `rgba(193,123,42,${p.alpha})`;
       ctx.fill();
     });
     requestAnimationFrame(draw);
@@ -187,24 +188,17 @@ document.addEventListener('DOMContentLoaded', () => {
   navigate('hero');
   initParticles();
 
-  // ── PHOTO UPLOAD ──
   const photoInput = document.getElementById('photo-upload-input');
-  photoInput.addEventListener('change', (e) => {
-    const file = e.target.files[0];
-    if (!file) return;
-    const reader = new FileReader();
-    reader.onload = (ev) => {
-      const img = document.getElementById('profile-photo');
-      if (img) {
-        img.src = ev.target.result;
-      } else {
-        // Fallback if structure changes
-        const placeholder = document.getElementById('photo-placeholder');
-        if (placeholder) {
-          placeholder.outerHTML = `<img src="${ev.target.result}" alt="Profile photo" class="photo-img" id="profile-photo">`;
-        }
-      }
-    };
-    reader.readAsDataURL(file);
-  });
+  if (photoInput) {
+    photoInput.addEventListener('change', (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = (ev) => {
+        const img = document.getElementById('profile-photo');
+        if (img) img.src = ev.target.result;
+      };
+      reader.readAsDataURL(file);
+    });
+  }
 });

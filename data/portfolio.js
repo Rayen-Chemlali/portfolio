@@ -129,7 +129,7 @@ const PORTFOLIO_DATA = {
   ],
   projects: [
     {
-      id: "house-prices", name: "House Prices in Grand Tunis", emoji: "🏘️", category: "academic", date: "Dec 2025 – Feb 2026",
+      id: "house-prices", name: "House Prices in Grand Tunis", emoji: "ML", category: "academic", date: "Dec 2025 – Feb 2026",
       tagline: { en: "Data mining & ML analysis of real estate prices in Grand Tunis", fr: "Data mining & ML sur les prix immobiliers du Grand Tunis" },
       accentColor: "#8b5cf6", watermark: "ML",
       status: { en: "Completed", fr: "Terminé" }, statusType: "done",
@@ -148,7 +148,7 @@ const PORTFOLIO_DATA = {
       }
     },
     {
-      id: "kickstream", name: "KickStream", emoji: "⚽", category: "academic", date: "Dec 2025 – Feb 2026",
+      id: "kickstream", name: "KickStream", emoji: "WS", category: "academic", date: "Dec 2025 – Feb 2026",
       tagline: { en: "Real-time football prediction & streaming platform", fr: "Plateforme de prédiction et streaming football en temps réel" },
       accentColor: "#00aaff", watermark: "KICK",
       status: { en: "Completed", fr: "Terminé" }, statusType: "done",
@@ -164,7 +164,7 @@ const PORTFOLIO_DATA = {
       }
     },
     {
-      id: "strategy-ai", name: "Strategy AI Assistant", emoji: "🤖", category: "freelance", date: "Aug 2025 – Present",
+      id: "strategy-ai", name: "Strategy AI Assistant", emoji: "AI", category: "freelance", date: "Aug 2025 – Present",
       tagline: { en: "AI-powered business strategy & diagnostic platform", fr: "Plateforme de stratégie business et diagnostic par IA" },
       accentColor: "#f59e0b", watermark: "AI",
       status: { en: "In Development", fr: "En Développement" }, statusType: "dev",
@@ -180,7 +180,7 @@ const PORTFOLIO_DATA = {
       }
     },
     {
-      id: "shannon", name: "Shannon", emoji: "⚙️", category: "freelance", date: "Nov 2025 – Jan 2026",
+      id: "shannon", name: "Shannon", emoji: "OSS", category: "freelance", date: "Nov 2025 – Jan 2026",
       tagline: { en: "Open-source Simulink-inspired visual code generator", fr: "Générateur de code visuel open-source inspiré de Simulink" },
       accentColor: "#8b5cf6", watermark: "SHN",
       status: { en: "Completed", fr: "Terminé" }, statusType: "done",
@@ -196,7 +196,7 @@ const PORTFOLIO_DATA = {
       }
     },
     {
-      id: "ml-suite", name: "ML Projects Suite", emoji: "🧠", category: "internship", date: "Feb 2026 – Mar 2026",
+      id: "ml-suite", name: "ML Projects Suite", emoji: "ML", category: "internship", date: "Feb 2026 – Mar 2026",
       tagline: { en: "5 end-to-end ML projects across domains", fr: "5 projets machine learning complets sur différents domaines" },
       accentColor: "#22c55e", watermark: "ML",
       status: { en: "Completed", fr: "Terminé" }, statusType: "done",
@@ -212,7 +212,7 @@ const PORTFOLIO_DATA = {
       }
     },
     {
-      id: "medisys", name: "MediSys", emoji: "🏥", category: "academic", date: "Mar 2025 – Jun 2025",
+      id: "medisys", name: "MediSys", emoji: "MD", category: "academic", date: "Mar 2025 – Jun 2025",
       tagline: { en: "AI-powered medical management platform", fr: "Plateforme de gestion médicale propulsée par l'IA" },
       accentColor: "#a855f7", watermark: "MEDI",
       status: { en: "In Development", fr: "En Développement" }, statusType: "dev",
@@ -232,7 +232,7 @@ const PORTFOLIO_DATA = {
       }
     },
     {
-      id: "erp", name: "Mini-ERP System", emoji: "📊", category: "academic", date: "Dec 2024 – Feb 2025",
+      id: "erp", name: "Mini-ERP System", emoji: "ERP", category: "academic", date: "Dec 2024 – Feb 2025",
       tagline: { en: "Enterprise resource planning for sales operations", fr: "Système ERP pour les opérations de vente" },
       accentColor: "#f59e0b", watermark: "ERP",
       status: { en: "Completed", fr: "Terminé" }, statusType: "done",
@@ -248,7 +248,7 @@ const PORTFOLIO_DATA = {
       }
     },
     {
-      id: "interim", name: "InterimCo Website", emoji: "🌐", category: "academic", date: "Mar 2024 – May 2024",
+      id: "interim", name: "InterimCo Website", emoji: "WEB", category: "academic", date: "Mar 2024 – May 2024",
       tagline: { en: "Corporate site built in PHP then migrated to Symfony", fr: "Site corporate développé en PHP puis migré vers Symfony" },
       accentColor: "#10b981", watermark: "SYM",
       status: { en: "Completed", fr: "Terminé" }, statusType: "done",
@@ -267,7 +267,7 @@ const PORTFOLIO_DATA = {
       }
     },
     {
-      id: "aria", name: "ARIA", emoji: "🛡️", category: "hackathon", date: "Mar 2026",
+      id: "aria", name: "ARIA", emoji: "RA", category: "hackathon", date: "Mar 2026",
       tagline: { en: "ML app predicting insurance bundle purchases with SHAP explanations", fr: "App ML prédisant l'achat de bundle d'assurance avec explications SHAP" },
       accentColor: "#6366f1", watermark: "ARIA",
       status: { en: "Completed", fr: "Terminé" }, statusType: "done",
@@ -287,7 +287,7 @@ const PORTFOLIO_DATA = {
       }
     },
     {
-      id: "soundguard", name: "SoundGuard", emoji: "🔊", category: "hackathon", date: "Nov 2025",
+      id: "soundguard", name: "SoundGuard", emoji: "SND", category: "hackathon", date: "Nov 2025",
       tagline: { en: "AI system detecting dangerous noise levels to protect workers' hearing", fr: "Système IA détectant les niveaux sonores dangereux pour protéger l'audition" },
       accentColor: "#f43f5e", watermark: "SND",
       status: { en: "Completed", fr: "Terminé" }, statusType: "done",
@@ -306,7 +306,7 @@ const PORTFOLIO_DATA = {
       }
     },
     {
-      id: "container-registry", name: "Smart Container Registry", emoji: "🐳", category: "internship", date: "Jun 2025 – Aug 2025",
+      id: "container-registry", name: "Smart Container Registry", emoji: "K8S", category: "internship", date: "Jun 2025 – Aug 2025",
       tagline: { en: "AI-powered Docker storage optimizer for Kubernetes", fr: "Optimiseur de stockage Docker pour Kubernetes par IA" },
       accentColor: "#38bdf8", watermark: "K8S",
       status: { en: "Phase 1 Delivered", fr: "Phase 1 Livrée" }, statusType: "p1",
@@ -343,27 +343,27 @@ const PORTFOLIO_DATA = {
     }
   ],
   certifications: [
-    { name: "Supervised Machine Learning", issuer: "Coursera", icon: "🎓", url: "https://www.coursera.org/account/accomplishments/verify/QNR4LRWNRVFB" },
-    { name: "Advanced Learning Algorithms", issuer: "Coursera", icon: "🎓", url: "https://www.coursera.org/account/accomplishments/verify/14QA5AQFDPQ4" },
-    { name: "Efficient LLM Customization", issuer: "NVIDIA Deep Learning Institute", icon: "🔥", url: "https://learn.nvidia.com/certificates?id=NiPMpiopQRGOW1fBsx3pZQ#" },
-    { name: "Building RAG Agents with LLMs", issuer: "NVIDIA Deep Learning Institute", icon: "🔥", url: "https://learn.nvidia.com/certificates?id=txMdLISsRYizzGSQXBmvAw#" },
-    { name: "Samsung Innovation Campus AI", issuer: "Samsung", icon: "⭐", url: "https://drive.google.com/file/d/1uMrPLNYzwKXtVgN3_iSDjSsD_ESujxVe/view?usp=drive_link", linkedProjectId: "soundguard" }
+    { name: "Supervised Machine Learning", issuer: "Coursera", icon: "CRS", url: "https://www.coursera.org/account/accomplishments/verify/QNR4LRWNRVFB" },
+    { name: "Advanced Learning Algorithms", issuer: "Coursera", icon: "CRS", url: "https://www.coursera.org/account/accomplishments/verify/14QA5AQFDPQ4" },
+    { name: "Efficient LLM Customization", issuer: "NVIDIA Deep Learning Institute", icon: "NV", url: "https://learn.nvidia.com/certificates?id=NiPMpiopQRGOW1fBsx3pZQ#" },
+    { name: "Building RAG Agents with LLMs", issuer: "NVIDIA Deep Learning Institute", icon: "NV", url: "https://learn.nvidia.com/certificates?id=txMdLISsRYizzGSQXBmvAw#" },
+    { name: "Samsung Innovation Campus AI", issuer: "Samsung", icon: "SAM", url: "https://drive.google.com/file/d/1uMrPLNYzwKXtVgN3_iSDjSsD_ESujxVe/view?usp=drive_link", linkedProjectId: "soundguard" }
   ],
   achievements: [
     {
-      place: "2nd", medal: "🥈",
+      place: "2nd", medal: "2nd",
       title: { en: "Code Quest 2023", fr: "Code Quest 2023" },
       subtitle: { en: "Competitive Programming Contest @ INSAT", fr: "Concours de Programmation Compétitive @ INSAT" },
       color: "#94a3b8", url: "https://www.linkedin.com/posts/mohammed-achref-hemissi_exciting-news-untraceable-team-takes-2nd-activity-7152624917576892417-eWMU?utm_source=share&utm_medium=member_desktop&rcm=ACoAADx9s5YB71VOxyG-0xt1QKdyDM9DES69bfM"
     },
     {
-      place: "11th", medal: "🥉",
+      place: "11th", medal: "11th",
       title: { en: "TCPC 2024 — Bronze Medal", fr: "TCPC 2024 — Médaille de Bronze" },
       subtitle: { en: "Tunisian Collegiate Programming Contest", fr: "Concours Tunisien de Programmation Universitaire" },
       color: "#cd7f32", url: "https://www.linkedin.com/posts/chemlali-rayen-69aa65243_competitiveprogramming-problemsolving-tcpc-activity-7246469206592958465-Jsn4?utm_source=share&utm_medium=member_desktop&rcm=ACoAADx9s5YB71VOxyG-0xt1QKdyDM9DES69bfM"
     },
     {
-      place: "3rd", medal: "🥉",
+      place: "3rd", medal: "3rd",
       title: { en: "AI 4 New Generation Hackathon", fr: "Hackathon AI 4 New Generation" },
       subtitle: { en: "by EY & Université Ibn Khaldoun — 2024", fr: "par EY & Université Ibn Khaldoun — 2024" },
       color: "#f97316", url: "https://www.linkedin.com/posts/chemlali-rayen-69aa65243_ai-hackathon-llm-activity-7277362902594908160-I_RN?utm_source=share&utm_medium=member_desktop&rcm=ACoAADx9s5YB71VOxyG-0xt1QKdyDM9DES69bfM"
