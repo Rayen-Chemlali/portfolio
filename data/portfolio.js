@@ -129,6 +129,62 @@ const PORTFOLIO_DATA = {
   ],
   projects: [
     {
+      id: "travel-agent", name: "Multi-Agent Travel Planner", emoji: "AI", category: "academic", date: "Jan 2026 – Present",
+      tagline: { en: "AI-powered personalized travel planning with multi-agent architecture", fr: "Planification de voyage personnalisée par architecture multi-agents IA" },
+      accentColor: "#0ea5e9", watermark: "TRVL",
+      status: { en: "In Development", fr: "En Développement" }, statusType: "dev",
+      duration: "End-of-year project (4th year)", team: "Team",
+      tech: ["LLMs","LangGraph","RAG","Qdrant","Python"],
+      myRole: { en: "AI architecture & multi-agent pipeline", fr: "Architecture IA & pipeline multi-agents" },
+      links: [],
+      tabs: {
+        overview: {
+          en: "End-of-year project of my 4th year at INSAT. A personalized travel planning system driven by a collaborative architecture of AI agents. Users interact through a conversational interface while agents handle destination research, itinerary generation, and preference learning. The system builds a persistent knowledge base over time using RAG with Qdrant, and pre-computes recommendations in the background to minimize response latency.",
+          fr: "Projet de fin d'année de ma 4ème année à l'INSAT. Un système de planification de voyage personnalisé piloté par une architecture collaborative d'agents IA. L'utilisateur interagit via une interface conversationnelle pendant que les agents gèrent la recherche de destinations, la génération d'itinéraires et l'apprentissage des préférences. Le système construit une base de connaissances persistante et évolutive via RAG avec Qdrant, et pré-calcule les recommandations en arrière-plan pour minimiser la latence."
+        },
+        features: {
+          en: ["Multi-agent collaborative architecture with LangGraph","Conversational travel planning interface","RAG-powered progressive knowledge base (Qdrant)","Multi-level persistent memory across sessions","Background pre-computation for optimized response time","Personalized recommendations based on user preferences"],
+          fr: ["Architecture multi-agents collaborative avec LangGraph","Interface conversationnelle de planification de voyage","Base de connaissances progressive via RAG (Qdrant)","Mémoire persistante multi-niveaux entre sessions","Pré-calcul en arrière-plan pour temps de réponse optimisé","Recommandations personnalisées selon les préférences utilisateur"]
+        },
+        challenges: {
+          en: "Coordinating multiple specialized agents without conflicts while maintaining coherent conversational context was the core design challenge. Balancing pre-computation with real-time personalization required careful orchestration with LangGraph.",
+          fr: "Coordonner plusieurs agents spécialisés sans conflits tout en maintenant un contexte conversationnel cohérent était le défi de conception principal. Équilibrer le pré-calcul avec la personnalisation temps réel a nécessité une orchestration soignée avec LangGraph."
+        },
+        learnings: {
+          en: "Multi-agent system design with LangGraph, RAG architectures with vector databases, persistent memory strategies for conversational AI, and background task orchestration for latency optimization.",
+          fr: "Conception de systèmes multi-agents avec LangGraph, architectures RAG avec bases de données vectorielles, stratégies de mémoire persistante pour l'IA conversationnelle, et orchestration de tâches en arrière-plan pour l'optimisation de latence."
+        }
+      }
+    },
+    {
+      id: "smart-city", name: "Smart City Platform", emoji: "BIG", category: "academic", date: "Jan 2026 – Present",
+      tagline: { en: "Big Data platform for urban intelligence with real-time streaming", fr: "Plateforme Big Data d'intelligence urbaine avec streaming temps réel" },
+      accentColor: "#14b8a6", watermark: "CITY",
+      status: { en: "In Development", fr: "En Développement" }, statusType: "dev",
+      duration: "Ongoing", team: "Team",
+      tech: ["Hadoop","Spark","Kafka","MLlib","Big Data"],
+      myRole: { en: "Big Data pipeline & ML scoring", fr: "Pipeline Big Data & scoring ML" },
+      links: [],
+      tabs: {
+        overview: {
+          en: "An urban intelligence platform implementing a full Big Data pipeline combining weekly batch processing and real-time streaming across 6 real-world datasets (traffic, energy, crime, and more). MLlib is used to compute a composite City Pulse Score per neighborhood, weighting multiple urban metrics for continuous city monitoring.",
+          fr: "Plateforme d'intelligence urbaine implémentant un pipeline Big Data complet combinant traitement par lots hebdomadaire et streaming temps réel sur 6 datasets réels (trafic, énergie, criminalité, etc.). MLlib est utilisé pour calculer un City Pulse Score composite par quartier, pondérant plusieurs métriques urbaines pour la surveillance continue de la ville."
+        },
+        features: {
+          en: ["Dual pipeline: weekly batch (Hadoop/Spark) + real-time streaming (Kafka)","6 real urban datasets: traffic, energy, crime, and more","MLlib-powered composite City Pulse Score per neighborhood","Continuous urban monitoring dashboard","Neighborhood-level analytics and trend detection"],
+          fr: ["Double pipeline : batch hebdomadaire (Hadoop/Spark) + streaming temps réel (Kafka)","6 datasets urbains réels : trafic, énergie, criminalité, etc.","City Pulse Score composite par quartier via MLlib","Dashboard de surveillance urbaine continue","Analyses et détection de tendances par quartier"]
+        },
+        challenges: {
+          en: "Synchronizing batch and real-time data pipelines while maintaining consistent scoring across heterogeneous datasets required careful schema alignment and pipeline orchestration.",
+          fr: "Synchroniser les pipelines batch et temps réel tout en maintenant un scoring cohérent sur des datasets hétérogènes a nécessité un alignement de schémas et une orchestration de pipeline soignés."
+        },
+        learnings: {
+          en: "Large-scale Big Data architecture, Kafka stream processing, Spark batch and streaming pipelines, MLlib for distributed ML, and designing composite scoring systems for multi-source urban data.",
+          fr: "Architecture Big Data à grande échelle, traitement de flux Kafka, pipelines batch et streaming Spark, MLlib pour le ML distribué, et conception de systèmes de scoring composite pour données urbaines multi-sources."
+        }
+      }
+    },
+    {
       id: "house-prices", name: "House Prices in Grand Tunis", emoji: "ML", category: "academic", date: "Dec 2025 – Feb 2026",
       tagline: { en: "Data mining & ML analysis of real estate prices in Grand Tunis", fr: "Data mining & ML sur les prix immobiliers du Grand Tunis" },
       accentColor: "#8b5cf6", watermark: "ML",
