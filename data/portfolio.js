@@ -55,7 +55,7 @@ const PORTFOLIO_DATA = {
     {
       role: { en: "Part-Time Software Engineer", fr: "Ingénieur Logiciel (Temps Partiel)" },
       company: "Plug & Tel",
-      period: "Nov 2025 – Present",
+      period: "Nov 2025 – Apr 2026",
       type: { en: "Part-Time", fr: "Temps Partiel" },
       description: {
         en: "Working part-time as a software engineer, contributing to production software projects and applying full-stack skills in a professional setting while completing my engineering degree.",
@@ -129,14 +129,17 @@ const PORTFOLIO_DATA = {
   ],
   projects: [
     {
-      id: "travel-agent", name: "Multi-Agent Travel Planner", emoji: "AI", category: "academic", date: "Jan 2026 – Present",
+      id: "travel-agent", name: "Multi-Agent Travel Planner", emoji: "AI", category: "academic", date: "Jan 2026 – Jun 2026",
       tagline: { en: "AI-powered personalized travel planning with multi-agent architecture", fr: "Planification de voyage personnalisée par architecture multi-agents IA" },
       accentColor: "#0ea5e9", watermark: "TRVL",
       status: { en: "In Development", fr: "En Développement" }, statusType: "dev",
       duration: "End-of-year project (4th year)", team: "Team",
       tech: ["LLMs","LangGraph","RAG","Qdrant","Python"],
       myRole: { en: "AI architecture & multi-agent pipeline", fr: "Architecture IA & pipeline multi-agents" },
-      links: [],
+      links: [
+        { label: "View Code", url: "https://drive.google.com/file/d/1x1eV0aHLcibl-Eq3d1tlzPykInLyjDsO/view" },
+        { label: "Live Demo", url: "https://rafiqai.onrender.com/" }
+      ],
       tabs: {
         overview: {
           en: "End-of-year project of my 4th year at INSAT. A personalized travel planning system driven by a collaborative architecture of AI agents. Users interact through a conversational interface while agents handle destination research, itinerary generation, and preference learning. The system builds a persistent knowledge base over time using RAG with Qdrant, and pre-computes recommendations in the background to minimize response latency.",
@@ -157,7 +160,7 @@ const PORTFOLIO_DATA = {
       }
     },
     {
-      id: "smart-city", name: "Smart City Platform", emoji: "BIG", category: "academic", date: "Jan 2026 – Present",
+      id: "smart-city", name: "Smart City Platform", emoji: "BIG", category: "academic", date: "Jan 2026 – Jun 2026",
       tagline: { en: "Big Data platform for urban intelligence with real-time streaming", fr: "Plateforme Big Data d'intelligence urbaine avec streaming temps réel" },
       accentColor: "#14b8a6", watermark: "CITY",
       status: { en: "In Development", fr: "En Développement" }, statusType: "dev",
