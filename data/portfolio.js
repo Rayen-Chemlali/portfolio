@@ -6,12 +6,12 @@ const PORTFOLIO_DATA = {
     name: "Rayen Chemlali",
     title: { en: "Software Engineer & AI Developer", fr: "Ingénieur Logiciel & Développeur IA" },
     description: {
-      en: "Rayen Chemlali is a software engineering student at INSAT Tunisia, specializing in full-stack development, machine learning, and competitive programming. Available for internships and collaborations.",
-      fr: "Rayen Chemlali est étudiant ingénieur à l'INSAT Tunisie, spécialisé en développement full-stack, machine learning et programmation compétitive. Disponible pour des stages et collaborations."
+      en: "Rayen Chemlali is a 5th-year engineering student at INP Toulouse – ENSEEIHT (HPC Big Data), on academic exchange from INSAT Tunisia. Specializing in full-stack development, machine learning, and competitive programming. Available for internships and collaborations.",
+      fr: "Rayen Chemlali est étudiant en 5ème année à l'INP Toulouse – ENSEEIHT (HPC Big Data), en échange académique depuis l'INSAT Tunisie. Spécialisé en développement full-stack, machine learning et programmation compétitive. Disponible pour des stages et collaborations."
     },
     email: "rayen.chemlali@insat.ucar.tn",
     phone: "+216 56042251",
-    location: "Tunis, Tunisia",
+    location: "Toulouse, France",
     linkedin: "https://www.linkedin.com/in/chemlali-rayen-69aa65243/",
     github: "https://github.com/Rayen-Chemlali",
     cvUrl: { en: "Rayen-Chemlali-CV.pdf", fr: "CV-Rayen-Chemlali.pdf" },
@@ -21,8 +21,8 @@ const PORTFOLIO_DATA = {
     }
   },
   about: {
-    en: "I'm a 4th-year Software Engineering student at INSAT, Tunisia. I started with mathematics, baccalaureate with Highest Honors (18.16/20), and never really stopped thinking like one. At INSAT I ranked 32nd/410 in the common first year, then 5th/90 and 6th/96 in Software Engineering.\n\nI've always been driven by a simple instinct: not just understanding things, but making them work. That led me to competitive programming, which I genuinely loved. It shaped the way I reason about problems more than any course did. I participated in the TCPC twice, came close to qualifying for the ACPC both times, and earned a bronze medal. I also took part in AI hackathons where delivering under pressure mattered as much as technical skill.\n\nOn the professional side, I've built things across three fronts: internships (cloud storage optimization with AI, HR platform with NestJS/React), freelance projects (an AI business copilot, a visual C++ code generator), and part-time work developing VoIP microservices in Go. I care about software architecture and distributed systems, and I'm increasingly drawn to ML and AI, having gone deep into the field through dedicated training and multiple end-to-end projects.\n\nI'm open to new opportunities, internships, collaborations, or anything that puts me in a challenging environment.",
-    fr: "Étudiant en 4ème année Génie Logiciel à l'INSAT, Tunisie. J'ai commencé par les mathématiques, baccalauréat mention Très Bien (18,16/20), et je n'ai jamais vraiment arrêté de penser comme un mathématicien. À l'INSAT, je me suis classé 32ème/410 en tronc commun, puis 5ème/90 et 6ème/96 en Génie Logiciel.\n\nCe qui me caractérise, c'est l'envie de faire fonctionner les choses, pas juste de les comprendre. La programmation compétitive, que j'ai vraiment aimée, m'a appris à raisonner plus que n'importe quel cours. J'ai participé deux fois au TCPC, deux fois à un problème près de l'ACPC, avec une médaille de bronze. J'ai aussi participé à des hackathons IA où livrer sous pression comptait autant que les compétences techniques.\n\nCôté professionnel, j'ai construit des choses sur trois fronts : stages (optimisation stockage cloud avec IA, plateforme RH NestJS/React), projets freelance (copilote business IA, générateur de code C++ visuel), et temps partiel en développement de microservices VoIP en Go. Je m'intéresse à l'architecture logicielle et aux systèmes distribués, et de plus en plus à l'IA et au ML, un domaine dans lequel je me suis investi en profondeur à travers des formations et plusieurs projets complets.\n\nJe suis ouvert à de nouvelles opportunités, stages, collaborations, ou tout environnement stimulant."
+    en: "I'm a 5th-year engineering student at INP Toulouse – ENSEEIHT (HPC Big Data track), on academic exchange from INSAT, Tunisia. I started with mathematics, baccalaureate with Highest Honors (18.16/20), and never really stopped thinking like one. At INSAT I ranked 32nd/410 in the common first year, then 5th/90, 6th/96, and 8th/90 in Software Engineering.\n\nI've always been driven by a simple instinct: not just understanding things, but making them work. That led me to competitive programming, which I genuinely loved. It shaped the way I reason about problems more than any course did. I participated in the TCPC twice, came close to qualifying for the ACPC both times, and earned a bronze medal. I also took part in AI hackathons where delivering under pressure mattered as much as technical skill.\n\nOn the professional side, I've built things across three fronts: internships (production ML model optimization for VoIP at Plug & Tel, cloud storage optimization with AI, HR platform with NestJS/React), freelance projects (an AI business copilot, a visual C++ code generator), and part-time work developing VoIP microservices in Go. I care about software architecture and distributed systems, and I'm increasingly drawn to ML and AI, having gone deep into the field through dedicated training and multiple end-to-end projects.\n\nI'm open to new opportunities, internships, collaborations, or anything that puts me in a challenging environment.",
+    fr: "Étudiant en 5ème année à l'INP Toulouse – ENSEEIHT (parcours HPC Big Data), en échange académique depuis l'INSAT, Tunisie. J'ai commencé par les mathématiques, baccalauréat mention Très Bien (18,16/20), et je n'ai jamais vraiment arrêté de penser comme un mathématicien. À l'INSAT, je me suis classé 32ème/410 en tronc commun, puis 5ème/90, 6ème/96 et 8ème/90 en Génie Logiciel.\n\nCe qui me caractérise, c'est l'envie de faire fonctionner les choses, pas juste de les comprendre. La programmation compétitive, que j'ai vraiment aimée, m'a appris à raisonner plus que n'importe quel cours. J'ai participé deux fois au TCPC, deux fois à un problème près de l'ACPC, avec une médaille de bronze. J'ai aussi participé à des hackathons IA où livrer sous pression comptait autant que les compétences techniques.\n\nCôté professionnel, j'ai construit des choses sur trois fronts : stages (optimisation de modèle ML en production pour la VoIP chez Plug & Tel, optimisation stockage cloud avec IA, plateforme RH NestJS/React), projets freelance (copilote business IA, générateur de code C++ visuel), et temps partiel en développement de microservices VoIP en Go. Je m'intéresse à l'architecture logicielle et aux systèmes distribués, et de plus en plus à l'IA et au ML, un domaine dans lequel je me suis investi en profondeur à travers des formations et plusieurs projets complets.\n\nJe suis ouvert à de nouvelles opportunités, stages, collaborations, ou tout environnement stimulant."
   },
   skills: [
     {
@@ -52,6 +52,16 @@ const PORTFOLIO_DATA = {
     }
   ],
   experience: [
+    {
+      role: { en: "ML Intern", fr: "Stagiaire ML" },
+      company: "Plug & Tel",
+      period: "Jun 2026 – Aug 2026",
+      type: { en: "Internship", fr: "Stage" },
+      description: {
+        en: "Improving the classification error rate of a production Answering Machine Detection (AMD) AI model while maintaining latency compatible with the real-time constraints of VoIP streams.",
+        fr: "Amélioration du taux d'erreur de classification d'un modèle IA de détection de répondeur (AMD) en production tout en maintenant une latence compatible avec les contraintes temps réel des flux VoIP."
+      }
+    },
     {
       role: { en: "Part-Time Software Engineer", fr: "Ingénieur Logiciel (Temps Partiel)" },
       company: "Plug & Tel",
@@ -97,7 +107,7 @@ const PORTFOLIO_DATA = {
     {
       role: { en: "Freelance Software Developer", fr: "Développeur Logiciel Freelance" },
       company: "Strategy AI Assistant",
-      period: "Aug 2025 – Present",
+      period: "Aug 2025 – Jun 2026",
       type: { en: "Freelance", fr: "Freelance" },
       linkedProjectId: "strategy-ai",
       description: {
@@ -132,13 +142,14 @@ const PORTFOLIO_DATA = {
       id: "travel-agent", name: "Multi-Agent Travel Planner", emoji: "AI", category: "academic", date: "Jan 2026 – Jun 2026",
       tagline: { en: "AI-powered personalized travel planning with multi-agent architecture", fr: "Planification de voyage personnalisée par architecture multi-agents IA" },
       accentColor: "#0ea5e9", watermark: "TRVL",
-      status: { en: "In Development", fr: "En Développement" }, statusType: "dev",
+      status: { en: "Completed", fr: "Terminé" }, statusType: "done",
       duration: "End-of-year project (4th year)", team: "Team",
       tech: ["LLMs","LangGraph","RAG","Qdrant","Python"],
       myRole: { en: "AI architecture & multi-agent pipeline", fr: "Architecture IA & pipeline multi-agents" },
       links: [
-        { label: "View Code", url: "https://drive.google.com/file/d/1x1eV0aHLcibl-Eq3d1tlzPykInLyjDsO/view" },
-        { label: "Live Demo", url: "https://rafiqai.onrender.com/" }
+        { label: "View Demo", url: "https://drive.google.com/file/d/1x1eV0aHLcibl-Eq3d1tlzPykInLyjDsO/view" },
+        { label: "Live Demo", url: "https://rafiqai.onrender.com/" },
+        { label: "View Report", url: "https://drive.google.com/file/d/1l6KHpfCYm8RsrekPGSfbJlsK07Eiwidk/view?usp=drive_link" }
       ],
       tabs: {
         overview: {
@@ -163,8 +174,8 @@ const PORTFOLIO_DATA = {
       id: "smart-city", name: "Smart City Platform", emoji: "BIG", category: "academic", date: "Jan 2026 – Jun 2026",
       tagline: { en: "Big Data platform for urban intelligence with real-time streaming", fr: "Plateforme Big Data d'intelligence urbaine avec streaming temps réel" },
       accentColor: "#14b8a6", watermark: "CITY",
-      status: { en: "In Development", fr: "En Développement" }, statusType: "dev",
-      duration: "Ongoing", team: "Team",
+      status: { en: "Completed", fr: "Terminé" }, statusType: "done",
+      duration: "6 months", team: "Team",
       tech: ["Hadoop","Spark","Kafka","MLlib","Big Data"],
       myRole: { en: "Big Data pipeline & ML scoring", fr: "Pipeline Big Data & scoring ML" },
       links: [],
@@ -223,16 +234,16 @@ const PORTFOLIO_DATA = {
       }
     },
     {
-      id: "strategy-ai", name: "Strategy AI Assistant", emoji: "AI", category: "freelance", date: "Aug 2025 – Present",
+      id: "strategy-ai", name: "Strategy AI Assistant", emoji: "AI", category: "freelance", date: "Aug 2025 – Jun 2026",
       tagline: { en: "AI-powered business strategy & diagnostic platform", fr: "Plateforme de stratégie business et diagnostic par IA" },
       accentColor: "#f59e0b", watermark: "AI",
-      status: { en: "In Development", fr: "En Développement" }, statusType: "dev",
-      duration: "Ongoing", team: "2 developers",
+      status: { en: "Completed", fr: "Terminé" }, statusType: "done",
+      duration: "10 months", team: "2 developers",
       tech: ["React","NestJS","OpenAI","LangChain","PDF Generation","Chatbot"],
       myRole: { en: "Co-developer — AI pipeline & backend", fr: "Co-développeur — pipeline IA & backend" },
       links: [],
       tabs: {
-        overview: { en: "An AI-powered business strategy assistant actively in development since August 2025. Generates complete business diagnostics, financial projections, and market analysis through a conversational chatbot. Visualizes strategic data as interactive graphs and exports results as PDF reports or pitch decks. Note: not currently in production — no public demo available.", fr: "Assistant stratégique IA en développement actif depuis août 2025. Génère des diagnostics business complets, des projections financières et des analyses de marché via chatbot conversationnel. Visualisations en graphiques interactifs, exports PDF et pitch deck. Note : pas en production actuellement." },
+        overview: { en: "An AI-powered business strategy assistant developed from August 2025 to June 2026. Generates complete business diagnostics, financial projections, and market analysis through a conversational chatbot. Visualizes strategic data as interactive graphs and exports results as PDF reports or pitch decks. Note: completed but not yet deployed by the client — no public demo available.", fr: "Assistant stratégique IA développé d'août 2025 à juin 2026. Génère des diagnostics business complets, des projections financières et des analyses de marché via chatbot conversationnel. Visualisations en graphiques interactifs, exports PDF et pitch deck. Note : terminé mais pas encore déployé par le client — pas de démo publique disponible." },
         features: { en: ["Conversational AI chatbot for business questions","Automated business diagnostic generation","Financial projection modeling","Market analysis with interactive graph visualizations","PDF and pitch deck export"], fr: ["Chatbot IA conversationnel pour questions business","Génération automatisée de diagnostics","Modélisation de projections financières","Analyses de marché avec graphiques interactifs","Export PDF et pitch deck"] },
         challenges: { en: "Structuring unstructured business input into coherent, actionable diagnostics required careful prompt engineering and output validation.", fr: "Structurer des données business non structurées en diagnostics cohérents a nécessité une ingénierie de prompts soignée et une validation rigoureuse des sorties." },
         learnings: { en: "Advanced prompt engineering, building AI pipelines that produce structured business outputs, and data visualization for strategic content.", fr: "Ingénierie de prompts avancée, construction de pipelines IA produisant des sorties structurées, et visualisation de données pour contenu stratégique." }
@@ -274,8 +285,8 @@ const PORTFOLIO_DATA = {
       id: "medisys", name: "MediSys", emoji: "MD", category: "academic", date: "Mar 2025 – Jun 2025",
       tagline: { en: "AI-powered medical management platform", fr: "Plateforme de gestion médicale propulsée par l'IA" },
       accentColor: "#a855f7", watermark: "MEDI",
-      status: { en: "In Development", fr: "En Développement" }, statusType: "dev",
-      duration: "8 months", team: "5 developers",
+      status: { en: "Completed", fr: "Terminé" }, statusType: "done",
+      duration: "4 months", team: "5 developers",
       tech: ["NestJS","Next.js","GraphQL","WebSocket","Python","OCR","AI"],
       myRole: { en: "Backend architecture and AI/OCR integration module", fr: "Architecture backend et module d'intégration IA/OCR" },
       links: [
@@ -288,6 +299,67 @@ const PORTFOLIO_DATA = {
         features: { en: ["Full medical workflow: appointments, consultations, prescriptions","AI-powered OCR for medical document digitization","Real-time notifications via WebSocket and SSE","Role-based access: doctors, patients, administrators","Hybrid GraphQL/REST API"], fr: ["Workflow médical complet : rendez-vous, consultations, prescriptions","OCR IA pour numérisation de documents médicaux","Notifications temps réel via WebSocket et SSE","Accès par rôles : médecins, patients, administrateurs","API hybride GraphQL/REST"] },
         challenges: { en: "Integrating OCR in a medical context required handling high document variability. Designing a GraphQL schema flexible enough for multiple medical specialties while keeping queries performant was also a major challenge.", fr: "L'intégration OCR dans un contexte médical nécessitait de gérer une grande variabilité documentaire. La conception d'un schéma GraphQL flexible pour plusieurs spécialités médicales tout en maintenant de bonnes performances était un défi majeur." },
         learnings: { en: "Deep expertise in GraphQL schema design, hybrid API architectures, OCR pipeline integration, and healthcare data modeling.", fr: "Expertise approfondie en conception de schémas GraphQL, architectures API hybrides, intégration de pipelines OCR et modélisation de données de santé." }
+      }
+    },
+    {
+      id: "operations-research", name: "Operations Research Optimization", emoji: "OR", category: "academic", date: "Apr 2025 – May 2025",
+      tagline: { en: "NP-hard optimization with Gurobi: transport, VRP & facility location", fr: "Optimisation NP-difficile avec Gurobi : transport, VRP & localisation de facilités" },
+      accentColor: "#ec4899", watermark: "OR",
+      status: { en: "Completed", fr: "Terminé" }, statusType: "done",
+      duration: "2 months", team: "Team",
+      tech: ["Python","Gurobi","Next.js","FastAPI","PyQt5"],
+      myRole: { en: "Modeling, optimization & full-stack development", fr: "Modélisation, optimisation & développement full-stack" },
+      links: [
+        { label: "View Code", url: "https://github.com/Rayen-Chemlali/GurobiProject" },
+        { label: "View Report", url: "https://drive.google.com/file/d/1J0Rvyd3EGkf77vtPk0PuZZv5tYSkxlLq/view" }
+      ],
+      tabs: {
+        overview: {
+          en: "Modeled and solved three NP-hard problems with Gurobi: transport, VRP with MTZ subtour elimination, and facility location, including dual and sensitivity analysis. Delivered two full applications: a Next.js/FastAPI web platform with interactive route visualization, and a PyQt5 desktop app.",
+          fr: "Modélisation et résolution de trois problèmes NP-difficiles avec Gurobi : transport, VRP avec élimination de sous-tours MTZ, et localisation de facilités, incluant analyse duale et de sensibilité. Livraison de deux applications complètes : une plateforme web Next.js/FastAPI avec visualisation interactive des routes, et une application desktop PyQt5."
+        },
+        features: {
+          en: ["Transport problem modeling and optimization","VRP with MTZ subtour elimination constraints","Facility location problem with capacity constraints","Dual and sensitivity analysis","Next.js/FastAPI web platform with interactive route visualization","PyQt5 desktop application"],
+          fr: ["Modélisation et optimisation du problème de transport","VRP avec contraintes d'élimination de sous-tours MTZ","Problème de localisation de facilités avec contraintes de capacité","Analyse duale et de sensibilité","Plateforme web Next.js/FastAPI avec visualisation interactive des routes","Application desktop PyQt5"]
+        },
+        challenges: {
+          en: "Formulating the MTZ subtour elimination constraints correctly for the VRP and ensuring solver convergence on large instances required careful mathematical modeling and parameter tuning.",
+          fr: "Formuler correctement les contraintes d'élimination de sous-tours MTZ pour le VRP et assurer la convergence du solveur sur de grandes instances a nécessité une modélisation mathématique soignée et un réglage fin des paramètres."
+        },
+        learnings: {
+          en: "Mathematical optimization modeling, linear and integer programming with Gurobi, duality theory, sensitivity analysis, and building interactive optimization result visualizations.",
+          fr: "Modélisation d'optimisation mathématique, programmation linéaire et en nombres entiers avec Gurobi, théorie de la dualité, analyse de sensibilité, et construction de visualisations interactives de résultats d'optimisation."
+        }
+      }
+    },
+    {
+      id: "gpu-computing", name: "Heterogeneous GPU Computing", emoji: "GPU", category: "academic", date: "Apr 2025 – May 2025",
+      tagline: { en: "CUDA/OpenCL heterogeneous computing with near-cuBLAS performance", fr: "Calcul hétérogène CUDA/OpenCL avec performance proche de cuBLAS" },
+      accentColor: "#84cc16", watermark: "GPU",
+      status: { en: "Completed", fr: "Terminé" }, statusType: "done",
+      duration: "2 months", team: "Team",
+      tech: ["CUDA","OpenCL","cuBLAS","C++"],
+      myRole: { en: "GPU kernel optimization & load balancing", fr: "Optimisation de kernels GPU & équilibrage de charge" },
+      links: [
+        { label: "View Reports", url: "https://drive.google.com/drive/u/1/folders/1YRj_bzkIM0phy20c8z-urQjFVcuhrEN_" }
+      ],
+      tabs: {
+        overview: {
+          en: "Dynamic load balancing across CPU, iGPU, and dGPU in OpenCL, achieving a 1.23× speedup over GPU-only execution. Optimized CUDA kernels using tiling, float4 vectorization, and Tensor Cores, reaching 1235 GFLOPS — within 6% of cuBLAS performance.",
+          fr: "Équilibrage de charge dynamique entre CPU, iGPU et dGPU en OpenCL, atteignant un speedup de 1.23× par rapport à l'exécution GPU seul. Optimisation de kernels CUDA avec tiling, vectorisation float4 et Tensor Cores, atteignant 1235 GFLOPS — à 6% des performances de cuBLAS."
+        },
+        features: {
+          en: ["Dynamic load balancing across CPU, iGPU, and dGPU","OpenCL heterogeneous computing with 1.23× speedup","CUDA kernel optimization: tiling, float4 vectorization","Tensor Core utilization reaching 1235 GFLOPS","Within 6% of cuBLAS reference performance","Performance profiling and benchmarking"],
+          fr: ["Équilibrage de charge dynamique CPU, iGPU et dGPU","Calcul hétérogène OpenCL avec speedup 1.23×","Optimisation de kernels CUDA : tiling, vectorisation float4","Utilisation des Tensor Cores atteignant 1235 GFLOPS","À 6% des performances de référence cuBLAS","Profilage et benchmarking de performances"]
+        },
+        challenges: {
+          en: "Achieving efficient dynamic load balancing across heterogeneous devices with different memory architectures and compute capabilities required careful workload partitioning and synchronization strategies.",
+          fr: "Atteindre un équilibrage de charge dynamique efficace entre des dispositifs hétérogènes avec des architectures mémoire et des capacités de calcul différentes a nécessité des stratégies de partitionnement de charge et de synchronisation soignées."
+        },
+        learnings: {
+          en: "GPU architecture and memory hierarchies, CUDA kernel optimization techniques, OpenCL heterogeneous programming, Tensor Core programming, and high-performance computing benchmarking.",
+          fr: "Architecture GPU et hiérarchies mémoire, techniques d'optimisation de kernels CUDA, programmation hétérogène OpenCL, programmation Tensor Core, et benchmarking en calcul haute performance."
+        }
       }
     },
     {
@@ -387,11 +459,18 @@ const PORTFOLIO_DATA = {
   ],
   education: [
     {
+      institution: "INP Toulouse - ENSEEIHT",
+      full: "École Nationale Supérieure d'Électrotechnique, d'Électronique, d'Informatique, d'Hydraulique et des Télécommunications",
+      degree: { en: "5th Year — Digital Sciences Dept., HPC Big Data Track (Academic Exchange)", fr: "5ème année — Dept. Sciences du Numérique, Parcours HPC Big Data (Échange Académique)" },
+      period: "2026 – 2027",
+      highlights: { en: ["Academic exchange program","HPC Big Data specialization track","Digital Sciences Department"], fr: ["Programme d'échange académique","Parcours de spécialisation HPC Big Data","Département Sciences du Numérique"] }
+    },
+    {
       institution: "INSAT",
       full: "Institut National des Sciences Appliquées et de Technologie",
       degree: { en: "Engineering Degree — Software Engineering", fr: "Diplôme d'Ingénieur — Génie Logiciel" },
-      period: "2022 – Present",
-      highlights: { en: ["Ranked 32nd / 410 — 1st year common cycle (MPI)","Ranked 5th / 90 — 2nd year preparatory cycle","Ranked 6th / 96 — 1st year engineering cycle"], fr: ["Classé 32ème / 410 — 1ère année tronc commun (MPI)","Classé 5ème / 90 — 2ème année préparatoire","Classé 6ème / 96 — 1ère année cycle ingénieur"] }
+      period: "2022 – 2026",
+      highlights: { en: ["Ranked 32nd / 410 — 1st year common cycle (MPI)","Ranked 5th / 90 — 2nd year preparatory cycle","Ranked 6th / 96 — 1st year engineering cycle","Ranked 8th / 90 — 2nd year engineering cycle"], fr: ["Classé 32ème / 410 — 1ère année tronc commun (MPI)","Classé 5ème / 90 — 2ème année préparatoire","Classé 6ème / 96 — 1ère année cycle ingénieur","Classé 8ème / 90 — 2ème année cycle ingénieur"] }
     },
     {
       institution: { en: "Baccalaureate in Mathematics", fr: "Baccalauréat en Mathématiques" },

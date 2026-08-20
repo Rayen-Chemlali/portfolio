@@ -3,8 +3,8 @@
 // ═══════════════════════════════════════════════════════
 function renderHero() {
   document.getElementById('hero-bio').textContent = lang === 'en'
-      ? "4th-year Software Engineering student at INSAT, passionate about AI, ML and software architecture. Building things across internships, freelance projects, and open to new opportunities."
-      : "Étudiant en 4ème année Génie Logiciel à l'INSAT, passionné par l'IA, le ML et l'architecture logicielle. Je construis des choses en stages, en freelance, et suis ouvert à de nouvelles opportunités.";
+      ? "5th-year engineering student at INP Toulouse – ENSEEIHT (HPC Big Data), on exchange from INSAT. Passionate about AI, ML and software architecture. Building things across internships, freelance projects, and open to new opportunities."
+      : "Étudiant en 5ème année à l'INP Toulouse – ENSEEIHT (HPC Big Data), en échange depuis l'INSAT. Passionné par l'IA, le ML et l'architecture logicielle. Je construis des choses en stages, en freelance, et suis ouvert à de nouvelles opportunités.";
   document.getElementById('btn-work').textContent = t(UI_LABELS.hero_work);
   document.getElementById('btn-cv').textContent = t(UI_LABELS.hero_cv);
 
