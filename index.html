@@ -15,6 +15,11 @@
   <meta id="og-title" property="og:title" content="Rayen Chemlali | Software Engineer & AI Developer - ENSEEIHT / INSAT">
   <meta id="og-desc" property="og:description" content="Rayen Chemlali, Software Engineer & AI Developer. 5th-year at INP Toulouse - ENSEEIHT (HPC Big Data) and PSMSC Master, on exchange from INSAT Tunisia. Agentic AI, HPC, full-stack and competitive programming.">
   <meta id="og-type" property="og:type" content="website">
+  <meta property="og:image" content="https://rayen-chemlali.vercel.app/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Rayen Chemlali, software engineer, HPC and agentic AI">
+  <meta name="twitter:image" content="https://rayen-chemlali.vercel.app/og-image.png">
   <meta id="og-locale" property="og:locale" content="en_US">
   <meta id="og-site" property="og:site_name" content="Rayen Chemlali Portfolio">
   <meta id="og-url" property="og:url" content="https://rayen-chemlali.vercel.app">
@@ -34,6 +39,7 @@
   <div class="topbar-inner">
     <a href="#hero" class="brand" onclick="navigate('hero');return false;">Rayen Chemlali</a>
     <nav id="top-nav" aria-label="Main navigation"></nav>
+    <a href="#" class="nav-cv" id="nav-cv" onclick="openCvModal();return false;">CV</a>
     <div id="lang-toggle" role="group" aria-label="Language selector">
       <button class="lang-btn active" onclick="setLang('en')" id="btn-en" aria-label="Switch to English">EN</button>
       <button class="lang-btn" onclick="setLang('fr')" id="btn-fr" aria-label="Passer en français">FR</button>
@@ -51,6 +57,7 @@
             <span id="typewriter"></span><span class="cursor" aria-hidden="true"></span>
           </div>
           <p class="hero-bio" id="hero-bio"></p>
+          <dl class="hero-facts" id="hero-facts"></dl>
           <div class="hero-btns">
             <a href="#" class="btn-primary" id="btn-work" onclick="navigate('projects');return false;" aria-label="View my work">View My Work</a>
             <a href="#" class="btn-outline" id="btn-cv" aria-label="Download CV">Download CV</a>
@@ -65,7 +72,7 @@
           </div>
         </div>
         <div class="hero-right" aria-label="Rayen Chemlali profile photo">
-          <img src="rayen.jpg" alt="Rayen Chemlali" class="hero-photo">
+          <img src="rayen-hero.jpg" alt="Rayen Chemlali" class="hero-photo" width="720" height="900">
         </div>
       </section>
     </div>
@@ -77,7 +84,7 @@
           <div class="about-left">
             <div class="photo-wrapper">
               <div class="photo-ring">
-                <img src="rayen.jpg" alt="Rayen Chemlali" class="photo-img" id="profile-photo">
+                <img src="rayen-hero.jpg" alt="Rayen Chemlali" class="photo-img" id="profile-photo">
               </div>
             </div>
             <div class="about-text" id="about-text"></div>
@@ -92,13 +99,6 @@
         </div>
       </section>
     </div>
-    <div id="section-skills" class="section">
-      <section aria-labelledby="skills-title">
-        <div class="section-label" aria-hidden="true" id="label-skills"></div>
-        <h2 class="section-title" id="skills-title"></h2>
-        <div class="skills-grid" id="skills-grid"></div>
-      </section>
-    </div>
     <div id="section-experience" class="section">
       <section aria-labelledby="exp-title">
         <div class="section-label" aria-hidden="true" id="label-experience"></div>
@@ -111,6 +111,13 @@
         <div class="section-label" aria-hidden="true" id="label-projects"></div>
         <h2 class="section-title" id="proj-title"></h2>
         <div id="projects-container"></div>
+      </section>
+    </div>
+    <div id="section-skills" class="section">
+      <section aria-labelledby="skills-title">
+        <div class="section-label" aria-hidden="true" id="label-skills"></div>
+        <h2 class="section-title" id="skills-title"></h2>
+        <div class="skills-grid" id="skills-grid"></div>
       </section>
     </div>
     <div id="section-education" class="section">

@@ -9,6 +9,13 @@ function renderHero() {
   if (st) st.innerHTML = '<span class="hero-status-dot" aria-hidden="true"></span>' + (lang === 'en'
       ? 'Open to a 6-month end-of-studies internship in 2027'
       : 'Disponible pour un stage de fin d\'études de 6 mois en 2027');
+  const facts = lang === 'en'
+    ? [['Now', 'ENSEEIHT, HPC Big Data track, and the PSMSC Master, Toulouse'], ['Before', 'Four years of software engineering at INSAT, Tunisia'], ['Focus', 'Agentic AI and high-performance computing']]
+    : [['Aujourd\'hui', 'ENSEEIHT, parcours HPC Big Data, et Master PSMSC, Toulouse'], ['Avant', 'Quatre ans de génie logiciel à l\'INSAT, Tunisie'], ['Domaines', 'IA agentique et calcul haute performance']];
+  const factsEl = document.getElementById('hero-facts');
+  if (factsEl) factsEl.innerHTML = facts.map(f => `<div><dt>${f[0]}</dt><dd>${f[1]}</dd></div>`).join('');
+  const navCv = document.getElementById('nav-cv');
+  if (navCv) navCv.setAttribute('aria-label', lang === 'en' ? 'Download my CV' : 'Télécharger mon CV');
   document.getElementById('btn-work').textContent = t(UI_LABELS.hero_work);
   document.getElementById('btn-cv').textContent = t(UI_LABELS.hero_cv);
 

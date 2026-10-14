@@ -17,9 +17,9 @@ const t = (field) => {
 const NAV_ITEMS = [
   { id: 'hero',           icon: '⌂', label: { en: 'Home',           fr: 'Accueil' } },
   { id: 'about',          icon: '◉', label: { en: 'About',          fr: 'À Propos' } },
-  { id: 'skills',         icon: '✦', label: { en: 'Skills',         fr: 'Compétences' } },
   { id: 'experience',     icon: '◈', label: { en: 'Experience',     fr: 'Expérience' } },
   { id: 'projects',       icon: '⬡', label: { en: 'Projects',       fr: 'Projets' } },
+  { id: 'skills',         icon: '✦', label: { en: 'Skills',         fr: 'Compétences' } },
   { id: 'education',      icon: '◎', label: { en: 'Education',      fr: 'Formation' } },
   { id: 'achievements',   icon: '◆', label: { en: 'Achievements',   fr: 'Récompenses' } },
   { id: 'certifications', icon: '◇', label: { en: 'Certifications', fr: 'Certifications' } },

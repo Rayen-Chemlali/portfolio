@@ -1825,3 +1825,49 @@ footer {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
 }
+
+/* ══ Refinements: calmer titles, accent reserved for actions ══ */
+.section-title { font-size: 30px; line-height: 1.15; margin-bottom: 28px; font-variation-settings: "wdth" 112; font-weight: 800; }
+.nav-cv {
+  flex: none; font: 600 13px/1 var(--font-body);
+  color: #fff; background: var(--accent);
+  padding: 9px 14px; border-radius: 6px; text-decoration: none;
+}
+.nav-cv:hover { background: #0F4C7A; color: #fff; }
+.hero-facts { margin: 0 0 30px; max-width: 560px; border-top: 1px solid var(--border); }
+.hero-facts > div { display: grid; grid-template-columns: 96px minmax(0, 1fr); gap: 16px; padding: 9px 0; border-bottom: 1px solid var(--border); }
+.hero-facts dt { color: var(--text-muted); font-size: 14px; }
+.hero-facts dd { margin: 0; color: var(--text); font-size: 15px; }
+.hero-bio { margin-bottom: 22px; }
+
+.hero-right { border: 0; outline: 0; box-shadow: none; width: 300px; height: auto; aspect-ratio: 4 / 5; border-radius: 10px; }
+.hero-right::after { display: none; }
+.hero-photo { border-radius: 10px; object-position: center; }
+
+.stat-card-num, .ach-rank { color: var(--text); }
+.timeline-company { color: var(--text-dim); font-weight: 600; }
+.timeline-dot { border-color: #B9C3D1; }
+.exp-col-count, .proj-category-count { color: var(--text-muted); background: var(--bg-alt); border-color: var(--border); }
+.proj-category-icon, .cert-icon-badge { color: var(--text-muted); background: var(--bg-alt); border-color: var(--border); }
+.timeline-type-badge { color: var(--text-muted); background: var(--bg-alt); border-color: var(--border); }
+.edu-card { border-top: 1px solid var(--border); }
+.edu-degree { color: var(--text-dim); }
+.edu-highlights li::before, .modal-features-list li::before { color: var(--text-muted); }
+
+.project-card-top { display: none; }
+.project-card::before { display: none; }
+.project-card:hover { border-color: #B9C3D1; }
+.project-view-btn { opacity: 1; transform: none; color: var(--text-muted); }
+.project-card:hover .project-view-btn { color: var(--accent); }
+.project-date { font-family: var(--font-body); }
+
+@media (max-width: 1100px) {
+  .nav-cv { order: 2; margin-left: auto; margin-right: 10px; }
+  #lang-toggle { margin-left: 0; }
+}
+@media (max-width: 900px) {
+  .section-title { font-size: 26px; }
+  .hero-right { width: 180px; }
+  .hero-facts > div { grid-template-columns: 84px minmax(0, 1fr); }
+}
+.timeline-period, .edu-period { font-family: var(--font-body); font-variant-numeric: tabular-nums; }
