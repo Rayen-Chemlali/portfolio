@@ -64,7 +64,7 @@ const UI_LABELS = {
   form_subject: { en: 'Subject',             fr: 'Sujet' },
   form_message: { en: 'Message',             fr: 'Message' },
   form_send:    { en: 'Send Message',        fr: 'Envoyer' },
-  footer_copy:  { en: '© 2026 Rayen Chemlali', fr: '© 2026 Rayen Chemlali' },
+  footer_copy:  { en: '', fr: '' },
   footer_made:  { en: '', fr: '' }
 };
 
