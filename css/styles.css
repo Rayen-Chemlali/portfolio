@@ -1911,3 +1911,4 @@ footer { display: none !important; }
   .modal-header, .modal-body, .modal-links { padding-left: 18px; padding-right: 18px; }
 }
 #modal-overlay:focus, #modal-overlay:focus-visible { outline: none; }
+#timeline.timeline::before { display: none; }
