@@ -527,7 +527,7 @@ const PORTFOLIO_DATA = {
   ],
   projectFilters: [
     { id: "ai", label: { en: "Agentic AI & LLMs", fr: "IA agentique & LLM" },
-      projects: ["travel-agent", "enedispo", "container-registry", "medisys", "strategy-ai"] },
+      projects: ["travel-agent", "container-registry", "medisys", "strategy-ai", "enedispo"] },
     { id: "ml", label: { en: "Machine Learning", fr: "Machine Learning" },
       projects: ["ml-suite", "soundguard", "aria", "house-prices"] },
     { id: "hpc", label: { en: "HPC, Big Data & Optimization", fr: "HPC, Big Data & Optimisation" },
