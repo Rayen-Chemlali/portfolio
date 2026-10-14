@@ -1871,3 +1871,7 @@ footer {
   .hero-facts > div { grid-template-columns: 84px minmax(0, 1fr); }
 }
 .timeline-period, .edu-period { font-family: var(--font-body); font-variant-numeric: tabular-nums; }
+.topbar-inner { gap: 18px; }
+#top-nav .nav-item { padding: 8px 8px; font-size: 14px; }
+.photo-ring { background: none !important; padding: 0 !important; border: 0 !important; box-shadow: none !important; }
+.photo-ring img, .photo-img { border-radius: 10px; border: 0; }
