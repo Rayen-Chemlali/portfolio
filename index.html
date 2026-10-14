@@ -279,6 +279,24 @@
         <div class="section-label" aria-hidden="true" id="label-projects"></div>
         <h2 class="section-title" id="proj-title">My Work</h2>
         <div id="projects-container">
+    <div class="proj-filters" role="group" aria-label="Filter projects by field">
+      <button class="proj-filter active" aria-pressed="true" onclick="setProjectFilter('all')">
+        All <span class="proj-filter-count">16</span>
+      </button>
+      
+        <button class="proj-filter" aria-pressed="false" onclick="setProjectFilter('ai')">
+          Agentic AI &amp; LLMs <span class="proj-filter-count">4</span>
+        </button>
+        <button class="proj-filter" aria-pressed="false" onclick="setProjectFilter('ml')">
+          Machine Learning <span class="proj-filter-count">4</span>
+        </button>
+        <button class="proj-filter" aria-pressed="false" onclick="setProjectFilter('hpc')">
+          HPC, Big Data &amp; Optimization <span class="proj-filter-count">4</span>
+        </button>
+        <button class="proj-filter" aria-pressed="false" onclick="setProjectFilter('software')">
+          Software &amp; Web <span class="proj-filter-count">7</span>
+        </button>
+    </div>
       <div class="proj-category">
         <div class="proj-category-header">
           <span class="proj-category-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"></path></svg></span>
@@ -286,30 +304,27 @@
           <span class="proj-category-count">2</span>
         </div>
         <div class="projects-grid">
-          
-              <article class="project-card" style="--project-color:var(--accent)" onclick="openModal(6)" role="button" tabindex="0" aria-label="View details for ML Projects Suite project" onkeydown="if(event.key==='Enter')openModal(6)">
-                <div class="project-card-top">
-                  <span class="project-emoji" role="img" aria-label="ML Projects Suite">ML</span>
-                </div>
-                <h3 class="project-name">ML Projects Suite</h3>
-                <p class="project-tagline">5 end-to-end ML projects across domains</p>
-                <div class="project-tech-row"><span class="tech-chip">Python</span><span class="tech-chip">Scikit-learn</span><span class="tech-chip">TensorFlow</span><span class="tech-chip">+3</span></div>
-                <div class="project-date">Feb 2026 - Mar 2026</div>
-                <div class="project-view-btn" aria-hidden="true">View details</div>
-              </article>
-              <article class="project-card" style="--project-color:var(--accent)" onclick="openModal(15)" role="button" tabindex="0" aria-label="View details for Smart Container Registry project" onkeydown="if(event.key==='Enter')openModal(15)">
-                <div class="project-card-top">
-                  <span class="project-emoji" role="img" aria-label="Smart Container Registry">K8S</span>
-                </div>
-                <h3 class="project-name">Smart Container Registry</h3>
-                <p class="project-tagline">AI-powered Docker storage optimizer for Kubernetes</p>
-                <div class="project-tech-row"><span class="tech-chip">Docker</span><span class="tech-chip">Kubernetes</span><span class="tech-chip">S3</span><span class="tech-chip">+3</span></div>
-                <div class="project-date">Jun 2025 - Aug 2025</div>
-                <div class="project-view-btn" aria-hidden="true">View details</div>
-              </article>
+      <article class="project-card" style="--project-color:var(--accent)" onclick="openModal(6)" role="button" tabindex="0" aria-label="View details for ML Projects Suite project" onkeydown="if(event.key==='Enter')openModal(6)">
+        <div class="project-card-top">
+          <span class="project-emoji" role="img" aria-label="ML Projects Suite">ML</span>
         </div>
+        <h3 class="project-name">ML Projects Suite</h3>
+        <p class="project-tagline">5 end-to-end ML projects across domains</p>
+        <div class="project-tech-row"><span class="tech-chip">Python</span><span class="tech-chip">Scikit-learn</span><span class="tech-chip">TensorFlow</span><span class="tech-chip">+3</span></div>
+        <div class="project-date">Feb 2026 - Mar 2026</div>
+        <div class="project-view-btn" aria-hidden="true">View details</div>
+      </article>
+      <article class="project-card" style="--project-color:var(--accent)" onclick="openModal(15)" role="button" tabindex="0" aria-label="View details for Smart Container Registry project" onkeydown="if(event.key==='Enter')openModal(15)">
+        <div class="project-card-top">
+          <span class="project-emoji" role="img" aria-label="Smart Container Registry">K8S</span>
+        </div>
+        <h3 class="project-name">Smart Container Registry</h3>
+        <p class="project-tagline">AI-powered Docker storage optimizer for Kubernetes</p>
+        <div class="project-tech-row"><span class="tech-chip">Docker</span><span class="tech-chip">Kubernetes</span><span class="tech-chip">S3</span><span class="tech-chip">+3</span></div>
+        <div class="project-date">Jun 2025 - Aug 2025</div>
+        <div class="project-view-btn" aria-hidden="true">View details</div>
+      </article></div>
       </div>
-    
       <div class="proj-category">
         <div class="proj-category-header">
           <span class="proj-category-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg></span>
@@ -317,30 +332,27 @@
           <span class="proj-category-count">2</span>
         </div>
         <div class="projects-grid">
-          
-              <article class="project-card" style="--project-color:var(--accent)" onclick="openModal(4)" role="button" tabindex="0" aria-label="View details for Strategy AI Assistant project" onkeydown="if(event.key==='Enter')openModal(4)">
-                <div class="project-card-top">
-                  <span class="project-emoji" role="img" aria-label="Strategy AI Assistant">AI</span>
-                </div>
-                <h3 class="project-name">Strategy AI Assistant</h3>
-                <p class="project-tagline">AI-powered business strategy &amp; diagnostic platform</p>
-                <div class="project-tech-row"><span class="tech-chip">React</span><span class="tech-chip">NestJS</span><span class="tech-chip">OpenAI</span><span class="tech-chip">+3</span></div>
-                <div class="project-date">Aug 2025 - Jun 2026</div>
-                <div class="project-view-btn" aria-hidden="true">View details</div>
-              </article>
-              <article class="project-card" style="--project-color:var(--accent)" onclick="openModal(5)" role="button" tabindex="0" aria-label="View details for Shannon project" onkeydown="if(event.key==='Enter')openModal(5)">
-                <div class="project-card-top">
-                  <span class="project-emoji" role="img" aria-label="Shannon">OSS</span>
-                </div>
-                <h3 class="project-name">Shannon</h3>
-                <p class="project-tagline">Open-source Simulink-inspired visual code generator</p>
-                <div class="project-tech-row"><span class="tech-chip">Canvas API</span><span class="tech-chip">Graph Model</span><span class="tech-chip">Code Generation</span><span class="tech-chip">+1</span></div>
-                <div class="project-date">Nov 2025 - Jan 2026</div>
-                <div class="project-view-btn" aria-hidden="true">View details</div>
-              </article>
+      <article class="project-card" style="--project-color:var(--accent)" onclick="openModal(4)" role="button" tabindex="0" aria-label="View details for Strategy AI Assistant project" onkeydown="if(event.key==='Enter')openModal(4)">
+        <div class="project-card-top">
+          <span class="project-emoji" role="img" aria-label="Strategy AI Assistant">AI</span>
         </div>
+        <h3 class="project-name">Strategy AI Assistant</h3>
+        <p class="project-tagline">AI-powered business strategy &amp; diagnostic platform</p>
+        <div class="project-tech-row"><span class="tech-chip">React</span><span class="tech-chip">NestJS</span><span class="tech-chip">OpenAI</span><span class="tech-chip">+3</span></div>
+        <div class="project-date">Aug 2025 - Jun 2026</div>
+        <div class="project-view-btn" aria-hidden="true">View details</div>
+      </article>
+      <article class="project-card" style="--project-color:var(--accent)" onclick="openModal(5)" role="button" tabindex="0" aria-label="View details for Shannon project" onkeydown="if(event.key==='Enter')openModal(5)">
+        <div class="project-card-top">
+          <span class="project-emoji" role="img" aria-label="Shannon">OSS</span>
+        </div>
+        <h3 class="project-name">Shannon</h3>
+        <p class="project-tagline">Open-source Simulink-inspired visual code generator</p>
+        <div class="project-tech-row"><span class="tech-chip">Canvas API</span><span class="tech-chip">Graph Model</span><span class="tech-chip">Code Generation</span><span class="tech-chip">+1</span></div>
+        <div class="project-date">Nov 2025 - Jan 2026</div>
+        <div class="project-view-btn" aria-hidden="true">View details</div>
+      </article></div>
       </div>
-    
       <div class="proj-category">
         <div class="proj-category-header">
           <span class="proj-category-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg></span>
@@ -348,100 +360,97 @@
           <span class="proj-category-count">9</span>
         </div>
         <div class="projects-grid">
-          
-              <article class="project-card" style="--project-color:var(--accent)" onclick="openModal(0)" role="button" tabindex="0" aria-label="View details for Multi-Agent Travel Planner project" onkeydown="if(event.key==='Enter')openModal(0)">
-                <div class="project-card-top">
-                  <span class="project-emoji" role="img" aria-label="Multi-Agent Travel Planner">AI</span>
-                </div>
-                <h3 class="project-name">Multi-Agent Travel Planner</h3>
-                <p class="project-tagline">AI-powered personalized travel planning with multi-agent architecture</p>
-                <div class="project-tech-row"><span class="tech-chip">LLMs</span><span class="tech-chip">LangGraph</span><span class="tech-chip">RAG</span><span class="tech-chip">+2</span></div>
-                <div class="project-date">Jan 2026 - Jun 2026</div>
-                <div class="project-view-btn" aria-hidden="true">View details</div>
-              </article>
-              <article class="project-card" style="--project-color:var(--accent)" onclick="openModal(1)" role="button" tabindex="0" aria-label="View details for Smart City Platform project" onkeydown="if(event.key==='Enter')openModal(1)">
-                <div class="project-card-top">
-                  <span class="project-emoji" role="img" aria-label="Smart City Platform">BIG</span>
-                </div>
-                <h3 class="project-name">Smart City Platform</h3>
-                <p class="project-tagline">Big Data platform for urban intelligence with real-time streaming</p>
-                <div class="project-tech-row"><span class="tech-chip">Hadoop</span><span class="tech-chip">Spark</span><span class="tech-chip">Kafka</span><span class="tech-chip">+2</span></div>
-                <div class="project-date">Jan 2026 - Jun 2026</div>
-                <div class="project-view-btn" aria-hidden="true">View details</div>
-              </article>
-              <article class="project-card" style="--project-color:var(--accent)" onclick="openModal(2)" role="button" tabindex="0" aria-label="View details for House Prices in Grand Tunis project" onkeydown="if(event.key==='Enter')openModal(2)">
-                <div class="project-card-top">
-                  <span class="project-emoji" role="img" aria-label="House Prices in Grand Tunis">ML</span>
-                </div>
-                <h3 class="project-name">House Prices in Grand Tunis</h3>
-                <p class="project-tagline">Data mining &amp; ML analysis of real estate prices in Grand Tunis</p>
-                <div class="project-tech-row"><span class="tech-chip">Python</span><span class="tech-chip">Pandas</span><span class="tech-chip">Scikit-learn</span><span class="tech-chip">+4</span></div>
-                <div class="project-date">Dec 2025 - Feb 2026</div>
-                <div class="project-view-btn" aria-hidden="true">View details</div>
-              </article>
-              <article class="project-card" style="--project-color:var(--accent)" onclick="openModal(3)" role="button" tabindex="0" aria-label="View details for KickStream project" onkeydown="if(event.key==='Enter')openModal(3)">
-                <div class="project-card-top">
-                  <span class="project-emoji" role="img" aria-label="KickStream">WS</span>
-                </div>
-                <h3 class="project-name">KickStream</h3>
-                <p class="project-tagline">Real-time football prediction &amp; streaming platform</p>
-                <div class="project-tech-row"><span class="tech-chip">Angular 20</span><span class="tech-chip">NestJS</span><span class="tech-chip">Rust</span><span class="tech-chip">+3</span></div>
-                <div class="project-date">Dec 2025 - Feb 2026</div>
-                <div class="project-view-btn" aria-hidden="true">View details</div>
-              </article>
-              <article class="project-card" style="--project-color:var(--accent)" onclick="openModal(7)" role="button" tabindex="0" aria-label="View details for MediSys project" onkeydown="if(event.key==='Enter')openModal(7)">
-                <div class="project-card-top">
-                  <span class="project-emoji" role="img" aria-label="MediSys">MD</span>
-                </div>
-                <h3 class="project-name">MediSys</h3>
-                <p class="project-tagline">AI-powered medical management platform</p>
-                <div class="project-tech-row"><span class="tech-chip">NestJS</span><span class="tech-chip">Next.js</span><span class="tech-chip">GraphQL</span><span class="tech-chip">+4</span></div>
-                <div class="project-date">Mar 2025 - Jun 2025</div>
-                <div class="project-view-btn" aria-hidden="true">View details</div>
-              </article>
-              <article class="project-card" style="--project-color:var(--accent)" onclick="openModal(8)" role="button" tabindex="0" aria-label="View details for Operations Research Optimization project" onkeydown="if(event.key==='Enter')openModal(8)">
-                <div class="project-card-top">
-                  <span class="project-emoji" role="img" aria-label="Operations Research Optimization">OR</span>
-                </div>
-                <h3 class="project-name">Operations Research Optimization</h3>
-                <p class="project-tagline">NP-hard optimization with Gurobi: transport, VRP &amp; facility location</p>
-                <div class="project-tech-row"><span class="tech-chip">Python</span><span class="tech-chip">Gurobi</span><span class="tech-chip">Next.js</span><span class="tech-chip">+2</span></div>
-                <div class="project-date">Apr 2025 - May 2025</div>
-                <div class="project-view-btn" aria-hidden="true">View details</div>
-              </article>
-              <article class="project-card" style="--project-color:var(--accent)" onclick="openModal(9)" role="button" tabindex="0" aria-label="View details for Heterogeneous GPU Computing project" onkeydown="if(event.key==='Enter')openModal(9)">
-                <div class="project-card-top">
-                  <span class="project-emoji" role="img" aria-label="Heterogeneous GPU Computing">GPU</span>
-                </div>
-                <h3 class="project-name">Heterogeneous GPU Computing</h3>
-                <p class="project-tagline">CUDA/OpenCL heterogeneous computing with near-cuBLAS performance</p>
-                <div class="project-tech-row"><span class="tech-chip">CUDA</span><span class="tech-chip">OpenCL</span><span class="tech-chip">cuBLAS</span><span class="tech-chip">+1</span></div>
-                <div class="project-date">Apr 2025 - May 2025</div>
-                <div class="project-view-btn" aria-hidden="true">View details</div>
-              </article>
-              <article class="project-card" style="--project-color:var(--accent)" onclick="openModal(10)" role="button" tabindex="0" aria-label="View details for Mini-ERP System project" onkeydown="if(event.key==='Enter')openModal(10)">
-                <div class="project-card-top">
-                  <span class="project-emoji" role="img" aria-label="Mini-ERP System">ERP</span>
-                </div>
-                <h3 class="project-name">Mini-ERP System</h3>
-                <p class="project-tagline">Enterprise resource planning for sales operations</p>
-                <div class="project-tech-row"><span class="tech-chip">ASP.NET</span><span class="tech-chip">C#</span><span class="tech-chip">SQL Server</span></div>
-                <div class="project-date">Dec 2024 - Feb 2025</div>
-                <div class="project-view-btn" aria-hidden="true">View details</div>
-              </article>
-              <article class="project-card" style="--project-color:var(--accent)" onclick="openModal(11)" role="button" tabindex="0" aria-label="View details for InterimCo Website project" onkeydown="if(event.key==='Enter')openModal(11)">
-                <div class="project-card-top">
-                  <span class="project-emoji" role="img" aria-label="InterimCo Website">WEB</span>
-                </div>
-                <h3 class="project-name">InterimCo Website</h3>
-                <p class="project-tagline">Corporate site built in PHP then migrated to Symfony</p>
-                <div class="project-tech-row"><span class="tech-chip">PHP</span><span class="tech-chip">Symfony</span><span class="tech-chip">Doctrine ORM</span><span class="tech-chip">+2</span></div>
-                <div class="project-date">Mar 2024 - May 2024</div>
-                <div class="project-view-btn" aria-hidden="true">View details</div>
-              </article>
+      <article class="project-card" style="--project-color:var(--accent)" onclick="openModal(0)" role="button" tabindex="0" aria-label="View details for Multi-Agent Travel Planner project" onkeydown="if(event.key==='Enter')openModal(0)">
+        <div class="project-card-top">
+          <span class="project-emoji" role="img" aria-label="Multi-Agent Travel Planner">AI</span>
         </div>
+        <h3 class="project-name">Multi-Agent Travel Planner</h3>
+        <p class="project-tagline">AI-powered personalized travel planning with multi-agent architecture</p>
+        <div class="project-tech-row"><span class="tech-chip">LLMs</span><span class="tech-chip">LangGraph</span><span class="tech-chip">RAG</span><span class="tech-chip">+2</span></div>
+        <div class="project-date">Jan 2026 - Jun 2026</div>
+        <div class="project-view-btn" aria-hidden="true">View details</div>
+      </article>
+      <article class="project-card" style="--project-color:var(--accent)" onclick="openModal(1)" role="button" tabindex="0" aria-label="View details for Smart City Platform project" onkeydown="if(event.key==='Enter')openModal(1)">
+        <div class="project-card-top">
+          <span class="project-emoji" role="img" aria-label="Smart City Platform">BIG</span>
+        </div>
+        <h3 class="project-name">Smart City Platform</h3>
+        <p class="project-tagline">Big Data platform for urban intelligence with real-time streaming</p>
+        <div class="project-tech-row"><span class="tech-chip">Hadoop</span><span class="tech-chip">Spark</span><span class="tech-chip">Kafka</span><span class="tech-chip">+2</span></div>
+        <div class="project-date">Jan 2026 - Jun 2026</div>
+        <div class="project-view-btn" aria-hidden="true">View details</div>
+      </article>
+      <article class="project-card" style="--project-color:var(--accent)" onclick="openModal(2)" role="button" tabindex="0" aria-label="View details for House Prices in Grand Tunis project" onkeydown="if(event.key==='Enter')openModal(2)">
+        <div class="project-card-top">
+          <span class="project-emoji" role="img" aria-label="House Prices in Grand Tunis">ML</span>
+        </div>
+        <h3 class="project-name">House Prices in Grand Tunis</h3>
+        <p class="project-tagline">Data mining &amp; ML analysis of real estate prices in Grand Tunis</p>
+        <div class="project-tech-row"><span class="tech-chip">Python</span><span class="tech-chip">Pandas</span><span class="tech-chip">Scikit-learn</span><span class="tech-chip">+4</span></div>
+        <div class="project-date">Dec 2025 - Feb 2026</div>
+        <div class="project-view-btn" aria-hidden="true">View details</div>
+      </article>
+      <article class="project-card" style="--project-color:var(--accent)" onclick="openModal(3)" role="button" tabindex="0" aria-label="View details for KickStream project" onkeydown="if(event.key==='Enter')openModal(3)">
+        <div class="project-card-top">
+          <span class="project-emoji" role="img" aria-label="KickStream">WS</span>
+        </div>
+        <h3 class="project-name">KickStream</h3>
+        <p class="project-tagline">Real-time football prediction &amp; streaming platform</p>
+        <div class="project-tech-row"><span class="tech-chip">Angular 20</span><span class="tech-chip">NestJS</span><span class="tech-chip">Rust</span><span class="tech-chip">+3</span></div>
+        <div class="project-date">Dec 2025 - Feb 2026</div>
+        <div class="project-view-btn" aria-hidden="true">View details</div>
+      </article>
+      <article class="project-card" style="--project-color:var(--accent)" onclick="openModal(7)" role="button" tabindex="0" aria-label="View details for MediSys project" onkeydown="if(event.key==='Enter')openModal(7)">
+        <div class="project-card-top">
+          <span class="project-emoji" role="img" aria-label="MediSys">MD</span>
+        </div>
+        <h3 class="project-name">MediSys</h3>
+        <p class="project-tagline">AI-powered medical management platform</p>
+        <div class="project-tech-row"><span class="tech-chip">NestJS</span><span class="tech-chip">Next.js</span><span class="tech-chip">GraphQL</span><span class="tech-chip">+4</span></div>
+        <div class="project-date">Mar 2025 - Jun 2025</div>
+        <div class="project-view-btn" aria-hidden="true">View details</div>
+      </article>
+      <article class="project-card" style="--project-color:var(--accent)" onclick="openModal(8)" role="button" tabindex="0" aria-label="View details for Operations Research Optimization project" onkeydown="if(event.key==='Enter')openModal(8)">
+        <div class="project-card-top">
+          <span class="project-emoji" role="img" aria-label="Operations Research Optimization">OR</span>
+        </div>
+        <h3 class="project-name">Operations Research Optimization</h3>
+        <p class="project-tagline">NP-hard optimization with Gurobi: transport, VRP &amp; facility location</p>
+        <div class="project-tech-row"><span class="tech-chip">Python</span><span class="tech-chip">Gurobi</span><span class="tech-chip">Next.js</span><span class="tech-chip">+2</span></div>
+        <div class="project-date">Apr 2025 - May 2025</div>
+        <div class="project-view-btn" aria-hidden="true">View details</div>
+      </article>
+      <article class="project-card" style="--project-color:var(--accent)" onclick="openModal(9)" role="button" tabindex="0" aria-label="View details for Heterogeneous GPU Computing project" onkeydown="if(event.key==='Enter')openModal(9)">
+        <div class="project-card-top">
+          <span class="project-emoji" role="img" aria-label="Heterogeneous GPU Computing">GPU</span>
+        </div>
+        <h3 class="project-name">Heterogeneous GPU Computing</h3>
+        <p class="project-tagline">CUDA/OpenCL heterogeneous computing with near-cuBLAS performance</p>
+        <div class="project-tech-row"><span class="tech-chip">CUDA</span><span class="tech-chip">OpenCL</span><span class="tech-chip">cuBLAS</span><span class="tech-chip">+1</span></div>
+        <div class="project-date">Apr 2025 - May 2025</div>
+        <div class="project-view-btn" aria-hidden="true">View details</div>
+      </article>
+      <article class="project-card" style="--project-color:var(--accent)" onclick="openModal(10)" role="button" tabindex="0" aria-label="View details for Mini-ERP System project" onkeydown="if(event.key==='Enter')openModal(10)">
+        <div class="project-card-top">
+          <span class="project-emoji" role="img" aria-label="Mini-ERP System">ERP</span>
+        </div>
+        <h3 class="project-name">Mini-ERP System</h3>
+        <p class="project-tagline">Enterprise resource planning for sales operations</p>
+        <div class="project-tech-row"><span class="tech-chip">ASP.NET</span><span class="tech-chip">C#</span><span class="tech-chip">SQL Server</span></div>
+        <div class="project-date">Dec 2024 - Feb 2025</div>
+        <div class="project-view-btn" aria-hidden="true">View details</div>
+      </article>
+      <article class="project-card" style="--project-color:var(--accent)" onclick="openModal(11)" role="button" tabindex="0" aria-label="View details for InterimCo Website project" onkeydown="if(event.key==='Enter')openModal(11)">
+        <div class="project-card-top">
+          <span class="project-emoji" role="img" aria-label="InterimCo Website">WEB</span>
+        </div>
+        <h3 class="project-name">InterimCo Website</h3>
+        <p class="project-tagline">Corporate site built in PHP then migrated to Symfony</p>
+        <div class="project-tech-row"><span class="tech-chip">PHP</span><span class="tech-chip">Symfony</span><span class="tech-chip">Doctrine ORM</span><span class="tech-chip">+2</span></div>
+        <div class="project-date">Mar 2024 - May 2024</div>
+        <div class="project-view-btn" aria-hidden="true">View details</div>
+      </article></div>
       </div>
-    
       <div class="proj-category">
         <div class="proj-category-header">
           <span class="proj-category-icon" aria-hidden="true"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg></span>
@@ -449,40 +458,37 @@
           <span class="proj-category-count">3</span>
         </div>
         <div class="projects-grid">
-          
-              <article class="project-card" style="--project-color:var(--accent)" onclick="openModal(12)" role="button" tabindex="0" aria-label="View details for EnedisPO project" onkeydown="if(event.key==='Enter')openModal(12)">
-                <div class="project-card-top">
-                  <span class="project-emoji" role="img" aria-label="EnedisPO">OR</span>
-                </div>
-                <h3 class="project-name">EnedisPO</h3>
-                <p class="project-tagline">Crisis dispatch copilot for power outages, winner of the Enedis track</p>
-                <div class="project-tech-row"><span class="tech-chip">Python</span><span class="tech-chip">FastAPI</span><span class="tech-chip">Operations Research</span><span class="tech-chip">+5</span></div>
-                <div class="project-date">Oct 2026</div>
-                <div class="project-view-btn" aria-hidden="true">View details</div>
-              </article>
-              <article class="project-card" style="--project-color:var(--accent)" onclick="openModal(13)" role="button" tabindex="0" aria-label="View details for ARIA project" onkeydown="if(event.key==='Enter')openModal(13)">
-                <div class="project-card-top">
-                  <span class="project-emoji" role="img" aria-label="ARIA">RA</span>
-                </div>
-                <h3 class="project-name">ARIA</h3>
-                <p class="project-tagline">ML app predicting insurance bundle purchases with SHAP explanations</p>
-                <div class="project-tech-row"><span class="tech-chip">LightGBM</span><span class="tech-chip">SHAP</span><span class="tech-chip">FastAPI</span><span class="tech-chip">+3</span></div>
-                <div class="project-date">Mar 2026</div>
-                <div class="project-view-btn" aria-hidden="true">View details</div>
-              </article>
-              <article class="project-card" style="--project-color:var(--accent)" onclick="openModal(14)" role="button" tabindex="0" aria-label="View details for SoundGuard project" onkeydown="if(event.key==='Enter')openModal(14)">
-                <div class="project-card-top">
-                  <span class="project-emoji" role="img" aria-label="SoundGuard">SND</span>
-                </div>
-                <h3 class="project-name">SoundGuard</h3>
-                <p class="project-tagline">AI system detecting dangerous noise levels to protect workers' hearing</p>
-                <div class="project-tech-row"><span class="tech-chip">Python</span><span class="tech-chip">Audio Classification</span><span class="tech-chip">ML</span><span class="tech-chip">+2</span></div>
-                <div class="project-date">Nov 2025</div>
-                <div class="project-view-btn" aria-hidden="true">View details</div>
-              </article>
+      <article class="project-card" style="--project-color:var(--accent)" onclick="openModal(12)" role="button" tabindex="0" aria-label="View details for EnedisPO project" onkeydown="if(event.key==='Enter')openModal(12)">
+        <div class="project-card-top">
+          <span class="project-emoji" role="img" aria-label="EnedisPO">OR</span>
         </div>
-      </div>
-    </div>
+        <h3 class="project-name">EnedisPO</h3>
+        <p class="project-tagline">Crisis dispatch copilot for power outages, winner of the Enedis track</p>
+        <div class="project-tech-row"><span class="tech-chip">Python</span><span class="tech-chip">FastAPI</span><span class="tech-chip">Operations Research</span><span class="tech-chip">+5</span></div>
+        <div class="project-date">Oct 2026</div>
+        <div class="project-view-btn" aria-hidden="true">View details</div>
+      </article>
+      <article class="project-card" style="--project-color:var(--accent)" onclick="openModal(13)" role="button" tabindex="0" aria-label="View details for ARIA project" onkeydown="if(event.key==='Enter')openModal(13)">
+        <div class="project-card-top">
+          <span class="project-emoji" role="img" aria-label="ARIA">RA</span>
+        </div>
+        <h3 class="project-name">ARIA</h3>
+        <p class="project-tagline">ML app predicting insurance bundle purchases with SHAP explanations</p>
+        <div class="project-tech-row"><span class="tech-chip">LightGBM</span><span class="tech-chip">SHAP</span><span class="tech-chip">FastAPI</span><span class="tech-chip">+3</span></div>
+        <div class="project-date">Mar 2026</div>
+        <div class="project-view-btn" aria-hidden="true">View details</div>
+      </article>
+      <article class="project-card" style="--project-color:var(--accent)" onclick="openModal(14)" role="button" tabindex="0" aria-label="View details for SoundGuard project" onkeydown="if(event.key==='Enter')openModal(14)">
+        <div class="project-card-top">
+          <span class="project-emoji" role="img" aria-label="SoundGuard">SND</span>
+        </div>
+        <h3 class="project-name">SoundGuard</h3>
+        <p class="project-tagline">AI system detecting dangerous noise levels to protect workers' hearing</p>
+        <div class="project-tech-row"><span class="tech-chip">Python</span><span class="tech-chip">Audio Classification</span><span class="tech-chip">ML</span><span class="tech-chip">+2</span></div>
+        <div class="project-date">Nov 2025</div>
+        <div class="project-view-btn" aria-hidden="true">View details</div>
+      </article></div>
+      </div></div>
       </section>
     </div>
     <div id="section-skills" class="section">

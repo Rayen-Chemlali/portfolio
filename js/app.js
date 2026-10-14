@@ -190,7 +190,16 @@ document.addEventListener('DOMContentLoaded', () => {
   renderAll();
   initScrollSpy();
   const start = location.hash.slice(1);
-  if (start && document.getElementById('section-' + start)) navigate(start);
+  const pf = start.match(/^projects-(\w+)$/);
+  if (pf && (PORTFOLIO_DATA.projectFilters || []).some(f => f.id === pf[1])) {
+    currentProjectFilter = pf[1]; renderProjects(); navigate('projects');
+    history.replaceState(null, '', '#' + start);
+  } else if (start && document.getElementById('section-' + start)) navigate(start);
+  // fonts and images can shift the layout after the first jump: jump again once loaded
+  if (start) window.addEventListener('load', () => {
+    const id = start.startsWith('projects') ? 'projects' : start;
+    if (document.getElementById('section-' + id)) { navigate(id); history.replaceState(null, '', '#' + start); }
+  });
 
   const photoInput = document.getElementById('photo-upload-input');
   if (photoInput) {

@@ -23,40 +23,77 @@ function renderProjects() {
     return getYear(b.date) - getYear(a.date);
   });
 
-  const container = document.getElementById('projects-container');
-  container.innerHTML = CATS.map(cat => {
-    const catProjects = allProjects.filter(p => p.category === cat.key);
-    if (!catProjects.length) return '';
+  const card = p => {
+    const idx = PORTFOLIO_DATA.projects.indexOf(p);
     return `
+      <article class="project-card" style="--project-color:var(--accent)"
+               onclick="openModal(${idx})"
+               role="button" tabindex="0"
+               aria-label="View details for ${p.name} project"
+               onkeydown="if(event.key==='Enter')openModal(${idx})">
+        <div class="project-card-top">
+          <span class="project-emoji" role="img" aria-label="${p.name}">${p.emoji}</span>
+        </div>
+        <h3 class="project-name">${p.name}</h3>
+        <p class="project-tagline">${t(p.tagline)}</p>
+        <div class="project-tech-row">${p.tech.slice(0,3).map(tech => `<span class="tech-chip">${tech}</span>`).join('')}${p.tech.length > 3 ? `<span class="tech-chip">+${p.tech.length - 3}</span>` : ''}</div>
+        ${p.date ? `<div class="project-date">${p.date}</div>` : ''}
+        <div class="project-view-btn" aria-hidden="true">${t(UI_LABELS.view_details)}</div>
+      </article>`;
+  };
+
+  const filters = PORTFOLIO_DATA.projectFilters || [];
+  const byId = id => PORTFOLIO_DATA.projects.find(p => p.id === id);
+  const active = filters.find(f => f.id === currentProjectFilter);
+
+  const bar = `
+    <div class="proj-filters" role="group" aria-label="${lang === 'en' ? 'Filter projects by field' : 'Filtrer les projets par domaine'}">
+      <button class="proj-filter${active ? '' : ' active'}" aria-pressed="${!active}" onclick="setProjectFilter('all')">
+        ${lang === 'en' ? 'All' : 'Tous'} <span class="proj-filter-count">${PORTFOLIO_DATA.projects.length}</span>
+      </button>
+      ${filters.map(f => `
+        <button class="proj-filter${active && active.id === f.id ? ' active' : ''}" aria-pressed="${!!(active && active.id === f.id)}" onclick="setProjectFilter('${f.id}')">
+          ${t(f.label)} <span class="proj-filter-count">${f.projects.filter(byId).length}</span>
+        </button>`).join('')}
+    </div>`;
+
+  let body;
+  if (active) {
+    body = `<div class="projects-grid proj-filtered">${active.projects.map(byId).filter(Boolean).map(card).join('')}</div>`;
+  } else {
+    body = CATS.map(cat => {
+      const catProjects = allProjects.filter(p => p.category === cat.key);
+      if (!catProjects.length) return '';
+      return `
       <div class="proj-category">
         <div class="proj-category-header">
           <span class="proj-category-icon" aria-hidden="true">${cat.icon}</span>
           <span class="proj-category-label">${t(cat.label)}</span>
           <span class="proj-category-count">${catProjects.length}</span>
         </div>
-        <div class="projects-grid">
-          ${catProjects.map(p => {
-      const idx = PORTFOLIO_DATA.projects.indexOf(p);
-      return `
-              <article class="project-card" style="--project-color:var(--accent)"
-                       onclick="openModal(${idx})"
-                       role="button" tabindex="0"
-                       aria-label="View details for ${p.name} project"
-                       onkeydown="if(event.key==='Enter')openModal(${idx})">
-                <div class="project-card-top">
-                  <span class="project-emoji" role="img" aria-label="${p.name}">${p.emoji}</span>
-                </div>
-                <h3 class="project-name">${p.name}</h3>
-                <p class="project-tagline">${t(p.tagline)}</p>
-                <div class="project-tech-row">${p.tech.slice(0,3).map(tech => `<span class="tech-chip">${tech}</span>`).join('')}${p.tech.length > 3 ? `<span class="tech-chip">+${p.tech.length - 3}</span>` : ''}</div>
-                ${p.date ? `<div class="project-date">${p.date}</div>` : ''}
-                <div class="project-view-btn" aria-hidden="true">${t(UI_LABELS.view_details)}</div>
-              </article>`;
-    }).join('')}
-        </div>
-      </div>
-    `;
-  }).join('');
+        <div class="projects-grid">${catProjects.map(card).join('')}</div>
+      </div>`;
+    }).join('');
+  }
+  document.getElementById('projects-container').innerHTML = bar + body;
+}
+
+let currentProjectFilter = 'all';
+
+function setProjectFilter(id) {
+  currentProjectFilter = id;
+  renderProjects();
+  history.replaceState(null, '', id === 'all' ? '#projects' : '#projects-' + id);
+  const first = document.querySelector('.proj-filter.active');
+  if (first) first.focus({ preventScroll: true });
+  // keep the filter row in view when the list gets shorter
+  const bar = document.querySelector('.proj-filters');
+  const header = document.getElementById('topbar');
+  if (bar) {
+    const offset = (header ? header.offsetHeight : 0) + 16;
+    const top = bar.getBoundingClientRect().top;
+    if (top < offset || top > window.innerHeight * 0.6) window.scrollTo({ top: window.scrollY + top - offset, behavior: 'smooth' });
+  }
 }
 
 // ═══════════════════════════════════════════════════════

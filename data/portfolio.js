@@ -518,6 +518,16 @@ const PORTFOLIO_DATA = {
       highlights: { en: ["Highest Honors (18.16 / 20)","Strong mathematical foundation for CS and AI"], fr: ["Mention Très Bien (18.16 / 20)","Solide base mathématique pour l'informatique et l'IA"] }
     }
   ],
+  projectFilters: [
+    { id: "ai", label: { en: "Agentic AI & LLMs", fr: "IA agentique & LLM" },
+      projects: ["travel-agent", "container-registry", "medisys", "strategy-ai"] },
+    { id: "ml", label: { en: "Machine Learning", fr: "Machine Learning" },
+      projects: ["ml-suite", "soundguard", "aria", "house-prices"] },
+    { id: "hpc", label: { en: "HPC, Big Data & Optimization", fr: "HPC, Big Data & Optimisation" },
+      projects: ["gpu-computing", "enedispo", "operations-research", "smart-city"] },
+    { id: "software", label: { en: "Software & Web", fr: "Logiciel & Web" },
+      projects: ["shannon", "erp", "strategy-ai", "kickstream", "medisys", "operations-research", "interim"] }
+  ],
   certifications: [
     { name: "Samsung Innovation Campus AI", issuer: "Samsung", icon: "SAM", url: "https://drive.google.com/file/d/1uMrPLNYzwKXtVgN3_iSDjSsD_ESujxVe/view?usp=drive_link", linkedProjectId: "soundguard" },
     { name: "Building RAG Agents with LLMs", issuer: "NVIDIA Deep Learning Institute", icon: "NV", url: "https://learn.nvidia.com/certificates?id=txMdLISsRYizzGSQXBmvAw#" },
