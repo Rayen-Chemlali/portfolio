@@ -220,16 +220,6 @@ function openCvModal() {
           </div>
           <span class="cv-opt-arrow">&#8594;</span>
         </button>
-
-        <div class="cv-opt-divider"></div>
-
-        <button class="cv-opt cv-opt-both" data-cv="both">
-          <div class="cv-opt-left">
-            <span class="cv-opt-label">${isEn ? 'Both Full Versions' : 'Les deux versions complètes'}</span>
-            <span class="cv-opt-sub">${isEn ? 'Download EN + FR' : 'Télécharger EN + FR'}</span>
-          </div>
-          <span class="cv-opt-arrow">&#8594;</span>
-        </button>
       </div>
     </div>
   `;
