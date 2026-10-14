@@ -249,6 +249,25 @@ body {
 
 .hero-left { flex: 1; }
 
+.hero-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: -4px 0 18px;
+  padding: 5px 12px 5px 10px;
+  border: 1px solid rgba(74, 124, 111, 0.30);
+  background: rgba(74, 124, 111, 0.08);
+  color: #3F6B60;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+}
+.hero-status-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: #4A9C7F;
+  box-shadow: 0 0 0 3px rgba(74, 156, 127, 0.18);
+}
 .hero-greeting {
   font-family: var(--font-mono);
   font-size: 12px;

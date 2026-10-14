@@ -30,12 +30,14 @@ function renderAbout() {
   document.getElementById('label-about').textContent = t(UI_LABELS.about_lbl);
   document.getElementById('about-title').textContent = t(UI_LABELS.about_title);
   document.getElementById('stat-year').textContent = t(UI_LABELS.stat_year);
+  const yn = document.getElementById('stat-year-num');
+  if (yn) yn.textContent = lang === 'en' ? '5th' : '5ème';
 
   const barsEl = document.getElementById('lang-bars');
   barsEl.innerHTML = PORTFOLIO_DATA.languages.map(l => `
     <div class="lang-bar-item">
       <div class="lang-bar-header">
-        <span style="font-size:12px;font-family:var(--font-body);font-weight:600">${l.lang}</span>
+        <span style="font-size:12px;font-family:var(--font-body);font-weight:600">${t(l.lang)}</span>
         <span style="font-size:11px;color:var(--text-muted);font-family:var(--font-mono)">${t(l.level)}</span>
       </div>
       <div class="lang-bar-track"><div class="lang-bar-fill" data-pct="${l.pct}" style="width:0%"></div></div>

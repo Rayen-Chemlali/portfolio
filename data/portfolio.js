@@ -18,13 +18,13 @@ const PORTFOLIO_DATA = {
     cvUrl: { en: "Rayen-Chemlali-CV.pdf", fr: "CV-Rayen-Chemlali.pdf" },
     cvUrlShort: { en: "Rayen-Chemlali-CV-1page.pdf", fr: "CV-Rayen-Chemlali-1page.pdf" },
     roles: {
-      en: ["Software Engineer","Agentic AI Developer","HPC & Scientific Computing","ML & AI Enthusiast","Competitive Programmer","Full-Stack Developer"],
-      fr: ["Ingénieur Logiciel","Développeur IA Agentique","HPC & Calcul Scientifique","Passionné ML & IA","Programmeur Compétitif","Développeur Full-Stack"]
+      en: ["Agentic AI Developer","HPC & Scientific Computing","Software Engineer","ML & AI Enthusiast","Competitive Programmer","Full-Stack Developer"],
+      fr: ["Développeur IA Agentique","HPC & Calcul Scientifique","Ingénieur Logiciel","Passionné ML & IA","Programmeur Compétitif","Développeur Full-Stack"]
     }
   },
   about: {
-    en: "I'm a 5th-year engineering student at INP Toulouse – ENSEEIHT (HPC Big Data track), alongside the PSMSC Master (Scientific Computing), on academic exchange from INSAT, Tunisia. I started with mathematics, baccalaureate with Highest Honors (18.16/20), and never really stopped thinking like one. At INSAT I ranked 32nd/410 in the common first year, then 5th/90, 6th/96, and 8th/90 in Software Engineering.\n\nI've always been driven by a simple instinct: not just understanding things, but making them work. That led me to competitive programming, which I genuinely loved. It shaped the way I reason about problems more than any course did. I participated in the TCPC twice, came close to qualifying for the ACPC both times, and earned a bronze medal. I also took part in AI hackathons where delivering under pressure mattered as much as technical skill. Most recently, I won the Enedis track of the AI For Impact Hackathon by La Mêlée (October 2026), an operations research problem where I built a complete system, not just an optimization model.\n\nOn the professional side, I've built things across three fronts: internships (production ML model optimization for VoIP at Plug & Tel, cloud storage optimization with AI, HR platform with NestJS/React), freelance projects (an AI business copilot, a visual C++ code generator), and part-time work developing VoIP microservices in Go. I care about software architecture and distributed systems, and I'm increasingly drawn to ML and AI, having gone deep into the field through dedicated training and multiple end-to-end projects.\n\nI'm open to new opportunities, internships, collaborations, or anything that puts me in a challenging environment.",
-    fr: "Étudiant en 5ème année à l'INP Toulouse – ENSEEIHT (parcours HPC Big Data), en parallèle du Master PSMSC (Scientific Computing), en échange académique depuis l'INSAT, Tunisie. J'ai commencé par les mathématiques, baccalauréat mention Très Bien (18,16/20), et je n'ai jamais vraiment arrêté de penser comme un mathématicien. À l'INSAT, je me suis classé 32ème/410 en tronc commun, puis 5ème/90, 6ème/96 et 8ème/90 en Génie Logiciel.\n\nCe qui me caractérise, c'est l'envie de faire fonctionner les choses, pas juste de les comprendre. La programmation compétitive, que j'ai vraiment aimée, m'a appris à raisonner plus que n'importe quel cours. J'ai participé deux fois au TCPC, deux fois à un problème près de l'ACPC, avec une médaille de bronze. J'ai aussi participé à des hackathons IA où livrer sous pression comptait autant que les compétences techniques. Plus récemment, j'ai remporté la thématique Enedis du Hackathon AI For Impact by La Mêlée (octobre 2026), un problème de recherche opérationnelle pour lequel j'ai construit un système complet, pas seulement un modèle d'optimisation.\n\nCôté professionnel, j'ai construit des choses sur trois fronts : stages (optimisation de modèle ML en production pour la VoIP chez Plug & Tel, optimisation stockage cloud avec IA, plateforme RH NestJS/React), projets freelance (copilote business IA, générateur de code C++ visuel), et temps partiel en développement de microservices VoIP en Go. Je m'intéresse à l'architecture logicielle et aux systèmes distribués, et de plus en plus à l'IA et au ML, un domaine dans lequel je me suis investi en profondeur à travers des formations et plusieurs projets complets.\n\nJe suis ouvert à de nouvelles opportunités, stages, collaborations, ou tout environnement stimulant."
+    en: "I'm currently in my 5th year at INP Toulouse – ENSEEIHT, on an academic exchange, following the HPC Big Data track alongside the PSMSC Master (Scientific Computing), after four years of software engineering at INSAT, Tunisia. Mathematics has always been what drives me, from the baccalaureate (Highest Honors, 18.16/20) to INSAT, where I ranked 32nd/410 in the common first year, then 5th/90, 6th/96 and 8th/90 in Software Engineering.\n\nWhat defines me is the urge to make things work, not just to understand them. Competitive programming, which I genuinely loved, taught me to break down a hard problem and look for the most efficient solution, more than any course did. I took part in the TCPC twice, came one problem short of qualifying for the ACPC both times, and earned a bronze medal. Hackathons had me working in a team under pressure, with wins as well as losses: losing taught me to analyse what went wrong and come back more efficient, and winning taught me to stay rigorous. Most recently, I won the Enedis track of the AI For Impact Hackathon by La Mêlée (October 2026), an operations research problem where I did not stop at the optimisation model: I built a complete system around it.\n\nOn the professional side, I've built things on three fronts: internships (improving a production ML model for VoIP at Plug & Tel, AI-driven cloud storage optimisation and an HR platform in NestJS/React at Talan), freelance projects (an AI business copilot, a visual C++ code generator), and part-time work developing VoIP microservices in Go. LLMs and agentic AI are the field I have worked on the most, and my HPC track gave me a taste for reasoning close to the hardware and its constraints.\n\nI'm now looking for a 6-month end-of-studies internship in 2027, ideally with an R&D dimension, in agentic AI, high-performance computing, or at the crossroads of both. I remain open to any opportunity that puts me in a challenging environment.",
+    fr: "Actuellement en 5ème année à l'INP Toulouse – ENSEEIHT, dans le cadre d'un échange académique, je suis le parcours HPC Big Data en parallèle du Master PSMSC (Scientific Computing), après 4 ans de génie logiciel à l'INSAT, en Tunisie. Les mathématiques m'ont toujours porté, du baccalauréat (mention Très Bien, 18,16/20) jusqu'à l'INSAT, où je me suis classé 32ème/410 en tronc commun, puis 5ème/90, 6ème/96 et 8ème/90 en Génie Logiciel.\n\nCe qui me caractérise, c'est l'envie de faire fonctionner les choses, pas juste de les comprendre. La programmation compétitive, que j'ai vraiment aimée, m'a appris à décomposer un problème complexe et à chercher la solution la plus efficace, plus que n'importe quel cours. J'ai participé deux fois au TCPC, deux fois à un problème près de l'ACPC, avec une médaille de bronze. Les hackathons m'ont fait vivre le travail en équipe sous pression, avec des victoires comme des défaites : perdre m'a appris à analyser ce qui n'avait pas marché et à repartir plus efficacement, et gagner à rester rigoureux. Plus récemment, j'ai remporté la thématique Enedis du Hackathon AI For Impact by La Mêlée (octobre 2026), un problème de recherche opérationnelle où je ne me suis pas arrêté au modèle d'optimisation : j'ai construit un système complet autour.\n\nCôté professionnel, j'ai construit des choses sur trois fronts : des stages (amélioration d'un modèle ML en production pour la VoIP chez Plug & Tel, optimisation du stockage cloud avec l'IA et plateforme RH NestJS/React chez Talan), des projets freelance (un copilote business IA, un générateur de code C++ visuel), et un poste à temps partiel en développement de microservices VoIP en Go. Les LLM et l'IA agentique sont le domaine sur lequel j'ai le plus travaillé, et mon parcours HPC m'a donné le goût de raisonner au plus près du matériel et de ses contraintes.\n\nJe recherche aujourd'hui un stage de fin d'études de 6 mois en 2027, idéalement avec une dimension R&D, en IA agentique, en calcul haute performance ou à la frontière des deux. Je reste ouvert à toute opportunité qui me place dans un environnement stimulant."
   },
   skills: [
     {
@@ -405,6 +405,37 @@ const PORTFOLIO_DATA = {
       }
     },
     {
+      id: "enedispo", name: "EnedisPO", emoji: "OR", category: "hackathon", date: "Oct 2026",
+      tagline: { en: "Crisis dispatch copilot for power outages — Enedis track winner", fr: "Copilote de dispatch en crise climatique — gagnant de la thématique Enedis" },
+      accentColor: "#eab308", watermark: "ENED",
+      status: { en: "Winner — Enedis track", fr: "Gagnant — thématique Enedis" }, statusType: "done",
+      duration: "Hackathon — AI For Impact by La Mêlée", team: "Team",
+      tech: ["Python","FastAPI","Operations Research","Local Search","Mistral","React","TypeScript","MapLibre"],
+      myRole: { en: "Team member — complete system around the optimisation model", fr: "Membre de l'équipe — système complet autour du modèle d'optimisation" },
+      links: [
+        { label: "View Code", url: "https://github.com/manticore999/hackatoun" },
+        { label: "View Post", url: "https://lnkd.in/p/eqP49Rea" }
+      ],
+      tabs: {
+        overview: {
+          en: "Enedis challenge at the AI For Impact Hackathon by La Mêlée (9–10 October 2026). During a storm, the system tells the crisis manager which field team to send to which outage, and in what order, to restore as many customers as possible as fast as possible. The optimisation engine decides, the AI explains and translates, the manager validates.",
+          fr: "Défi Enedis du Hackathon AI For Impact by La Mêlée (9–10 octobre 2026). Pendant une tempête, le système dit au responsable de crise quelle équipe envoyer sur quelle panne, et dans quel ordre, pour rétablir le plus de clients le plus vite possible. Le moteur d'optimisation décide, l'IA explique et traduit, le responsable valide."
+        },
+        features: {
+          en: ["Optimisation engine minimising customers × hours without power (Smith's rule + local search), re-planned at every event in under 3 s","Work/rest rules respected: 12 h of work then rest, no interrupted repair","Team shift groups optimised on 50 past crises","90% within 48 h target checked, with an alert and the reinforcements needed when it is missed","LLM copilot (Mistral) that explains the plan in French and turns a manager's refusal into a priced rule — it never decides","Learning loop on repeated refusals, and a dashboard with a live map, real road routes and plan validation"],
+          fr: ["Moteur d'optimisation minimisant clients × heures sans électricité (règle de Smith + recherche locale), re-planifié à chaque événement en moins de 3 s","Horaires respectés : 12 h de travail puis repos, aucune interruption de dépannage","Groupes d'horaires des équipes optimisés sur 50 crises passées","Objectif 90 % en 48 h contrôlé, avec alerte et calcul des renforts nécessaires s'il est manqué","Copilote LLM (Mistral) qui explique le plan en français et traduit un refus du responsable en règle chiffrée — il ne décide jamais","Boucle d'apprentissage sur les refus répétés, et tableau de bord avec carte en temps réel, tracés routiers réels et validation du plan"]
+        },
+        challenges: {
+          en: "Re-planning in real time on crises of up to 250 incidents and 63 teams, while respecting work/rest rules and keeping the AI strictly in an explaining role: every number shown to the manager comes from the engine, never from the LLM.",
+          fr: "Re-planifier en temps réel sur des crises allant jusqu'à 250 incidents et 63 équipes, en respectant les horaires de travail et de repos, et en gardant l'IA strictement dans un rôle d'explication : chaque chiffre montré au responsable vient du moteur, jamais du LLM."
+        },
+        learnings: {
+          en: "On the 100 crises provided: 16% to 28% fewer customers × hours than classic dispatch rules, better on 100 crises out of 100, and a plan in 3 s within 2.3% of OR-Tools run for 60 s. An optimisation result only has value if it is usable, which is why we built the whole system around it.",
+          fr: "Sur les 100 crises fournies : de 16 % à 28 % de clients × heures en moins par rapport aux règles classiques, meilleur sur 100 crises sur 100, et un plan en 3 s à 2,3 % d'OR-Tools lancé pendant 60 s. Un résultat d'optimisation n'a de valeur que s'il est exploitable, c'est pour ça que nous avons construit tout le système autour."
+        }
+      }
+    },
+    {
       id: "aria", name: "ARIA", emoji: "RA", category: "hackathon", date: "Mar 2026",
       tagline: { en: "ML app predicting insurance bundle purchases with SHAP explanations", fr: "App ML prédisant l'achat de bundle d'assurance avec explications SHAP" },
       accentColor: "#6366f1", watermark: "ARIA",
@@ -528,9 +559,9 @@ const PORTFOLIO_DATA = {
     }
   ],
   languages: [
-    { lang: "Arabic", level: { en: "Native", fr: "Langue maternelle" }, pct: 100 },
-    { lang: "French", level: { en: "Fluent", fr: "Courant" }, pct: 90 },
-    { lang: "English", level: { en: "Fluent", fr: "Courant" }, pct: 85 },
-    { lang: "Spanish", level: { en: "Beginner", fr: "Débutant" }, pct: 20 }
+    { lang: { en: "Arabic", fr: "Arabe" }, level: { en: "Native", fr: "Langue maternelle" }, pct: 100 },
+    { lang: { en: "French", fr: "Français" }, level: { en: "Fluent", fr: "Courant" }, pct: 90 },
+    { lang: { en: "English", fr: "Anglais" }, level: { en: "Fluent", fr: "Courant" }, pct: 85 },
+    { lang: { en: "Spanish", fr: "Espagnol" }, level: { en: "Beginner", fr: "Débutant" }, pct: 20 }
   ]
 };
