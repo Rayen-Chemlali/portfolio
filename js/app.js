@@ -78,7 +78,7 @@ function setLang(l) {
   document.getElementById('btn-fr').classList.toggle('active', l === 'fr');
   updateSEOMeta();
   renderAll();
-  navigate(currentSection);
+  setActiveNav(currentSection);
 }
 
 function updateSEOMeta() {
@@ -188,7 +188,9 @@ document.addEventListener('DOMContentLoaded', () => {
   updateSEOMeta();
   injectSchema();
   renderAll();
-  navigate('hero');
+  initScrollSpy();
+  const start = location.hash.slice(1);
+  if (start && document.getElementById('section-' + start)) navigate(start);
 
   const photoInput = document.getElementById('photo-upload-input');
   if (photoInput) {

@@ -287,24 +287,11 @@ function triggerCvDownload(choice) {
 //  TYPEWRITER
 // ═══════════════════════════════════════════════════════
 function startTypewriter() {
-  const roles = PORTFOLIO_DATA.meta.roles[lang];
   const el = document.getElementById('typewriter');
   if (!el) return;
-  if (typewriterTimeout) clearTimeout(typewriterTimeout);
-  typewriterIndex = 0; typewriterCharIndex = 0; typewriterDeleting = false;
-  function tick() {
-    const current = roles[typewriterIndex % roles.length];
-    if (typewriterDeleting) {
-      typewriterCharIndex--;
-      el.textContent = current.substring(0, typewriterCharIndex);
-      if (typewriterCharIndex === 0) { typewriterDeleting = false; typewriterIndex++; typewriterTimeout = setTimeout(tick, 400); return; }
-      typewriterTimeout = setTimeout(tick, 40);
-    } else {
-      typewriterCharIndex++;
-      el.textContent = current.substring(0, typewriterCharIndex);
-      if (typewriterCharIndex === current.length) { typewriterDeleting = true; typewriterTimeout = setTimeout(tick, 1800); return; }
-      typewriterTimeout = setTimeout(tick, 80);
-    }
-  }
-  tick();
+  el.textContent = lang === 'en'
+    ? 'Software engineer working on agentic AI and high-performance computing'
+    : 'Ingénieur logiciel, entre IA agentique et calcul haute performance';
+  const sub = document.getElementById('sidebar-sub');
+  if (sub) sub.textContent = lang === 'en' ? 'Software engineer, HPC and agentic AI' : 'Ingénieur logiciel, HPC et IA agentique';
 }

@@ -34,15 +34,11 @@ function renderAbout() {
   if (yn) yn.textContent = lang === 'en' ? '5th' : '5ème';
 
   const barsEl = document.getElementById('lang-bars');
-  barsEl.innerHTML = PORTFOLIO_DATA.languages.map(l => `
-    <div class="lang-bar-item">
-      <div class="lang-bar-header">
-        <span style="font-size:12px;font-family:var(--font-body);font-weight:600">${t(l.lang)}</span>
-        <span style="font-size:11px;color:var(--text-muted);font-family:var(--font-mono)">${t(l.level)}</span>
-      </div>
-      <div class="lang-bar-track"><div class="lang-bar-fill" data-pct="${l.pct}" style="width:0%"></div></div>
-    </div>
-  `).join('');
+  barsEl.innerHTML = `
+    <div class="fact-title">${lang === 'en' ? 'Languages' : 'Langues'}</div>
+    <ul class="lang-list">
+      ${PORTFOLIO_DATA.languages.map(l => `<li><span>${t(l.lang)}</span><span>${t(l.level)}</span></li>`).join('')}
+    </ul>`;
 }
 
 function animateLangBars() {
