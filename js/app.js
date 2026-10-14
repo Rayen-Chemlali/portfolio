@@ -52,7 +52,7 @@ const UI_LABELS = {
   contact_lbl:  { en: '// 09_contact',       fr: '// 09_contact' },
   contact_title:{ en: 'Get In Touch',        fr: 'Me Contacter' },
   view_details: { en: '→ View Details',      fr: '→ Voir Détails' },
-  view_post:    { en: '→ View Post',         fr: '→ Voir Post' },
+  view_post:    { en: '→ View Post',         fr: '→ Voir le post' },
   view_cert:    { en: '→ View Certificate',  fr: '→ Voir Certificat' },
   tab_overview: { en: 'Overview',            fr: 'Vue d\'ensemble' },
   tab_features: { en: 'Features',            fr: 'Fonctionnalités' },

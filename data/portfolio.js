@@ -48,11 +48,6 @@ const PORTFOLIO_DATA = {
       items: ["CUDA","OpenCL","OpenMP","MPI","Parallel & Distributed Computing","Spark","Hadoop","Kafka"]
     },
     {
-      category: { en: "Optimization", fr: "Optimisation" },
-      tag: "opt",
-      items: ["Operations Research","Linear & Integer Programming","Gurobi","Heuristic Search (A*)"]
-    },
-    {
       category: { en: "DevOps & Infrastructure", fr: "DevOps & Infrastructure" },
       tag: "devops",
       items: ["Docker","Kubernetes","CI/CD","Linux","Git"]
@@ -473,7 +468,7 @@ const PORTFOLIO_DATA = {
     {
       institution: "INP Toulouse - ENSEEIHT",
       full: "École Nationale Supérieure d'Électrotechnique, d'Électronique, d'Informatique, d'Hydraulique et des Télécommunications",
-      degree: { en: "5th Year — Digital Sciences Dept., HPC Big Data Track (Academic Exchange) + PSMSC Master (Scientific Computing)", fr: "5ème année — Dept. Sciences du Numérique, Parcours HPC Big Data (Échange Académique) + Master PSMSC (Scientific Computing)" },
+      degree: { en: "5th Year — HPC Big Data Track (Academic Exchange) & PSMSC Master (Scientific Computing)", fr: "5ème année — Parcours HPC Big Data (Échange Académique) & Master PSMSC (Scientific Computing)" },
       period: "2026 – 2027",
       highlights: { en: ["Academic exchange program","HPC Big Data specialization track","PSMSC Master (Scientific Computing) in parallel","Digital Sciences Department"], fr: ["Programme d'échange académique","Parcours de spécialisation HPC Big Data","Master PSMSC (Scientific Computing) en parallèle","Département Sciences du Numérique"] }
     },
@@ -510,7 +505,8 @@ const PORTFOLIO_DATA = {
       place: "6th", medal: "Top 6",
       title: { en: "Data Quest 2026", fr: "Data Quest 2026" },
       subtitle: { en: "Data science competition — February 2026", fr: "Compétition de data science — février 2026" },
-      color: "#6366f1", url: "https://github.com/Rayen-Chemlali/ARIA-Insurance-Bundle-Predictor"
+      color: "#6366f1", url: "https://github.com/Rayen-Chemlali/ARIA-Insurance-Bundle-Predictor",
+      linkLabel: { en: "→ View Code", fr: "→ Voir le code" }
     },
     {
       place: "2nd", medal: "2nd",

@@ -15,7 +15,7 @@ function renderAchievements() {
       <p class="achievement-subtitle">${t(a.subtitle)}</p>
       <button onclick="window.open('${a.url}','_blank','noopener,noreferrer')"
          class="achievement-link" aria-label="View LinkedIn post about ${t(a.title)}">
-        ${t(UI_LABELS.view_post)}
+        ${t(a.linkLabel || UI_LABELS.view_post)}
       </button>
     </article>
   `).join('');

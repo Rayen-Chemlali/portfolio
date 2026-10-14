@@ -7,8 +7,7 @@ const SKILL_ACCENTS = {
   ai:     { color: '#4A7C6F', bg: 'rgba(74,124,111,0.08)',  border: 'rgba(74,124,111,0.22)' },
   devops: { color: '#DC6B4A', bg: 'rgba(220,107,74,0.07)',  border: 'rgba(220,107,74,0.22)' },
   arch:   { color: '#7C5CBF', bg: 'rgba(124,92,191,0.07)',  border: 'rgba(124,92,191,0.22)' },
-  hpc:    { color: '#2F7FA8', bg: 'rgba(47,127,168,0.07)',  border: 'rgba(47,127,168,0.22)' },
-  opt:    { color: '#B5487A', bg: 'rgba(181,72,122,0.07)',  border: 'rgba(181,72,122,0.22)' }
+  hpc:    { color: '#2F7FA8', bg: 'rgba(47,127,168,0.07)',  border: 'rgba(47,127,168,0.22)' }
 };
 
 function renderSkills() {

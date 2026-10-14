@@ -3,8 +3,8 @@
 // ═══════════════════════════════════════════════════════
 function renderHero() {
   document.getElementById('hero-bio').textContent = lang === 'en'
-      ? "5th-year engineering student at INP Toulouse – ENSEEIHT (HPC Big Data), on exchange from INSAT. Passionate about AI, ML and software architecture. Building things across internships, freelance projects, and open to new opportunities."
-      : "Étudiant en 5ème année à l'INP Toulouse – ENSEEIHT (HPC Big Data), en échange depuis l'INSAT. Passionné par l'IA, le ML et l'architecture logicielle. Je construis des choses en stages, en freelance, et suis ouvert à de nouvelles opportunités.";
+      ? "5th-year engineering student at INP Toulouse – ENSEEIHT (HPC Big Data track), alongside the PSMSC Master (Scientific Computing), on academic exchange from INSAT. Passionate about AI, HPC and software architecture. Building things across internships, freelance projects and hackathons, and looking for a 6-month end-of-studies internship in 2027."
+      : "Étudiant en 5ème année à l'INP Toulouse – ENSEEIHT (parcours HPC Big Data), en parallèle du Master PSMSC (Scientific Computing), en échange académique depuis l'INSAT. Passionné par l'IA, le HPC et l'architecture logicielle. Je construis des choses en stages, en freelance et en hackathons, et je recherche un stage de fin d'études de 6 mois en 2027.";
   document.getElementById('btn-work').textContent = t(UI_LABELS.hero_work);
   document.getElementById('btn-cv').textContent = t(UI_LABELS.hero_cv);
 
