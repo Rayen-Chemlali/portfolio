@@ -83,12 +83,12 @@ function setLang(l) {
 
 function updateSEOMeta() {
   const d = PORTFOLIO_DATA;
-  document.getElementById('page-title').textContent = d.meta.name + ' | ' + t(d.meta.title) + ' - Toulouse, France';
   document.getElementById('meta-desc').setAttribute('content', t(d.meta.description));
-  const shareTitle = d.meta.name + ' | ' + (lang === 'fr' ? 'Ingénieur logiciel, HPC & IA agentique' : 'Software Engineer, HPC & Agentic AI');
+  const shareTitle = d.meta.name + ' | ' + (lang === 'fr' ? 'Ingénieur logiciel, HPC & IA' : 'Software Engineer, HPC & AI');
   const shareDesc = lang === 'fr'
     ? "Projets et travaux d'ingénierie en HPC, IA agentique, machine learning et développement full-stack : calcul GPU, systèmes multi-agents, copilote de crise gagnant au hackathon Enedis, et plus."
     : 'Selected projects and engineering work across HPC, agentic AI, machine learning and full-stack development: GPU computing, multi-agent systems, an award-winning crisis-dispatch copilot and more.';
+  document.getElementById('page-title').textContent = shareTitle;
   document.getElementById('og-title').setAttribute('content', shareTitle);
   document.getElementById('og-desc').setAttribute('content', shareDesc);
   document.getElementById('og-locale').setAttribute('content', lang === 'fr' ? 'fr_FR' : 'en_US');
