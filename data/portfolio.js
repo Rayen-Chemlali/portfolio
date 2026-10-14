@@ -1,13 +1,13 @@
 // ═══════════════════════════════════════════════════════
-//  PORTFOLIO DATA — Edit only this object to update content
+//  PORTFOLIO DATA, Edit only this object to update content
 // ═══════════════════════════════════════════════════════
 const PORTFOLIO_DATA = {
   meta: {
     name: "Rayen Chemlali",
     title: { en: "Software Engineer & AI Developer", fr: "Ingénieur Logiciel & Développeur IA" },
     description: {
-      en: "Rayen Chemlali is a 5th-year engineering student at INP Toulouse – ENSEEIHT (HPC Big Data), alongside the PSMSC Master (Scientific Computing), on academic exchange from INSAT Tunisia. Specializing in agentic AI, HPC, full-stack development, machine learning, and competitive programming. Looking for a 6-month end-of-studies internship in 2027.",
-      fr: "Rayen Chemlali est étudiant en 5ème année à l'INP Toulouse – ENSEEIHT (HPC Big Data), en parallèle du Master PSMSC (Scientific Computing), en échange académique depuis l'INSAT Tunisie. Spécialisé en IA agentique, HPC, développement full-stack, machine learning et programmation compétitive. À la recherche d'un stage de fin d'études de 6 mois en 2027."
+      en: "Rayen Chemlali is a 5th-year engineering student at INP Toulouse - ENSEEIHT (HPC Big Data), alongside the PSMSC Master (Scientific Computing), on academic exchange from INSAT Tunisia. Specializing in agentic AI, HPC, full-stack development, machine learning, and competitive programming. Looking for a 6-month end-of-studies internship in 2027.",
+      fr: "Rayen Chemlali est étudiant en 5ème année à l'INP Toulouse - ENSEEIHT (HPC Big Data), en parallèle du Master PSMSC (Scientific Computing), en échange académique depuis l'INSAT Tunisie. Spécialisé en IA agentique, HPC, développement full-stack, machine learning et programmation compétitive. À la recherche d'un stage de fin d'études de 6 mois en 2027."
     },
     email: "rayen.chemlali@insat.ucar.tn",
     phone: "+33 6 72 19 39 37",
@@ -23,8 +23,8 @@ const PORTFOLIO_DATA = {
     }
   },
   about: {
-    en: "I'm currently in my 5th year at INP Toulouse – ENSEEIHT, on an academic exchange, following the HPC Big Data track alongside the PSMSC Master (Scientific Computing), after four years of software engineering at INSAT, Tunisia. Mathematics has always been what drives me, from the baccalaureate (Highest Honors, 18.16/20) to INSAT, where I ranked 32nd/410 in the common first year, then 5th/90, 6th/96 and 8th/90 in Software Engineering.\n\nWhat defines me is the urge to make things work, not just to understand them. Competitive programming, which I genuinely loved, taught me to break down a hard problem and look for the most efficient solution, more than any course did. I took part in the TCPC twice, came one problem short of qualifying for the ACPC both times, and earned a bronze medal. Hackathons had me working in a team under pressure, with wins as well as losses: losing taught me to analyse what went wrong and come back more efficient, and winning taught me to stay rigorous. Most recently, I won the Enedis track of the AI For Impact Hackathon by La Mêlée (October 2026), an operations research problem where I did not stop at the optimisation model: I built a complete system around it.\n\nOn the professional side, I've built things on three fronts: internships (improving a production ML model for VoIP at Plug & Tel, AI-driven cloud storage optimisation and an HR platform in NestJS/React at Talan), freelance projects (an AI business copilot, a visual C++ code generator), and part-time work developing VoIP microservices in Go. LLMs and agentic AI are the field I have worked on the most, and my HPC track gave me a taste for reasoning close to the hardware and its constraints.\n\nI'm now looking for a 6-month end-of-studies internship in 2027, ideally with an R&D dimension, in agentic AI, high-performance computing, or at the crossroads of both. I remain open to any opportunity that puts me in a challenging environment.",
-    fr: "Actuellement en 5ème année à l'INP Toulouse – ENSEEIHT, dans le cadre d'un échange académique, je suis le parcours HPC Big Data en parallèle du Master PSMSC (Scientific Computing), après 4 ans de génie logiciel à l'INSAT, en Tunisie. Les mathématiques m'ont toujours porté, du baccalauréat (mention Très Bien, 18,16/20) jusqu'à l'INSAT, où je me suis classé 32ème/410 en tronc commun, puis 5ème/90, 6ème/96 et 8ème/90 en Génie Logiciel.\n\nCe qui me caractérise, c'est l'envie de faire fonctionner les choses, pas juste de les comprendre. La programmation compétitive, que j'ai vraiment aimée, m'a appris à décomposer un problème complexe et à chercher la solution la plus efficace, plus que n'importe quel cours. J'ai participé deux fois au TCPC, deux fois à un problème près de l'ACPC, avec une médaille de bronze. Les hackathons m'ont fait vivre le travail en équipe sous pression, avec des victoires comme des défaites : perdre m'a appris à analyser ce qui n'avait pas marché et à repartir plus efficacement, et gagner à rester rigoureux. Plus récemment, j'ai remporté la thématique Enedis du Hackathon AI For Impact by La Mêlée (octobre 2026), un problème de recherche opérationnelle où je ne me suis pas arrêté au modèle d'optimisation : j'ai construit un système complet autour.\n\nCôté professionnel, j'ai construit des choses sur trois fronts : des stages (amélioration d'un modèle ML en production pour la VoIP chez Plug & Tel, optimisation du stockage cloud avec l'IA et plateforme RH NestJS/React chez Talan), des projets freelance (un copilote business IA, un générateur de code C++ visuel), et un poste à temps partiel en développement de microservices VoIP en Go. Les LLM et l'IA agentique sont le domaine sur lequel j'ai le plus travaillé, et mon parcours HPC m'a donné le goût de raisonner au plus près du matériel et de ses contraintes.\n\nJe recherche aujourd'hui un stage de fin d'études de 6 mois en 2027, idéalement avec une dimension R&D, en IA agentique, en calcul haute performance ou à la frontière des deux. Je reste ouvert à toute opportunité qui me place dans un environnement stimulant."
+    en: "I'm currently in my 5th year at INP Toulouse - ENSEEIHT, on an academic exchange, following the HPC Big Data track alongside the PSMSC Master (Scientific Computing), after four years of software engineering at INSAT, Tunisia. Mathematics has always been what drives me, from the baccalaureate (Highest Honors, 18.16/20) to INSAT, where I ranked 32nd/410 in the common first year, then 5th/90, 6th/96 and 8th/90 in Software Engineering.\n\nWhat defines me is the urge to make things work, not just to understand them. Competitive programming, which I genuinely loved, taught me to break down a hard problem and look for the most efficient solution, more than any course did. I took part in the TCPC twice, came one problem short of qualifying for the ACPC both times, and earned a bronze medal. Hackathons had me working in a team under pressure, with wins as well as losses: losing taught me to analyse what went wrong and come back more efficient, and winning taught me to stay rigorous. Most recently, I won the Enedis track of the AI For Impact Hackathon by La Mêlée (October 2026), an operations research problem where I did not stop at the optimisation model: I built a complete system around it.\n\nOn the professional side, I've built things on three fronts: internships (improving a production ML model for VoIP at Plug & Tel, AI-driven cloud storage optimisation and an HR platform in NestJS/React at Talan), freelance projects (an AI business copilot, a visual C++ code generator), and part-time work developing VoIP microservices in Go. LLMs and agentic AI are the field I have worked on the most, and my HPC track gave me a taste for reasoning close to the hardware and its constraints.\n\nI'm now looking for a 6-month end-of-studies internship in 2027, ideally with an R&D dimension, in agentic AI, high-performance computing, or at the crossroads of both. I remain open to any opportunity that puts me in a challenging environment.",
+    fr: "Actuellement en 5ème année à l'INP Toulouse - ENSEEIHT, dans le cadre d'un échange académique, je suis le parcours HPC Big Data en parallèle du Master PSMSC (Scientific Computing), après 4 ans de génie logiciel à l'INSAT, en Tunisie. Les mathématiques m'ont toujours porté, du baccalauréat (mention Très Bien, 18,16/20) jusqu'à l'INSAT, où je me suis classé 32ème/410 en tronc commun, puis 5ème/90, 6ème/96 et 8ème/90 en Génie Logiciel.\n\nCe qui me caractérise, c'est l'envie de faire fonctionner les choses, pas juste de les comprendre. La programmation compétitive, que j'ai vraiment aimée, m'a appris à décomposer un problème complexe et à chercher la solution la plus efficace, plus que n'importe quel cours. J'ai participé deux fois au TCPC, deux fois à un problème près de l'ACPC, avec une médaille de bronze. Les hackathons m'ont fait vivre le travail en équipe sous pression, avec des victoires comme des défaites : perdre m'a appris à analyser ce qui n'avait pas marché et à repartir plus efficacement, et gagner à rester rigoureux. Plus récemment, j'ai remporté la thématique Enedis du Hackathon AI For Impact by La Mêlée (octobre 2026), un problème de recherche opérationnelle où je ne me suis pas arrêté au modèle d'optimisation : j'ai construit un système complet autour.\n\nCôté professionnel, j'ai construit des choses sur trois fronts : des stages (amélioration d'un modèle ML en production pour la VoIP chez Plug & Tel, optimisation du stockage cloud avec l'IA et plateforme RH NestJS/React chez Talan), des projets freelance (un copilote business IA, un générateur de code C++ visuel), et un poste à temps partiel en développement de microservices VoIP en Go. Les LLM et l'IA agentique sont le domaine sur lequel j'ai le plus travaillé, et mon parcours HPC m'a donné le goût de raisonner au plus près du matériel et de ses contraintes.\n\nJe recherche aujourd'hui un stage de fin d'études de 6 mois en 2027, idéalement avec une dimension R&D, en IA agentique, en calcul haute performance ou à la frontière des deux. Je reste ouvert à toute opportunité qui me place dans un environnement stimulant."
   },
   skills: [
     {
@@ -62,7 +62,7 @@ const PORTFOLIO_DATA = {
     {
       role: { en: "ML Intern", fr: "Stagiaire ML" },
       company: "Plug & Tel",
-      period: "Jun 2026 – Aug 2026",
+      period: "Jun 2026 - Aug 2026",
       type: { en: "Internship", fr: "Stage" },
       description: {
         en: "Improving the classification error rate of a production Answering Machine Detection (AMD) AI model while maintaining latency compatible with the real-time constraints of VoIP streams. Explored several approaches: tabular models, CNNs on mel-spectrograms, and hybrid models combining both, with model explainability (Grad-CAM for CNNs and tabular model explainability).",
@@ -72,7 +72,7 @@ const PORTFOLIO_DATA = {
     {
       role: { en: "Part-Time Software Engineer", fr: "Ingénieur Logiciel (Temps Partiel)" },
       company: "Plug & Tel",
-      period: "Nov 2025 – Apr 2026",
+      period: "Nov 2025 - Apr 2026",
       type: { en: "Part-Time", fr: "Temps Partiel" },
       description: {
         en: "Working part-time as a software engineer, contributing to production software projects and applying full-stack skills in a professional setting while completing my engineering degree, notably developing VoIP microservices in Go and taking part in the production deployment process.",
@@ -82,7 +82,7 @@ const PORTFOLIO_DATA = {
     {
       role: { en: "ML Intern", fr: "Stagiaire ML" },
       company: "Elevvo Pathways",
-      period: "Feb 2026 – Mar 2026",
+      period: "Feb 2026 - Mar 2026",
       type: { en: "Internship", fr: "Stage" },
       linkedProjectId: "ml-suite",
       description: {
@@ -93,7 +93,7 @@ const PORTFOLIO_DATA = {
     {
       role: { en: "Summer Intern", fr: "Stagiaire d'Été" },
       company: "Talan Tunisie Consulting",
-      period: "Jun 2025 – Aug 2025",
+      period: "Jun 2025 - Aug 2025",
       type: { en: "Internship", fr: "Stage" },
       linkedProjectId: "container-registry",
       description: {
@@ -104,7 +104,7 @@ const PORTFOLIO_DATA = {
     {
       role: { en: "Summer Intern", fr: "Stagiaire d'Été" },
       company: "Talan Tunisie Consulting",
-      period: "Jul 2024 – Aug 2024",
+      period: "Jul 2024 - Aug 2024",
       type: { en: "Internship", fr: "Stage" },
       description: {
         en: "Built an HR Management Application with NestJS backend and React frontend, focusing on user experience optimization, role-based access control, and application security hardening.",
@@ -114,7 +114,7 @@ const PORTFOLIO_DATA = {
     {
       role: { en: "Freelance Software Developer", fr: "Développeur Logiciel Freelance" },
       company: "Strategy AI Assistant",
-      period: "Aug 2025 – Jun 2026",
+      period: "Aug 2025 - Jun 2026",
       type: { en: "Freelance", fr: "Freelance" },
       linkedProjectId: "strategy-ai",
       description: {
@@ -125,7 +125,7 @@ const PORTFOLIO_DATA = {
     {
       role: { en: "Freelance Software Developer", fr: "Développeur Logiciel Freelance" },
       company: "Shannon",
-      period: "Nov 2025 – Jan 2026",
+      period: "Nov 2025 - Jan 2026",
       type: { en: "Freelance", fr: "Freelance" },
       linkedProjectId: "shannon",
       description: {
@@ -135,7 +135,7 @@ const PORTFOLIO_DATA = {
     },
     {
       role: { en: "Summer Intern", fr: "Stagiaire d'Été" },
-      company: "Centre Informatique – Ministère des Finances",
+      company: "Centre Informatique - Ministère des Finances",
       period: "Jul 2023",
       type: { en: "Internship", fr: "Stage" },
       description: {
@@ -146,7 +146,7 @@ const PORTFOLIO_DATA = {
   ],
   projects: [
     {
-      id: "travel-agent", name: "Multi-Agent Travel Planner", emoji: "AI", category: "academic", date: "Jan 2026 – Jun 2026",
+      id: "travel-agent", name: "Multi-Agent Travel Planner", emoji: "AI", category: "academic", date: "Jan 2026 - Jun 2026",
       tagline: { en: "AI-powered personalized travel planning with multi-agent architecture", fr: "Planification de voyage personnalisée par architecture multi-agents IA" },
       accentColor: "#0ea5e9", watermark: "TRVL",
       status: { en: "Completed", fr: "Terminé" }, statusType: "done",
@@ -178,7 +178,7 @@ const PORTFOLIO_DATA = {
       }
     },
     {
-      id: "smart-city", name: "Smart City Platform", emoji: "BIG", category: "academic", date: "Jan 2026 – Jun 2026",
+      id: "smart-city", name: "Smart City Platform", emoji: "BIG", category: "academic", date: "Jan 2026 - Jun 2026",
       tagline: { en: "Big Data platform for urban intelligence with real-time streaming", fr: "Plateforme Big Data d'intelligence urbaine avec streaming temps réel" },
       accentColor: "#14b8a6", watermark: "CITY",
       status: { en: "Completed", fr: "Terminé" }, statusType: "done",
@@ -206,7 +206,7 @@ const PORTFOLIO_DATA = {
       }
     },
     {
-      id: "house-prices", name: "House Prices in Grand Tunis", emoji: "ML", category: "academic", date: "Dec 2025 – Feb 2026",
+      id: "house-prices", name: "House Prices in Grand Tunis", emoji: "ML", category: "academic", date: "Dec 2025 - Feb 2026",
       tagline: { en: "Data mining & ML analysis of real estate prices in Grand Tunis", fr: "Data mining & ML sur les prix immobiliers du Grand Tunis" },
       accentColor: "#8b5cf6", watermark: "ML",
       status: { en: "Completed", fr: "Terminé" }, statusType: "done",
@@ -225,7 +225,7 @@ const PORTFOLIO_DATA = {
       }
     },
     {
-      id: "kickstream", name: "KickStream", emoji: "WS", category: "academic", date: "Dec 2025 – Feb 2026",
+      id: "kickstream", name: "KickStream", emoji: "WS", category: "academic", date: "Dec 2025 - Feb 2026",
       tagline: { en: "Real-time football prediction & streaming platform", fr: "Plateforme de prédiction et streaming football en temps réel" },
       accentColor: "#00aaff", watermark: "KICK",
       status: { en: "Completed", fr: "Terminé" }, statusType: "done",
@@ -241,29 +241,29 @@ const PORTFOLIO_DATA = {
       }
     },
     {
-      id: "strategy-ai", name: "Strategy AI Assistant", emoji: "AI", category: "freelance", date: "Aug 2025 – Jun 2026",
+      id: "strategy-ai", name: "Strategy AI Assistant", emoji: "AI", category: "freelance", date: "Aug 2025 - Jun 2026",
       tagline: { en: "AI-powered business strategy & diagnostic platform", fr: "Plateforme de stratégie business et diagnostic par IA" },
       accentColor: "#f59e0b", watermark: "AI",
       status: { en: "Completed", fr: "Terminé" }, statusType: "done",
       duration: "10 months", team: "2 developers",
       tech: ["React","NestJS","OpenAI","LangChain","PDF Generation","Chatbot"],
-      myRole: { en: "Co-developer — AI pipeline & backend", fr: "Co-développeur — pipeline IA & backend" },
+      myRole: { en: "Co-developer: AI pipeline & backend", fr: "Co-développeur : pipeline IA & backend" },
       links: [],
       tabs: {
-        overview: { en: "An AI-powered business strategy assistant developed from August 2025 to June 2026. Generates complete business diagnostics, financial projections, and market analysis through a conversational chatbot. Visualizes strategic data as interactive graphs and exports results as PDF reports or pitch decks. Note: completed but not yet deployed by the client — no public demo available.", fr: "Assistant stratégique IA développé d'août 2025 à juin 2026. Génère des diagnostics business complets, des projections financières et des analyses de marché via chatbot conversationnel. Visualisations en graphiques interactifs, exports PDF et pitch deck. Note : terminé mais pas encore déployé par le client — pas de démo publique disponible." },
+        overview: { en: "An AI-powered business strategy assistant developed from August 2025 to June 2026. Generates complete business diagnostics, financial projections, and market analysis through a conversational chatbot. Visualizes strategic data as interactive graphs and exports results as PDF reports or pitch decks. Note: completed but not yet deployed by the client, so no public demo is available.", fr: "Assistant stratégique IA développé d'août 2025 à juin 2026. Génère des diagnostics business complets, des projections financières et des analyses de marché via chatbot conversationnel. Visualisations en graphiques interactifs, exports PDF et pitch deck. Note : terminé mais pas encore déployé par le client, donc pas de démo publique." },
         features: { en: ["Conversational AI chatbot for business questions","Automated business diagnostic generation","Financial projection modeling","Market analysis with interactive graph visualizations","PDF and pitch deck export"], fr: ["Chatbot IA conversationnel pour questions business","Génération automatisée de diagnostics","Modélisation de projections financières","Analyses de marché avec graphiques interactifs","Export PDF et pitch deck"] },
         challenges: { en: "Structuring unstructured business input into coherent, actionable diagnostics required careful prompt engineering and output validation.", fr: "Structurer des données business non structurées en diagnostics cohérents a nécessité une ingénierie de prompts soignée et une validation rigoureuse des sorties." },
         learnings: { en: "Advanced prompt engineering, building AI pipelines that produce structured business outputs, and data visualization for strategic content.", fr: "Ingénierie de prompts avancée, construction de pipelines IA produisant des sorties structurées, et visualisation de données pour contenu stratégique." }
       }
     },
     {
-      id: "shannon", name: "Shannon", emoji: "OSS", category: "freelance", date: "Nov 2025 – Jan 2026",
+      id: "shannon", name: "Shannon", emoji: "OSS", category: "freelance", date: "Nov 2025 - Jan 2026",
       tagline: { en: "Open-source Simulink-inspired visual code generator", fr: "Générateur de code visuel open-source inspiré de Simulink" },
       accentColor: "#8b5cf6", watermark: "SHN",
       status: { en: "Completed", fr: "Terminé" }, statusType: "done",
       duration: "Freelance", team: "2 developers",
       tech: ["Canvas API","Graph Model","Code Generation","Open Source"],
-      myRole: { en: "Co-developer — canvas engine and code generation", fr: "Co-développeur — moteur canvas et génération de code" },
+      myRole: { en: "Co-developer: canvas engine and code generation", fr: "Co-développeur : moteur canvas et génération de code" },
       links: [{ label: "View Demo", url: "https://drive.google.com/file/d/1FP3jKk7bzvZEF6kKc1ofRmF47yAf0qW2/view?usp=sharing" }],
       tabs: {
         overview: { en: "Co-developed Shannon, a free open-source alternative to Simulink. An interactive visual canvas lets users place and connect functional blocks to model systems, then automatically generates executable code from the graph. Built for engineers needing accessible model-based design tooling.", fr: "Co-développement de Shannon, alternative open-source gratuite à Simulink. Canvas visuel interactif pour modéliser des systèmes par blocs et liens, avec génération automatique de code exécutable." },
@@ -273,23 +273,23 @@ const PORTFOLIO_DATA = {
       }
     },
     {
-      id: "ml-suite", name: "ML Projects Suite", emoji: "ML", category: "internship", date: "Feb 2026 – Mar 2026",
+      id: "ml-suite", name: "ML Projects Suite", emoji: "ML", category: "internship", date: "Feb 2026 - Mar 2026",
       tagline: { en: "5 end-to-end ML projects across domains", fr: "5 projets machine learning complets sur différents domaines" },
       accentColor: "#22c55e", watermark: "ML",
       status: { en: "Completed", fr: "Terminé" }, statusType: "done",
       duration: "1 month", team: "Solo",
       tech: ["Python","Scikit-learn","TensorFlow","CV","NLP","Audio"],
-      myRole: { en: "Full project — sole developer", fr: "Projet complet — développeur unique" },
+      myRole: { en: "Full project, sole developer", fr: "Projet complet, développeur unique" },
       links: [{ label: "View Code", url: "https://github.com/Rayen-Chemlali/Elevvo-ml-internship-projects" }],
       tabs: {
         overview: { en: "A suite of 5 complete ML projects built during the Elevvo Pathways internship. Each covers the full pipeline: data collection, preprocessing, EDA, feature engineering, model training, evaluation, and deployment packaging. Domains: clustering, classification, time series, computer vision, audio.", fr: "Suite de 5 projets ML complets réalisés lors du stage Elevvo Pathways. Pipeline complet : collecte, prétraitement, EDA, feature engineering, entraînement, évaluation et déploiement." },
         features: { en: ["Customer segmentation with clustering","Binary and multi-class classification pipelines","Time series forecasting with LSTM/ARIMA","Image classification with CNNs","Audio classification with spectral features"], fr: ["Segmentation client par clustering","Pipelines de classification binaire et multi-classes","Prévision de séries temporelles LSTM/ARIMA","Classification d'images avec CNNs","Classification audio avec features spectrales"] },
-        challenges: { en: "Each domain had unique data challenges — audio spectrogram extraction, time series stationarity, and class imbalance all required domain-specific solutions.", fr: "Chaque domaine avait ses défis spécifiques — spectrogrammes audio, stationnarité des séries temporelles, déséquilibre de classes." },
+        challenges: { en: "Each domain had unique data challenges: audio spectrogram extraction, time series stationarity, and class imbalance all required domain-specific solutions.", fr: "Chaque domaine avait ses défis spécifiques : spectrogrammes audio, stationnarité des séries temporelles, déséquilibre de classes." },
         learnings: { en: "Breadth of the ML landscape, domain-specific feature engineering, model selection trade-offs, and professional ML project structure.", fr: "Vue d'ensemble du paysage ML, feature engineering spécifique, compromis de sélection de modèles et structure professionnelle de projets ML." }
       }
     },
     {
-      id: "medisys", name: "MediSys", emoji: "MD", category: "academic", date: "Mar 2025 – Jun 2025",
+      id: "medisys", name: "MediSys", emoji: "MD", category: "academic", date: "Mar 2025 - Jun 2025",
       tagline: { en: "AI-powered medical management platform", fr: "Plateforme de gestion médicale propulsée par l'IA" },
       accentColor: "#a855f7", watermark: "MEDI",
       status: { en: "Completed", fr: "Terminé" }, statusType: "done",
@@ -309,7 +309,7 @@ const PORTFOLIO_DATA = {
       }
     },
     {
-      id: "operations-research", name: "Operations Research Optimization", emoji: "OR", category: "academic", date: "Apr 2025 – May 2025",
+      id: "operations-research", name: "Operations Research Optimization", emoji: "OR", category: "academic", date: "Apr 2025 - May 2025",
       tagline: { en: "NP-hard optimization with Gurobi: transport, VRP & facility location", fr: "Optimisation NP-difficile avec Gurobi : transport, VRP & localisation de facilités" },
       accentColor: "#ec4899", watermark: "OR",
       status: { en: "Completed", fr: "Terminé" }, statusType: "done",
@@ -340,7 +340,7 @@ const PORTFOLIO_DATA = {
       }
     },
     {
-      id: "gpu-computing", name: "Heterogeneous GPU Computing", emoji: "GPU", category: "academic", date: "Apr 2025 – May 2025",
+      id: "gpu-computing", name: "Heterogeneous GPU Computing", emoji: "GPU", category: "academic", date: "Apr 2025 - May 2025",
       tagline: { en: "CUDA/OpenCL heterogeneous computing with near-cuBLAS performance", fr: "Calcul hétérogène CUDA/OpenCL avec performance proche de cuBLAS" },
       accentColor: "#84cc16", watermark: "GPU",
       status: { en: "Completed", fr: "Terminé" }, statusType: "done",
@@ -352,8 +352,8 @@ const PORTFOLIO_DATA = {
       ],
       tabs: {
         overview: {
-          en: "Dynamic load balancing across CPU, iGPU, and dGPU in OpenCL, achieving a 1.23× speedup over GPU-only execution. Optimized CUDA kernels using tiling, float4 vectorization, and Tensor Cores, reaching 1235 GFLOPS — within 6% of cuBLAS performance.",
-          fr: "Équilibrage de charge dynamique entre CPU, iGPU et dGPU en OpenCL, atteignant un speedup de 1.23× par rapport à l'exécution GPU seul. Optimisation de kernels CUDA avec tiling, vectorisation float4 et Tensor Cores, atteignant 1235 GFLOPS — à 6% des performances de cuBLAS."
+          en: "Dynamic load balancing across CPU, iGPU, and dGPU in OpenCL, achieving a 1.23× speedup over GPU-only execution. Optimized CUDA kernels using tiling, float4 vectorization, and Tensor Cores, reaching 1235 GFLOPS, within 6% of cuBLAS performance.",
+          fr: "Équilibrage de charge dynamique entre CPU, iGPU et dGPU en OpenCL, atteignant un speedup de 1.23× par rapport à l'exécution GPU seul. Optimisation de kernels CUDA avec tiling, vectorisation float4 et Tensor Cores, atteignant 1235 GFLOPS, à 6% des performances de cuBLAS."
         },
         features: {
           en: ["Dynamic load balancing across CPU, iGPU, and dGPU","OpenCL heterogeneous computing with 1.23× speedup","CUDA kernel optimization: tiling, float4 vectorization","Tensor Core utilization reaching 1235 GFLOPS","Within 6% of cuBLAS reference performance","Performance profiling and benchmarking"],
@@ -370,7 +370,7 @@ const PORTFOLIO_DATA = {
       }
     },
     {
-      id: "erp", name: "Mini-ERP System", emoji: "ERP", category: "academic", date: "Dec 2024 – Feb 2025",
+      id: "erp", name: "Mini-ERP System", emoji: "ERP", category: "academic", date: "Dec 2024 - Feb 2025",
       tagline: { en: "Enterprise resource planning for sales operations", fr: "Système ERP pour les opérations de vente" },
       accentColor: "#f59e0b", watermark: "ERP",
       status: { en: "Completed", fr: "Terminé" }, statusType: "done",
@@ -386,19 +386,19 @@ const PORTFOLIO_DATA = {
       }
     },
     {
-      id: "interim", name: "InterimCo Website", emoji: "WEB", category: "academic", date: "Mar 2024 – May 2024",
+      id: "interim", name: "InterimCo Website", emoji: "WEB", category: "academic", date: "Mar 2024 - May 2024",
       tagline: { en: "Corporate site built in PHP then migrated to Symfony", fr: "Site corporate développé en PHP puis migré vers Symfony" },
       accentColor: "#10b981", watermark: "SYM",
       status: { en: "Completed", fr: "Terminé" }, statusType: "done",
       duration: "6 months", team: "5 developers",
       tech: ["PHP","Symfony","Doctrine ORM","MySQL","MVC"],
-      myRole: { en: "Full project — sole developer", fr: "Projet complet — développeur unique" },
+      myRole: { en: "Full project, sole developer", fr: "Projet complet, développeur unique" },
       links: [
         { label: "Symfony Version", url: "https://github.com/Rayen-Chemlali/InterimCo-symfony" },
         { label: "Native PHP Version", url: "https://github.com/Rayen-Chemlali/Interim-Co-webApplication" }
       ],
       tabs: {
-        overview: { en: "A major milestone in my web dev journey. Built a full corporate website for an interim staffing company, first in native PHP, then fully refactored and migrated to Symfony — gaining deep experience with MVC architecture, Symfony routing, and Doctrine ORM.", fr: "Étape majeure dans mon parcours. Site corporate complet d'une entreprise intérimaire, d'abord en PHP natif, puis entièrement migré vers Symfony — maîtrise approfondie de l'architecture MVC, du routing Symfony et de Doctrine ORM." },
+        overview: { en: "A major milestone in my web dev journey. Built a full corporate website for an interim staffing company, first in native PHP, then fully refactored and migrated to Symfony, gaining deep experience with MVC architecture, Symfony routing, and Doctrine ORM.", fr: "Étape majeure dans mon parcours. Site corporate complet d'une entreprise intérimaire, d'abord en PHP natif, puis entièrement migré vers Symfony, ce qui m'a apporté une maîtrise approfondie de l'architecture MVC, du routing Symfony et de Doctrine ORM." },
         features: { en: ["Corporate pages: services, team, contact","Job listing and application management","Admin panel for content management","Full form handling and validation"], fr: ["Pages corporate : services, équipe, contact","Gestion des offres d'emploi et candidatures","Panneau d'administration","Gestion complète des formulaires et validation"] },
         challenges: { en: "Migrating a working PHP app to Symfony without breaking functionality required careful planning. Understanding Symfony's bundle system and Doctrine entity mapping had a steep but rewarding learning curve.", fr: "Migrer une application PHP fonctionnelle vers Symfony sans casser les fonctionnalités a nécessité une planification minutieuse. La courbe d'apprentissage de Symfony était raide mais enrichissante." },
         learnings: { en: "In-depth Symfony knowledge, MVC in a real project, Doctrine ORM, and the long-term value of migrating legacy code to a proper framework.", fr: "Connaissance approfondie de Symfony, MVC dans un vrai projet, Doctrine ORM, et la valeur à long terme de la migration de code legacy vers un framework structuré." }
@@ -406,24 +406,24 @@ const PORTFOLIO_DATA = {
     },
     {
       id: "enedispo", name: "EnedisPO", emoji: "OR", category: "hackathon", date: "Oct 2026",
-      tagline: { en: "Crisis dispatch copilot for power outages — Enedis track winner", fr: "Copilote de dispatch en crise climatique — gagnant de la thématique Enedis" },
+      tagline: { en: "Crisis dispatch copilot for power outages, winner of the Enedis track", fr: "Copilote de dispatch en crise climatique, gagnant de la thématique Enedis" },
       accentColor: "#eab308", watermark: "ENED",
-      status: { en: "Winner — Enedis track", fr: "Gagnant — thématique Enedis" }, statusType: "done",
-      duration: "Hackathon — AI For Impact by La Mêlée", team: "Team",
+      status: { en: "Winner, Enedis track", fr: "Gagnant, thématique Enedis" }, statusType: "done",
+      duration: "AI For Impact Hackathon by La Mêlée", team: "Team",
       tech: ["Python","FastAPI","Operations Research","Local Search","Mistral","React","TypeScript","MapLibre"],
-      myRole: { en: "Team member — complete system around the optimisation model", fr: "Membre de l'équipe — système complet autour du modèle d'optimisation" },
+      myRole: { en: "Team member: complete system around the optimisation model", fr: "Membre de l'équipe : système complet autour du modèle d'optimisation" },
       links: [
         { label: "View Code", url: "https://github.com/manticore999/hackatoun" },
         { label: "View Post", url: "https://lnkd.in/p/eqP49Rea" }
       ],
       tabs: {
         overview: {
-          en: "Enedis challenge at the AI For Impact Hackathon by La Mêlée (9–10 October 2026). During a storm, the system tells the crisis manager which field team to send to which outage, and in what order, to restore as many customers as possible as fast as possible. The optimisation engine decides, the AI explains and translates, the manager validates.",
-          fr: "Défi Enedis du Hackathon AI For Impact by La Mêlée (9–10 octobre 2026). Pendant une tempête, le système dit au responsable de crise quelle équipe envoyer sur quelle panne, et dans quel ordre, pour rétablir le plus de clients le plus vite possible. Le moteur d'optimisation décide, l'IA explique et traduit, le responsable valide."
+          en: "Enedis challenge at the AI For Impact Hackathon by La Mêlée (9-10 October 2026). During a storm, the system tells the crisis manager which field team to send to which outage, and in what order, to restore as many customers as possible as fast as possible. The optimisation engine decides, the AI explains and translates, the manager validates.",
+          fr: "Défi Enedis du Hackathon AI For Impact by La Mêlée (9-10 octobre 2026). Pendant une tempête, le système dit au responsable de crise quelle équipe envoyer sur quelle panne, et dans quel ordre, pour rétablir le plus de clients le plus vite possible. Le moteur d'optimisation décide, l'IA explique et traduit, le responsable valide."
         },
         features: {
-          en: ["Optimisation engine minimising customers × hours without power (Smith's rule + local search), re-planned at every event in under 3 s","Work/rest rules respected: 12 h of work then rest, no interrupted repair","Team shift groups optimised on 50 past crises","90% within 48 h target checked, with an alert and the reinforcements needed when it is missed","LLM copilot (Mistral) that explains the plan in French and turns a manager's refusal into a priced rule — it never decides","Learning loop on repeated refusals, and a dashboard with a live map, real road routes and plan validation"],
-          fr: ["Moteur d'optimisation minimisant clients × heures sans électricité (règle de Smith + recherche locale), re-planifié à chaque événement en moins de 3 s","Horaires respectés : 12 h de travail puis repos, aucune interruption de dépannage","Groupes d'horaires des équipes optimisés sur 50 crises passées","Objectif 90 % en 48 h contrôlé, avec alerte et calcul des renforts nécessaires s'il est manqué","Copilote LLM (Mistral) qui explique le plan en français et traduit un refus du responsable en règle chiffrée — il ne décide jamais","Boucle d'apprentissage sur les refus répétés, et tableau de bord avec carte en temps réel, tracés routiers réels et validation du plan"]
+          en: ["Optimisation engine minimising customers × hours without power (Smith's rule + local search), re-planned at every event in under 3 s","Work/rest rules respected: 12 h of work then rest, no interrupted repair","Team shift groups optimised on 50 past crises","90% within 48 h target checked, with an alert and the reinforcements needed when it is missed","LLM copilot (Mistral) that explains the plan in French and turns a manager's refusal into a priced rule, but never decides","Learning loop on repeated refusals, and a dashboard with a live map, real road routes and plan validation"],
+          fr: ["Moteur d'optimisation minimisant clients × heures sans électricité (règle de Smith + recherche locale), re-planifié à chaque événement en moins de 3 s","Horaires respectés : 12 h de travail puis repos, aucune interruption de dépannage","Groupes d'horaires des équipes optimisés sur 50 crises passées","Objectif 90 % en 48 h contrôlé, avec alerte et calcul des renforts nécessaires s'il est manqué","Copilote LLM (Mistral) qui explique le plan en français et traduit un refus du responsable en règle chiffrée, sans jamais décider","Boucle d'apprentissage sur les refus répétés, et tableau de bord avec carte en temps réel, tracés routiers réels et validation du plan"]
         },
         challenges: {
           en: "Re-planning in real time on crises of up to 250 incidents and 63 teams, while respecting work/rest rules and keeping the AI strictly in an explaining role: every number shown to the manager comes from the engine, never from the LLM.",
@@ -440,9 +440,9 @@ const PORTFOLIO_DATA = {
       tagline: { en: "ML app predicting insurance bundle purchases with SHAP explanations", fr: "App ML prédisant l'achat de bundle d'assurance avec explications SHAP" },
       accentColor: "#6366f1", watermark: "ARIA",
       status: { en: "Completed", fr: "Terminé" }, statusType: "done",
-      duration: "Hackathon — DataQuest", team: "Team",
+      duration: "DataQuest hackathon", team: "Team",
       tech: ["LightGBM","SHAP","FastAPI","Next.js","Docker","Python"],
-      myRole: { en: "Full project — sole developer", fr: "Projet complet — développeur unique" },
+      myRole: { en: "Full project, sole developer", fr: "Projet complet, développeur unique" },
       links: [
         { label: "View Code", url: "https://github.com/Rayen-Chemlali/ARIA-Insurance-Bundle-Predictor" },
         { label: "View Demo", url: "https://drive.google.com/file/d/1H7aMbbFKjfAymFi7h-F3yMwXy7kXgC9h/view" },
@@ -462,7 +462,7 @@ const PORTFOLIO_DATA = {
       status: { en: "Completed", fr: "Terminé" }, statusType: "done",
       duration: "Samsung Innovation Campus Capstone", team: "Team",
       tech: ["Python","Audio Classification","ML","Signal Processing","TensorFlow"],
-      myRole: { en: "ML developer — audio classification pipeline", fr: "Développeur ML — pipeline de classification audio" },
+      myRole: { en: "ML developer: audio classification pipeline", fr: "Développeur ML : pipeline de classification audio" },
       links: [
         { label: "View Demo", url: "https://drive.google.com/file/d/1HGZXY4uEW1PzCPmhjkFVkj6V5w_yPTkL/view?usp=drive_link" },
         { label: "Code & Report", url: "https://drive.google.com/drive/folders/1__1i_2a0eI8Zz69PaIDkRbfMakr-S80h?usp=drive_link" }
@@ -475,13 +475,13 @@ const PORTFOLIO_DATA = {
       }
     },
     {
-      id: "container-registry", name: "Smart Container Registry", emoji: "K8S", category: "internship", date: "Jun 2025 – Aug 2025",
+      id: "container-registry", name: "Smart Container Registry", emoji: "K8S", category: "internship", date: "Jun 2025 - Aug 2025",
       tagline: { en: "AI-powered Docker storage optimizer for Kubernetes", fr: "Optimiseur de stockage Docker pour Kubernetes par IA" },
       accentColor: "#38bdf8", watermark: "K8S",
       status: { en: "Phase 1 Delivered", fr: "Phase 1 Livrée" }, statusType: "p1",
       duration: "3 months", team: "Solo (Internship)",
       tech: ["Docker","Kubernetes","S3","AI","NestJS","Chatbot"],
-      myRole: { en: "Full project — sole intern developer", fr: "Projet complet — seul développeur stagiaire" },
+      myRole: { en: "Full project, sole intern developer", fr: "Projet complet, seul développeur stagiaire" },
       links: [
         { label: "Frontend", url: "https://github.com/Rayen-Chemlali/smart-sontainer-registry-frontend" },
         { label: "Backend", url: "https://github.com/Rayen-Chemlali/smart-sontainer-registry-backend" },
@@ -499,23 +499,23 @@ const PORTFOLIO_DATA = {
     {
       institution: "INP Toulouse - ENSEEIHT",
       full: "École Nationale Supérieure d'Électrotechnique, d'Électronique, d'Informatique, d'Hydraulique et des Télécommunications",
-      degree: { en: "5th Year — HPC Big Data Track (Academic Exchange) & PSMSC Master (Scientific Computing)", fr: "5ème année — Parcours HPC Big Data (Échange Académique) & Master PSMSC (Scientific Computing)" },
-      period: "2026 – 2027",
+      degree: { en: "5th Year, HPC Big Data Track (Academic Exchange) & PSMSC Master (Scientific Computing)", fr: "5ème année, Parcours HPC Big Data (Échange Académique) & Master PSMSC (Scientific Computing)" },
+      period: "2026 - 2027",
       highlights: { en: ["Academic exchange program","HPC Big Data specialization track","PSMSC Master (Scientific Computing) in parallel","Digital Sciences Department"], fr: ["Programme d'échange académique","Parcours de spécialisation HPC Big Data","Master PSMSC (Scientific Computing) en parallèle","Département Sciences du Numérique"] }
     },
     {
       institution: "INSAT",
       full: "Institut National des Sciences Appliquées et de Technologie",
-      degree: { en: "Engineering Degree — Software Engineering", fr: "Diplôme d'Ingénieur — Génie Logiciel" },
-      period: "2022 – 2026",
-      highlights: { en: ["Ranked 32nd / 410 — 1st year common cycle (MPI)","Ranked 5th / 90 — 2nd year preparatory cycle","Ranked 6th / 96 — 1st year engineering cycle","Ranked 8th / 90 — 2nd year engineering cycle"], fr: ["Classé 32ème / 410 — 1ère année tronc commun (MPI)","Classé 5ème / 90 — 2ème année préparatoire","Classé 6ème / 96 — 1ère année cycle ingénieur","Classé 8ème / 90 — 2ème année cycle ingénieur"] }
+      degree: { en: "Engineering Degree in Software Engineering", fr: "Diplôme d'Ingénieur en Génie Logiciel" },
+      period: "2022 - 2026",
+      highlights: { en: ["Ranked 32nd / 410 in the 1st year common cycle (MPI)","Ranked 5th / 90 in the 2nd year preparatory cycle","Ranked 6th / 96 in the 1st year engineering cycle","Ranked 8th / 90 in the 2nd year engineering cycle"], fr: ["Classé 32ème / 410 en 1ère année tronc commun (MPI)","Classé 5ème / 90 en 2ème année préparatoire","Classé 6ème / 96 en 1ère année cycle ingénieur","Classé 8ème / 90 en 2ème année cycle ingénieur"] }
     },
     {
       institution: { en: "Baccalaureate in Mathematics", fr: "Baccalauréat en Mathématiques" },
-      full: "Lycée — Tunisia",
-      degree: { en: "Mathematics Baccalaureate — Highest Honors", fr: "Baccalauréat Mathématiques — Mention Très Bien" },
+      full: "Lycée, Tunisia",
+      degree: { en: "Mathematics Baccalaureate, Highest Honors", fr: "Baccalauréat Mathématiques, Mention Très Bien" },
       period: "2022",
-      highlights: { en: ["Highest Honors — 18.16 / 20","Strong mathematical foundation for CS and AI"], fr: ["Mention Très Bien — 18.16 / 20","Solide base mathématique pour l'informatique et l'IA"] }
+      highlights: { en: ["Highest Honors (18.16 / 20)","Strong mathematical foundation for CS and AI"], fr: ["Mention Très Bien (18.16 / 20)","Solide base mathématique pour l'informatique et l'IA"] }
     }
   ],
   certifications: [
@@ -528,16 +528,16 @@ const PORTFOLIO_DATA = {
   achievements: [
     {
       place: "1st", medal: "Winner",
-      title: { en: "AI For Impact Hackathon — Enedis Track Winner", fr: "Hackathon AI For Impact — Gagnant thématique Enedis" },
-      subtitle: { en: "by La Mêlée — October 2026", fr: "par La Mêlée — octobre 2026" },
+      title: { en: "AI For Impact Hackathon, Enedis track winner", fr: "Hackathon AI For Impact, gagnant de la thématique Enedis" },
+      subtitle: { en: "by La Mêlée, October 2026", fr: "par La Mêlée, octobre 2026" },
       color: "#eab308", url: "https://lnkd.in/p/eqP49Rea"
     },
     {
       place: "6th", medal: "Top 6",
       title: { en: "Data Quest 2026", fr: "Data Quest 2026" },
-      subtitle: { en: "Data science competition — February 2026", fr: "Compétition de data science — février 2026" },
+      subtitle: { en: "Data science competition, February 2026", fr: "Compétition de data science, février 2026" },
       color: "#6366f1", url: "https://github.com/Rayen-Chemlali/ARIA-Insurance-Bundle-Predictor",
-      linkLabel: { en: "→ View Code", fr: "→ Voir le code" }
+      linkLabel: { en: "View Code", fr: "Voir le code" }
     },
     {
       place: "2nd", medal: "2nd",
@@ -547,14 +547,14 @@ const PORTFOLIO_DATA = {
     },
     {
       place: "11th", medal: "11th",
-      title: { en: "TCPC 2024 — Bronze Medal", fr: "TCPC 2024 — Médaille de Bronze" },
+      title: { en: "TCPC 2024, Bronze Medal", fr: "TCPC 2024, Médaille de Bronze" },
       subtitle: { en: "Tunisian Collegiate Programming Contest", fr: "Concours Tunisien de Programmation Universitaire" },
       color: "#cd7f32", url: "https://www.linkedin.com/posts/chemlali-rayen-69aa65243_competitiveprogramming-problemsolving-tcpc-activity-7246469206592958465-Jsn4?utm_source=share&utm_medium=member_desktop&rcm=ACoAADx9s5YB71VOxyG-0xt1QKdyDM9DES69bfM"
     },
     {
       place: "3rd", medal: "3rd",
       title: { en: "AI 4 New Generation Hackathon", fr: "Hackathon AI 4 New Generation" },
-      subtitle: { en: "by EY & Université Ibn Khaldoun — 2024", fr: "par EY & Université Ibn Khaldoun — 2024" },
+      subtitle: { en: "by EY & Université Ibn Khaldoun, 2024", fr: "par EY & Université Ibn Khaldoun, 2024" },
       color: "#f97316", url: "https://www.linkedin.com/posts/chemlali-rayen-69aa65243_ai-hackathon-llm-activity-7277362902594908160-I_RN?utm_source=share&utm_medium=member_desktop&rcm=ACoAADx9s5YB71VOxyG-0xt1QKdyDM9DES69bfM"
     }
   ],

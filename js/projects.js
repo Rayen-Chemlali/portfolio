@@ -2,20 +2,14 @@
 //  RENDER PROJECTS
 // ═══════════════════════════════════════════════════════
 function renderProjects() {
-  document.getElementById('label-projects').textContent = t(UI_LABELS.proj_lbl);
+  document.getElementById('label-projects').textContent = '';
   document.getElementById('proj-title').textContent = t(UI_LABELS.proj_title);
 
-  const CAT_ICONS = {
-    internship: `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>`,
-    freelance:  `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>`,
-    academic:   `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>`,
-    hackathon:  `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`
-  };
   const CATS = [
-    { key: 'internship', icon: CAT_ICONS.internship, label: UI_LABELS.cat_internship },
-    { key: 'freelance',  icon: CAT_ICONS.freelance,  label: UI_LABELS.cat_freelance },
-    { key: 'academic',   icon: CAT_ICONS.academic,   label: UI_LABELS.cat_academic },
-    { key: 'hackathon',  icon: CAT_ICONS.hackathon,  label: UI_LABELS.cat_hackathon || { en: 'Hackathons', fr: 'Hackathons' } }
+    { key: 'internship', label: UI_LABELS.cat_internship },
+    { key: 'freelance',  label: UI_LABELS.cat_freelance },
+    { key: 'academic',   label: UI_LABELS.cat_academic },
+    { key: 'hackathon',  label: UI_LABELS.cat_hackathon || { en: 'Hackathons', fr: 'Hackathons' } }
   ];
 
   const allProjects = [...PORTFOLIO_DATA.projects].sort((a, b) => {
@@ -23,39 +17,27 @@ function renderProjects() {
     return getYear(b.date) - getYear(a.date);
   });
 
-  const container = document.getElementById('projects-container');
-  container.innerHTML = CATS.map(cat => {
-    const catProjects = allProjects.filter(p => p.category === cat.key);
-    if (!catProjects.length) return '';
+  document.getElementById('projects-container').innerHTML = CATS.map(cat => {
+    const list = allProjects.filter(p => p.category === cat.key);
+    if (!list.length) return '';
     return `
       <div class="proj-category">
-        <div class="proj-category-header">
-          <span class="proj-category-icon" aria-hidden="true">${cat.icon}</span>
-          <span class="proj-category-label">${t(cat.label)}</span>
-          <span class="proj-category-count">${catProjects.length}</span>
-        </div>
-        <div class="projects-grid">
-          ${catProjects.map(p => {
-      const idx = PORTFOLIO_DATA.projects.indexOf(p);
-      return `
-              <article class="project-card" style="--project-color:${p.accentColor}"
-                       onclick="openModal(${idx})"
-                       role="button" tabindex="0"
-                       aria-label="View details for ${p.name} project"
-                       onkeydown="if(event.key==='Enter')openModal(${idx})">
-                <div class="project-card-top">
-                  <span class="project-emoji" role="img" aria-label="${p.name}">${p.emoji}</span>
-                </div>
-                <h3 class="project-name">${p.name}</h3>
-                <p class="project-tagline">${t(p.tagline)}</p>
-                <div class="project-tech-row">${p.tech.slice(0,3).map(tech => `<span class="tech-chip">${tech}</span>`).join('')}${p.tech.length > 3 ? `<span class="tech-chip">+${p.tech.length - 3}</span>` : ''}</div>
-                ${p.date ? `<div class="project-date">${p.date}</div>` : ''}
-                <div class="project-view-btn" aria-hidden="true">${t(UI_LABELS.view_details)}</div>
-              </article>`;
-    }).join('')}
-        </div>
-      </div>
-    `;
+        <h3 class="sub-title">${t(cat.label)}</h3>
+        ${list.map(p => {
+          const idx = PORTFOLIO_DATA.projects.indexOf(p);
+          return `
+          <article class="proj-row" onclick="openModal(${idx})" role="button" tabindex="0"
+                   aria-label="${p.name}, ${t(UI_LABELS.view_details)}"
+                   onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openModal(${idx})}">
+            <div>
+              <h4 class="proj-name">${p.name}</h4>
+              <p class="proj-tagline">${t(p.tagline)}</p>
+              <div class="proj-tech">${p.tech.join(', ')}</div>
+            </div>
+            ${p.date ? `<div class="proj-date">${p.date}</div>` : ''}
+          </article>`;
+        }).join('')}
+      </div>`;
   }).join('');
 }
 
@@ -65,15 +47,12 @@ function renderProjects() {
 function openModal(idx) {
   const p = PORTFOLIO_DATA.projects[idx];
   document.getElementById('modal-watermark-el').textContent = p.watermark;
-  document.getElementById('modal-watermark-el').style.color = p.accentColor;
+
   document.getElementById('modal-emoji-el').textContent = p.emoji;
   document.getElementById('modal-emoji-el').setAttribute('aria-label', p.name + ' icon');
   document.getElementById('modal-title-el').textContent = p.name;
-  document.getElementById('modal-title-el').style.color = p.accentColor;
-  document.getElementById('modal-badges-el').innerHTML = `
-    <span class="modal-badge">⏱ ${p.date || p.duration}</span>
-    <span class="modal-badge">👥 ${p.team}</span>
-  `;
+
+  document.getElementById('modal-badges-el').textContent = [p.date || p.duration, p.team].filter(Boolean).join(', ');
   document.getElementById('modal-tech-el').innerHTML = p.tech.map(tech => `<span class="tech-chip">${tech}</span>`).join('');
 
   const tabs = [
@@ -91,7 +70,7 @@ function openModal(idx) {
   document.getElementById('modal-tab-contents').innerHTML = tabs.map((tab, i) => {
     let content = '';
     if (tab.key === 'overview') {
-      content = `<p class="modal-overview">${t(p.tabs.overview)}</p>`;
+      content = `<p class="modal-overview">${t(p.tabs.overview)}</p>` + (p.myRole ? `<p class="modal-role"><b>${t(UI_LABELS.my_role)} :</b> ${t(p.myRole)}</p>`.replace(' :</b>', lang === 'fr' ? ' :</b>' : ':</b>') : '');
     } else if (tab.key === 'features') {
       const feats = t(p.tabs.features);
       content = `<ul class="modal-features-list">${(Array.isArray(feats) ? feats : []).map(f => `<li>${f}</li>`).join('')}</ul>`;
