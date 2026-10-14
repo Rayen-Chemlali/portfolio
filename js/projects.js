@@ -69,8 +69,8 @@ function openModal(idx) {
   document.getElementById('modal-emoji-el').setAttribute('aria-label', p.name + ' icon');
   document.getElementById('modal-title-el').textContent = p.name;
   document.getElementById('modal-badges-el').innerHTML = `
-    <span class="modal-badge">⏱ ${p.date || p.duration}</span>
-    <span class="modal-badge">👥 ${p.team}</span>
+    <span class="modal-badge">${p.date || p.duration}</span>
+    <span class="modal-badge">${p.team}</span>
   `;
   document.getElementById('modal-tech-el').innerHTML = p.tech.map(tech => `<span class="tech-chip">${tech}</span>`).join('');
 

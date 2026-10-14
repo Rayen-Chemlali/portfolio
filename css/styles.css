@@ -1890,3 +1890,24 @@ footer {
 }
 footer { display: none !important; }
 #main-panel { padding-bottom: 72px; }
+
+/* Mobile and modal polish */
+.modal-watermark, .modal-emoji, .cert-icon-badge, .cv-opt-arrow { display: none !important; }
+.modal-tabs { overflow-x: auto; scrollbar-width: none; flex-wrap: nowrap; }
+.modal-tabs::-webkit-scrollbar { display: none; }
+.modal-tab { white-space: nowrap; flex: none; }
+.cv-opt-sub { font-family: var(--font-body); }
+@media (max-width: 900px) {
+  #section-about .photo-wrapper { display: none; }
+  #section-about .about-top { display: block; }
+}
+@media (max-width: 480px) {
+  .topbar-inner { gap: 0 8px; padding: 10px 16px 0; }
+  .brand { font-size: 15px; }
+  .nav-cv { padding: 7px 11px; margin-right: 2px; }
+  #lang-toggle { margin-left: 2px; padding-left: 8px; }
+  #top-nav { width: calc(100% + 32px); margin: 6px -16px 0; padding: 0 10px 8px; }
+  #main-panel { padding-left: 16px; padding-right: 16px; }
+  .modal-header, .modal-body, .modal-links { padding-left: 18px; padding-right: 18px; }
+}
+#modal-overlay:focus, #modal-overlay:focus-visible { outline: none; }
