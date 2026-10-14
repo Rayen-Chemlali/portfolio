@@ -453,8 +453,7 @@ const PORTFOLIO_DATA = {
       myRole: { en: "Full project, sole developer", fr: "Projet complet, développeur unique" },
       links: [
         { label: "View Code", url: "https://github.com/Rayen-Chemlali/ARIA-Insurance-Bundle-Predictor" },
-        { label: "View Demo", url: "https://drive.google.com/file/d/1H7aMbbFKjfAymFi7h-F3yMwXy7kXgC9h/view" },
-        { label: "Live App", url: "https://amusing-connection-production.up.railway.app" }
+        { label: "View Demo", url: "https://drive.google.com/file/d/1H7aMbbFKjfAymFi7h-F3yMwXy7kXgC9h/view" }
       ],
       tabs: {
         overview: { en: "ARIA (Autonomous Risk Intelligence Advisor) is a full-stack ML application built for the DataQuest competition. It predicts which insurance coverage bundle a client will purchase using a trained LightGBM classifier. A conversational UI guides brokers through client intake, returning a prediction with confidence scoring and SHAP-based explanations.", fr: "ARIA (Autonomous Risk Intelligence Advisor) est une application ML full-stack construite pour la compétition DataQuest. Elle prédit quel bundle d'assurance un client achètera via un classifieur LightGBM, avec une interface conversationnelle, un scoring de confiance et des explications SHAP." },
