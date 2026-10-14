@@ -406,6 +406,14 @@ const PORTFOLIO_DATA = {
     },
     {
       id: "enedispo", name: "EnedisPO", emoji: "OR", category: "hackathon", date: "Oct 2026",
+      images: [
+        { src: "assets/projects/enedispo-architecture.jpg",
+          caption: { en: "Architecture: a deterministic engine computes the plan, the LLM explains it, the crisis manager accepts or refuses, and refusals are analysed to update the engine's constraints.",
+                     fr: "Architecture : une unité de calcul déterministe produit le plan, le LLM l'explique, le responsable de crise accepte ou refuse, et les refus sont analysés pour mettre à jour les contraintes." } },
+        { src: "assets/projects/enedispo-dashboard.jpg",
+          caption: { en: "The crisis dashboard: live map of outages and teams, the engine's proposal with its explanation, and the replay timeline.",
+                     fr: "Le tableau de bord de crise : carte des pannes et des équipes en direct, proposition du moteur avec son explication, et frise de rejeu." } }
+      ],
       tagline: { en: "Crisis dispatch copilot for power outages, winner of the Enedis track", fr: "Copilote de dispatch en crise climatique, gagnant de la thématique Enedis" },
       accentColor: "#eab308", watermark: "ENED",
       status: { en: "Winner, Enedis track", fr: "Gagnant, thématique Enedis" }, statusType: "done",
@@ -520,13 +528,13 @@ const PORTFOLIO_DATA = {
   ],
   projectFilters: [
     { id: "ai", label: { en: "Agentic AI & LLMs", fr: "IA agentique & LLM" },
-      projects: ["travel-agent", "container-registry", "medisys", "strategy-ai"] },
+      projects: ["travel-agent", "enedispo", "container-registry", "medisys", "strategy-ai"] },
     { id: "ml", label: { en: "Machine Learning", fr: "Machine Learning" },
       projects: ["ml-suite", "soundguard", "aria", "house-prices"] },
     { id: "hpc", label: { en: "HPC, Big Data & Optimization", fr: "HPC, Big Data & Optimisation" },
       projects: ["gpu-computing", "enedispo", "operations-research", "smart-city"] },
     { id: "software", label: { en: "Software & Web", fr: "Logiciel & Web" },
-      projects: ["shannon", "erp", "strategy-ai", "kickstream", "medisys", "operations-research", "interim"] }
+      projects: ["shannon", "erp", "strategy-ai", "container-registry", "kickstream", "medisys", "operations-research", "interim"] }
   ],
   certifications: [
     { name: "Samsung Innovation Campus AI", issuer: "Samsung", icon: "SAM", url: "https://drive.google.com/file/d/1uMrPLNYzwKXtVgN3_iSDjSsD_ESujxVe/view?usp=drive_link", linkedProjectId: "soundguard" },

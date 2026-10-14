@@ -126,7 +126,11 @@ function openModal(idx) {
   document.getElementById('modal-tab-contents').innerHTML = tabs.map((tab, i) => {
     let content = '';
     if (tab.key === 'overview') {
-      content = `<p class="modal-overview">${t(p.tabs.overview)}</p>`;
+      content = `<p class="modal-overview">${t(p.tabs.overview)}</p>` + (p.images ? p.images.map(im => `
+        <figure class="modal-figure">
+          <a href="${im.src}" target="_blank" rel="noopener"><img src="${im.src}" alt="${t(im.caption)}" loading="lazy"></a>
+          <figcaption>${t(im.caption)}</figcaption>
+        </figure>`).join('') : '');
     } else if (tab.key === 'features') {
       const feats = t(p.tabs.features);
       content = `<ul class="modal-features-list">${(Array.isArray(feats) ? feats : []).map(f => `<li>${f}</li>`).join('')}</ul>`;

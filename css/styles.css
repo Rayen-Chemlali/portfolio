@@ -1930,3 +1930,8 @@ footer { display: none !important; }
   .proj-filters::-webkit-scrollbar { display: none; }
   .proj-filter { flex: none; }
 }
+
+/* Project images in the details window */
+.modal-figure { margin: 22px 0 0; }
+.modal-figure img { width: 100%; height: auto; display: block; border: 1px solid var(--border); border-radius: 10px; background: #fff; }
+.modal-figure figcaption { margin-top: 8px; font-size: 13.5px; line-height: 1.5; color: var(--text-muted); }
