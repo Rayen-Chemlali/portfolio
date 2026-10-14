@@ -519,11 +519,11 @@ const PORTFOLIO_DATA = {
     }
   ],
   certifications: [
-    { name: "Supervised Machine Learning", issuer: "Coursera", icon: "CRS", url: "https://www.coursera.org/account/accomplishments/verify/QNR4LRWNRVFB" },
-    { name: "Advanced Learning Algorithms", issuer: "Coursera", icon: "CRS", url: "https://www.coursera.org/account/accomplishments/verify/14QA5AQFDPQ4" },
+    { name: "Samsung Innovation Campus AI", issuer: "Samsung", icon: "SAM", url: "https://drive.google.com/file/d/1uMrPLNYzwKXtVgN3_iSDjSsD_ESujxVe/view?usp=drive_link", linkedProjectId: "soundguard" },
     { name: "Efficient LLM Customization", issuer: "NVIDIA Deep Learning Institute", icon: "NV", url: "https://learn.nvidia.com/certificates?id=NiPMpiopQRGOW1fBsx3pZQ#" },
     { name: "Building RAG Agents with LLMs", issuer: "NVIDIA Deep Learning Institute", icon: "NV", url: "https://learn.nvidia.com/certificates?id=txMdLISsRYizzGSQXBmvAw#" },
-    { name: "Samsung Innovation Campus AI", issuer: "Samsung", icon: "SAM", url: "https://drive.google.com/file/d/1uMrPLNYzwKXtVgN3_iSDjSsD_ESujxVe/view?usp=drive_link", linkedProjectId: "soundguard" }
+    { name: "Supervised Machine Learning", issuer: "Coursera", icon: "CRS", url: "https://www.coursera.org/account/accomplishments/verify/QNR4LRWNRVFB" },
+    { name: "Advanced Learning Algorithms", issuer: "Coursera", icon: "CRS", url: "https://www.coursera.org/account/accomplishments/verify/14QA5AQFDPQ4" }
   ],
   achievements: [
     {
