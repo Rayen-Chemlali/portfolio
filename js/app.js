@@ -16,54 +16,54 @@ const t = (field) => {
 
 const NAV_ITEMS = [
   { id: 'hero',           icon: '⌂', label: { en: 'Home',           fr: 'Accueil' } },
-  { id: 'about',          icon: '◉', label: { en: 'About',          fr: 'À propos' } },
+  { id: 'about',          icon: '◉', label: { en: 'About',          fr: 'À Propos' } },
   { id: 'skills',         icon: '✦', label: { en: 'Skills',         fr: 'Compétences' } },
   { id: 'experience',     icon: '◈', label: { en: 'Experience',     fr: 'Expérience' } },
   { id: 'projects',       icon: '⬡', label: { en: 'Projects',       fr: 'Projets' } },
   { id: 'education',      icon: '◎', label: { en: 'Education',      fr: 'Formation' } },
-  { id: 'achievements',   icon: '◆', label: { en: 'Awards',         fr: 'Prix' } },
+  { id: 'achievements',   icon: '◆', label: { en: 'Achievements',   fr: 'Récompenses' } },
   { id: 'certifications', icon: '◇', label: { en: 'Certifications', fr: 'Certifications' } },
   { id: 'contact',        icon: '◉', label: { en: 'Contact',        fr: 'Contact' } }
 ];
 
 const UI_LABELS = {
-  cat_internship: { en: 'Internship projects', fr: 'Projets de stage' },
-  cat_freelance:  { en: 'Freelance projects',  fr: 'Projets freelance' },
-  cat_academic:   { en: 'Academic projects',   fr: 'Projets académiques' },
-  hero_work:    { en: 'See my projects',     fr: 'Voir mes projets' },
-  hero_cv:      { en: 'Download my CV',      fr: 'Télécharger mon CV' },
-  stat_year:    { en: 'year of engineering studies', fr: 'année d\'études d\'ingénieur' },
+  cat_internship: { en: 'Internship Projects', fr: 'Projets de Stage' },
+  cat_freelance:  { en: 'Freelance Projects',  fr: 'Projets Freelance' },
+  cat_academic:   { en: 'Academic Projects',   fr: 'Projets Académiques' },
+  hero_work:    { en: 'View My Work',        fr: 'Voir Mon Travail' },
+  hero_cv:      { en: 'Download CV',         fr: 'Télécharger CV' },
+  stat_year:    { en: 'Year of Study',       fr: 'Année d\'études' },
   stat_bac:     { en: 'Baccalaureate Score', fr: 'Note au Baccalauréat' },
   stat_rank:    { en: 'Best Engineering Rank',fr: 'Meilleur Rang Ingénieur' },
-  about_lbl:    { en: '// 02_about',         fr: '// 02_à_propos' },
-  about_title:  { en: 'About',               fr: 'À propos' },
-  skills_lbl:   { en: '// 03_skills',        fr: '// 03_compétences' },
-  skills_title: { en: 'Skills',              fr: 'Compétences' },
-  exp_lbl:      { en: '// 04_experience',    fr: '// 04_expérience' },
+  about_lbl:    { en: '', fr: '' },
+  about_title:  { en: 'About Me',            fr: 'À Propos' },
+  skills_lbl:   { en: '', fr: '' },
+  skills_title: { en: 'My Stack',            fr: 'Mon Stack' },
+  exp_lbl:      { en: '', fr: '' },
   exp_title:    { en: 'Experience',          fr: 'Expérience' },
-  proj_lbl:     { en: '// 05_projects',      fr: '// 05_projets' },
-  proj_title:   { en: 'Projects',            fr: 'Projets' },
-  edu_lbl:      { en: '// 06_education',     fr: '// 06_formation' },
+  proj_lbl:     { en: '', fr: '' },
+  proj_title:   { en: 'My Work',             fr: 'Mes Projets' },
+  edu_lbl:      { en: '', fr: '' },
   edu_title:    { en: 'Education',           fr: 'Formation' },
-  ach_lbl:      { en: '// 07_achievements',  fr: '// 07_récompenses' },
-  ach_title:    { en: 'Awards and contests', fr: 'Prix et compétitions' },
-  cert_lbl:     { en: '// 08_certifications',fr: '// 08_certifications' },
+  ach_lbl:      { en: '', fr: '' },
+  ach_title:    { en: 'Achievements',         fr: 'Récompenses' },
+  cert_lbl:     { en: '', fr: '' },
   cert_title:   { en: 'Certifications',       fr: 'Certifications' },
-  contact_lbl:  { en: '// 09_contact',       fr: '// 09_contact' },
-  contact_title:{ en: 'Contact',             fr: 'Contact' },
-  view_details: { en: 'Details',             fr: 'Détails' },
-  view_post:    { en: 'Read the post',       fr: 'Voir le post' },
-  view_cert:    { en: 'View certificate',    fr: 'Voir le certificat' },
+  contact_lbl:  { en: '', fr: '' },
+  contact_title:{ en: 'Get In Touch',        fr: 'Me Contacter' },
+  view_details: { en: 'View details',      fr: 'Voir les détails' },
+  view_post:    { en: 'View post',         fr: 'Voir le post' },
+  view_cert:    { en: 'View certificate',  fr: 'Voir le certificat' },
   tab_overview: { en: 'Overview',            fr: 'Vue d\'ensemble' },
   tab_features: { en: 'Features',            fr: 'Fonctionnalités' },
   tab_challenges:{ en: 'Challenges',         fr: 'Défis' },
   tab_learnings:{ en: 'Key Learnings',       fr: 'Apprentissages' },
-  my_role:      { en: 'My role',             fr: 'Mon rôle' },
+  my_role:      { en: 'My role', fr: 'Mon rôle' },
   form_name:    { en: 'Name',                fr: 'Nom' },
   form_email:   { en: 'Email',               fr: 'Email' },
   form_subject: { en: 'Subject',             fr: 'Sujet' },
   form_message: { en: 'Message',             fr: 'Message' },
-  form_send:    { en: 'Send message',        fr: 'Envoyer le message' },
+  form_send:    { en: 'Send Message',        fr: 'Envoyer' },
   footer_copy:  { en: '© 2026 Rayen Chemlali', fr: '© 2026 Rayen Chemlali' },
   footer_made:  { en: '', fr: '' }
 };
@@ -138,8 +138,8 @@ function initParticles() {
       if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
       ctx.beginPath();
       ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-      // Warm amber color matching --accent: #C17B2A
-      ctx.fillStyle = `rgba(193,123,42,${p.alpha})`;
+      // Warm amber color matching --accent: #1A659E
+      ctx.fillStyle = `rgba(26,101,158,${p.alpha})`;
       ctx.fill();
     });
     requestAnimationFrame(draw);

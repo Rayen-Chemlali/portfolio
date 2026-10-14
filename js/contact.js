@@ -2,46 +2,59 @@
 //  RENDER CONTACT
 // ═══════════════════════════════════════════════════════
 function renderContact() {
-  document.getElementById('label-contact').textContent = '';
+  document.getElementById('label-contact').textContent = t(UI_LABELS.contact_lbl);
   document.getElementById('contact-title').textContent = t(UI_LABELS.contact_title);
   const d = PORTFOLIO_DATA.meta;
-  const en = lang === 'en';
-  const rows = [
-    [en ? 'Email' : 'Email', `<a href="mailto:${d.email}">${d.email}</a>`],
-    [en ? 'Phone' : 'Téléphone', `<a href="tel:${d.phone.replace(/\s/g,'')}">${d.phone}</a>`],
-    d.whatsapp ? ['WhatsApp', `<a href="https://wa.me/${d.whatsapp.replace(/[^0-9]/g,'')}" target="_blank" rel="noopener noreferrer">${d.whatsapp}</a>`] : null,
-    ['LinkedIn', `<a href="${d.linkedin}" target="_blank" rel="noopener noreferrer">chemlali-rayen</a>`],
-    ['GitHub', `<a href="${d.github}" target="_blank" rel="noopener noreferrer">Rayen-Chemlali</a>`],
-    [en ? 'Based in' : 'Basé à', d.location]
-  ].filter(Boolean);
   document.getElementById('contact-info').innerHTML = `
-    <dl class="contact-list">
-      ${rows.map(r => `<div class="contact-row"><dt>${r[0]}</dt><dd>${r[1]}</dd></div>`).join('')}
-    </dl>`;
+    <a href="mailto:${d.email}" class="contact-card" aria-label="Send email to ${d.email}">
+      <span class="contact-card-icon" aria-hidden="true">✉</span>
+      <div><div class="contact-card-label">EMAIL</div><div class="contact-card-val">${d.email}</div></div>
+    </a>
+    <a href="tel:${d.phone.replace(/\s/g,'')}" class="contact-card" aria-label="Call ${d.phone}">
+      <span class="contact-card-icon" aria-hidden="true">☎</span>
+      <div><div class="contact-card-label">PHONE</div><div class="contact-card-val">${d.phone}</div></div>
+    </a>
+    ${d.whatsapp ? `<a href="https://wa.me/${d.whatsapp.replace(/[^0-9]/g,'')}" target="_blank" rel="noopener noreferrer" class="contact-card" aria-label="WhatsApp ${d.whatsapp}">
+      <span class="contact-card-icon" aria-hidden="true">✆</span>
+      <div><div class="contact-card-label">WHATSAPP</div><div class="contact-card-val">${d.whatsapp}</div></div>
+    </a>` : ''}
+    <a href="${d.linkedin}" target="_blank" rel="noopener noreferrer" class="contact-card" aria-label="LinkedIn profile">
+      <span class="contact-card-icon" aria-hidden="true">in</span>
+      <div><div class="contact-card-label">LINKEDIN</div><div class="contact-card-val">chemlali-rayen</div></div>
+    </a>
+    <a href="${d.github}" target="_blank" rel="noopener noreferrer" class="contact-card" aria-label="GitHub profile">
+      <span class="contact-card-icon" aria-hidden="true">⌥</span>
+      <div><div class="contact-card-label">GITHUB</div><div class="contact-card-val">Rayen-Chemlali</div></div>
+    </a>
+    <div class="contact-card" style="cursor:default">
+      <span class="contact-card-icon" aria-hidden="true">◎</span>
+      <div><div class="contact-card-label">LOCATION</div><div class="contact-card-val">${d.location}</div></div>
+    </div>
+  `;
   document.getElementById('contact-form').innerHTML = `
-    <h3 class="contact-form-title">${en ? 'Write to me' : 'M\'écrire'}</h3>
-    <div id="form-success" class="form-success" style="display:none">
-      <strong>${en ? 'Message sent' : 'Message envoyé'}</strong>
-      <span>${en ? "I'll get back to you soon." : 'Je vous répondrai rapidement.'}</span>
+    <div id="form-success" style="display:none;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.3);border-radius:10px;padding:20px;text-align:center;">
+      <div style="font-size:28px;margin-bottom:8px">✅</div>
+      <div style="font-size:14px;font-weight:700;color:#22c55e;margin-bottom:4px">${lang === 'en' ? 'Message sent!' : 'Message envoyé !'}</div>
+      <div style="font-size:12px;color:var(--text-muted)">${lang === 'en' ? "I'll get back to you soon." : 'Je vous répondrai bientôt.'}</div>
     </div>
     <div id="form-fields">
       <div class="form-group">
         <label class="form-label" for="f-name">${t(UI_LABELS.form_name)}</label>
-        <input id="f-name" class="form-input" type="text" autocomplete="name">
+        <input id="f-name" class="form-input" type="text" placeholder="${t(UI_LABELS.form_name)}..." autocomplete="name">
       </div>
       <div class="form-group">
         <label class="form-label" for="f-email">${t(UI_LABELS.form_email)}</label>
-        <input id="f-email" class="form-input" type="email" placeholder="you@company.com" autocomplete="email">
+        <input id="f-email" class="form-input" type="email" placeholder="you@email.com" autocomplete="email">
       </div>
       <div class="form-group">
         <label class="form-label" for="f-subject">${t(UI_LABELS.form_subject)}</label>
-        <input id="f-subject" class="form-input" type="text">
+        <input id="f-subject" class="form-input" type="text" placeholder="${t(UI_LABELS.form_subject)}...">
       </div>
       <div class="form-group">
         <label class="form-label" for="f-message">${t(UI_LABELS.form_message)}</label>
-        <textarea id="f-message" class="form-textarea"></textarea>
+        <textarea id="f-message" class="form-textarea" placeholder="${t(UI_LABELS.form_message)}..."></textarea>
       </div>
-      <button class="btn-primary" id="form-submit-btn" onclick="handleFormSubmit()" style="align-self:flex-start">
+      <button class="btn-primary" id="form-submit-btn" onclick="handleFormSubmit()" style="align-self:flex-start" aria-label="Send contact message">
         ${t(UI_LABELS.form_send)}
       </button>
     </div>
@@ -58,7 +71,7 @@ async function handleFormSubmit() {
   const message = document.getElementById('f-message')?.value?.trim();
 
   if (!name || !email || !message) {
-    alert(lang === 'en' ? 'Add your name, email and message before sending.' : 'Ajoutez votre nom, votre email et votre message avant l\'envoi.');
+    alert(lang === 'en' ? 'Please fill in Name, Email and Message.' : 'Veuillez remplir Nom, Email et Message.');
     return;
   }
 

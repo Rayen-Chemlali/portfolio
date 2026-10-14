@@ -24,13 +24,18 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Rayen Chemlali","url":"https://rayen-chemlali.vercel.app","image":"rayen.jpg","jobTitle":"Software Engineer & AI Developer","worksFor":{"@type":"EducationalOrganization","name":"INP Toulouse - ENSEEIHT"},"alumniOf":{"@type":"CollegeOrUniversity","name":"INSAT - Institut National des Sciences Appliquées et de Technologie"},"knowsAbout":["Software Engineering","Machine Learning","HPC","Big Data","Full-Stack Development","Competitive Programming"],"sameAs":["https://github.com/rayen-chemlali","https://linkedin.com/in/rayen-chemlali"],"address":{"@type":"PostalAddress","addressLocality":"Toulouse","addressCountry":"France"}}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <title id="page-title">Rayen Chemlali | Software Engineer & AI Developer - ENSEEIHT Toulouse / INSAT Tunisia</title>
 </head>
 <body>
 <canvas id="particles-canvas" aria-hidden="true"></canvas>
 <header id="topbar" role="banner">
+  <div class="topbar-dots" aria-hidden="true">
+    <div class="dot dot-r"></div>
+    <div class="dot dot-y"></div>
+    <div class="dot dot-g"></div>
+  </div>
   <div id="lang-toggle" role="group" aria-label="Language selector">
     <button class="lang-btn active" onclick="setLang('en')" id="btn-en" aria-label="Switch to English">EN</button>
     <button class="lang-btn" onclick="setLang('fr')" id="btn-fr" aria-label="Passer en francais">FR</button>
@@ -40,8 +45,9 @@
   <nav id="sidebar" aria-label="Main navigation">
     <div class="sidebar-logo">
       <div class="sidebar-logo-name">Rayen Chemlali</div>
-      <div class="sidebar-logo-sub" id="sidebar-sub">Software engineer, HPC and agentic AI</div>
+      <div class="sidebar-logo-sub" id="sidebar-sub">Software engineer</div>
     </div>
+    <div class="sidebar-section-label">Navigate</div>
     <div id="sidebar-nav"></div>
   </nav>
   <main id="main-panel" role="main">
@@ -160,7 +166,7 @@
   <div id="modal-box">
     <div class="modal-header">
       <div class="modal-watermark" id="modal-watermark-el" aria-hidden="true"></div>
-      <button class="modal-close" id="modal-close-btn" aria-label="Close">Close</button>
+      <button class="modal-close" id="modal-close-btn" aria-label="Close modal">x</button>
       <div class="modal-emoji" id="modal-emoji-el" role="img" aria-label="Project icon"></div>
       <h3 class="modal-title" id="modal-title-el"></h3>
       <div class="modal-badges" id="modal-badges-el"></div>
