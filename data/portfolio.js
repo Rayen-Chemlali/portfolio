@@ -45,7 +45,7 @@ const PORTFOLIO_DATA = {
     {
       category: { en: "HPC & Big Data", fr: "HPC & Big Data" },
       tag: "hpc",
-      items: ["CUDA","OpenCL","OpenMP","MPI","Parallel & Distributed Computing","Spark","Hadoop","Kafka"]
+      items: ["Parallel & Distributed Computing","HPC Algorithms","OpenMP","MPI","CUDA","OpenCL","Hadoop","Spark","Kafka"]
     },
     {
       category: { en: "DevOps & Infrastructure", fr: "DevOps & Infrastructure" },
