@@ -35,12 +35,12 @@ const PORTFOLIO_DATA = {
     {
       category: { en: "Frontend & Backend", fr: "Frontend & Backend" },
       tag: "web",
-      items: ["Angular","React","Next.js","NestJS","FastAPI","Symfony","ASP.NET"]
+      items: ["FastAPI","NestJS","ASP.NET","Symfony","React","Next.js","Angular"]
     },
     {
       category: { en: "AI & Machine Learning", fr: "IA & Machine Learning" },
       tag: "ai",
-      items: ["LLMs","RAG","Agentic AI","Multi-Agent Systems","LangChain","LangGraph","Qdrant","NLP","CNN","Transformer Architecture","TensorFlow","Scikit-learn","NumPy","Pandas","Computer Vision","Supervised & Unsupervised Learning"]
+      items: ["NLP","LLMs","Prompt Engineering","Fine-tuning","Embeddings","RAG","Agentic AI","Multi-Agent Systems","Tool Calling","LangChain","LangGraph","Qdrant","Supervised & Unsupervised Learning","CNN","Transformer Architecture","Time Series","Audio Classification","Computer Vision","TensorFlow","Scikit-learn","NumPy","Pandas"]
     },
     {
       category: { en: "HPC & Big Data", fr: "HPC & Big Data" },
@@ -50,12 +50,12 @@ const PORTFOLIO_DATA = {
     {
       category: { en: "DevOps & Infrastructure", fr: "DevOps & Infrastructure" },
       tag: "devops",
-      items: ["Docker","Kubernetes","CI/CD","Linux","Git"]
+      items: ["Git","Docker","Kubernetes","CI/CD","DevOps","Linux"]
     },
     {
       category: { en: "Architecture & Design", fr: "Architecture & Design" },
       tag: "arch",
-      items: ["Design Patterns","UML","Relational Databases","Non-relational Databases","Distributed Systems","Microservices"]
+      items: ["Software Architecture","Design Patterns","UML","Relational Databases","Non-relational Databases","Neo4j","Distributed Systems","Microservices"]
     }
   ],
   experience: [
