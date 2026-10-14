@@ -55,7 +55,7 @@ const PORTFOLIO_DATA = {
     {
       category: { en: "Architecture & Design", fr: "Architecture & Design" },
       tag: "arch",
-      items: ["Software Architecture","Design Patterns","UML","Relational Databases","Non-relational Databases","Neo4j","Distributed Systems","Microservices"]
+      items: ["Software Architecture","Design Patterns","UML","Relational Databases","Non-relational Databases","Distributed Systems","Microservices"]
     }
   ],
   experience: [
