@@ -23,8 +23,16 @@ function renderProjects() {
     return getYear(b.date) - getYear(a.date);
   });
 
-  const card = p => {
+  const CAT_SHORT = {
+    internship: { en: 'Internship', fr: 'Stage' },
+    freelance:  { en: 'Freelance',  fr: 'Freelance' },
+    academic:   { en: 'Academic',   fr: 'Académique' },
+    hackathon:  { en: 'Hackathon',  fr: 'Hackathon' }
+  };
+  const card = (p, showCat) => {
     const idx = PORTFOLIO_DATA.projects.indexOf(p);
+    const catTag = showCat && CAT_SHORT[p.category]
+      ? `<div class="project-cat"><span class="project-cat-icon" aria-hidden="true">${(CATS.find(c => c.key === p.category) || {}).icon || ''}</span>${t(CAT_SHORT[p.category])}</div>` : '';
     return `
       <article class="project-card" style="--project-color:var(--accent)"
                onclick="openModal(${idx})"
@@ -34,6 +42,7 @@ function renderProjects() {
         <div class="project-card-top">
           <span class="project-emoji" role="img" aria-label="${p.name}">${p.emoji}</span>
         </div>
+        ${catTag}
         <h3 class="project-name">${p.name}</h3>
         <p class="project-tagline">${t(p.tagline)}</p>
         <div class="project-tech-row">${p.tech.slice(0,3).map(tech => `<span class="tech-chip">${tech}</span>`).join('')}${p.tech.length > 3 ? `<span class="tech-chip">+${p.tech.length - 3}</span>` : ''}</div>
@@ -59,7 +68,7 @@ function renderProjects() {
 
   let body;
   if (active) {
-    body = `<div class="projects-grid proj-filtered">${active.projects.map(byId).filter(Boolean).map(card).join('')}</div>`;
+    body = `<div class="projects-grid proj-filtered">${active.projects.map(byId).filter(Boolean).map(p => card(p, true)).join('')}</div>`;
   } else {
     body = CATS.map(cat => {
       const catProjects = allProjects.filter(p => p.category === cat.key);
@@ -71,7 +80,7 @@ function renderProjects() {
           <span class="proj-category-label">${t(cat.label)}</span>
           <span class="proj-category-count">${catProjects.length}</span>
         </div>
-        <div class="projects-grid">${catProjects.map(card).join('')}</div>
+        <div class="projects-grid">${catProjects.map(p => card(p, false)).join('')}</div>
       </div>`;
     }).join('');
   }
