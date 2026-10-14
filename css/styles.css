@@ -1935,3 +1935,23 @@ footer { display: none !important; }
 .modal-figure { margin: 22px 0 0; }
 .modal-figure img { width: 100%; height: auto; display: block; border: 1px solid var(--border); border-radius: 10px; background: #fff; }
 .modal-figure figcaption { margin-top: 8px; font-size: 13.5px; line-height: 1.5; color: var(--text-muted); }
+
+/* Same-page image viewer */
+#lightbox {
+  position: fixed; inset: 0; z-index: 3000;
+  background: rgba(19, 34, 58, .82);
+  display: none; align-items: center; justify-content: center; padding: 56px 24px 24px;
+}
+#lightbox.open { display: flex; }
+.lightbox-figure { margin: 0; max-width: min(1200px, 100%); max-height: 100%; display: flex; flex-direction: column; align-items: center; }
+.lightbox-figure img { max-width: 100%; max-height: calc(100vh - 160px); object-fit: contain; border-radius: 8px; background: #fff; }
+.lightbox-figure figcaption { color: #E9EDF2; font-size: 14px; line-height: 1.5; margin-top: 12px; max-width: 760px; text-align: center; }
+.lightbox-close {
+  position: absolute; top: 14px; right: 16px; width: 40px; height: 40px;
+  border-radius: 8px; border: 1px solid rgba(255,255,255,.35); background: transparent;
+  color: #fff; font-size: 24px; line-height: 1; cursor: pointer;
+}
+.lightbox-close:hover { background: rgba(255,255,255,.12); }
+button.modal-link-btn { font-family: var(--font-body); cursor: pointer; }
+#lightbox { background: rgba(12, 20, 34, .95); }
+#lightbox { background: #0C1422; }

@@ -407,10 +407,10 @@ const PORTFOLIO_DATA = {
     {
       id: "enedispo", name: "EnedisPO", emoji: "OR", category: "hackathon", date: "Oct 2026",
       images: [
-        { src: "assets/projects/enedispo-architecture.jpg",
+        { src: "assets/projects/enedispo-architecture.jpg", label: { en: "View Architecture", fr: "Voir l'architecture" },
           caption: { en: "Architecture: a deterministic engine computes the plan, the LLM explains it, the crisis manager accepts or refuses, and refusals are analysed to update the engine's constraints.",
                      fr: "Architecture : une unité de calcul déterministe produit le plan, le LLM l'explique, le responsable de crise accepte ou refuse, et les refus sont analysés pour mettre à jour les contraintes." } },
-        { src: "assets/projects/enedispo-dashboard.jpg",
+        { src: "assets/projects/enedispo-dashboard.jpg", label: { en: "View Dashboard", fr: "Voir le tableau de bord" },
           caption: { en: "The crisis dashboard: live map of outages and teams, the engine's proposal with its explanation, and the replay timeline.",
                      fr: "Le tableau de bord de crise : carte des pannes et des équipes en direct, proposition du moteur avec son explication, et frise de rejeu." } }
       ],
