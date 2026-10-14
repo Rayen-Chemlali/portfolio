@@ -6,23 +6,25 @@ const PORTFOLIO_DATA = {
     name: "Rayen Chemlali",
     title: { en: "Software Engineer & AI Developer", fr: "Ingénieur Logiciel & Développeur IA" },
     description: {
-      en: "Rayen Chemlali is a 5th-year engineering student at INP Toulouse – ENSEEIHT (HPC Big Data), on academic exchange from INSAT Tunisia. Specializing in full-stack development, machine learning, and competitive programming. Available for internships and collaborations.",
-      fr: "Rayen Chemlali est étudiant en 5ème année à l'INP Toulouse – ENSEEIHT (HPC Big Data), en échange académique depuis l'INSAT Tunisie. Spécialisé en développement full-stack, machine learning et programmation compétitive. Disponible pour des stages et collaborations."
+      en: "Rayen Chemlali is a 5th-year engineering student at INP Toulouse – ENSEEIHT (HPC Big Data), alongside the PSMSC Master (Scientific Computing), on academic exchange from INSAT Tunisia. Specializing in agentic AI, HPC, full-stack development, machine learning, and competitive programming. Looking for a 6-month end-of-studies internship in 2027.",
+      fr: "Rayen Chemlali est étudiant en 5ème année à l'INP Toulouse – ENSEEIHT (HPC Big Data), en parallèle du Master PSMSC (Scientific Computing), en échange académique depuis l'INSAT Tunisie. Spécialisé en IA agentique, HPC, développement full-stack, machine learning et programmation compétitive. À la recherche d'un stage de fin d'études de 6 mois en 2027."
     },
     email: "rayen.chemlali@insat.ucar.tn",
-    phone: "+216 56042251",
+    phone: "+33 6 72 19 39 37",
+    whatsapp: "+216 56 042 251",
     location: "Toulouse, France",
     linkedin: "https://www.linkedin.com/in/chemlali-rayen-69aa65243/",
     github: "https://github.com/Rayen-Chemlali",
     cvUrl: { en: "Rayen-Chemlali-CV.pdf", fr: "CV-Rayen-Chemlali.pdf" },
+    cvUrlShort: { en: "Rayen-Chemlali-CV-1page.pdf", fr: "CV-Rayen-Chemlali-1page.pdf" },
     roles: {
-      en: ["Software Engineer","ML & AI Enthusiast","Competitive Programmer","Full-Stack Developer"],
-      fr: ["Ingénieur Logiciel","Passionné ML & IA","Programmeur Compétitif","Développeur Full-Stack"]
+      en: ["Software Engineer","Agentic AI Developer","HPC & Scientific Computing","ML & AI Enthusiast","Competitive Programmer","Full-Stack Developer"],
+      fr: ["Ingénieur Logiciel","Développeur IA Agentique","HPC & Calcul Scientifique","Passionné ML & IA","Programmeur Compétitif","Développeur Full-Stack"]
     }
   },
   about: {
-    en: "I'm a 5th-year engineering student at INP Toulouse – ENSEEIHT (HPC Big Data track), on academic exchange from INSAT, Tunisia. I started with mathematics, baccalaureate with Highest Honors (18.16/20), and never really stopped thinking like one. At INSAT I ranked 32nd/410 in the common first year, then 5th/90, 6th/96, and 8th/90 in Software Engineering.\n\nI've always been driven by a simple instinct: not just understanding things, but making them work. That led me to competitive programming, which I genuinely loved. It shaped the way I reason about problems more than any course did. I participated in the TCPC twice, came close to qualifying for the ACPC both times, and earned a bronze medal. I also took part in AI hackathons where delivering under pressure mattered as much as technical skill.\n\nOn the professional side, I've built things across three fronts: internships (production ML model optimization for VoIP at Plug & Tel, cloud storage optimization with AI, HR platform with NestJS/React), freelance projects (an AI business copilot, a visual C++ code generator), and part-time work developing VoIP microservices in Go. I care about software architecture and distributed systems, and I'm increasingly drawn to ML and AI, having gone deep into the field through dedicated training and multiple end-to-end projects.\n\nI'm open to new opportunities, internships, collaborations, or anything that puts me in a challenging environment.",
-    fr: "Étudiant en 5ème année à l'INP Toulouse – ENSEEIHT (parcours HPC Big Data), en échange académique depuis l'INSAT, Tunisie. J'ai commencé par les mathématiques, baccalauréat mention Très Bien (18,16/20), et je n'ai jamais vraiment arrêté de penser comme un mathématicien. À l'INSAT, je me suis classé 32ème/410 en tronc commun, puis 5ème/90, 6ème/96 et 8ème/90 en Génie Logiciel.\n\nCe qui me caractérise, c'est l'envie de faire fonctionner les choses, pas juste de les comprendre. La programmation compétitive, que j'ai vraiment aimée, m'a appris à raisonner plus que n'importe quel cours. J'ai participé deux fois au TCPC, deux fois à un problème près de l'ACPC, avec une médaille de bronze. J'ai aussi participé à des hackathons IA où livrer sous pression comptait autant que les compétences techniques.\n\nCôté professionnel, j'ai construit des choses sur trois fronts : stages (optimisation de modèle ML en production pour la VoIP chez Plug & Tel, optimisation stockage cloud avec IA, plateforme RH NestJS/React), projets freelance (copilote business IA, générateur de code C++ visuel), et temps partiel en développement de microservices VoIP en Go. Je m'intéresse à l'architecture logicielle et aux systèmes distribués, et de plus en plus à l'IA et au ML, un domaine dans lequel je me suis investi en profondeur à travers des formations et plusieurs projets complets.\n\nJe suis ouvert à de nouvelles opportunités, stages, collaborations, ou tout environnement stimulant."
+    en: "I'm a 5th-year engineering student at INP Toulouse – ENSEEIHT (HPC Big Data track), alongside the PSMSC Master (Scientific Computing), on academic exchange from INSAT, Tunisia. I started with mathematics, baccalaureate with Highest Honors (18.16/20), and never really stopped thinking like one. At INSAT I ranked 32nd/410 in the common first year, then 5th/90, 6th/96, and 8th/90 in Software Engineering.\n\nI've always been driven by a simple instinct: not just understanding things, but making them work. That led me to competitive programming, which I genuinely loved. It shaped the way I reason about problems more than any course did. I participated in the TCPC twice, came close to qualifying for the ACPC both times, and earned a bronze medal. I also took part in AI hackathons where delivering under pressure mattered as much as technical skill. Most recently, I won the Enedis track of the AI For Impact Hackathon by La Mêlée (October 2026), an operations research problem where I built a complete system, not just an optimization model.\n\nOn the professional side, I've built things across three fronts: internships (production ML model optimization for VoIP at Plug & Tel, cloud storage optimization with AI, HR platform with NestJS/React), freelance projects (an AI business copilot, a visual C++ code generator), and part-time work developing VoIP microservices in Go. I care about software architecture and distributed systems, and I'm increasingly drawn to ML and AI, having gone deep into the field through dedicated training and multiple end-to-end projects.\n\nI'm open to new opportunities, internships, collaborations, or anything that puts me in a challenging environment.",
+    fr: "Étudiant en 5ème année à l'INP Toulouse – ENSEEIHT (parcours HPC Big Data), en parallèle du Master PSMSC (Scientific Computing), en échange académique depuis l'INSAT, Tunisie. J'ai commencé par les mathématiques, baccalauréat mention Très Bien (18,16/20), et je n'ai jamais vraiment arrêté de penser comme un mathématicien. À l'INSAT, je me suis classé 32ème/410 en tronc commun, puis 5ème/90, 6ème/96 et 8ème/90 en Génie Logiciel.\n\nCe qui me caractérise, c'est l'envie de faire fonctionner les choses, pas juste de les comprendre. La programmation compétitive, que j'ai vraiment aimée, m'a appris à raisonner plus que n'importe quel cours. J'ai participé deux fois au TCPC, deux fois à un problème près de l'ACPC, avec une médaille de bronze. J'ai aussi participé à des hackathons IA où livrer sous pression comptait autant que les compétences techniques. Plus récemment, j'ai remporté la thématique Enedis du Hackathon AI For Impact by La Mêlée (octobre 2026), un problème de recherche opérationnelle pour lequel j'ai construit un système complet, pas seulement un modèle d'optimisation.\n\nCôté professionnel, j'ai construit des choses sur trois fronts : stages (optimisation de modèle ML en production pour la VoIP chez Plug & Tel, optimisation stockage cloud avec IA, plateforme RH NestJS/React), projets freelance (copilote business IA, générateur de code C++ visuel), et temps partiel en développement de microservices VoIP en Go. Je m'intéresse à l'architecture logicielle et aux systèmes distribués, et de plus en plus à l'IA et au ML, un domaine dans lequel je me suis investi en profondeur à travers des formations et plusieurs projets complets.\n\nJe suis ouvert à de nouvelles opportunités, stages, collaborations, ou tout environnement stimulant."
   },
   skills: [
     {
@@ -33,12 +35,22 @@ const PORTFOLIO_DATA = {
     {
       category: { en: "Frontend & Backend", fr: "Frontend & Backend" },
       tag: "web",
-      items: ["Angular","React","Next.js","NestJS","Symfony","ASP.NET"]
+      items: ["Angular","React","Next.js","NestJS","FastAPI","Symfony","ASP.NET"]
     },
     {
       category: { en: "AI & Machine Learning", fr: "IA & Machine Learning" },
       tag: "ai",
-      items: ["TensorFlow","Scikit-learn","NumPy","Pandas","NLP","Computer Vision","RAG","Supervised & Unsupervised Learning"]
+      items: ["LLMs","RAG","Agentic AI","Multi-Agent Systems","LangChain","LangGraph","Qdrant","NLP","CNN","Transformer Architecture","TensorFlow","Scikit-learn","NumPy","Pandas","Computer Vision","Supervised & Unsupervised Learning"]
+    },
+    {
+      category: { en: "HPC & Big Data", fr: "HPC & Big Data" },
+      tag: "hpc",
+      items: ["CUDA","OpenCL","OpenMP","MPI","Parallel & Distributed Computing","Spark","Hadoop","Kafka"]
+    },
+    {
+      category: { en: "Optimization", fr: "Optimisation" },
+      tag: "opt",
+      items: ["Operations Research","Linear & Integer Programming","Gurobi","Heuristic Search (A*)"]
     },
     {
       category: { en: "DevOps & Infrastructure", fr: "DevOps & Infrastructure" },
@@ -58,8 +70,8 @@ const PORTFOLIO_DATA = {
       period: "Jun 2026 – Aug 2026",
       type: { en: "Internship", fr: "Stage" },
       description: {
-        en: "Improving the classification error rate of a production Answering Machine Detection (AMD) AI model while maintaining latency compatible with the real-time constraints of VoIP streams.",
-        fr: "Amélioration du taux d'erreur de classification d'un modèle IA de détection de répondeur (AMD) en production tout en maintenant une latence compatible avec les contraintes temps réel des flux VoIP."
+        en: "Improving the classification error rate of a production Answering Machine Detection (AMD) AI model while maintaining latency compatible with the real-time constraints of VoIP streams. Explored several approaches: tabular models, CNNs on mel-spectrograms, and hybrid models combining both, with model explainability (Grad-CAM for CNNs and tabular model explainability).",
+        fr: "Amélioration du taux d'erreur de classification d'un modèle IA de détection de répondeur (AMD) en production tout en maintenant une latence compatible avec les contraintes temps réel des flux VoIP. Exploration de plusieurs approches : modèles tabulaires, CNN sur mel-spectrogrammes et modèles hybrides combinant les deux, avec explicabilité des modèles (Grad-CAM pour les CNN et explicabilité des modèles tabulaires)."
       }
     },
     {
@@ -68,8 +80,8 @@ const PORTFOLIO_DATA = {
       period: "Nov 2025 – Apr 2026",
       type: { en: "Part-Time", fr: "Temps Partiel" },
       description: {
-        en: "Working part-time as a software engineer, contributing to production software projects and applying full-stack skills in a professional setting while completing my engineering degree.",
-        fr: "Travail à temps partiel en tant qu'ingénieur logiciel, contribution à des projets de développement en production tout en terminant mon diplôme d'ingénieur."
+        en: "Working part-time as a software engineer, contributing to production software projects and applying full-stack skills in a professional setting while completing my engineering degree, notably developing VoIP microservices in Go and taking part in the production deployment process.",
+        fr: "Travail à temps partiel en tant qu'ingénieur logiciel, contribution à des projets de développement en production tout en terminant mon diplôme d'ingénieur, notamment le développement de microservices VoIP en Go et la participation au processus de déploiement en production."
       }
     },
     {
@@ -461,9 +473,9 @@ const PORTFOLIO_DATA = {
     {
       institution: "INP Toulouse - ENSEEIHT",
       full: "École Nationale Supérieure d'Électrotechnique, d'Électronique, d'Informatique, d'Hydraulique et des Télécommunications",
-      degree: { en: "5th Year — Digital Sciences Dept., HPC Big Data Track (Academic Exchange)", fr: "5ème année — Dept. Sciences du Numérique, Parcours HPC Big Data (Échange Académique)" },
+      degree: { en: "5th Year — Digital Sciences Dept., HPC Big Data Track (Academic Exchange) + PSMSC Master (Scientific Computing)", fr: "5ème année — Dept. Sciences du Numérique, Parcours HPC Big Data (Échange Académique) + Master PSMSC (Scientific Computing)" },
       period: "2026 – 2027",
-      highlights: { en: ["Academic exchange program","HPC Big Data specialization track","Digital Sciences Department"], fr: ["Programme d'échange académique","Parcours de spécialisation HPC Big Data","Département Sciences du Numérique"] }
+      highlights: { en: ["Academic exchange program","HPC Big Data specialization track","PSMSC Master (Scientific Computing) in parallel","Digital Sciences Department"], fr: ["Programme d'échange académique","Parcours de spécialisation HPC Big Data","Master PSMSC (Scientific Computing) en parallèle","Département Sciences du Numérique"] }
     },
     {
       institution: "INSAT",
@@ -489,6 +501,18 @@ const PORTFOLIO_DATA = {
   ],
   achievements: [
     {
+      place: "1st", medal: "Winner",
+      title: { en: "AI For Impact Hackathon — Enedis Track Winner", fr: "Hackathon AI For Impact — Gagnant thématique Enedis" },
+      subtitle: { en: "by La Mêlée — October 2026", fr: "par La Mêlée — octobre 2026" },
+      color: "#eab308", url: "https://lnkd.in/p/eqP49Rea"
+    },
+    {
+      place: "6th", medal: "Top 6",
+      title: { en: "Data Quest 2026", fr: "Data Quest 2026" },
+      subtitle: { en: "Data science competition — February 2026", fr: "Compétition de data science — février 2026" },
+      color: "#6366f1", url: "https://github.com/Rayen-Chemlali/ARIA-Insurance-Bundle-Predictor"
+    },
+    {
       place: "2nd", medal: "2nd",
       title: { en: "Code Quest 2023", fr: "Code Quest 2023" },
       subtitle: { en: "Competitive Programming Contest @ INSAT", fr: "Concours de Programmation Compétitive @ INSAT" },
@@ -510,7 +534,7 @@ const PORTFOLIO_DATA = {
   languages: [
     { lang: "Arabic", level: { en: "Native", fr: "Langue maternelle" }, pct: 100 },
     { lang: "French", level: { en: "Fluent", fr: "Courant" }, pct: 90 },
-    { lang: "English", level: { en: "Good", fr: "Bon niveau" }, pct: 75 },
+    { lang: "English", level: { en: "Fluent", fr: "Courant" }, pct: 85 },
     { lang: "Spanish", level: { en: "Beginner", fr: "Débutant" }, pct: 20 }
   ]
 };

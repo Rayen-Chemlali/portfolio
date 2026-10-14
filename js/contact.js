@@ -14,6 +14,10 @@ function renderContact() {
       <span class="contact-card-icon" aria-hidden="true">☎</span>
       <div><div class="contact-card-label">PHONE</div><div class="contact-card-val">${d.phone}</div></div>
     </a>
+    ${d.whatsapp ? `<a href="https://wa.me/${d.whatsapp.replace(/[^0-9]/g,'')}" target="_blank" rel="noopener noreferrer" class="contact-card" aria-label="WhatsApp ${d.whatsapp}">
+      <span class="contact-card-icon" aria-hidden="true">✆</span>
+      <div><div class="contact-card-label">WHATSAPP</div><div class="contact-card-val">${d.whatsapp}</div></div>
+    </a>` : ''}
     <a href="${d.linkedin}" target="_blank" rel="noopener noreferrer" class="contact-card" aria-label="LinkedIn profile">
       <span class="contact-card-icon" aria-hidden="true">in</span>
       <div><div class="contact-card-label">LINKEDIN</div><div class="contact-card-val">chemlali-rayen</div></div>

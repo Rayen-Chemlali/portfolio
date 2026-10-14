@@ -178,18 +178,34 @@ function openCvModal() {
       </div>
 
       <div id="cv-modal-options">
+        <button class="cv-opt" data-cv="fr">
+          <div class="cv-opt-left">
+            <span class="cv-opt-label">${isEn ? 'French — Full (2 pages)' : 'Français — Complet (2 pages)'}</span>
+            <span class="cv-opt-sub">CV_Rayen_Chemlali_FR.pdf</span>
+          </div>
+          <span class="cv-opt-arrow">&#8594;</span>
+        </button>
+
         <button class="cv-opt" data-cv="en">
           <div class="cv-opt-left">
-            <span class="cv-opt-label">${isEn ? 'English Version' : 'Version Anglaise'}</span>
+            <span class="cv-opt-label">${isEn ? 'English — Full (2 pages)' : 'Anglais — Complet (2 pages)'}</span>
             <span class="cv-opt-sub">CV_Rayen_Chemlali_EN.pdf</span>
           </div>
           <span class="cv-opt-arrow">&#8594;</span>
         </button>
 
-        <button class="cv-opt" data-cv="fr">
+        <button class="cv-opt" data-cv="fr-short">
           <div class="cv-opt-left">
-            <span class="cv-opt-label">${isEn ? 'French Version' : 'Version Française'}</span>
-            <span class="cv-opt-sub">CV_Rayen_Chemlali_FR.pdf</span>
+            <span class="cv-opt-label">${isEn ? 'French — Short (1 page)' : 'Français — Court (1 page)'}</span>
+            <span class="cv-opt-sub">CV_Rayen_Chemlali_FR_1page.pdf</span>
+          </div>
+          <span class="cv-opt-arrow">&#8594;</span>
+        </button>
+
+        <button class="cv-opt" data-cv="en-short">
+          <div class="cv-opt-left">
+            <span class="cv-opt-label">${isEn ? 'English — Short (1 page)' : 'Anglais — Court (1 page)'}</span>
+            <span class="cv-opt-sub">CV_Rayen_Chemlali_EN_1page.pdf</span>
           </div>
           <span class="cv-opt-arrow">&#8594;</span>
         </button>
@@ -198,7 +214,7 @@ function openCvModal() {
 
         <button class="cv-opt cv-opt-both" data-cv="both">
           <div class="cv-opt-left">
-            <span class="cv-opt-label">${isEn ? 'Both Versions' : 'Les deux versions'}</span>
+            <span class="cv-opt-label">${isEn ? 'Both Full Versions' : 'Les deux versions complètes'}</span>
             <span class="cv-opt-sub">${isEn ? 'Download EN + FR' : 'Télécharger EN + FR'}</span>
           </div>
           <span class="cv-opt-arrow">&#8594;</span>
@@ -251,6 +267,10 @@ function triggerCvDownload(choice) {
     downloadFile(enUrl, 'CV_Rayen_Chemlali_EN.pdf');
   } else if (choice === 'fr') {
     downloadFile(frUrl, 'CV_Rayen_Chemlali_FR.pdf');
+  } else if (choice === 'fr-short' || choice === 'en-short') {
+    const short = PORTFOLIO_DATA.meta.cvUrlShort || {};
+    const l = choice.slice(0, 2);
+    downloadFile(short[l], 'CV_Rayen_Chemlali_' + l.toUpperCase() + '_1page.pdf');
   } else if (choice === 'both') {
     downloadFile(enUrl, 'CV_Rayen_Chemlali_EN.pdf');
     setTimeout(function() {

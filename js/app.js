@@ -83,7 +83,7 @@ function setLang(l) {
 
 function updateSEOMeta() {
   const d = PORTFOLIO_DATA;
-  document.getElementById('page-title').textContent = d.meta.name + ' | ' + t(d.meta.title) + ' – Tunis, Tunisia';
+  document.getElementById('page-title').textContent = d.meta.name + ' | ' + t(d.meta.title) + ' – Toulouse, France';
   document.getElementById('meta-desc').setAttribute('content', t(d.meta.description));
   document.getElementById('og-title').setAttribute('content', d.meta.name + ' | ' + t(d.meta.title));
   document.getElementById('og-desc').setAttribute('content', t(d.meta.description));
