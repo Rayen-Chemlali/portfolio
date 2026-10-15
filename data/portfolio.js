@@ -212,7 +212,7 @@ const PORTFOLIO_DATA = {
       status: { en: "Completed", fr: "Terminé" }, statusType: "done",
       duration: "Deep Learning course project, INSAT", team: "6 students",
       myRole: { en: "Team member", fr: "Membre de l'équipe" },
-      tech: ["Python","PyTorch","Audio Spectrogram Transformer","SAM","DeiT","EfficientNet","BiLSTM","librosa","Kaggle GPU"],
+      tech: ["Python","Audio Spectrogram Transformer","SAM","DeiT","EfficientNet","BiLSTM","librosa","Kaggle GPU"],
       links: [
         { label: "View Code", url: "https://github.com/Rayen-Chemlali/ICBHI-Respiratory-Sound-Classification" },
         { label: "View Report", url: "https://drive.google.com/file/d/12yF3DN4DiVH6RC9b5dp24vJtQiHycrNm/view?usp=sharing" }
