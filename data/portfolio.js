@@ -206,6 +206,25 @@ const PORTFOLIO_DATA = {
       }
     },
     {
+      id: "icbhi", name: "Respiratory Sound Classification", emoji: "DL", category: "academic", date: "Feb 2026 - Apr 2026",
+      tagline: { en: "Reproducing a research paper on ICBHI 2017, then testing 6 approaches to improve sensitivity", fr: "Reproduction d'un article de recherche sur ICBHI 2017, puis 6 approches testées pour améliorer la sensibilité" },
+      accentColor: "#14b8a6", watermark: "DL",
+      status: { en: "Completed", fr: "Terminé" }, statusType: "done",
+      duration: "Deep Learning course project, INSAT", team: "6 students",
+      myRole: { en: "Team member", fr: "Membre de l'équipe" },
+      tech: ["Python","PyTorch","Audio Spectrogram Transformer","SAM","DeiT","EfficientNet","BiLSTM","librosa","Kaggle GPU"],
+      links: [
+        { label: "View Code", url: "https://github.com/Rayen-Chemlali/ICBHI-Respiratory-Sound-Classification" },
+        { label: "View Report", url: "https://drive.google.com/file/d/12yF3DN4DiVH6RC9b5dp24vJtQiHycrNm/view?usp=sharing" }
+      ],
+      tabs: {
+        overview: { en: "Automatic detection of abnormal sounds (crackles, wheezes, or both) in respiratory cycles from the ICBHI 2017 dataset: noisy clinical recordings made with 4 different devices, where the normal class strongly dominates. The goal was to beat the sensitivity (recall) of a recent reference paper (AST + SAM), the metric that matters in medical diagnosis, since a false negative is a sick patient who goes unnoticed. We first reproduced the paper under controlled conditions (60/40 patient-level split, fixed seed), then led a research process over several experiments, analysing each failure to choose the next one.", fr: "Détecter automatiquement les sons anormaux (crépitements, sifflements, les deux) dans les cycles respiratoires du dataset ICBHI 2017 : des enregistrements cliniques bruités, faits avec 4 appareils différents, où la classe normale domine fortement. Le but était de dépasser la sensibilité (recall) d'un article de référence récent (AST + SAM), la métrique qui compte en diagnostic médical, car un faux négatif est un malade qu'on ne voit pas. Nous avons d'abord reproduit l'article dans un cadre contrôlé (split 60/40 par patient, seed fixe), puis mené une démarche de recherche en plusieurs essais, en analysant chaque échec pour choisir l'essai suivant." },
+        features: { en: ["Paper reproduction (AST pretrained on AudioSet + SAM): 70.10% ICBHI score vs 68.10% in the paper, used as the controlled baseline","EfficientNet-B0 CNN + CBA attention + BiLSTM + Focal Loss: an instructive failure, the normal class collapses (8.68% specificity), showing the limits of ImageNet pretraining on spectrograms","DeiT Tiny, Mel spectrogram vs gammatone cochleagram: the cochleagram detects the both class better (0.67 vs 0.45 recall), Mel detects wheezes better","DeiT Tiny with two-phase training (classifier head first, then SAM on the full model) and 100-2000 Hz band-pass filtering, which stabilised training","AST + SAM + augmentations (SpecAugment, MixUp, GaP) + Focal Loss: best ICBHI score, 69.84%, with 84.75% specificity","AST + SAM + inverse-frequency Focal Loss + class-aware SpecAugment + logit adjustment: best sensitivity, 72.98% vs 68.31% in the paper, adjustable up to 98.57% with a single parameter and no retraining"], fr: ["Reproduction de l'article (AST pré-entraîné sur AudioSet + SAM) : score ICBHI de 70,10 % contre 68,10 % pour l'article, utilisé comme référence contrôlée","CNN EfficientNet-B0 + attention CBA + BiLSTM + Focal Loss : un échec instructif, la classe normale s'effondre (spécificité de 8,68 %), ce qui montre les limites d'un pré-entraînement ImageNet sur des spectrogrammes","DeiT Tiny, Mel spectrogramme contre cochléagramme gammatone : le cochléagramme détecte mieux la classe both (recall de 0,67 contre 0,45), le Mel détecte mieux les sifflements","DeiT Tiny avec entraînement en deux phases (tête de classification d'abord, puis SAM sur le modèle complet) et filtrage passe-bande 100-2000 Hz, qui a stabilisé l'entraînement","AST + SAM + augmentations (SpecAugment, MixUp, GaP) + Focal Loss : meilleur score ICBHI, 69,84 %, avec une spécificité de 84,75 %","AST + SAM + Focal Loss pondérée par fréquence inverse + SpecAugment adaptée à chaque classe + logit adjustment : meilleure sensibilité, 72,98 % contre 68,31 % pour l'article, ajustable jusqu'à 98,57 % avec un seul paramètre et sans réentraîner"] },
+        challenges: { en: "A small, imbalanced and noisy dataset: abnormal cycles mostly contain normal breathing, the both class has only 506 samples, and SAM doubles memory cost on T4 GPUs.", fr: "Un dataset petit, déséquilibré et bruité : les cycles anormaux contiennent surtout de la respiration normale, la classe both ne compte que 506 exemples, et SAM double le coût mémoire sur des GPU T4." },
+        learnings: { en: "On a small medical dataset, audio pretraining matters more than architectural complexity. Sensitivity and specificity pull against each other, so the right model depends on the clinical use (screening or diagnosis). Measuring every change under controlled conditions before keeping it.", fr: "Sur un petit dataset médical, le pré-entraînement audio compte plus que la complexité de l'architecture. Sensibilité et spécificité s'opposent, donc le bon modèle dépend de l'usage clinique (dépistage ou diagnostic). Mesurer chaque changement dans un cadre contrôlé avant de le garder." }
+      }
+    },
+    {
       id: "house-prices", name: "House Prices in Grand Tunis", emoji: "ML", category: "academic", date: "Dec 2025 - Feb 2026",
       tagline: { en: "Data mining & ML analysis of real estate prices in Grand Tunis", fr: "Data mining & ML sur les prix immobiliers du Grand Tunis" },
       accentColor: "#8b5cf6", watermark: "ML",
@@ -529,7 +548,7 @@ const PORTFOLIO_DATA = {
     { id: "ai", label: { en: "Agentic AI & LLMs", fr: "IA agentique & LLM" },
       projects: ["travel-agent", "container-registry", "medisys", "strategy-ai", "enedispo"] },
     { id: "ml", label: { en: "Machine Learning", fr: "Machine Learning" },
-      projects: ["ml-suite", "soundguard", "aria", "house-prices"] },
+      projects: ["ml-suite", "icbhi", "soundguard", "aria", "house-prices"] },
     { id: "hpc", label: { en: "HPC, Big Data & Optimization", fr: "HPC, Big Data & Optimisation" },
       projects: ["gpu-computing", "enedispo", "operations-research", "smart-city"] },
     { id: "software", label: { en: "Software & Web", fr: "Logiciel & Web" },
