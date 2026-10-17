@@ -225,6 +225,24 @@ const PORTFOLIO_DATA = {
       }
     },
     {
+      id: "mylang-compiler", name: "MyLang Compiler", emoji: "CC", category: "academic", date: "Spring 2026",
+      tagline: { en: "A full compiler for a statically typed imperative language, compiled to Python", fr: "Un compilateur complet pour un langage impératif typé statiquement, compilé vers Python" },
+      accentColor: "#f59e0b", watermark: "AST",
+      status: { en: "Completed", fr: "Terminé" }, statusType: "done",
+      duration: "Compilers course project, INSAT",
+      myRole: { en: "Team member", fr: "Membre de l'équipe" },
+      tech: ["Python","Regex","Recursive descent parsing","AST","Visitor pattern","pytest"],
+      links: [
+        { label: "View Code & Report", url: "https://drive.google.com/drive/u/4/folders/1uL8BwSWTdbiOC2vpS31WvIW-OJq_5xVJ" }
+      ],
+      tabs: {
+        overview: { en: "MyLang is a statically typed imperative language (int and string types, arithmetic with operator precedence, comparisons, if/else, while and for loops, print) compiled to executable Python 3. The compiler covers the four classical phases, lexical, syntax and semantic analysis, then code generation, and is written in Python with the standard library only. It goes beyond the base requirements with a for loop, floating-point literals, a web playground and 94 unit tests.", fr: "MyLang est un langage impératif typé statiquement (types int et string, arithmétique avec priorité des opérateurs, comparaisons, if/else, boucles while et for, print) compilé en Python 3 exécutable. Le compilateur couvre les quatre phases classiques, analyse lexicale, syntaxique et sémantique, puis génération de code, et il est écrit en Python avec la seule bibliothèque standard. Il va au-delà du sujet avec une boucle for, des littéraux flottants, un playground web et 94 tests unitaires." },
+        features: { en: ["Lexer: a single master regular expression matching every token type in one pass, with line and column tracking for precise error messages","Parser: hand-written recursive descent parser building the AST from a formal BNF grammar, one parse method per grammar rule","Semantic analysis with a chained symbol table: undeclared variables, double declarations, type-incompatible assignments, mixed-type arithmetic and invalid comparisons","Code generation with the Visitor pattern, producing valid, indented Python 3","94 unit tests across the four phases, runnable with pytest or unittest","Debug modes to inspect tokens, AST and generated Python from the command line","Web playground: Run, Tokens, AST and Generated Python modes, a live pipeline indicator and a collapsible AST tree"], fr: ["Lexer : une seule expression régulière maître qui reconnaît tous les types de tokens en une passe, avec suivi des lignes et colonnes pour des erreurs précises","Parser : analyseur descendant récursif écrit à la main qui construit l'AST à partir d'une grammaire BNF formelle, une méthode par règle","Analyse sémantique avec une table des symboles chaînée : variables non déclarées, doubles déclarations, affectations de types incompatibles, arithmétique de types mixtes et comparaisons invalides","Génération de code avec le pattern Visitor, qui produit du Python 3 valide et indenté","94 tests unitaires sur les quatre phases, exécutables avec pytest ou unittest","Modes de débogage pour inspecter les tokens, l'AST et le Python généré en ligne de commande","Playground web : modes Run, Tokens, AST et Python généré, indicateur de pipeline en direct et arbre AST repliable"] },
+        challenges: { en: "Getting scoping right in nested blocks, so that look-ups walk up the enclosing scopes while double declarations are still caught in the same scope, and reporting every error with its exact position.", fr: "Gérer correctement la portée dans les blocs imbriqués, pour que la recherche remonte les portées englobantes tout en détectant les doubles déclarations dans une même portée, et signaler chaque erreur avec sa position exacte." },
+        learnings: { en: "How a compiler is built phase by phase, from regular expressions and grammars to type checking and code generation, and why testing each phase separately makes the whole pipeline reliable.", fr: "Comment un compilateur se construit phase par phase, des expressions régulières et des grammaires jusqu'au typage et à la génération de code, et pourquoi tester chaque phase séparément rend toute la chaîne fiable." }
+      }
+    },
+    {
       id: "house-prices", name: "House Prices in Grand Tunis", emoji: "ML", category: "academic", date: "Dec 2025 - Feb 2026",
       tagline: { en: "Data mining & ML analysis of real estate prices in Grand Tunis", fr: "Data mining & ML sur les prix immobiliers du Grand Tunis" },
       accentColor: "#8b5cf6", watermark: "ML",
@@ -552,7 +570,7 @@ const PORTFOLIO_DATA = {
     { id: "hpc", label: { en: "HPC, Big Data & Optimization", fr: "HPC, Big Data & Optimisation" },
       projects: ["gpu-computing", "enedispo", "operations-research", "smart-city"] },
     { id: "software", label: { en: "Software & Web", fr: "Logiciel & Web" },
-      projects: ["shannon", "erp", "strategy-ai", "container-registry", "kickstream", "medisys", "operations-research", "interim"] }
+      projects: ["shannon", "mylang-compiler", "erp", "strategy-ai", "container-registry", "kickstream", "medisys", "operations-research", "interim"] }
   ],
   certifications: [
     { name: "Samsung Innovation Campus AI", issuer: "Samsung", icon: "SAM", url: "https://drive.google.com/file/d/1uMrPLNYzwKXtVgN3_iSDjSsD_ESujxVe/view?usp=drive_link", linkedProjectId: "soundguard" },
