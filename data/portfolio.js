@@ -243,6 +243,23 @@ const PORTFOLIO_DATA = {
       }
     },
     {
+      id: "stm32-serial", name: "STM32 Serial UART Class", emoji: "MCU", category: "academic", date: "Nov 2024 - Dec 2024",
+      tagline: { en: "A C++ Serial class for UART/USART communication on STM32F1, in three layers", fr: "Une classe Serial en C++ pour la communication UART/USART sur STM32F1, en trois couches" },
+      accentColor: "#06b6d4", watermark: "MCU",
+      status: { en: "Completed", fr: "Terminé" }, statusType: "done",
+      duration: "Nov 2024 - Dec 2024",
+      myRole: { en: "Developer", fr: "Développeur" },
+      tech: ["C++","C","STM32F1","HAL","UART/USART","Interrupts"],
+      links: [
+        { label: "View Code", url: "https://drive.google.com/drive/folders/14TlzPe6zZhcfKTPozma9nUs9jPZLouad?usp=sharing" },
+        { label: "View Report", url: "https://drive.google.com/file/d/1JiHaeSfbROLdoiw-1UiE_fx3JVhLb2wL/view?usp=sharing" }
+      ],
+      tabs: {
+        overview: { en: "A Serial class written in C++ for UART/USART serial communication on the STM32F1, configurable on USART1, USART2 and USART3. The architecture has three layers: an object-oriented class, a wrapper, and the ST HAL. Data is sent and received first in blocking mode, then with interrupts.", fr: "Une classe Serial écrite en C++ pour la communication série UART/USART sur STM32F1, configurable sur USART1, USART2 et USART3. L'architecture comporte trois couches : une classe orientée objet, un wrapper et la HAL ST. L'envoi et la réception de données se font d'abord en mode bloquant, puis par interruptions." },
+        features: { en: ["Serial class in C++ for UART/USART communication on STM32F1","Configurable on USART1, USART2 and USART3","Three-layer architecture: object-oriented class, wrapper, ST HAL","Data sending and receiving in blocking mode","Data sending and receiving with interrupts"], fr: ["Classe Serial en C++ pour la communication UART/USART sur STM32F1","Configurable sur USART1, USART2 et USART3","Architecture en trois couches : classe orientée objet, wrapper, HAL ST","Envoi et réception de données en mode bloquant","Envoi et réception de données par interruptions"] }
+      }
+    },
+    {
       id: "house-prices", name: "House Prices in Grand Tunis", emoji: "ML", category: "academic", date: "Dec 2025 - Feb 2026",
       tagline: { en: "Data mining & ML analysis of real estate prices in Grand Tunis", fr: "Data mining & ML sur les prix immobiliers du Grand Tunis" },
       accentColor: "#8b5cf6", watermark: "ML",
@@ -570,7 +587,7 @@ const PORTFOLIO_DATA = {
     { id: "hpc", label: { en: "HPC, Big Data & Optimization", fr: "HPC, Big Data & Optimisation" },
       projects: ["gpu-computing", "enedispo", "operations-research", "smart-city"] },
     { id: "software", label: { en: "Software & Web", fr: "Logiciel & Web" },
-      projects: ["shannon", "mylang-compiler", "erp", "strategy-ai", "container-registry", "kickstream", "medisys", "operations-research", "interim"] }
+      projects: ["shannon", "mylang-compiler", "stm32-serial", "erp", "strategy-ai", "container-registry", "kickstream", "medisys", "operations-research", "interim"] }
   ],
   certifications: [
     { name: "Samsung Innovation Campus AI", issuer: "Samsung", icon: "SAM", url: "https://drive.google.com/file/d/1uMrPLNYzwKXtVgN3_iSDjSsD_ESujxVe/view?usp=drive_link", linkedProjectId: "soundguard" },

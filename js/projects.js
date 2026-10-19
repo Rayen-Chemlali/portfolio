@@ -125,7 +125,7 @@ function openModal(idx) {
     { key: 'features',   label: t(UI_LABELS.tab_features) },
     { key: 'challenges', label: t(UI_LABELS.tab_challenges) },
     { key: 'learnings',  label: t(UI_LABELS.tab_learnings) }
-  ];
+  ].filter(tab => p.tabs[tab.key]);
 
   document.getElementById('modal-tabs-el').innerHTML = tabs.map((tab, i) => `
     <div class="modal-tab${i === 0 ? ' active' : ''}" role="tab" aria-selected="${i === 0}"
