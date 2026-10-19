@@ -177,49 +177,59 @@ function openCvModal() {
       }
       .cv-opt.cv-opt-both .cv-opt-arrow { color: rgba(26,101,158,0.5); }
       .cv-opt.cv-opt-both:hover .cv-opt-arrow { color: #1A659E; }
+      .cv-row { display: flex; gap: 6px; align-items: stretch; }
+      .cv-row .cv-opt { flex: 1; min-width: 0; }
+      .cv-prev {
+        display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px;
+        padding: 0 12px; min-width: 64px;
+        background: #FFFFFF; border: 1.5px solid #D8DEE7; border-radius: 9px;
+        color: #1A659E; cursor: pointer;
+        font-family: 'Archivo', system-ui, sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 0.2px;
+        transition: border-color 0.18s, background 0.18s;
+      }
+      .cv-prev svg { width: 16px; height: 16px; }
+      .cv-prev:hover { border-color: #1A659E; background: rgba(26,101,158,0.05); }
+      .cv-opt:focus-visible, .cv-prev:focus-visible, #cv-modal-close:focus-visible, .cv-view-btn:focus-visible {
+        outline: 2px solid #1A659E; outline-offset: 2px;
+      }
+      #cv-modal-box.cv-viewing { width: min(920px, 94vw); height: 90vh; display: flex; flex-direction: column; }
+      #cv-viewer { flex: 1; display: flex; flex-direction: column; background: #EAEEF3; min-height: 0; }
+      #cv-viewer iframe { flex: 1; width: 100%; border: 0; background: #EAEEF3; }
+      .cv-view-actions { display: flex; gap: 8px; align-items: center; flex-shrink: 0; }
+      .cv-view-btn {
+        background: #FFFFFF; border: 1px solid #D8DEE7; color: #13223A; cursor: pointer;
+        font-family: 'Archivo', system-ui, sans-serif; font-size: 12px; font-weight: 600;
+        padding: 6px 12px; border-radius: 7px; transition: all 0.15s; white-space: nowrap;
+      }
+      .cv-view-btn:hover { border-color: #1A659E; background: #EAEEF3; }
+      .cv-view-btn.primary { background: #1A659E; border-color: #1A659E; color: #FFFFFF; }
+      .cv-view-btn.primary:hover { background: #13507E; }
     </style>
 
     <div id="cv-modal-box">
       <div id="cv-modal-header">
         <div>
           <h3 id="cv-modal-title">${isEn ? 'Download CV' : 'Télécharger le CV'}</h3>
-          <div id="cv-modal-subtitle">${isEn ? 'Select a version to download' : 'Sélectionnez une version à télécharger'}</div>
+          <div id="cv-modal-subtitle">${isEn ? 'Preview or download a version' : 'Prévisualisez ou téléchargez une version'}</div>
         </div>
         <button id="cv-modal-close" aria-label="Close">&times;</button>
       </div>
 
       <div id="cv-modal-options">
-        <button class="cv-opt" data-cv="fr">
-          <div class="cv-opt-left">
-            <span class="cv-opt-label">${isEn ? 'French, full version (2 pages)' : 'Français, version complète (2 pages)'}</span>
-            <span class="cv-opt-sub">CV_Rayen_Chemlali_FR.pdf</span>
-          </div>
-          <span class="cv-opt-arrow">&#8594;</span>
-        </button>
-
-        <button class="cv-opt" data-cv="en">
-          <div class="cv-opt-left">
-            <span class="cv-opt-label">${isEn ? 'English, full version (2 pages)' : 'Anglais, version complète (2 pages)'}</span>
-            <span class="cv-opt-sub">CV_Rayen_Chemlali_EN.pdf</span>
-          </div>
-          <span class="cv-opt-arrow">&#8594;</span>
-        </button>
-
-        <button class="cv-opt" data-cv="fr-short">
-          <div class="cv-opt-left">
-            <span class="cv-opt-label">${isEn ? 'French, short version (1 page)' : 'Français, version courte (1 page)'}</span>
-            <span class="cv-opt-sub">CV_Rayen_Chemlali_FR_1page.pdf</span>
-          </div>
-          <span class="cv-opt-arrow">&#8594;</span>
-        </button>
-
-        <button class="cv-opt" data-cv="en-short">
-          <div class="cv-opt-left">
-            <span class="cv-opt-label">${isEn ? 'English, short version (1 page)' : 'Anglais, version courte (1 page)'}</span>
-            <span class="cv-opt-sub">CV_Rayen_Chemlali_EN_1page.pdf</span>
-          </div>
-          <span class="cv-opt-arrow">&#8594;</span>
-        </button>
+        ${CV_CHOICES.map(c => `
+        <div class="cv-row">
+          <button class="cv-opt" data-cv="${c.id}" aria-label="${isEn ? 'Download' : 'Télécharger'}: ${isEn ? c.en : c.fr}">
+            <div class="cv-opt-left">
+              <span class="cv-opt-label">${isEn ? c.en : c.fr}</span>
+              <span class="cv-opt-sub">${c.file}</span>
+            </div>
+            <span class="cv-opt-arrow">&#8595;</span>
+          </button>
+          <button class="cv-prev" data-preview="${c.id}" aria-label="${isEn ? 'Preview' : 'Aperçu'}: ${isEn ? c.en : c.fr}">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            ${isEn ? 'Preview' : 'Aperçu'}
+          </button>
+        </div>`).join('')}
       </div>
     </div>
   `;
@@ -240,6 +250,68 @@ function openCvModal() {
       closeCvModal();
     });
   });
+  overlay.querySelectorAll('.cv-prev').forEach(function(btn) {
+    btn.addEventListener('click', function() { previewCv(btn.getAttribute('data-preview')); });
+  });
+}
+
+const CV_CHOICES = [
+  { id: 'fr',       fr: 'Français, version complète (2 pages)', en: 'French, full version (2 pages)',  file: 'CV_Rayen_Chemlali_FR.pdf' },
+  { id: 'en',       fr: 'Anglais, version complète (2 pages)',  en: 'English, full version (2 pages)', file: 'CV_Rayen_Chemlali_EN.pdf' },
+  { id: 'fr-short', fr: 'Français, version courte (1 page)',    en: 'French, short version (1 page)',  file: 'CV_Rayen_Chemlali_FR_1page.pdf' },
+  { id: 'en-short', fr: 'Anglais, version courte (1 page)',     en: 'English, short version (1 page)', file: 'CV_Rayen_Chemlali_EN_1page.pdf' },
+];
+
+function cvUrlFor(choice) {
+  const cvUrls = PORTFOLIO_DATA.meta.cvUrl;
+  const short = PORTFOLIO_DATA.meta.cvUrlShort || {};
+  const l = choice.slice(0, 2);
+  if (choice.endsWith('-short')) return short[l];
+  return typeof cvUrls === 'object' ? cvUrls[l] : cvUrls;
+}
+
+function previewCv(choice) {
+  const url = cvUrlFor(choice);
+  const c = CV_CHOICES.find(x => x.id === choice);
+  const isEn = lang === 'en';
+  // Small or touch screens: mobile browsers rarely render PDFs inside a frame, so open the native viewer.
+  if (window.matchMedia('(max-width: 767px), (pointer: coarse)').matches) {
+    window.open(url, '_blank', 'noopener');
+    return;
+  }
+  const box = document.getElementById('cv-modal-box');
+  if (!box) return;
+  box.classList.add('cv-viewing');
+  document.getElementById('cv-modal-title').textContent = isEn ? c.en : c.fr;
+  document.getElementById('cv-modal-subtitle').textContent = c.file;
+  const options = document.getElementById('cv-modal-options');
+  options.style.display = 'none';
+  const header = document.getElementById('cv-modal-header');
+  const closeBtn = document.getElementById('cv-modal-close');
+  const actions = document.createElement('div');
+  actions.className = 'cv-view-actions';
+  actions.innerHTML = `
+    <button class="cv-view-btn" id="cv-view-back">&#8592; ${isEn ? 'Back' : 'Retour'}</button>
+    <button class="cv-view-btn primary" id="cv-view-dl">&#8595; ${isEn ? 'Download' : 'Télécharger'}</button>`;
+  header.insertBefore(actions, closeBtn);
+  actions.appendChild(closeBtn);
+  const viewer = document.createElement('div');
+  viewer.id = 'cv-viewer';
+  viewer.innerHTML = `<iframe src="${url}#view=FitH" title="${isEn ? 'CV preview' : 'Aperçu du CV'}"></iframe>`;
+  box.appendChild(viewer);
+  document.getElementById('cv-view-dl').addEventListener('click', function() { triggerCvDownload(choice); });
+  document.getElementById('cv-view-back').addEventListener('click', function() {
+    viewer.remove();
+    header.appendChild(closeBtn);
+    actions.remove();
+    options.style.display = '';
+    box.classList.remove('cv-viewing');
+    document.getElementById('cv-modal-title').textContent = isEn ? 'Download CV' : 'Télécharger le CV';
+    document.getElementById('cv-modal-subtitle').textContent = isEn ? 'Preview or download a version' : 'Prévisualisez ou téléchargez une version';
+    const again = options.querySelector('[data-preview="' + choice + '"]');
+    if (again) again.focus();
+  });
+  document.getElementById('cv-view-back').focus();
 }
 
 function closeCvModal() {
