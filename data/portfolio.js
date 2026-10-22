@@ -60,6 +60,16 @@ const PORTFOLIO_DATA = {
   ],
   experience: [
     {
+      role: { en: "AI & IoT Research Project", fr: "Projet de recherche IA & IoT" },
+      company: "IRIT (RMESS team) - INP Toulouse ENSEEIHT",
+      period: "Oct 2026 - Feb 2027",
+      type: { en: "Research Project", fr: "Projet de recherche" },
+      description: {
+        en: "Health Guardian - Personal AI Twin: long team project supervised by the IRIT RMESS team. Building a behavioral digital twin that learns an individual's normal patterns from connected-sensor time series (smartwatches, wristbands) and detects gradual drift instead of relying on generic thresholds. Work covers multimodal time series, anomaly and concept-drift detection, population vs. personalized baselines, uncertainty and explainability. Study phase in progress (state of the art, datasets, evaluation protocol), prototype in February 2027.",
+        fr: "Health Guardian - Personal AI Twin : projet long en équipe encadré par l'équipe RMESS de l'IRIT. Conception d'un jumeau numérique comportemental qui apprend la normalité d'un individu à partir des séries temporelles de capteurs connectés (montres, bracelets) et détecte les dérives progressives, plutôt que de s'appuyer sur des seuils génériques. Séries temporelles multimodales, détection d'anomalies et de dérive (concept drift), baselines populationnelle et personnalisée, incertitude et explicabilité. Phase d'étude en cours (état de l'art, jeux de données, protocole d'évaluation), prototype en février 2027."
+      }
+    },
+    {
       role: { en: "ML Intern", fr: "Stagiaire ML" },
       company: "Plug & Tel",
       period: "Jun 2026 - Aug 2026",
